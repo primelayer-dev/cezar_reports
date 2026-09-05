@@ -1,51 +1,69 @@
-# Звіт про стан pull request №28
+# Cesar report: React type-family guard
 
-**Дата перевірки:** 2026-09-05 (UTC)
-**Джерело стану PR:** GitHub API, повторно перевірено безпосередньо перед оновленням звіту.
+Generated: 2026-09-05T19:03:32Z
 
-## Огляд
-
-| Поле | Значення |
+| Field | Value |
 | --- | --- |
-| Назва завдання | Fix React type conflict and Milesign lint warnings |
-| Репозиторій | `primelayer-dev/Milesign` (приватний) |
-| Pull request | №28 |
-| Гілка (head) | `cez/cac05128` |
-| Базова гілка | `main` |
-| SHA гілки (head) | `d1c6fb5a5d9c8696ab5aadb4fd871ec6c16418ba` |
-| SHA коміту злиття в `main` | `4ecb6fcb39a5192ee3a7f06b2a477ccc5231a001` |
-| Стан pull request | **MERGED** (2026-09-05 о 04:50 UTC) |
-| Чернетка | ні |
-| Кількість змінених файлів | **18** |
-| Обсяг змін | +407 / −661 рядків |
-| Перевірки CI на GitHub | статус-перевірок для цього PR немає |
+| Source repository | `primelayer-dev/Milesign` |
+| Workflow | `milesign-claude-codex-gate` |
+| Task | Add a workspace React type-family guard |
+| Source branch | `cez/d744c813` |
+| Base ref and SHA | `origin/main` at `4ecb6fcb39a5192ee3a7f06b2a477ccc5231a001` |
+| Merge-base SHA | `ad659554f6e4460dcf2d1d0da5ea343e396e5fcf` |
+| Head SHA | `ad659554f6e4460dcf2d1d0da5ea343e396e5fcf` |
+| Pull request | None |
+| Diff statistics | 24 files, 1,806 insertions, 648 deletions (aggregate working-tree diff from merge base) |
 
-Перевірки виконано на фактичному результаті злиття в `main`, коміті
-`4ecb6fc`. Перед початком і після завершення перевірено, що локальний стан
-збігається з `origin/main`, робоче дерево чисте, а tracked diff відсутній.
+## Changed files
 
-## Результати свіжих перевірок
+- `artifacts/milesign/app/(auth)/login.tsx`
+- `artifacts/milesign/app/(auth)/register.tsx`
+- `artifacts/milesign/app/(tabs)/calendar.tsx`
+- `artifacts/milesign/app/(tabs)/projects.tsx`
+- `artifacts/milesign/app/project/[id]/budget.tsx`
+- `artifacts/milesign/app/project/[id]/contractors.tsx`
+- `artifacts/milesign/app/project/[id]/documents.tsx`
+- `artifacts/milesign/app/project/[id]/expenses.tsx`
+- `artifacts/milesign/app/project/[id]/index.tsx`
+- `artifacts/milesign/app/project/[id]/materials.tsx`
+- `artifacts/milesign/app/project/[id]/photos.tsx`
+- `artifacts/milesign/app/project/[id]/stage/[stageId].tsx`
+- `artifacts/milesign/app/project/[id]/stages.tsx`
+- `artifacts/milesign/app/work-item/[id].tsx`
+- `artifacts/milesign/components/project/CommentThread.tsx`
+- `artifacts/milesign/package.json`
+- `artifacts/milesign/utils/userErrors.ts`
+- `package.json`
+- `pnpm-lock.yaml`
+- `pnpm-workspace.yaml`
+- `replit.md`
+- `scripts/package.json`
+- `scripts/src/check-react-types.test.ts`
+- `scripts/src/check-react-types.ts`
 
-| Крок | Результат |
+## Verified gates
+
+| Gate | Status and exit result |
 | --- | --- |
-| Чисте встановлення залежностей | ✅ `pnpm` 10.34.5 із frozen lockfile завершився з кодом 0; lockfile не змінився. |
-| Lint Milesign | ✅ Завершився з кодом 0, помилок немає. |
-| Перевірка типів Milesign | ✅ Завершилася з кодом 0, помилок немає. |
-| Тести Milesign | ✅ 50 із 50 наборів і 383 із 383 тестів пройдено; невдалих тестів немає. |
-| Загальна перевірка типів | ✅ Бібліотеки, `api-server`, `milesign`, `mockup-sandbox` і `scripts` перевірено; команда завершилася з кодом 0. |
-| Повна збірка | ✅ Виконано з потрібними `PORT`, `BASE_PATH` та `EXPO_PUBLIC_DOMAIN`; усі workspace-пакети, включно з клієнтськими bundle, зібрано; команда завершилася з кодом 0. Значення параметрів не публікуються. |
-| Перевірка diff | ✅ Після всіх перевірок tracked diff від `origin/main` відсутній, `git diff --check` успішний, робоче дерево чисте. |
+| Clean dependency installation with pnpm 10.34.5 and frozen lockfile | PASS, exit 0 |
+| React type-family validation | PASS, exit 0; 9 workspace packages inspected; one resolved version for each React types package |
+| Validation-script tests | PASS, exit 0; 24/24 tests |
+| Workspace typecheck | PASS, exit 0 |
+| Workspace build with required build parameters | PASS, exit 0 |
+| Milesign lint with zero warnings | PASS, exit 0 |
+| Milesign typecheck | PASS, exit 0 |
+| Milesign test suite | PASS, exit 0; 50/50 suites and 383/383 tests |
+| Aggregate whitespace/error check | PASS, exit 0 |
 
-## Остаточний висновок
+## Review verdict and remaining risks
 
-Pull request №28 злитий у `main`. Його результат підтверджено свіжим повним
-циклом перевірок: залежності встановлюються відтворювано, lint і обидві
-перевірки типів проходять, усі 383 тести проходять, а повна збірка з потрібною
-конфігурацією середовища завершується успішно. Блокувальних дефектів не
-виявлено; репозиторій Milesign під час перевірки не змінювався.
+The implementation and final gate are technically green, and the complete aggregate diff was inspected. It is not yet ready to land unchanged: the source branch is one commit behind the current base, all changes are uncommitted, and current `main` independently contains overlapping React-type and lint changes. Human review should begin only after the guard-specific patch is reconciled with current `main` and the full gate is repeated. No pull request was created.
 
-## Наступна безпечна дія
+## Proposed next technical task
 
-Додаткових змін для PR №28 не потрібно. Безпечно спостерігати за роботою
-злитого результату в середовищі розгортання та відкривати окреме завдання лише
-за наявності нового відтворюваного дефекту.
+Reconcile the React type-family guard onto current `main`.
+
+- Purpose: preserve the automated regression protection while avoiding duplicate or conflicting edits already present on `main`.
+- Exact scope: start from current `origin/main`; port only the validation script, its tests, script wiring, catalog/manifests or documentation changes still required by the guard; drop superseded overlapping lint and dependency edits; do not change runtime behavior.
+- Acceptance criteria: the final diff contains only necessary guard-related changes; every React-using workspace package declares aligned catalog-backed React and React DOM type ranges; the lockfile resolves one compatible version of each types package; the controlled incompatible-range fixture fails; the working tree has no unintended files and the complete diff passes human review.
+- Verification: frozen clean install with pnpm 10.34.5; React type-family validation; all 24 validation-script tests; workspace typecheck; parameterized workspace build; Milesign lint with zero warnings; Milesign typecheck; all 383 Milesign tests; aggregate diff and whitespace/error checks.
