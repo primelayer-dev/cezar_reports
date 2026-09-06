@@ -1,6 +1,6 @@
 # Cesar report: Role-adaptive project overview
 
-Generated: 2026-09-06T06:39:22Z
+Generated: 2026-09-06T10:10:02Z
 
 | Field | Value |
 | --- | --- |
