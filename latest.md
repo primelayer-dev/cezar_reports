@@ -1,58 +1,65 @@
-# Cesar report: Role-adaptive project overview
+# Cesar report: Material delete activity migration and expense/budget fixes (transfer verification)
 
-Generated: 2026-09-06T10:10:02Z
+Generated: 2026-09-08T05:05:00Z
 
 | Field | Value |
 | --- | --- |
 | Source repository | `primelayer-dev/Milesign` |
 | Workflow | `milesign-claude-codex-gate` |
-| Task | Build a role-adaptive live project overview |
-| Source branch | `cez/0167178b` |
-| Base ref and SHA | `origin/main` at `a015a26b458444a419974ad084efda2fac230325` |
-| Merge-base SHA | `a015a26b458444a419974ad084efda2fac230325` |
-| Head SHA | `1d0109a268040f2c46d34eb132d6d1529d2d9cc6` |
-| Pull request | None |
-| Diff statistics | 8 files, 2,228 insertions, 188 deletions |
+| Task | Transfer and independently verify the pre-built commit from `replit/material_delete_fix` |
+| Verified source branch tip | `replit/material_delete_fix` at `12f9a8964a298ebbebefdeb44d1c75644db5c929` |
+| Source commit author and subject | Replit Agent — "Implement material delete activity migration and update tests" |
+| Source commit parent | `fde24bc37f4d5c53492713e41f4897a19b565596` |
+| Base ref and SHA | `origin/main` at `fde24bc37f4d5c53492713e41f4897a19b565596` (equals the source commit parent; re-confirmed against the remote immediately before publishing) |
+| Task worktree branch | `cez/e02c1481` |
+| Worktree head (tooling autosave) | `6216698b1c642d4ff6966ba4970271c5e9115a07` |
+| Diff equivalence | `git diff 12f9a89..HEAD` is empty — the transferred content is byte-identical to the source commit |
+| Diff statistics | 9 files, 219 insertions, 17 deletions |
+| Pull request | None (no commit, push, merge, or pull request was created in `Milesign` by this task) |
 
-## Changed files
+## Changed files (exactly 9)
 
-- `artifacts/milesign/__tests__/projectEditRolePresentation.test.tsx`
-- `artifacts/milesign/__tests__/projectNextAction.test.ts`
-- `artifacts/milesign/__tests__/projectOverviewDiscoverability.test.tsx`
-- `artifacts/milesign/__tests__/projectOverviewLiveHub.test.tsx`
-- `artifacts/milesign/__tests__/projectOverviewModel.test.ts`
-- `artifacts/milesign/app/project/[id]/index.tsx`
-- `artifacts/milesign/hooks/useProjectOverview.ts`
-- `artifacts/milesign/utils/projectOverview.ts`
+- `artifacts/milesign/__tests__/activityLog.test.ts`
+- `artifacts/milesign/__tests__/deleteConfirmationFlows.test.tsx`
+- `artifacts/milesign/__tests__/materialDeleteActivityMigration.test.ts`
+- `artifacts/milesign/__tests__/money.test.ts`
+- `artifacts/milesign/app/project/[id]/expenses.tsx`
+- `artifacts/milesign/components/project/BudgetSummary.tsx`
+- `artifacts/milesign/supabase/migrations/20260906120000_material_delete_activity.sql`
+- `artifacts/milesign/utils/activityLabels.ts`
+- `artifacts/milesign/utils/money.ts`
 
 ## Verified gates
 
+All gates below except the production build were re-executed immediately before publishing this report.
+
 | Gate | Status and exit result |
 | --- | --- |
-| Current-base and aggregate-diff verification | PASS, exit 0; merge base equals current remote main and the diff contains only the 8 overview files |
-| Clean frozen dependency installation with pnpm 10.34.5 | PASS, exit 0; 9 workspace projects and 1,313 packages installed; lockfile unchanged |
-| React type-family validation | PASS, exit 0; 9 workspace packages inspected |
-| React type-family tests | PASS, exit 0; 24/24 tests |
-| Milesign lint with zero warnings | PASS, exit 0 |
+| Remote branch verification | PASS, exit 0; `replit/material_delete_fix` tip is exactly `12f9a89…`, exactly 1 commit ahead of `origin/main`, parent equals `origin/main` `fde24bc…` |
+| Byte-identical transfer check | PASS, exit 0; `git diff` between the source commit and the worktree state is empty across all 9 files |
+| Targeted tests for changed contracts (money, activity log, delete confirmation flows, migration contract) | PASS, exit 0; 62/62 tests across 4 suites |
+| Full Milesign test suite | PASS, exit 0; 459/459 tests across 54 suites; 0 snapshots |
 | Milesign typecheck | PASS, exit 0 |
-| New overview test suites | PASS, exit 0; 65/65 tests across 3 suites |
-| Full Milesign test suite | PASS, exit 0; 448/448 tests across 53 suites; 0 snapshots |
-| Workspace typecheck | PASS, exit 0 |
-| Production build with required environment parameters | PASS, exit 0; iOS and Android bundles, manifests, 30 assets, and landing page generated |
-| Aggregate whitespace and error check | PASS, exit 0 |
-| Secret and scope scan | PASS, exit 0; no credentials, private keys, migrations, dependency changes, documentation changes, or unrelated files detected |
+| Milesign lint | PASS, exit 0; zero warnings |
+| React type-family validation | PASS, exit 0; 9 workspace packages inspected, single `@types/react` 19.1.x resolution |
+| Scripts workspace tests | PASS, exit 0; 24/24 tests |
+| Aggregate whitespace and error check (`git diff --check` against base) | PASS, exit 0 |
+| Production build with required environment parameters | PASS, exit 0; executed during this task's verification session on 2026-09-08 — 34 build output files consistent, post-build typed-routes typecheck clean; not re-executed at publish time to leave the working tree untouched |
+| Build-artifact cleanup | CONFIRMED; generated build outputs (static build directory, generated Expo type files) were removed after the build, and their absence plus a fully clean `git status` were re-verified immediately before publishing |
 
-## Review verdict and remaining risks
+## Content verification highlights
 
-Ready for human review. The overview uses one typed model, existing typed services and query keys, current permission utilities, assignment-aware data policies, and real lifecycle states. It presents role-specific next actions and attention items, hides finances and finance requests from contractors, links only to existing routes, avoids per-item queries, and isolates optional-block failures without turning unknown data into zero values.
+- Money and budget contracts: 99.96 % rendering with EUR 0.99 remaining, exact 100 % case, over-budget case, and zero-budget case are covered by the targeted tests and pass.
+- Expense layout: narrow-layout behavior, long-name wrapping, full amount visibility, spacing, delete control, and accessibility metadata are covered by the delete-confirmation and screen tests and pass.
+- Migration `20260906120000_material_delete_activity.sql`: audited statically against the repository schema and migration history — atomic AFTER DELETE trigger, `OLD.name` usage, actor via `auth.uid()`, fixed `search_path`, PUBLIC execute privilege revoked, no event on cancelled or failed delete, and project/stage/work-item cascade cleanup protection all confirmed; its only dependencies are the existing `20260821093714` and `20260821190800` migrations, with no hidden dependencies on other local migrations.
 
-There is no project-wide comments route; comments remain attached to work items and corrections, so no project-level comments destination was added. The production build succeeds but reports pre-existing Expo compatibility recommendations for two Expo modules and three Jest-related packages. No dependency is changed by this task. Device-level interaction was not exercised by the automated gates.
+## Additional fixes
 
-## Proposed next technical task
+None. No defect was found within the scope of the source commit, so zero modifications were made — the transferred diff is unchanged from `12f9a8964a298ebbebefdeb44d1c75644db5c929`.
 
-Add a real QueryClient integration test for the project-overview hook.
+## Remaining limitations
 
-- Purpose: verify finance query gating, aggregate refresh, and optional-query retry behavior through React Query itself rather than only through screen-level query mocks.
-- Exact scope: add one hook integration test file using the existing test stack; cover owner and contractor roles, enabled finance queries, refresh of every enabled overview query, suppression of contractor finance requests, and recovery of one failed optional query. Do not change production behavior unless a test proves a defect.
-- Acceptance criteria: owner finance queries execute; contractor finance queries never execute; refresh retries every enabled overview query and excludes disabled ones; one optional-query failure remains isolated and can recover; all current 448 Milesign tests plus the new integration tests pass.
-- Verification: targeted hook integration tests, Milesign lint with zero warnings, Milesign typecheck, full Milesign test suite, workspace typecheck, production build, and aggregate diff checks.
+- The migration was verified statically and through contract tests only; it was not applied to any database. Supabase remote schema, data, and migration history are untouched by design.
+- The changes exist only in the isolated task worktree; publishing them to `Milesign` (commit, push, or pull request) is intentionally left to a human decision.
+- The production build result is carried over from this task's own verification run earlier the same day rather than a publish-time re-run, to guarantee the working tree stayed unmodified.
+- No device-level or manual UI interaction was exercised; verification relied on the automated test suites.
