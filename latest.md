@@ -1,81 +1,112 @@
-# Cesar report: Auditing the V1 requirement inventory
+# Cesar latest report
 
-Generated: 2026-09-27T17:37:09Z
+- Generated (UTC): `2026-09-28T16:04:03Z`
+- Source repository: `primelayer-dev/Milesign`
+- Workflow: `milesign-claude-codex-gate`
+- Task: `verifying reproducible baseline gates`
+- Source branch: `cez/7f384af0`
+- Base ref: `origin/main`
+- Base SHA: `9f86b3820051cb0b64d2ba668552143fd2e90165`
+- Head SHA: `fdc861388daa49d7788fcd48782b13b78f5d1258`
+- Pull request: none
 
-| Field | Value |
-| --- | --- |
-| Source repository | `primelayer-dev/Milesign` |
-| Workflow | `milesign-claude-codex-gate` |
-| Task | Sanitized V1 requirement inventory audit |
-| Source branch | `cez/3236c8d9` |
-| Base ref and SHA | `origin/main` at `9f86b3820051cb0b64d2ba668552143fd2e90165` |
-| Head SHA | `78ccfeb63dda2e0edee0d67beb92ff0bf78b53d2` |
-| Pull request | None |
-| Diff statistics | 21 files changed, 4091 insertions, 2 deletions |
-| Review verdict | Ready for human review; no defect found by independent review. Owner sign-off remains required for the manual-review criterion. |
+## Aggregate diff
 
-## Changed files
+`62 files changed, 17,367 insertions, 2 deletions`
 
+Changed files:
+
+- `.gitattributes`
+- `.gitignore`
+- `artifacts/milesign/__tests__/spec/req-156.test.ts`
+- `artifacts/milesign/__tests__/spec/req-31.test.ts`
+- `artifacts/milesign/__tests__/spec/req-32.test.ts`
+- `artifacts/milesign/__tests__/testUtils/gateReport.ts`
+- `attached_assets/MILESIGN_ACCESS_TEMPLATE.json`
+- `attached_assets/MILESIGN_CONTINUE_AND_FIX.txt`
+- `attached_assets/MILESIGN_MASTER_SPEC.md`
 - `docs/ACCESS_GAPS.md`
 - `docs/execution_protocol.md`
 - `docs/phase1_closure_plan.md`
 - `orchestrator/README.md`
+- `orchestrator/build-registry.mjs`
 - `orchestrator/cli.mjs`
 - `orchestrator/evidence/.gitkeep`
 - `orchestrator/evidence/T00.json`
+- `orchestrator/evidence/T01-gate/baseline/01-install.log`
+- `orchestrator/evidence/T01-gate/baseline/02-check-react-types.log`
+- `orchestrator/evidence/T01-gate/baseline/03-lint.log`
+- `orchestrator/evidence/T01-gate/baseline/04-typecheck.log`
+- `orchestrator/evidence/T01-gate/baseline/05-jest-milesign.log`
+- `orchestrator/evidence/T01-gate/baseline/06-scripts-test.log`
+- `orchestrator/evidence/T01-gate/baseline/07-build.log`
+- `orchestrator/evidence/T01-gate/baseline/08-git-diff-check.log`
+- `orchestrator/evidence/T01-gate/baseline/09-git-status.log`
+- `orchestrator/evidence/T01-gate/baseline/env.txt`
+- `orchestrator/evidence/T01-gate/baseline/exits.txt`
+- `orchestrator/evidence/T01-gate/reviewed/01-install.log`
+- `orchestrator/evidence/T01-gate/reviewed/02-check-react-types.log`
+- `orchestrator/evidence/T01-gate/reviewed/03-lint.log`
+- `orchestrator/evidence/T01-gate/reviewed/04-typecheck.log`
+- `orchestrator/evidence/T01-gate/reviewed/05-jest-milesign.log`
+- `orchestrator/evidence/T01-gate/reviewed/06-scripts-test.log`
+- `orchestrator/evidence/T01-gate/reviewed/07-build.log`
+- `orchestrator/evidence/T01-gate/reviewed/08-git-diff-check.log`
+- `orchestrator/evidence/T01-gate/reviewed/09-git-status.log`
+- `orchestrator/evidence/T01-gate/reviewed/env.txt`
+- `orchestrator/evidence/T01-gate/reviewed/exits.txt`
+- `orchestrator/evidence/T01.json`
+- `orchestrator/evidence/T02.json`
+- `orchestrator/evidence/T03.json`
 - `orchestrator/lib/cezar-driver.mjs`
 - `orchestrator/lib/controller.mjs`
 - `orchestrator/lib/gate.mjs`
 - `orchestrator/lib/git.mjs`
+- `orchestrator/lib/methods.mjs`
 - `orchestrator/lib/registry.mjs`
 - `orchestrator/lib/state.mjs`
 - `orchestrator/lib/verify.mjs`
 - `orchestrator/registry.json`
 - `orchestrator/reports/.gitkeep`
+- `orchestrator/reports/SETUP.md`
 - `orchestrator/reports/T00.md`
+- `orchestrator/reports/T01.md`
+- `orchestrator/reports/T02.md`
+- `orchestrator/reports/T03.md`
+- `orchestrator/reviews/.gitkeep`
 - `orchestrator/systemd/milesign-orchestrator.service`
 - `orchestrator/test/harness.mjs`
 - `orchestrator/test/real-e2e.mjs`
 - `orchestrator/test/scenarios.test.mjs`
 
-The task commit itself adds only `orchestrator/evidence/T00.json` and `orchestrator/reports/T00.md`; the larger list is the complete aggregate diff from the current remote base.
-
 ## Verified gates
 
-| Gate | Status and exit result |
-| --- | --- |
-| Dependency installation from the frozen lockfile | PASS, exit 0; 1313 packages and no lockfile change |
-| React type-family validation | PASS, exit 0; one React type line |
-| Milesign lint | PASS, exit 0; 0 errors and 0 warnings |
-| Workspace typecheck | PASS, exit 0 |
-| Milesign Jest suite | PASS, exit 0; 459/459 tests across 54 suites |
-| Scripts workspace tests | PASS, exit 0; 36/36 tests |
-| Production web build | PASS, exit 0; 30 assets |
-| Whitespace/error check | PASS, exit 0 |
-| Source worktree status check | PASS, exit 0; clean |
-| Final independent review | PASS; complete aggregate diff and all 736 task-added lines inspected, 36/36 scripts tests passed again, and the whitespace/error check passed again |
+Final workflow gate at the head SHA:
 
-Test count: 459 Milesign tests across 54 suites and 36 scripts tests passed. Database pgTAP suites were not run because a local database runtime was unavailable.
+| Gate | Status | Exit |
+|---|---:|---:|
+| Deterministic install | passed | 0 |
+| Milesign lint | passed | 0 |
+| Milesign typecheck | passed | 0 |
+| Milesign Jest | passed | 0 |
+| Workspace typecheck | passed | 0 |
+| Production build | passed with recorded compatibility warnings | 0 |
+| Aggregate whitespace integrity | passed | 0 |
+| Clean-tree check | passed | 0 |
+
+The registry `core` gate passed 9 of 9 checks with exit 0 at the head SHA. The two acceptance suites passed 25 of 25 tests. The full Milesign run passed 57 suites and 496 tests. The scripts test runner passed 36 tests with no failures or skips.
+
+## Review verdict
+
+Ready for human review. The exact head SHA is committed, the worktree is clean, all three acceptance criteria have non-empty committed evidence, and the completed final gate passed.
 
 ## Remaining risks
 
-- The manual-review acceptance item is intentionally unsigned and requires an owner decision; the current verifier does not recognize an owner approval while the evidence value remains false.
-- The remote integration branch named by the execution protocol does not exist; this must be resolved before an implementation task.
-- Local database replay, Android export, email-provider validation, Play Console validation, and device-level UI checks remain unavailable or out of scope.
-- Read-only production migration history contains 21 entries while the repository contains 34 migration files; reconciliation is still required before any production mutation.
+- Five package versions differ from Expo's expected compatibility versions; the build still exits 0.
+- Localization and offline registry gates currently match no tests and can pass vacuously.
+- Five database test files were not run because a local database engine is unavailable.
+- The registry whitespace gate checks only working-tree changes, while the workflow checks the aggregate branch diff.
 
 ## Proposed next task
 
-**T03 — Reconcile stale issues 10, 22, and 24.**
-
-Purpose: distinguish already completed work from genuine residual gaps using current-main evidence.
-
-Exact scope: perform a read-only reconciliation of those three issues; record an implementation path, regression test, commit SHA, and gate result for every acceptance item; draft issue comments and closure decisions without modifying or closing any issue.
-
-Acceptance criteria:
-
-1. No stale issue is classified as unimplemented without evidence review.
-2. No issue is classified as complete from its commit title alone; every item has path, test, and SHA evidence.
-3. Every residual item is assigned to a later task.
-
-Verification: compare the current open-issue records with the repository paths and history; validate every cited regression test; confirm every residual row has a task identifier; require a clean source worktree at completion.
+**Align registry and workflow integrity gates.** Purpose: make a successful registry `core` result predict the automated workflow result before implementation-gate execution. Scope: update only the phase-one gate definition, generated registry representation, integrity-gate tests, and task report/evidence; do not change product code, lint, typecheck, Jest, build configuration, dependencies, database state, or deployment. Acceptance: the registry and workflow use equivalent aggregate whitespace and clean-tree semantics; a fixture with an older-commit whitespace defect fails both; a clean fixture passes both; the generated registry is current; the full `core` and workflow gates pass on the exact reviewed SHA. Verification: targeted integrity-parity tests, registry generation check, full registry `core` gate, and the automated workflow gate.
