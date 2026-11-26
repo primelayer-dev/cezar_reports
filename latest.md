@@ -1,7302 +1,7350 @@
 # Cesar latest report
 
-- Generated (UTC): `2026-11-26T07:32:04Z`
-- Source repository: `primelayer-dev/Milesign`
-- Workflow: `milesign-claude-codex-gate`
-- Task: `Prepare Android RC 1.0.2 (versionCode 7)`
-- Source branch: `cez/e8b0f83c`
-- Base ref: `origin/main`
-- Base SHA: `9f86b3820051cb0b64d2ba668552143fd2e90165`
-- Head SHA: `9d9033ca24108d795e9c9a3981afa88ca14e1201`
+- Generated (UTC): 2026-11-26T21:07:34Z
+- Source repository: primelayer-dev/Milesign
+- Workflow: milesign-claude-codex-gate
+- Task: FX1 storage URL containment final inspection
+- Source branch: cez/e9fec766
+- Base ref: fetched origin/main
+- Base SHA: 9f86b3820051cb0b64d2ba668552143fd2e90165
+- Head SHA: 2d837ed1851bb45d243e3080ae0e7370fe1e50a2
 - Pull request: none
-
-## Diff statistics
-
-7,220 files changed, 14,843,597 insertions, 6,004 deletions.
+- Diff statistics: 7266 files changed, 14847812 insertions(+), 6004 deletions(-)
 
 ## Changed files
 
-- `.agents/memory/MEMORY.md`
-- `.agents/memory/milesign-auth-flow.md`
-- `.gitattributes`
-- `.github/workflows/retention-purge.yml`
-- `.gitignore`
-- `LICENSE`
-- `STATUS.md`
-- `artifacts/api-server/package.json`
-- `artifacts/milesign/.gitignore`
-- `artifacts/milesign/__tests__/activityLog.test.ts`
-- `artifacts/milesign/__tests__/app-icon.test.tsx`
-- `artifacts/milesign/__tests__/appDialogHost.test.tsx`
-- `artifacts/milesign/__tests__/appDialogHostCompiledRuntime.test.tsx`
-- `artifacts/milesign/__tests__/calendar.test.ts`
-- `artifacts/milesign/__tests__/calendarCreateEvent.test.tsx`
-- `artifacts/milesign/__tests__/commentActivity.test.ts`
-- `artifacts/milesign/__tests__/contractorEditSave.test.tsx`
-- `artifacts/milesign/__tests__/contractorRemoval.test.ts`
-- `artifacts/milesign/__tests__/deleteConfirmationFlows.test.tsx`
-- `artifacts/milesign/__tests__/designTokens.test.ts`
-- `artifacts/milesign/__tests__/dialogFocusLifecycle.test.tsx`
-- `artifacts/milesign/__tests__/fixtures/ai/plan-draft-a01-grammar-3b.json`
-- `artifacts/milesign/__tests__/fixtures/ai/plan-draft-live-3b.json`
-- `artifacts/milesign/__tests__/fixtures/android-prebuild-c956cf7/AndroidManifest.xml`
-- `artifacts/milesign/__tests__/fixtures/android-prebuild-c956cf7/MainActivity.kt`
-- `artifacts/milesign/__tests__/fixtures/android-prebuild-c956cf7/MainApplication.kt`
-- `artifacts/milesign/__tests__/fixtures/h03-matrix-base-tests.json`
-- `artifacts/milesign/__tests__/fixtures/media/README.md`
-- `artifacts/milesign/__tests__/fixtures/media/malicious.exe`
-- `artifacts/milesign/__tests__/fixtures/media/malicious.sh`
-- `artifacts/milesign/__tests__/fixtures/media/pixel.gif`
-- `artifacts/milesign/__tests__/fixtures/media/pixel.jpg`
-- `artifacts/milesign/__tests__/fixtures/media/pixel.png`
-- `artifacts/milesign/__tests__/fixtures/media/pixel.webp`
-- `artifacts/milesign/__tests__/fixtures/media/sample.avif`
-- `artifacts/milesign/__tests__/fixtures/media/sample.csv`
-- `artifacts/milesign/__tests__/fixtures/media/sample.doc`
-- `artifacts/milesign/__tests__/fixtures/media/sample.docx`
-- `artifacts/milesign/__tests__/fixtures/media/sample.heic`
-- `artifacts/milesign/__tests__/fixtures/media/sample.heif`
-- `artifacts/milesign/__tests__/fixtures/media/sample.mov`
-- `artifacts/milesign/__tests__/fixtures/media/sample.mp4`
-- `artifacts/milesign/__tests__/fixtures/media/sample.pdf`
-- `artifacts/milesign/__tests__/fixtures/media/sample.ppt`
-- `artifacts/milesign/__tests__/fixtures/media/sample.pptx`
-- `artifacts/milesign/__tests__/fixtures/media/sample.txt`
-- `artifacts/milesign/__tests__/fixtures/media/sample.xls`
-- `artifacts/milesign/__tests__/fixtures/media/sample.xlsx`
-- `artifacts/milesign/__tests__/fixtures/ocr/receipt-en.txt`
-- `artifacts/milesign/__tests__/fixtures/ocr/receipt-uk.txt`
-- `artifacts/milesign/__tests__/fixtures/script-font-samples.json`
-- `artifacts/milesign/__tests__/fixtures/t06/project-index-e3e4059.tsx.txt`
-- `artifacts/milesign/__tests__/i18nCatalogs.test.ts`
-- `artifacts/milesign/__tests__/i18nFormat.test.ts`
-- `artifacts/milesign/__tests__/i18nNarrowLayout.test.ts`
-- `artifacts/milesign/__tests__/insertReturningClient.test.ts`
-- `artifacts/milesign/__tests__/interfaceLevel.test.ts`
-- `artifacts/milesign/__tests__/inviteSurvivesSignIn.test.tsx`
-- `artifacts/milesign/__tests__/jestProjects.test.ts`
-- `artifacts/milesign/__tests__/layout.test.tsx`
-- `artifacts/milesign/__tests__/localePreference.test.ts`
-- `artifacts/milesign/__tests__/materialStatuses.test.ts`
-- `artifacts/milesign/__tests__/materials.test.ts`
-- `artifacts/milesign/__tests__/media.test.ts`
-- `artifacts/milesign/__tests__/migrationCrossProjectReplay.test.ts`
-- `artifacts/milesign/__tests__/money.test.ts`
-- `artifacts/milesign/__tests__/moneyInputForms.test.tsx`
-- `artifacts/milesign/__tests__/offlineSyncQueue.test.ts`
-- `artifacts/milesign/__tests__/profileSurface.test.tsx`
-- `artifacts/milesign/__tests__/projectEditRolePresentation.test.tsx`
-- `artifacts/milesign/__tests__/projectLocale.test.ts`
-- `artifacts/milesign/__tests__/projectNextAction.test.ts`
-- `artifacts/milesign/__tests__/projectOverviewDiscoverability.test.tsx`
-- `artifacts/milesign/__tests__/projectOverviewLiveHub.test.tsx`
-- `artifacts/milesign/__tests__/projectOverviewModel.test.ts`
-- `artifacts/milesign/__tests__/projectTemplatesLocaleFallback.test.ts`
-- `artifacts/milesign/__tests__/protectedRouteGuards.test.tsx`
-- `artifacts/milesign/__tests__/retentionJobRunner.test.ts`
-- `artifacts/milesign/__tests__/screenLoadingStates.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab2-level-tokens.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab2b-level-transition.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab2b-onboarding-level.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab3a-advanced-overview.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab3b-balanced-navigation.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab3b-balanced-screens.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab3c-simple-hidden.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab3c-simple-navigation.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab3c-simple-screens.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab4-entries-feed.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab5-nearby-card.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab6-invite-report-delivery.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/ab6-notification-centre.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/account-name-and-onboarding.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/app-calendar.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/appearance-settings.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/auth-footer-alignment.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/calendar-date-display.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/calendar-date-picker.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/component-library.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/direction-restart-route.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/first-launch-language.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/first-look-visual-clarity.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/font-scale-live-change.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/font-scale-live-recompute.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/font-scale-remount.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/google-sign-in-availability.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/harness.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/interface-level-settings.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/keyboard-safe-forms.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/large-font-no-clipping.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/layout-cards-chips.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/legal-and-licenses.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/line-height-scales.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/moderation.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/portfolio-guided-flow.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-d05.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-d06.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-d07.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-d08.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-matrix-2.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-matrix-3.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-matrix-4.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-matrix-5.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-matrix-6.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/redesign-matrix.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/registration-policy-acceptance.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-106.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-107.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-108.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-110.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-112.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-113.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-114.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-115.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-116.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-117.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-118.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-119.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-120.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-121.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-122.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-123.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-124.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-125.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-126.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-127.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-128.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-129.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-130.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-131.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-132.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-133.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-134.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-135.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-136.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-137.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-138.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-139.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-140.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-141.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-46.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-49-level-journey.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-66.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-67.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-68.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-69.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-76.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-89.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-90.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-91.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/req-94.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/rtl-layout.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/script-font-switch.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/settings-language-selector.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/settings-row-layout.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/settings-rows-email-back.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/shared-date-field.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/stage-work-quick-toggle.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/support/acceptanceScreen.ts`
-- `artifacts/milesign/__tests__/screens/support/acceptanceWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/accountWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/accountabilityWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/agreementWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/aiWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/collaborationWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/d07World.tsx`
-- `artifacts/milesign/__tests__/screens/support/d08World.tsx`
-- `artifacts/milesign/__tests__/screens/support/d09World.tsx`
-- `artifacts/milesign/__tests__/screens/support/datePicker.ts`
-- `artifacts/milesign/__tests__/screens/support/exportWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/fakeSupabase.ts`
-- `artifacts/milesign/__tests__/screens/support/financeWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/marketplaceWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/nativeMocks.tsx`
-- `artifacts/milesign/__tests__/screens/support/notificationScreenWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/platformWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/react-test-renderer.d.ts`
-- `artifacts/milesign/__tests__/screens/support/replaySupabase.ts`
-- `artifacts/milesign/__tests__/screens/support/reputationWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/screenHarness.tsx`
-- `artifacts/milesign/__tests__/screens/support/searchWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/simpleWorld.ts`
-- `artifacts/milesign/__tests__/screens/support/supplyWorld.ts`
-- `artifacts/milesign/__tests__/screens/t06-project-home-language.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/text-fit-project.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/theme-switch-immediate.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/touch-targets-rendered.screen.test.tsx`
-- `artifacts/milesign/__tests__/screens/v101-layout.screen.test.tsx`
-- `artifacts/milesign/__tests__/settingsSurface.test.tsx`
-- `artifacts/milesign/__tests__/spec/ab2-air-preset.test.ts`
-- `artifacts/milesign/__tests__/spec/ab2-level-tokens.test.ts`
-- `artifacts/milesign/__tests__/spec/ab2b-level-hint.test.ts`
-- `artifacts/milesign/__tests__/spec/ab3c-simple-hidden.test.ts`
-- `artifacts/milesign/__tests__/spec/ab4-capture-entry.test.ts`
-- `artifacts/milesign/__tests__/spec/ab4-voice-notes-live-plan.test.ts`
-- `artifacts/milesign/__tests__/spec/ab4-voice-storage.test.ts`
-- `artifacts/milesign/__tests__/spec/ab5-nearby-aggregates.test.ts`
-- `artifacts/milesign/__tests__/spec/ab6-notification-matrix.test.ts`
-- `artifacts/milesign/__tests__/spec/ab6-notification-migration.test.ts`
-- `artifacts/milesign/__tests__/spec/ab6-notifications-live-plan.test.ts`
-- `artifacts/milesign/__tests__/spec/ab6-push.test.ts`
-- `artifacts/milesign/__tests__/spec/active-project-role-live-plan.test.ts`
-- `artifacts/milesign/__tests__/spec/android-device-start.test.ts`
-- `artifacts/milesign/__tests__/spec/android-locale-resources.test.ts`
-- `artifacts/milesign/__tests__/spec/camera-upload-size.test.ts`
-- `artifacts/milesign/__tests__/spec/date-picker-android-theme.test.ts`
-- `artifacts/milesign/__tests__/spec/direction-restart-route.test.ts`
-- `artifacts/milesign/__tests__/spec/document-layout-fits-page.test.ts`
-- `artifacts/milesign/__tests__/spec/documents-module-boundary.test.ts`
-- `artifacts/milesign/__tests__/spec/export-open-share.test.ts`
-- `artifacts/milesign/__tests__/spec/forms-dates-labels-localized.test.ts`
-- `artifacts/milesign/__tests__/spec/h03-matrix-shards.test.ts`
-- `artifacts/milesign/__tests__/spec/lazy-catalogs.test.ts`
-- `artifacts/milesign/__tests__/spec/locale-registry.test.ts`
-- `artifacts/milesign/__tests__/spec/locale-theme-upgrade.test.ts`
-- `artifacts/milesign/__tests__/spec/locales-i10.test.ts`
-- `artifacts/milesign/__tests__/spec/locales-i11.test.ts`
-- `artifacts/milesign/__tests__/spec/locales-i12.test.ts`
-- `artifacts/milesign/__tests__/spec/locales-i13.test.ts`
-- `artifacts/milesign/__tests__/spec/locales-i14.test.ts`
-- `artifacts/milesign/__tests__/spec/locales-i15.test.ts`
-- `artifacts/milesign/__tests__/spec/locales-i16.test.ts`
-- `artifacts/milesign/__tests__/spec/locales-i17.test.ts`
-- `artifacts/milesign/__tests__/spec/localization-ast-audit.test.ts`
-- `artifacts/milesign/__tests__/spec/localization-inventory.test.ts`
-- `artifacts/milesign/__tests__/spec/moderation-reports-blocks.test.ts`
-- `artifacts/milesign/__tests__/spec/offline-cold-start-dashboard.test.ts`
-- `artifacts/milesign/__tests__/spec/offline-workitem-and-portfolio.test.ts`
-- `artifacts/milesign/__tests__/spec/package-name.test.ts`
-- `artifacts/milesign/__tests__/spec/photo-from-file-manager.test.ts`
-- `artifacts/milesign/__tests__/spec/photos-bucket-mime.test.ts`
-- `artifacts/milesign/__tests__/spec/plurals-labels-contrast.test.ts`
-- `artifacts/milesign/__tests__/spec/policy-links-in-app.test.ts`
-- `artifacts/milesign/__tests__/spec/portfolio-public-text.test.ts`
-- `artifacts/milesign/__tests__/spec/project-screens-localized.test.ts`
-- `artifacts/milesign/__tests__/spec/redesign-d00.test.ts`
-- `artifacts/milesign/__tests__/spec/reject-evidence-format-message.test.tsx`
-- `artifacts/milesign/__tests__/spec/req-100.test.ts`
-- `artifacts/milesign/__tests__/spec/req-101.test.ts`
-- `artifacts/milesign/__tests__/spec/req-102.test.ts`
-- `artifacts/milesign/__tests__/spec/req-103.test.ts`
-- `artifacts/milesign/__tests__/spec/req-104.test.ts`
-- `artifacts/milesign/__tests__/spec/req-105.test.ts`
-- `artifacts/milesign/__tests__/spec/req-106.test.ts`
-- `artifacts/milesign/__tests__/spec/req-107.test.ts`
-- `artifacts/milesign/__tests__/spec/req-108.test.ts`
-- `artifacts/milesign/__tests__/spec/req-109.test.ts`
-- `artifacts/milesign/__tests__/spec/req-110.test.ts`
-- `artifacts/milesign/__tests__/spec/req-111-template.test.ts`
-- `artifacts/milesign/__tests__/spec/req-111.test.ts`
-- `artifacts/milesign/__tests__/spec/req-112.test.ts`
-- `artifacts/milesign/__tests__/spec/req-113.test.ts`
-- `artifacts/milesign/__tests__/spec/req-114.test.ts`
-- `artifacts/milesign/__tests__/spec/req-115.test.ts`
-- `artifacts/milesign/__tests__/spec/req-116.test.ts`
-- `artifacts/milesign/__tests__/spec/req-117.test.ts`
-- `artifacts/milesign/__tests__/spec/req-118.test.ts`
-- `artifacts/milesign/__tests__/spec/req-119.test.ts`
-- `artifacts/milesign/__tests__/spec/req-120.test.ts`
-- `artifacts/milesign/__tests__/spec/req-121.test.ts`
-- `artifacts/milesign/__tests__/spec/req-122.test.ts`
-- `artifacts/milesign/__tests__/spec/req-123.test.ts`
-- `artifacts/milesign/__tests__/spec/req-124.test.ts`
-- `artifacts/milesign/__tests__/spec/req-125.test.ts`
-- `artifacts/milesign/__tests__/spec/req-126.test.ts`
-- `artifacts/milesign/__tests__/spec/req-127.test.ts`
-- `artifacts/milesign/__tests__/spec/req-128.test.ts`
-- `artifacts/milesign/__tests__/spec/req-129.test.ts`
-- `artifacts/milesign/__tests__/spec/req-130.test.ts`
-- `artifacts/milesign/__tests__/spec/req-131.test.ts`
-- `artifacts/milesign/__tests__/spec/req-132.test.ts`
-- `artifacts/milesign/__tests__/spec/req-133.test.ts`
-- `artifacts/milesign/__tests__/spec/req-134.test.ts`
-- `artifacts/milesign/__tests__/spec/req-135.test.ts`
-- `artifacts/milesign/__tests__/spec/req-136.test.ts`
-- `artifacts/milesign/__tests__/spec/req-137.test.ts`
-- `artifacts/milesign/__tests__/spec/req-138.test.ts`
-- `artifacts/milesign/__tests__/spec/req-139.test.ts`
-- `artifacts/milesign/__tests__/spec/req-140.test.ts`
-- `artifacts/milesign/__tests__/spec/req-141.test.ts`
-- `artifacts/milesign/__tests__/spec/req-156.test.ts`
-- `artifacts/milesign/__tests__/spec/req-157.test.ts`
-- `artifacts/milesign/__tests__/spec/req-158.test.ts`
-- `artifacts/milesign/__tests__/spec/req-159.test.ts`
-- `artifacts/milesign/__tests__/spec/req-160.test.ts`
-- `artifacts/milesign/__tests__/spec/req-161.test.ts`
-- `artifacts/milesign/__tests__/spec/req-162.test.ts`
-- `artifacts/milesign/__tests__/spec/req-163.test.ts`
-- `artifacts/milesign/__tests__/spec/req-164.test.ts`
-- `artifacts/milesign/__tests__/spec/req-165.test.ts`
-- `artifacts/milesign/__tests__/spec/req-166.test.ts`
-- `artifacts/milesign/__tests__/spec/req-167.test.ts`
-- `artifacts/milesign/__tests__/spec/req-168-live-plan.test.ts`
-- `artifacts/milesign/__tests__/spec/req-168.test.ts`
-- `artifacts/milesign/__tests__/spec/req-169.test.ts`
-- `artifacts/milesign/__tests__/spec/req-170.test.ts`
-- `artifacts/milesign/__tests__/spec/req-171.test.ts`
-- `artifacts/milesign/__tests__/spec/req-173.test.ts`
-- `artifacts/milesign/__tests__/spec/req-174.test.ts`
-- `artifacts/milesign/__tests__/spec/req-25-brevo.test.ts`
-- `artifacts/milesign/__tests__/spec/req-25-interface.test.ts`
-- `artifacts/milesign/__tests__/spec/req-25-smtp-env.test.ts`
-- `artifacts/milesign/__tests__/spec/req-26-fcm.test.ts`
-- `artifacts/milesign/__tests__/spec/req-31.test.ts`
-- `artifacts/milesign/__tests__/spec/req-32.test.ts`
-- `artifacts/milesign/__tests__/spec/req-33.test.ts`
-- `artifacts/milesign/__tests__/spec/req-34.test.ts`
-- `artifacts/milesign/__tests__/spec/req-35.test.ts`
-- `artifacts/milesign/__tests__/spec/req-36.test.ts`
-- `artifacts/milesign/__tests__/spec/req-37.test.ts`
-- `artifacts/milesign/__tests__/spec/req-38.test.ts`
-- `artifacts/milesign/__tests__/spec/req-39.test.ts`
-- `artifacts/milesign/__tests__/spec/req-40.test.ts`
-- `artifacts/milesign/__tests__/spec/req-41.test.ts`
-- `artifacts/milesign/__tests__/spec/req-42.test.ts`
-- `artifacts/milesign/__tests__/spec/req-43.test.ts`
-- `artifacts/milesign/__tests__/spec/req-44.test.ts`
-- `artifacts/milesign/__tests__/spec/req-45.test.ts`
-- `artifacts/milesign/__tests__/spec/req-46.test.ts`
-- `artifacts/milesign/__tests__/spec/req-47.test.ts`
-- `artifacts/milesign/__tests__/spec/req-48.test.ts`
-- `artifacts/milesign/__tests__/spec/req-49.test.ts`
-- `artifacts/milesign/__tests__/spec/req-50.test.ts`
-- `artifacts/milesign/__tests__/spec/req-51.test.ts`
-- `artifacts/milesign/__tests__/spec/req-52.test.ts`
-- `artifacts/milesign/__tests__/spec/req-53.test.ts`
-- `artifacts/milesign/__tests__/spec/req-54.test.ts`
-- `artifacts/milesign/__tests__/spec/req-55-concurrency.test.ts`
-- `artifacts/milesign/__tests__/spec/req-55.test.ts`
-- `artifacts/milesign/__tests__/spec/req-56-concurrency.test.ts`
-- `artifacts/milesign/__tests__/spec/req-56.test.ts`
-- `artifacts/milesign/__tests__/spec/req-57.test.ts`
-- `artifacts/milesign/__tests__/spec/req-58.test.ts`
-- `artifacts/milesign/__tests__/spec/req-59.test.ts`
-- `artifacts/milesign/__tests__/spec/req-60.test.ts`
-- `artifacts/milesign/__tests__/spec/req-61.test.ts`
-- `artifacts/milesign/__tests__/spec/req-62.test.ts`
-- `artifacts/milesign/__tests__/spec/req-63.test.ts`
-- `artifacts/milesign/__tests__/spec/req-64.test.ts`
-- `artifacts/milesign/__tests__/spec/req-65.test.ts`
-- `artifacts/milesign/__tests__/spec/req-66.test.ts`
-- `artifacts/milesign/__tests__/spec/req-67.test.ts`
-- `artifacts/milesign/__tests__/spec/req-68.test.ts`
-- `artifacts/milesign/__tests__/spec/req-69.test.ts`
-- `artifacts/milesign/__tests__/spec/req-70.test.ts`
-- `artifacts/milesign/__tests__/spec/req-71.test.ts`
-- `artifacts/milesign/__tests__/spec/req-72.test.ts`
-- `artifacts/milesign/__tests__/spec/req-73.test.ts`
-- `artifacts/milesign/__tests__/spec/req-74.test.ts`
-- `artifacts/milesign/__tests__/spec/req-75.test.ts`
-- `artifacts/milesign/__tests__/spec/req-76.test.ts`
-- `artifacts/milesign/__tests__/spec/req-77.test.ts`
-- `artifacts/milesign/__tests__/spec/req-78.test.ts`
-- `artifacts/milesign/__tests__/spec/req-79.test.ts`
-- `artifacts/milesign/__tests__/spec/req-80.test.ts`
-- `artifacts/milesign/__tests__/spec/req-81.test.ts`
-- `artifacts/milesign/__tests__/spec/req-82.test.ts`
-- `artifacts/milesign/__tests__/spec/req-83.test.ts`
-- `artifacts/milesign/__tests__/spec/req-84.test.ts`
-- `artifacts/milesign/__tests__/spec/req-85.test.ts`
-- `artifacts/milesign/__tests__/spec/req-86.test.ts`
-- `artifacts/milesign/__tests__/spec/req-87.test.ts`
-- `artifacts/milesign/__tests__/spec/req-88.test.ts`
-- `artifacts/milesign/__tests__/spec/req-89.test.ts`
-- `artifacts/milesign/__tests__/spec/req-9.test.ts`
-- `artifacts/milesign/__tests__/spec/req-90.test.ts`
-- `artifacts/milesign/__tests__/spec/req-91.test.ts`
-- `artifacts/milesign/__tests__/spec/req-92.test.ts`
-- `artifacts/milesign/__tests__/spec/req-93.test.ts`
-- `artifacts/milesign/__tests__/spec/req-94.test.ts`
-- `artifacts/milesign/__tests__/spec/req-95.test.ts`
-- `artifacts/milesign/__tests__/spec/req-96.test.ts`
-- `artifacts/milesign/__tests__/spec/req-97.test.ts`
-- `artifacts/milesign/__tests__/spec/req-98.test.ts`
-- `artifacts/milesign/__tests__/spec/req-99.test.ts`
-- `artifacts/milesign/__tests__/spec/restart-background-theme.test.ts`
-- `artifacts/milesign/__tests__/spec/script-fonts.test.ts`
-- `artifacts/milesign/__tests__/spec/server-locales.test.ts`
-- `artifacts/milesign/__tests__/spec/single-date-field.test.ts`
-- `artifacts/milesign/__tests__/spec/splash-and-offline-overview.test.ts`
-- `artifacts/milesign/__tests__/spec/store-data-safety.test.ts`
-- `artifacts/milesign/__tests__/spec/submit-for-acceptance-role.test.ts`
-- `artifacts/milesign/__tests__/spec/template-translations.test.ts`
-- `artifacts/milesign/__tests__/spec/theme-engine.test.ts`
-- `artifacts/milesign/__tests__/spec/thumbnail-delete-policy.test.ts`
-- `artifacts/milesign/__tests__/spec/typography-spacing-layout.test.ts`
-- `artifacts/milesign/__tests__/spec/upload-progress-and-tiles.test.ts`
-- `artifacts/milesign/__tests__/spec/video-thumbnail-delete-policy.test.ts`
-- `artifacts/milesign/__tests__/spec/video-thumbnail.test.ts`
-- `artifacts/milesign/__tests__/spec/work-item-expense-form.test.ts`
-- `artifacts/milesign/__tests__/spec/writing-direction-consistency.test.ts`
-- `artifacts/milesign/__tests__/stageCompleteAction.test.tsx`
-- `artifacts/milesign/__tests__/stageDetailContext.test.tsx`
-- `artifacts/milesign/__tests__/storagePurgeDrain.test.ts`
-- `artifacts/milesign/__tests__/tabsNavigation.test.tsx`
-- `artifacts/milesign/__tests__/testUtils/accessibilityAudit.ts`
-- `artifacts/milesign/__tests__/testUtils/accountWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/agreementWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/aiWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/appCalendarDriver.ts`
-- `artifacts/milesign/__tests__/testUtils/cjkAdvance.ts`
-- `artifacts/milesign/__tests__/testUtils/copyLiteralAudit.ts`
-- `artifacts/milesign/__tests__/testUtils/deviceZone.ts`
-- `artifacts/milesign/__tests__/testUtils/directionalStyleAudit.ts`
-- `artifacts/milesign/__tests__/testUtils/fakeAuthServer.ts`
-- `artifacts/milesign/__tests__/testUtils/fontFile.ts`
-- `artifacts/milesign/__tests__/testUtils/gateReport.ts`
-- `artifacts/milesign/__tests__/testUtils/handoffWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/jpegExifFixture.ts`
-- `artifacts/milesign/__tests__/testUtils/laterPlannedMigrations.ts`
-- `artifacts/milesign/__tests__/testUtils/lifecycleSeed.ts`
-- `artifacts/milesign/__tests__/testUtils/lineHeightAudit.ts`
-- `artifacts/milesign/__tests__/testUtils/liveShapedSeed.ts`
-- `artifacts/milesign/__tests__/testUtils/localOnlyClosure.ts`
-- `artifacts/milesign/__tests__/testUtils/marketplaceWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/mediaSeed.ts`
-- `artifacts/milesign/__tests__/testUtils/narrowLayout.ts`
-- `artifacts/milesign/__tests__/testUtils/nodeRender.ts`
-- `artifacts/milesign/__tests__/testUtils/notificationWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/offlineForms.ts`
-- `artifacts/milesign/__tests__/testUtils/offlineFormsReal.ts`
-- `artifacts/milesign/__tests__/testUtils/offlineMediaWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/offlineWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/pdfText.ts`
-- `artifacts/milesign/__tests__/testUtils/pgConcurrent.ts`
-- `artifacts/milesign/__tests__/testUtils/pgConcurrentServer.mjs`
-- `artifacts/milesign/__tests__/testUtils/pgMediaSupabase.ts`
-- `artifacts/milesign/__tests__/testUtils/pgReplay.ts`
-- `artifacts/milesign/__tests__/testUtils/pgReplaySeed.ts`
-- `artifacts/milesign/__tests__/testUtils/pgReplayWorker.mjs`
-- `artifacts/milesign/__tests__/testUtils/platformWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/redesignMatrix.tsx`
-- `artifacts/milesign/__tests__/testUtils/releaseWorld.ts`
-- `artifacts/milesign/__tests__/testUtils/renderedCall.ts`
-- `artifacts/milesign/__tests__/testUtils/roleMatrix.ts`
-- `artifacts/milesign/__tests__/testUtils/screenMatrix.ts`
-- `artifacts/milesign/__tests__/testUtils/simpleHidden.ts`
-- `artifacts/milesign/__tests__/testUtils/statefulHooks.ts`
-- `artifacts/milesign/__tests__/testUtils/styleValueResolver.ts`
-- `artifacts/milesign/__tests__/testUtils/syncCentreHarness.ts`
-- `artifacts/milesign/__tests__/testUtils/textColumns.ts`
-- `artifacts/milesign/__tests__/testUtils/textFlow.cjs`
-- `artifacts/milesign/__tests__/testUtils/visibleTextScan.cjs`
-- `artifacts/milesign/__tests__/testUtils/yogaLayout.mjs`
-- `artifacts/milesign/__tests__/webValidationFeedback.test.tsx`
-- `artifacts/milesign/__tests__/webshots/d09.webshots.tsx`
-- `artifacts/milesign/__tests__/webshots/domEnvironment.js`
-- `artifacts/milesign/__tests__/webshots/jest.config.js`
-- `artifacts/milesign/__tests__/workItemDetailStates.test.tsx`
-- `artifacts/milesign/__tests__/workItemRejectionEvidence.test.tsx`
-- `artifacts/milesign/__tests__/workItems.test.ts`
-- `artifacts/milesign/app.config.js`
-- `artifacts/milesign/app.json`
-- `artifacts/milesign/app/(auth)/_layout.tsx`
-- `artifacts/milesign/app/(auth)/confirm.tsx`
-- `artifacts/milesign/app/(auth)/forgot-password.tsx`
-- `artifacts/milesign/app/(auth)/login.tsx`
-- `artifacts/milesign/app/(auth)/register.tsx`
-- `artifacts/milesign/app/(auth)/reset-password.tsx`
-- `artifacts/milesign/app/(tabs)/_layout.tsx`
-- `artifacts/milesign/app/(tabs)/activity.tsx`
-- `artifacts/milesign/app/(tabs)/calendar.tsx`
-- `artifacts/milesign/app/(tabs)/index.tsx`
-- `artifacts/milesign/app/(tabs)/more.tsx`
-- `artifacts/milesign/app/(tabs)/notifications.tsx`
-- `artifacts/milesign/app/(tabs)/owner.tsx`
-- `artifacts/milesign/app/(tabs)/people.tsx`
-- `artifacts/milesign/app/(tabs)/profile.tsx`
-- `artifacts/milesign/app/(tabs)/projects.tsx`
-- `artifacts/milesign/app/(tabs)/settings.tsx`
-- `artifacts/milesign/app/(tabs)/today.tsx`
-- `artifacts/milesign/app/+not-found.tsx`
-- `artifacts/milesign/app/_layout.tsx`
-- `artifacts/milesign/app/account/_layout.tsx`
-- `artifacts/milesign/app/account/contexts.tsx`
-- `artifacts/milesign/app/account/organization/[id].tsx`
-- `artifacts/milesign/app/account/team/[id].tsx`
-- `artifacts/milesign/app/admin/_layout.tsx`
-- `artifacts/milesign/app/admin/index.tsx`
-- `artifacts/milesign/app/change-password.tsx`
-- `artifacts/milesign/app/delete-account.tsx`
-- `artifacts/milesign/app/invite.tsx`
-- `artifacts/milesign/app/language.tsx`
-- `artifacts/milesign/app/marketplace.tsx`
-- `artifacts/milesign/app/onboarding.tsx`
-- `artifacts/milesign/app/policy/[id].tsx`
-- `artifacts/milesign/app/profile/_layout.tsx`
-- `artifacts/milesign/app/profile/plan.tsx`
-- `artifacts/milesign/app/profile/portfolio.tsx`
-- `artifacts/milesign/app/profile/reputation.tsx`
-- `artifacts/milesign/app/profile/review.tsx`
-- `artifacts/milesign/app/project/[id]/_layout.tsx`
-- `artifacts/milesign/app/project/[id]/acceptance.tsx`
-- `artifacts/milesign/app/project/[id]/activity.tsx`
-- `artifacts/milesign/app/project/[id]/agreement-change.tsx`
-- `artifacts/milesign/app/project/[id]/agreement.tsx`
-- `artifacts/milesign/app/project/[id]/ai-draft.tsx`
-- `artifacts/milesign/app/project/[id]/analytics.tsx`
-- `artifacts/milesign/app/project/[id]/budget.tsx`
-- `artifacts/milesign/app/project/[id]/capture.tsx`
-- `artifacts/milesign/app/project/[id]/chat.tsx`
-- `artifacts/milesign/app/project/[id]/checklists.tsx`
-- `artifacts/milesign/app/project/[id]/contractors.tsx`
-- `artifacts/milesign/app/project/[id]/defects.tsx`
-- `artifacts/milesign/app/project/[id]/delegation.tsx`
-- `artifacts/milesign/app/project/[id]/dependencies.tsx`
-- `artifacts/milesign/app/project/[id]/disputes.tsx`
-- `artifacts/milesign/app/project/[id]/documents.tsx`
-- `artifacts/milesign/app/project/[id]/entries.tsx`
-- `artifacts/milesign/app/project/[id]/expenses.tsx`
-- `artifacts/milesign/app/project/[id]/export.tsx`
-- `artifacts/milesign/app/project/[id]/index.tsx`
-- `artifacts/milesign/app/project/[id]/listings.tsx`
-- `artifacts/milesign/app/project/[id]/material-requests.tsx`
-- `artifacts/milesign/app/project/[id]/materials.tsx`
-- `artifacts/milesign/app/project/[id]/offers.tsx`
-- `artifacts/milesign/app/project/[id]/participants.tsx`
-- `artifacts/milesign/app/project/[id]/payments.tsx`
-- `artifacts/milesign/app/project/[id]/photos.tsx`
-- `artifacts/milesign/app/project/[id]/receipts.tsx`
-- `artifacts/milesign/app/project/[id]/stage/[stageId].tsx`
-- `artifacts/milesign/app/project/[id]/stages.tsx`
-- `artifacts/milesign/app/project/[id]/stock.tsx`
-- `artifacts/milesign/app/project/[id]/summary.tsx`
-- `artifacts/milesign/app/project/[id]/templates.tsx`
-- `artifacts/milesign/app/project/[id]/work.tsx`
-- `artifacts/milesign/app/search.tsx`
-- `artifacts/milesign/app/settings/_layout.tsx`
-- `artifacts/milesign/app/settings/appearance.tsx`
-- `artifacts/milesign/app/settings/interface-level.tsx`
-- `artifacts/milesign/app/settings/language.tsx`
-- `artifacts/milesign/app/settings/legal.tsx`
-- `artifacts/milesign/app/settings/level-change.tsx`
-- `artifacts/milesign/app/settings/licence/[id].tsx`
-- `artifacts/milesign/app/settings/licences.tsx`
-- `artifacts/milesign/app/settings/locale.tsx`
-- `artifacts/milesign/app/support.tsx`
-- `artifacts/milesign/app/sync.tsx`
-- `artifacts/milesign/app/work-item/[id].tsx`
-- `artifacts/milesign/app/work-item/_layout.tsx`
-- `artifacts/milesign/assets/fonts/NotoSansArabic_400Regular.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansArabic_600SemiBold.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansDevanagari_400Regular.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansDevanagari_600SemiBold.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansJP_400Regular.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansJP_600SemiBold.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansKR_400Regular.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansKR_600SemiBold.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansSC_400Regular.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansSC_600SemiBold.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansTC_400Regular.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansTC_600SemiBold.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansThai_400Regular.ttf`
-- `artifacts/milesign/assets/fonts/NotoSansThai_600SemiBold.ttf`
-- `artifacts/milesign/assets/fonts/OFL.txt`
-- `artifacts/milesign/assets/fonts/licenses.json`
-- `artifacts/milesign/assets/fonts/manifest.json`
-- `artifacts/milesign/assets/licenses/components.json`
-- `artifacts/milesign/components/ErrorFallback.tsx`
-- `artifacts/milesign/components/LevelGate.tsx`
-- `artifacts/milesign/components/LevelGateCard.tsx`
-- `artifacts/milesign/components/SystemBars.tsx`
-- `artifacts/milesign/components/TranslationReport.tsx`
-- `artifacts/milesign/components/auth/AgeConfirmation.tsx`
-- `artifacts/milesign/components/auth/PolicyAcceptance.tsx`
-- `artifacts/milesign/components/auth/PolicyAgreement.tsx`
-- `artifacts/milesign/components/balanced/BalancedBlocks.tsx`
-- `artifacts/milesign/components/balanced/BalancedOverview.tsx`
-- `artifacts/milesign/components/levels/LevelSuggestion.tsx`
-- `artifacts/milesign/components/media/VoiceNotePlayer.tsx`
-- `artifacts/milesign/components/media/VoiceRecorderControl.tsx`
-- `artifacts/milesign/components/moderation/BlockedAccounts.tsx`
-- `artifacts/milesign/components/moderation/ModerationActions.tsx`
-- `artifacts/milesign/components/moderation/queryKeys.ts`
-- `artifacts/milesign/components/notifications/InAppBanner.tsx`
-- `artifacts/milesign/components/notifications/InviteRoleCard.tsx`
-- `artifacts/milesign/components/notifications/NeedsActionStrip.tsx`
-- `artifacts/milesign/components/notifications/NotificationDeliverySheet.tsx`
-- `artifacts/milesign/components/notifications/NotificationMatrixSettings.tsx`
-- `artifacts/milesign/components/notifications/NotificationOverlay.tsx`
-- `artifacts/milesign/components/offline/DeviceCopyNotice.tsx`
-- `artifacts/milesign/components/offline/SyncStateBadge.tsx`
-- `artifacts/milesign/components/overview/AdvancedOverviewBlocks.tsx`
-- `artifacts/milesign/components/policy/PolicyDocumentModal.tsx`
-- `artifacts/milesign/components/portfolio/PortfolioFlowSteps.tsx`
-- `artifacts/milesign/components/project/ActivityFeed.tsx`
-- `artifacts/milesign/components/project/AttachmentsCard.tsx`
-- `artifacts/milesign/components/project/BudgetSummary.tsx`
-- `artifacts/milesign/components/project/CaptureSourceSheet.tsx`
-- `artifacts/milesign/components/project/CommentThread.tsx`
-- `artifacts/milesign/components/project/ContractorCard.tsx`
-- `artifacts/milesign/components/project/ExportFileActions.tsx`
-- `artifacts/milesign/components/project/ProjectCard.tsx`
-- `artifacts/milesign/components/project/ProjectCover.tsx`
-- `artifacts/milesign/components/project/ProjectFieldChoosers.tsx`
-- `artifacts/milesign/components/project/StageCard.tsx`
-- `artifacts/milesign/components/project/WorkItemCard.tsx`
-- `artifacts/milesign/components/project/recentPhotoTiles.tsx`
-- `artifacts/milesign/components/settings/NearbyOptOutRow.tsx`
-- `artifacts/milesign/components/simple/SimpleNotebook.tsx`
-- `artifacts/milesign/components/simple/SimpleObjectSwitcher.tsx`
-- `artifacts/milesign/components/simple/SimplePhotos.tsx`
-- `artifacts/milesign/components/simple/SimpleStages.tsx`
-- `artifacts/milesign/components/ui/AppCalendar.tsx`
-- `artifacts/milesign/components/ui/AppDialogHost.tsx`
-- `artifacts/milesign/components/ui/AppIcon.tsx`
-- `artifacts/milesign/components/ui/Avatar.tsx`
-- `artifacts/milesign/components/ui/BackButton.tsx`
-- `artifacts/milesign/components/ui/Badge.tsx`
-- `artifacts/milesign/components/ui/BrandHeader.tsx`
-- `artifacts/milesign/components/ui/Button.tsx`
-- `artifacts/milesign/components/ui/Card.tsx`
-- `artifacts/milesign/components/ui/Checkbox.tsx`
-- `artifacts/milesign/components/ui/Chip.tsx`
-- `artifacts/milesign/components/ui/ConfirmDialog.tsx`
-- `artifacts/milesign/components/ui/DatePickerField.tsx`
-- `artifacts/milesign/components/ui/Dialog.tsx`
-- `artifacts/milesign/components/ui/EmptyState.tsx`
-- `artifacts/milesign/components/ui/FloatingActionButton.tsx`
-- `artifacts/milesign/components/ui/Header.tsx`
-- `artifacts/milesign/components/ui/IconButton.tsx`
-- `artifacts/milesign/components/ui/IconTile.tsx`
-- `artifacts/milesign/components/ui/Input.tsx`
-- `artifacts/milesign/components/ui/KeyboardSafeFormContext.ts`
-- `artifacts/milesign/components/ui/ListRow.tsx`
-- `artifacts/milesign/components/ui/ListSearch.tsx`
-- `artifacts/milesign/components/ui/MediaPreviewModal.tsx`
-- `artifacts/milesign/components/ui/MediaTile.tsx`
-- `artifacts/milesign/components/ui/MenuRow.tsx`
-- `artifacts/milesign/components/ui/Money.tsx`
-- `artifacts/milesign/components/ui/PlayableVideoTile.tsx`
-- `artifacts/milesign/components/ui/ProgressBar.tsx`
-- `artifacts/milesign/components/ui/RadioOption.tsx`
-- `artifacts/milesign/components/ui/Screen.tsx`
-- `artifacts/milesign/components/ui/ScreenState.tsx`
-- `artifacts/milesign/components/ui/Section.tsx`
-- `artifacts/milesign/components/ui/TabBarIcon.tsx`
-- `artifacts/milesign/components/ui/TabBarLabel.tsx`
-- `artifacts/milesign/components/ui/TextLink.tsx`
-- `artifacts/milesign/components/ui/VideoPlayerModal.tsx`
-- `artifacts/milesign/constants/accessibility.ts`
-- `artifacts/milesign/constants/brand.ts`
-- `artifacts/milesign/constants/colors.ts`
-- `artifacts/milesign/constants/interfaceLevel.ts`
-- `artifacts/milesign/constants/layout.ts`
-- `artifacts/milesign/constants/nearby.ts`
-- `artifacts/milesign/constants/performance.ts`
-- `artifacts/milesign/constants/screenStateCoverage.ts`
-- `artifacts/milesign/constants/scriptFonts.ts`
-- `artifacts/milesign/constants/textFit.ts`
-- `artifacts/milesign/constants/theme.ts`
-- `artifacts/milesign/constants/themeCoverage.ts`
-- `artifacts/milesign/constants/themeSettings.ts`
-- `artifacts/milesign/constants/typography.ts`
-- `artifacts/milesign/content/policies/documents.ts`
-- `artifacts/milesign/content/policies/hosting.json`
-- `artifacts/milesign/content/policies/operator.json`
-- `artifacts/milesign/content/policies/published.json`
-- `artifacts/milesign/content/store/google-play.json`
-- `artifacts/milesign/context/AuthContext.tsx`
-- `artifacts/milesign/context/InterfaceLevelContext.tsx`
-- `artifacts/milesign/context/LocaleContext.tsx`
-- `artifacts/milesign/context/ThemeContext.tsx`
-- `artifacts/milesign/hooks/navigationCarry.ts`
-- `artifacts/milesign/hooks/useAccessibleProjects.ts`
-- `artifacts/milesign/hooks/useAdvancedOverview.ts`
-- `artifacts/milesign/hooks/useAppearanceDraft.ts`
-- `artifacts/milesign/hooks/useColors.ts`
-- `artifacts/milesign/hooks/useCommentStream.ts`
-- `artifacts/milesign/hooks/useDisplayName.ts`
-- `artifacts/milesign/hooks/useDisplayScale.ts`
-- `artifacts/milesign/hooks/useFontScaleRemount.ts`
-- `artifacts/milesign/hooks/useGoogleSignInAvailable.ts`
-- `artifacts/milesign/hooks/useHiddenContent.ts`
-- `artifacts/milesign/hooks/useLayout.ts`
-- `artifacts/milesign/hooks/useLevelHint.ts`
-- `artifacts/milesign/hooks/useLevelTokens.ts`
-- `artifacts/milesign/hooks/useLoadDeadline.ts`
-- `artifacts/milesign/hooks/useMyBlocks.ts`
-- `artifacts/milesign/hooks/useNearbyCounts.ts`
-- `artifacts/milesign/hooks/useNetworkStatus.ts`
-- `artifacts/milesign/hooks/useNotificationSignals.ts`
-- `artifacts/milesign/hooks/useOfflineRows.ts`
-- `artifacts/milesign/hooks/useProjectLifecycleFlow.ts`
-- `artifacts/milesign/hooks/useProjectOverview.ts`
-- `artifacts/milesign/hooks/useProjectTabs.ts`
-- `artifacts/milesign/hooks/usePushNotifications.ts`
-- `artifacts/milesign/hooks/useRecordSheets.ts`
-- `artifacts/milesign/hooks/useResignedMediaUrls.ts`
-- `artifacts/milesign/hooks/useScaledStyles.ts`
-- `artifacts/milesign/hooks/useScriptFonts.ts`
-- `artifacts/milesign/hooks/useSimpleLevel.ts`
-- `artifacts/milesign/hooks/useSingleFlight.ts`
-- `artifacts/milesign/hooks/useStackHeaderOptions.tsx`
-- `artifacts/milesign/hooks/useStackedLayout.ts`
-- `artifacts/milesign/hooks/useStagePlan.ts`
-- `artifacts/milesign/hooks/useTranslation.ts`
-- `artifacts/milesign/hooks/useWorkItemPanels.ts`
-- `artifacts/milesign/i18n/activeLocale.ts`
-- `artifacts/milesign/i18n/catalog.ts`
-- `artifacts/milesign/i18n/catalogs/ar-AE.ts`
-- `artifacts/milesign/i18n/catalogs/ar.ts`
-- `artifacts/milesign/i18n/catalogs/cs.ts`
-- `artifacts/milesign/i18n/catalogs/da.ts`
-- `artifacts/milesign/i18n/catalogs/de.ts`
-- `artifacts/milesign/i18n/catalogs/en-GB.ts`
-- `artifacts/milesign/i18n/catalogs/en.ts`
-- `artifacts/milesign/i18n/catalogs/es-MX.ts`
-- `artifacts/milesign/i18n/catalogs/es.ts`
-- `artifacts/milesign/i18n/catalogs/et.ts`
-- `artifacts/milesign/i18n/catalogs/fr.ts`
-- `artifacts/milesign/i18n/catalogs/hi.ts`
-- `artifacts/milesign/i18n/catalogs/hu.ts`
-- `artifacts/milesign/i18n/catalogs/id.ts`
-- `artifacts/milesign/i18n/catalogs/it.ts`
-- `artifacts/milesign/i18n/catalogs/ja.ts`
-- `artifacts/milesign/i18n/catalogs/ko.ts`
-- `artifacts/milesign/i18n/catalogs/lt.ts`
-- `artifacts/milesign/i18n/catalogs/lv.ts`
-- `artifacts/milesign/i18n/catalogs/nb.ts`
-- `artifacts/milesign/i18n/catalogs/nl.ts`
-- `artifacts/milesign/i18n/catalogs/pl.ts`
-- `artifacts/milesign/i18n/catalogs/pt-BR.ts`
-- `artifacts/milesign/i18n/catalogs/ro.ts`
-- `artifacts/milesign/i18n/catalogs/sk.ts`
-- `artifacts/milesign/i18n/catalogs/sv.ts`
-- `artifacts/milesign/i18n/catalogs/th.ts`
-- `artifacts/milesign/i18n/catalogs/tr.ts`
-- `artifacts/milesign/i18n/catalogs/uk.ts`
-- `artifacts/milesign/i18n/catalogs/vi.ts`
-- `artifacts/milesign/i18n/catalogs/zh-Hans.ts`
-- `artifacts/milesign/i18n/catalogs/zh-Hant.ts`
-- `artifacts/milesign/i18n/copyRef.ts`
-- `artifacts/milesign/i18n/direction.ts`
-- `artifacts/milesign/i18n/enumLabels.ts`
-- `artifacts/milesign/i18n/format.ts`
-- `artifacts/milesign/i18n/locales.ts`
-- `artifacts/milesign/i18n/nativeReview.ts`
-- `artifacts/milesign/i18n/plural.ts`
-- `artifacts/milesign/i18n/routeCoverage.ts`
-- `artifacts/milesign/i18n/serverMessages.ts`
-- `artifacts/milesign/i18n/translate.ts`
-- `artifacts/milesign/jest.config.js`
-- `artifacts/milesign/lib/accountPurge.ts`
-- `artifacts/milesign/lib/authFlows.ts`
-- `artifacts/milesign/lib/authLinks.ts`
-- `artifacts/milesign/lib/authProviders.ts`
-- `artifacts/milesign/lib/authStorage.ts`
-- `artifacts/milesign/lib/captureEntry.ts`
-- `artifacts/milesign/lib/deviceLocale.ts`
-- `artifacts/milesign/lib/diagnostics.ts`
-- `artifacts/milesign/lib/directionRestart.ts`
-- `artifacts/milesign/lib/documentScriptFonts.ts`
-- `artifacts/milesign/lib/documents/README.md`
-- `artifacts/milesign/lib/documents/core/cellText.ts`
-- `artifacts/milesign/lib/documents/core/checks.ts`
-- `artifacts/milesign/lib/documents/core/create.ts`
-- `artifacts/milesign/lib/documents/core/model.ts`
-- `artifacts/milesign/lib/documents/core/registry.ts`
-- `artifacts/milesign/lib/documents/csv/tableExport.ts`
-- `artifacts/milesign/lib/documents/formats.ts`
-- `artifacts/milesign/lib/documents/index.ts`
-- `artifacts/milesign/lib/documents/pdf/layout.ts`
-- `artifacts/milesign/lib/documents/pdf/pdfDocument.ts`
-- `artifacts/milesign/lib/documents/pdf/renderPdf.ts`
-- `artifacts/milesign/lib/documents/pdf/reportCharacters.ts`
-- `artifacts/milesign/lib/documents/pdf/reportFont.generated.ts`
-- `artifacts/milesign/lib/documents/pdf/reportFont.ts`
-- `artifacts/milesign/lib/documents/pdf/scripts.ts`
-- `artifacts/milesign/lib/documents/pdf/truetype.ts`
-- `artifacts/milesign/lib/documents/reports/projectReports.ts`
-- `artifacts/milesign/lib/documents/run.ts`
-- `artifacts/milesign/lib/documents/scripts/build-report-font.mjs`
-- `artifacts/milesign/lib/email/transactionalEmail.ts`
-- `artifacts/milesign/lib/interfaceLevelPreference.ts`
-- `artifacts/milesign/lib/interfaceLevelStore.ts`
-- `artifacts/milesign/lib/inviteLinks.ts`
-- `artifacts/milesign/lib/levelHintPreference.ts`
-- `artifacts/milesign/lib/localePreference.ts`
-- `artifacts/milesign/lib/mediaCaptureAdapter.ts`
-- `artifacts/milesign/lib/mediaFileStore.ts`
-- `artifacts/milesign/lib/networkStatus.ts`
-- `artifacts/milesign/lib/offline/conflictResolution.ts`
-- `artifacts/milesign/lib/offline/deviceIdentity.ts`
-- `artifacts/milesign/lib/offline/domainWrites.ts`
-- `artifacts/milesign/lib/offline/draftRecovery.ts`
-- `artifacts/milesign/lib/offline/localStore.ts`
-- `artifacts/milesign/lib/offline/mediaDrain.ts`
-- `artifacts/milesign/lib/offline/mediaPorts.ts`
-- `artifacts/milesign/lib/offline/mediaQueue.ts`
-- `artifacts/milesign/lib/offline/mediaWrites.ts`
-- `artifacts/milesign/lib/offline/mutationQueue.ts`
-- `artifacts/milesign/lib/offline/offlineLease.ts`
-- `artifacts/milesign/lib/offline/syncEngine.ts`
-- `artifacts/milesign/lib/offline/webDrafts.ts`
-- `artifacts/milesign/lib/openExternally.ts`
-- `artifacts/milesign/lib/pendingInvite.ts`
-- `artifacts/milesign/lib/pickedFileCopy.ts`
-- `artifacts/milesign/lib/projectAccessGuard.ts`
-- `artifacts/milesign/lib/pushNotifications.ts`
-- `artifacts/milesign/lib/reportFile.ts`
-- `artifacts/milesign/lib/reportFileActions.ts`
-- `artifacts/milesign/lib/rootBackground.ts`
-- `artifacts/milesign/lib/scriptFonts.ts`
-- `artifacts/milesign/lib/simpleObjectPreference.ts`
-- `artifacts/milesign/lib/supabase.ts`
-- `artifacts/milesign/lib/textScript.ts`
-- `artifacts/milesign/lib/themePreference.ts`
-- `artifacts/milesign/lib/themeStore.ts`
-- `artifacts/milesign/lib/videoThumbnail.ts`
-- `artifacts/milesign/lib/voicePlayer.ts`
-- `artifacts/milesign/lib/voiceRecorderAdapter.ts`
-- `artifacts/milesign/lib/voiceRecording.ts`
-- `artifacts/milesign/locales/en.json`
-- `artifacts/milesign/locales/uk.json`
-- `artifacts/milesign/metro.config.js`
-- `artifacts/milesign/package.json`
-- `artifacts/milesign/plugins/withDatePickerTheme.js`
-- `artifacts/milesign/plugins/withLiveFontScale.js`
-- `artifacts/milesign/plugins/withThemedWindowBackground.js`
-- `artifacts/milesign/release/build-candidate.sh`
-- `artifacts/milesign/release/candidate.cjs`
-- `artifacts/milesign/release/deploy-web.sh`
-- `artifacts/milesign/release/gradle/upload-signing.init.gradle`
-- `artifacts/milesign/release/nginx/milesign.conf.template`
-- `artifacts/milesign/release/redact.cjs`
-- `artifacts/milesign/release/syntheticCheck.cjs`
-- `artifacts/milesign/release/systemd/milesign-synthetic-check.service`
-- `artifacts/milesign/release/systemd/milesign-synthetic-check.timer`
-- `artifacts/milesign/release/systemd/milesign-web.service`
-- `artifacts/milesign/release/verify-nginx.sh`
-- `artifacts/milesign/release/webHost.cjs`
-- `artifacts/milesign/scripts/backup/backupSet.ts`
-- `artifacts/milesign/scripts/fonts/build-script-fonts.py`
-- `artifacts/milesign/scripts/licenses/build-component-licences.mjs`
-- `artifacts/milesign/scripts/licenses/expo.LICENSE`
-- `artifacts/milesign/scripts/observe-local-effects.mjs`
-- `artifacts/milesign/scripts/run-retention-purge.ts`
-- `artifacts/milesign/server/accountDeletionPage.js`
-- `artifacts/milesign/server/aiAdapter.js`
-- `artifacts/milesign/server/brevoTransport.js`
-- `artifacts/milesign/server/emailConfig.js`
-- `artifacts/milesign/server/emailTemplates.js`
-- `artifacts/milesign/server/fcmCredentials.js`
-- `artifacts/milesign/server/fcmPush.js`
-- `artifacts/milesign/server/ocrFields.js`
-- `artifacts/milesign/server/policyPages.js`
-- `artifacts/milesign/server/publicListing.js`
-- `artifacts/milesign/server/pushWorker.js`
-- `artifacts/milesign/server/pushWorkerMain.js`
-- `artifacts/milesign/server/serve.js`
-- `artifacts/milesign/server/smtpTransport.js`
-- `artifacts/milesign/server/templates/landing-page.html`
-- `artifacts/milesign/services/accountDeletion.ts`
-- `artifacts/milesign/services/accountProfile.ts`
-- `artifacts/milesign/services/activityLog.ts`
-- `artifacts/milesign/services/agreementPayments.ts`
-- `artifacts/milesign/services/agreements.ts`
-- `artifacts/milesign/services/aiPlanDrafts.ts`
-- `artifacts/milesign/services/budget.ts`
-- `artifacts/milesign/services/calendar.ts`
-- `artifacts/milesign/services/capabilities.ts`
-- `artifacts/milesign/services/chat.ts`
-- `artifacts/milesign/services/chatStream.ts`
-- `artifacts/milesign/services/checklists.ts`
-- `artifacts/milesign/services/commentStream.ts`
-- `artifacts/milesign/services/comments.ts`
-- `artifacts/milesign/services/contractors.ts`
-- `artifacts/milesign/services/corrections.ts`
-- `artifacts/milesign/services/disputes.ts`
-- `artifacts/milesign/services/entitlements.ts`
-- `artifacts/milesign/services/financeAnalytics.ts`
-- `artifacts/milesign/services/marketplace.ts`
-- `artifacts/milesign/services/materialLedger.ts`
-- `artifacts/milesign/services/materialRequests.ts`
-- `artifacts/milesign/services/materials.ts`
-- `artifacts/milesign/services/media.ts`
-- `artifacts/milesign/services/mediaPaths.ts`
-- `artifacts/milesign/services/mediaUpload.ts`
-- `artifacts/milesign/services/mediaUrls.ts`
-- `artifacts/milesign/services/moderation.ts`
-- `artifacts/milesign/services/nearby.ts`
-- `artifacts/milesign/services/notifications.ts`
-- `artifacts/milesign/services/ocrExtractions.ts`
-- `artifacts/milesign/services/offlineMediaTransfer.ts`
-- `artifacts/milesign/services/offlineSync.ts`
-- `artifacts/milesign/services/organizations.ts`
-- `artifacts/milesign/services/participants.ts`
-- `artifacts/milesign/services/platformAdmin.ts`
-- `artifacts/milesign/services/policyAcceptance.ts`
-- `artifacts/milesign/services/portfolio.ts`
-- `artifacts/milesign/services/profile.ts`
-- `artifacts/milesign/services/projectReports.ts`
-- `artifacts/milesign/services/projectTemplates.ts`
-- `artifacts/milesign/services/projects.ts`
-- `artifacts/milesign/services/publicListing.ts`
-- `artifacts/milesign/services/pushDevices.ts`
-- `artifacts/milesign/services/reportExports.ts`
-- `artifacts/milesign/services/reputation.ts`
-- `artifacts/milesign/services/retentionJob.ts`
-- `artifacts/milesign/services/reviews.ts`
-- `artifacts/milesign/services/search.ts`
-- `artifacts/milesign/services/stages.ts`
-- `artifacts/milesign/services/storagePurge.ts`
-- `artifacts/milesign/services/submissions.ts`
-- `artifacts/milesign/services/teams.ts`
-- `artifacts/milesign/services/voiceNotes.ts`
-- `artifacts/milesign/services/workDefects.ts`
-- `artifacts/milesign/services/workDependencies.ts`
-- `artifacts/milesign/services/workItems.ts`
-- `artifacts/milesign/services/workSeries.ts`
-- `artifacts/milesign/supabase/migrations/20260928120000_cross_project_integrity.sql`
-- `artifacts/milesign/supabase/migrations/20260928140000_server_authorization_hardening.sql`
-- `artifacts/milesign/supabase/migrations/20260929090000_account_state_session_gate.sql`
-- `artifacts/milesign/supabase/migrations/20260930090000_role_matrix_hardening.sql`
-- `artifacts/milesign/supabase/migrations/20260930100000_invitation_link_secrets.sql`
-- `artifacts/milesign/supabase/migrations/20260930110000_ownership_transfer.sql`
-- `artifacts/milesign/supabase/migrations/20260930120000_project_property_type.sql`
-- `artifacts/milesign/supabase/migrations/20260930130000_plan_change_history.sql`
-- `artifacts/milesign/supabase/migrations/20260930140000_money_model_integrity.sql`
-- `artifacts/milesign/supabase/migrations/20260930150000_contractor_removal_preserves_history.sql`
-- `artifacts/milesign/supabase/migrations/20261001090000_accepted_evidence_and_project_lifecycle.sql`
-- `artifacts/milesign/supabase/migrations/20261001110000_work_submission_lifecycle.sql`
-- `artifacts/milesign/supabase/migrations/20261001120000_notification_center.sql`
-- `artifacts/milesign/supabase/migrations/20261002090000_work_item_calendar_sync.sql`
-- `artifacts/milesign/supabase/migrations/20261002100000_comment_stream.sql`
-- `artifacts/milesign/supabase/migrations/20261002110000_project_calendar_event_context.sql`
-- `artifacts/milesign/supabase/migrations/20261002120000_authorized_search.sql`
-- `artifacts/milesign/supabase/migrations/20261002130000_public_listing_privacy.sql`
-- `artifacts/milesign/supabase/migrations/20261002140000_media_integrity_and_limits.sql`
-- `artifacts/milesign/supabase/migrations/20261002150000_offline_sync_contract.sql`
-- `artifacts/milesign/supabase/migrations/20261003090000_project_templates.sql`
-- `artifacts/milesign/supabase/migrations/20261003100000_work_checklists_and_recurrence.sql`
-- `artifacts/milesign/supabase/migrations/20261003110000_work_dependencies_and_load.sql`
-- `artifacts/milesign/supabase/migrations/20261004090000_finance_analytics.sql`
-- `artifacts/milesign/supabase/migrations/20261004100000_material_stock_ledger.sql`
-- `artifacts/milesign/supabase/migrations/20261004110000_material_requests.sql`
-- `artifacts/milesign/supabase/migrations/20261004120000_report_exports.sql`
-- `artifacts/milesign/supabase/migrations/20261005090000_accounts_teams_organizations.sql`
-- `artifacts/milesign/supabase/migrations/20261006090000_listings_search_and_offers.sql`
-- `artifacts/milesign/supabase/migrations/20261007090000_agreement_versions_and_activation.sql`
-- `artifacts/milesign/supabase/migrations/20261008090000_external_payment_records.sql`
-- `artifacts/milesign/supabase/migrations/20261009090000_defects_and_disputes.sql`
-- `artifacts/milesign/supabase/migrations/20261010090000_reputation_portfolio_and_reviews.sql`
-- `artifacts/milesign/supabase/migrations/20261011090000_structured_chat_and_delegation.sql`
-- `artifacts/milesign/supabase/migrations/20261012090000_platform_admin_and_entitlements.sql`
-- `artifacts/milesign/supabase/migrations/20261013090000_ai_drafts_reports_and_ocr.sql`
-- `artifacts/milesign/supabase/migrations/20261014090000_material_procurement_and_finance_privacy.sql`
-- `artifacts/milesign/supabase/migrations/20261015090000_project_market_model.sql`
-- `artifacts/milesign/supabase/migrations/20261016090000_contractor_removal_guard_follows_the_catalog.sql`
-- `artifacts/milesign/supabase/migrations/20261017090000_lifecycle_version_advances_and_audit_keeps_its_place.sql`
-- `artifacts/milesign/supabase/migrations/20261017093000_work_item_project_lookup_requires_participation.sql`
-- `artifacts/milesign/supabase/migrations/20261017094000_settled_work_terms_and_stage_pointers.sql`
-- `artifacts/milesign/supabase/migrations/20261017100000_project_purge_removes_stored_bytes.sql`
-- `artifacts/milesign/supabase/migrations/20261017110000_privileged_predicates_refuse_outsiders.sql`
-- `artifacts/milesign/supabase/migrations/20261018090000_minimal_grants_for_subject_predicates.sql`
-- `artifacts/milesign/supabase/migrations/20261019090000_organization_admin_predicate_is_null_safe.sql`
-- `artifacts/milesign/supabase/migrations/20261020090000_interaction_work_state_answers_only_a_party.sql`
-- `artifacts/milesign/supabase/migrations/20261021090000_material_purchase_lock_and_price_privacy.sql`
-- `artifacts/milesign/supabase/migrations/20261022090000_notification_delivery_claim_lease.sql`
-- `artifacts/milesign/supabase/migrations/20261023090000_push_devices_and_account_binding.sql`
-- `artifacts/milesign/supabase/migrations/20261024090000_listing_free_text_privacy.sql`
-- `artifacts/milesign/supabase/migrations/20261025090000_account_deletion.sql`
-- `artifacts/milesign/supabase/migrations/20261026090000_ocr_extractions_listed_for_their_project.sql`
-- `artifacts/milesign/supabase/migrations/20261027090000_negative_access_hardening.sql`
-- `artifacts/milesign/supabase/migrations/20261027100000_media_and_activity_page_indexes.sql`
-- `artifacts/milesign/supabase/migrations/20261028090000_offline_lease_owner_decision_and_material_columns.sql`
-- `artifacts/milesign/supabase/migrations/20261029090000_photos_bucket_media_mime_types.sql`
-- `artifacts/milesign/supabase/migrations/20261030090000_photos_thumbnail_delete_follows_recording.sql`
-- `artifacts/milesign/supabase/migrations/20261031090000_media_delete_row_first.sql`
-- `artifacts/milesign/supabase/migrations/20261101090000_project_template_translations.sql`
-- `artifacts/milesign/supabase/migrations/20261102090000_active_project_role_plpgsql.sql`
-- `artifacts/milesign/supabase/migrations/20261103090000_content_reports_and_account_blocks.sql`
-- `artifacts/milesign/supabase/migrations/20261104090000_server_locales.sql`
-- `artifacts/milesign/supabase/migrations/20261105090000_nearby_brigade_counts.sql`
-- `artifacts/milesign/supabase/migrations/20261106090000_voice_notes.sql`
-- `artifacts/milesign/supabase/migrations/20261107090000_notification_digest_and_moderation_actions.sql`
-- `artifacts/milesign/supabase/replay/supabase_platform.sql`
-- `artifacts/milesign/types/database.types.ts`
-- `artifacts/milesign/utils/accountContexts.ts`
-- `artifacts/milesign/utils/accountDeletion.ts`
-- `artifacts/milesign/utils/activityLabels.ts`
-- `artifacts/milesign/utils/adminScreens.ts`
-- `artifacts/milesign/utils/advancedOverview.ts`
-- `artifacts/milesign/utils/agreementPayments.ts`
-- `artifacts/milesign/utils/agreements.ts`
-- `artifacts/milesign/utils/aiPlanDraft.ts`
-- `artifacts/milesign/utils/aiScreens.ts`
-- `artifacts/milesign/utils/appCalendar.ts`
-- `artifacts/milesign/utils/appDialogs.ts`
-- `artifacts/milesign/utils/appearance.ts`
-- `artifacts/milesign/utils/balancedLevel.ts`
-- `artifacts/milesign/utils/byteSize.ts`
-- `artifacts/milesign/utils/calendarEvents.ts`
-- `artifacts/milesign/utils/capabilityDelegation.ts`
-- `artifacts/milesign/utils/chatThread.ts`
-- `artifacts/milesign/utils/color.ts`
-- `artifacts/milesign/utils/commentActivity.ts`
-- `artifacts/milesign/utils/commentThread.ts`
-- `artifacts/milesign/utils/contractorRemoval.ts`
-- `artifacts/milesign/utils/contractorWork.ts`
-- `artifacts/milesign/utils/dateInput.ts`
-- `artifacts/milesign/utils/defectWorkflow.ts`
-- `artifacts/milesign/utils/dialogFocus.ts`
-- `artifacts/milesign/utils/disputeCourse.ts`
-- `artifacts/milesign/utils/documentNames.ts`
-- `artifacts/milesign/utils/entitlements.ts`
-- `artifacts/milesign/utils/errorReport.ts`
-- `artifacts/milesign/utils/financeAnalytics.ts`
-- `artifacts/milesign/utils/imageExif.ts`
-- `artifacts/milesign/utils/levelChange.ts`
-- `artifacts/milesign/utils/levelHint.ts`
-- `artifacts/milesign/utils/linkedSentence.ts`
-- `artifacts/milesign/utils/liveUpdates.ts`
-- `artifacts/milesign/utils/localeSearch.ts`
-- `artifacts/milesign/utils/marketProfile.ts`
-- `artifacts/milesign/utils/marketplace.ts`
-- `artifacts/milesign/utils/materialLedger.ts`
-- `artifacts/milesign/utils/materialRecord.ts`
-- `artifacts/milesign/utils/materialRequests.ts`
-- `artifacts/milesign/utils/materialStatuses.ts`
-- `artifacts/milesign/utils/materialUnits.ts`
-- `artifacts/milesign/utils/materials.ts`
-- `artifacts/milesign/utils/mediaCapture.ts`
-- `artifacts/milesign/utils/mediaFormats.ts`
-- `artifacts/milesign/utils/mediaLibrary.ts`
-- `artifacts/milesign/utils/mediaLimits.ts`
-- `artifacts/milesign/utils/mediaTransfer.ts`
-- `artifacts/milesign/utils/minimumAge.ts`
-- `artifacts/milesign/utils/money.ts`
-- `artifacts/milesign/utils/moneyRecord.ts`
-- `artifacts/milesign/utils/navigationMap.ts`
-- `artifacts/milesign/utils/notificationCenter.ts`
-- `artifacts/milesign/utils/notificationMatrix.ts`
-- `artifacts/milesign/utils/ocrReview.ts`
-- `artifacts/milesign/utils/offlineConflicts.ts`
-- `artifacts/milesign/utils/offlineDomain.ts`
-- `artifacts/milesign/utils/offlineMatrix.ts`
-- `artifacts/milesign/utils/offlineMutation.ts`
-- `artifacts/milesign/utils/offlineProjects.ts`
-- `artifacts/milesign/utils/offlineRows.ts`
-- `artifacts/milesign/utils/offlineStorage.ts`
-- `artifacts/milesign/utils/offlineWriteAnnounce.ts`
-- `artifacts/milesign/utils/onboarding.ts`
-- `artifacts/milesign/utils/openPolicy.ts`
-- `artifacts/milesign/utils/openSourceLicences.ts`
-- `artifacts/milesign/utils/optimistic.ts`
-- `artifacts/milesign/utils/organizationScope.ts`
-- `artifacts/milesign/utils/permissions.ts`
-- `artifacts/milesign/utils/platformAdmin.ts`
-- `artifacts/milesign/utils/policyAcceptance.ts`
-- `artifacts/milesign/utils/policyLinks.ts`
-- `artifacts/milesign/utils/policyReader.ts`
-- `artifacts/milesign/utils/policyTemplate.ts`
-- `artifacts/milesign/utils/portfolioFlow.ts`
-- `artifacts/milesign/utils/projectDates.ts`
-- `artifacts/milesign/utils/projectHome.ts`
-- `artifacts/milesign/utils/projectLifecycle.ts`
-- `artifacts/milesign/utils/projectList.ts`
-- `artifacts/milesign/utils/projectLocale.ts`
-- `artifacts/milesign/utils/projectMarket.ts`
-- `artifacts/milesign/utils/projectMoney.ts`
-- `artifacts/milesign/utils/projectOverview.ts`
-- `artifacts/milesign/utils/projectRecord.ts`
-- `artifacts/milesign/utils/projectSummary.ts`
-- `artifacts/milesign/utils/projectTemplates.ts`
-- `artifacts/milesign/utils/publicListing.ts`
-- `artifacts/milesign/utils/pushDevices.ts`
-- `artifacts/milesign/utils/reminders.ts`
-- `artifacts/milesign/utils/reputationScreens.ts`
-- `artifacts/milesign/utils/retryPolicy.ts`
-- `artifacts/milesign/utils/screenState.ts`
-- `artifacts/milesign/utils/search.ts`
-- `artifacts/milesign/utils/settingsControls.ts`
-- `artifacts/milesign/utils/sha256.ts`
-- `artifacts/milesign/utils/simpleLevel.ts`
-- `artifacts/milesign/utils/stageRecord.ts`
-- `artifacts/milesign/utils/submitGuard.ts`
-- `artifacts/milesign/utils/supportChannel.ts`
-- `artifacts/milesign/utils/syncCenter.ts`
-- `artifacts/milesign/utils/teamRoster.ts`
-- `artifacts/milesign/utils/themeBuilder.ts`
-- `artifacts/milesign/utils/tones.ts`
-- `artifacts/milesign/utils/translationReport.ts`
-- `artifacts/milesign/utils/transportSecurity.ts`
-- `artifacts/milesign/utils/uploadErrors.ts`
-- `artifacts/milesign/utils/uploadPipeline.ts`
-- `artifacts/milesign/utils/uploadProgress.ts`
-- `artifacts/milesign/utils/userErrors.ts`
-- `artifacts/milesign/utils/voiceNote.ts`
-- `artifacts/milesign/utils/workAcceptance.ts`
-- `artifacts/milesign/utils/workChecklist.ts`
-- `artifacts/milesign/utils/workDependencies.ts`
-- `artifacts/milesign/utils/workItemRecord.ts`
-- `artifacts/milesign/utils/workProgress.ts`
-- `artifacts/milesign/utils/workSeries.ts`
-- `artifacts/mockup-sandbox/package.json`
-- `attached_assets/MILESIGN_ACCESS_TEMPLATE.json`
-- `attached_assets/MILESIGN_CONTINUE_AND_FIX.txt`
-- `attached_assets/MILESIGN_DESIGN_AGENT_SPEC.md`
-- `attached_assets/MILESIGN_MASTER_SPEC.md`
-- `docs/ACCESS_GAPS.md`
-- `docs/AI_HOST_CAPABILITY.md`
-- `docs/backup_and_restore.md`
-- `docs/data_model_dictionary.md`
-- `docs/decisions/H02-node-runtime-brief.md`
-- `docs/design/ab6_notifications_gap.md`
-- `docs/design/ab_series.md`
-- `docs/design/finance_values.md`
-- `docs/design/interface_levels.md`
-- `docs/design/redesign_report.md`
-- `docs/design/reference/owner-style-2026-10-29/README.md`
-- `docs/design/reference/owner-style-2026-10-29/ref-01.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-02.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-03.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-04.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-05.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-06.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-07.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-08.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-09.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-10.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-11.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-12.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-13.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-14.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-15.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-16.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-17.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-18.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-19.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-20.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-21.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-22.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-23.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-24.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-25.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-26.png`
-- `docs/design/reference/owner-style-2026-10-29/ref-27.png`
-- `docs/design/route_map.md`
-- `docs/design/screenshots/d09/compare/ref-01-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-02-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-03-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-04-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-05-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-06-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-07-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-08-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-09-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-10-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-11-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-12-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-13-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-14-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-15-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-16-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-17-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-18-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-19-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-20-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-21-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-22-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-23-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-24-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-25-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-26-side-by-side.jpg`
-- `docs/design/screenshots/d09/compare/ref-27-side-by-side.jpg`
-- `docs/design/screenshots/d09/screens/01-overview--blue-cool-light--390.jpg`
-- `docs/design/screenshots/d09/screens/01-overview--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/01-overview--green-neutral-dark--390.jpg`
-- `docs/design/screenshots/d09/screens/01-overview--light--320.jpg`
-- `docs/design/screenshots/d09/screens/01-overview--light--360.jpg`
-- `docs/design/screenshots/d09/screens/01-overview--light--390.jpg`
-- `docs/design/screenshots/d09/screens/01-overview--light--430.jpg`
-- `docs/design/screenshots/d09/screens/01-overview--light--600.jpg`
-- `docs/design/screenshots/d09/screens/02-projects--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/02-projects--light--320.jpg`
-- `docs/design/screenshots/d09/screens/02-projects--light--360.jpg`
-- `docs/design/screenshots/d09/screens/02-projects--light--390.jpg`
-- `docs/design/screenshots/d09/screens/02-projects--light--430.jpg`
-- `docs/design/screenshots/d09/screens/02-projects--light--600.jpg`
-- `docs/design/screenshots/d09/screens/03-project-overview--blue-cool-light--390.jpg`
-- `docs/design/screenshots/d09/screens/03-project-overview--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/03-project-overview--green-neutral-dark--390.jpg`
-- `docs/design/screenshots/d09/screens/03-project-overview--light--320.jpg`
-- `docs/design/screenshots/d09/screens/03-project-overview--light--360.jpg`
-- `docs/design/screenshots/d09/screens/03-project-overview--light--390.jpg`
-- `docs/design/screenshots/d09/screens/03-project-overview--light--430.jpg`
-- `docs/design/screenshots/d09/screens/03-project-overview--light--600.jpg`
-- `docs/design/screenshots/d09/screens/04-project-stages--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/04-project-stages--light--320.jpg`
-- `docs/design/screenshots/d09/screens/04-project-stages--light--360.jpg`
-- `docs/design/screenshots/d09/screens/04-project-stages--light--390.jpg`
-- `docs/design/screenshots/d09/screens/04-project-stages--light--430.jpg`
-- `docs/design/screenshots/d09/screens/04-project-stages--light--600.jpg`
-- `docs/design/screenshots/d09/screens/05-project-finances--blue-cool-light--390.jpg`
-- `docs/design/screenshots/d09/screens/05-project-finances--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/05-project-finances--green-neutral-dark--390.jpg`
-- `docs/design/screenshots/d09/screens/05-project-finances--light--320.jpg`
-- `docs/design/screenshots/d09/screens/05-project-finances--light--360.jpg`
-- `docs/design/screenshots/d09/screens/05-project-finances--light--390.jpg`
-- `docs/design/screenshots/d09/screens/05-project-finances--light--430.jpg`
-- `docs/design/screenshots/d09/screens/05-project-finances--light--600.jpg`
-- `docs/design/screenshots/d09/screens/06-project-people--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/06-project-people--light--320.jpg`
-- `docs/design/screenshots/d09/screens/06-project-people--light--360.jpg`
-- `docs/design/screenshots/d09/screens/06-project-people--light--390.jpg`
-- `docs/design/screenshots/d09/screens/06-project-people--light--430.jpg`
-- `docs/design/screenshots/d09/screens/06-project-people--light--600.jpg`
-- `docs/design/screenshots/d09/screens/07-project-files--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/07-project-files--light--320.jpg`
-- `docs/design/screenshots/d09/screens/07-project-files--light--360.jpg`
-- `docs/design/screenshots/d09/screens/07-project-files--light--390.jpg`
-- `docs/design/screenshots/d09/screens/07-project-files--light--430.jpg`
-- `docs/design/screenshots/d09/screens/07-project-files--light--600.jpg`
-- `docs/design/screenshots/d09/screens/08-calendar--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/08-calendar--light--320.jpg`
-- `docs/design/screenshots/d09/screens/08-calendar--light--360.jpg`
-- `docs/design/screenshots/d09/screens/08-calendar--light--390.jpg`
-- `docs/design/screenshots/d09/screens/08-calendar--light--430.jpg`
-- `docs/design/screenshots/d09/screens/08-calendar--light--600.jpg`
-- `docs/design/screenshots/d09/screens/09-activity--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/09-activity--light--320.jpg`
-- `docs/design/screenshots/d09/screens/09-activity--light--360.jpg`
-- `docs/design/screenshots/d09/screens/09-activity--light--390.jpg`
-- `docs/design/screenshots/d09/screens/09-activity--light--430.jpg`
-- `docs/design/screenshots/d09/screens/09-activity--light--600.jpg`
-- `docs/design/screenshots/d09/screens/10-settings--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/10-settings--light--320.jpg`
-- `docs/design/screenshots/d09/screens/10-settings--light--360.jpg`
-- `docs/design/screenshots/d09/screens/10-settings--light--390.jpg`
-- `docs/design/screenshots/d09/screens/10-settings--light--430.jpg`
-- `docs/design/screenshots/d09/screens/10-settings--light--600.jpg`
-- `docs/design/screenshots/d09/screens/11-appearance--dark--390.jpg`
-- `docs/design/screenshots/d09/screens/11-appearance--light--320.jpg`
-- `docs/design/screenshots/d09/screens/11-appearance--light--360.jpg`
-- `docs/design/screenshots/d09/screens/11-appearance--light--390.jpg`
-- `docs/design/screenshots/d09/screens/11-appearance--light--430.jpg`
-- `docs/design/screenshots/d09/screens/11-appearance--light--600.jpg`
-- `docs/design/screenshots/d09/shots.json`
-- `docs/domain_data_ownership.md`
-- `docs/effects_matrix_d1_d2_d3.md`
-- `docs/email/PROVIDER_SWITCH.md`
-- `docs/execution_protocol.md`
-- `docs/google_sign_in_setup.md`
-- `docs/i18n_native_review.md`
-- `docs/ios/ios_readiness_audit.md`
-- `docs/localization_inventory.json`
-- `docs/localization_inventory.md`
-- `docs/media_private_access.md`
-- `docs/migration_strategy.md`
-- `docs/notifications_delivery_setup.md`
-- `docs/owner_decisions.json`
-- `docs/phase1_closure_plan.md`
-- `docs/production_change_plan.md`
-- `docs/production_change_plan_active_project_role.md`
-- `docs/production_change_plan_locales.md`
-- `docs/production_change_plan_media_bucket.md`
-- `docs/production_change_plan_media_delete_row_first.md`
-- `docs/production_change_plan_moderation.md`
-- `docs/production_change_plan_nearby.md`
-- `docs/production_change_plan_notifications.md`
-- `docs/production_change_plan_template_translations.md`
-- `docs/production_change_plan_thumbnail_delete.md`
-- `docs/production_change_plan_voice_notes.md`
-- `docs/qa/rc101_internal_testing.md`
-- `docs/qa/rc102_internal_testing.md`
-- `docs/release/RELEASE_CANDIDATE.md`
-- `docs/release/RUNBOOK.md`
-- `docs/release/SIGNING.md`
-- `docs/release/WEB_DEPLOY.md`
-- `docs/store/google_play_listing.md`
-- `lib/api-client-react/package.json`
-- `lib/api-spec/package.json`
-- `lib/api-zod/package.json`
-- `lib/db/package.json`
-- `orchestrator/README.md`
-- `orchestrator/build-registry.mjs`
-- `orchestrator/cli.mjs`
-- `orchestrator/controller-snapshot.json`
-- `orchestrator/evidence/.gitkeep`
-- `orchestrator/evidence/A01-gate/build.txt`
-- `orchestrator/evidence/A01-gate/clean-tree.txt`
-- `orchestrator/evidence/A01-gate/git-diff-check.txt`
-- `orchestrator/evidence/A01-gate/head.txt`
-- `orchestrator/evidence/A01-gate/install.txt`
-- `orchestrator/evidence/A01-gate/jest.txt`
-- `orchestrator/evidence/A01-gate/lint.txt`
-- `orchestrator/evidence/A01-gate/react-types.txt`
-- `orchestrator/evidence/A01-gate/scripts-test.txt`
-- `orchestrator/evidence/A01-gate/selfcheck.mjs.txt`
-- `orchestrator/evidence/A01-gate/selfcheck.txt`
-- `orchestrator/evidence/A01-gate/typecheck.txt`
-- `orchestrator/evidence/A01-measurements/01-host.txt`
-- `orchestrator/evidence/A01-measurements/02-llama-bench-t2.txt`
-- `orchestrator/evidence/A01-measurements/03-llama-bench-t1-and-reverse.txt`
-- `orchestrator/evidence/A01-measurements/04-reverse-contention.txt`
-- `orchestrator/evidence/A01-measurements/05-end-to-end-draft-runs.txt`
-- `orchestrator/evidence/A01-measurements/06-llama-server-endpoint.txt`
-- `orchestrator/evidence/A01-measurements/07-grammar-constrained.txt`
-- `orchestrator/evidence/A01-measurements/08-contention-agent-side.txt`
-- `orchestrator/evidence/A01-measurements/08b-discarded-first-contention-attempt.txt`
-- `orchestrator/evidence/A01-measurements/09-prompt-137-shaped.txt`
-- `orchestrator/evidence/A01-measurements/10-schema-137.json`
-- `orchestrator/evidence/A01-measurements/11-grammar-3b-output.json`
-- `orchestrator/evidence/A01.json`
-- `orchestrator/evidence/AB1-gate/files.txt`
-- `orchestrator/evidence/AB1-gate/gate.sh`
-- `orchestrator/evidence/AB1-gate/inventory-added.json`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/00-sha.txt`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/01-install.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/02-check-react-types.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/03-lint.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/04-typecheck.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/05-criterion-suites.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/06-jest-full.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/06b-handoff-check.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/07-scripts-test.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/08-build.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/09-localization.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/10-android-export.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/10a-level-keys.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/10c-no-schema-change.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/11-git-diff-check.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/12-git-status.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/12b-install-local.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/13-negative-controls.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/14-git-status-final.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/15-race-control-after-gate.log`
-- `orchestrator/evidence/AB1-gate/logs-b694f47c/exits.txt`
-- `orchestrator/evidence/AB1-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB1-gate/negative-controls.py`
-- `orchestrator/evidence/AB1-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB1-gate/realign.sh`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/00-sha.txt`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/01-install.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/02-check-react-types.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/03-lint.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/04-typecheck.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/05-criterion-suites.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/06-jest-full.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/06b-handoff-check.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/07-scripts-test.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/08-build.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/09-localization.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/10-android-export.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/10a-level-keys.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/10c-no-schema-change.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/11-git-diff-check.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/12-git-status.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/12b-install-local.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/13-negative-controls.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/14-git-status-final.log`
-- `orchestrator/evidence/AB1-gate/superseded-896e2c37/exits.txt`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/00-sha.txt`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/01-install.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/02-check-react-types.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/03-lint.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/04-typecheck.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/05-criterion-suites.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/06-jest-full.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/06b-handoff-check.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/07-scripts-test.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/08-build.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/09-localization.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/10-android-export.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/10a-level-keys.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/10c-no-schema-change.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/11-git-diff-check.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/12-git-status.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/12b-install-local.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/13-negative-controls.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/14-git-status-final.log`
-- `orchestrator/evidence/AB1-gate/superseded-d04c044a/exits.txt`
-- `orchestrator/evidence/AB1.json`
-- `orchestrator/evidence/AB2-gate/files.txt`
-- `orchestrator/evidence/AB2-gate/gate.sh`
-- `orchestrator/evidence/AB2-gate/inventory-delta.json`
-- `orchestrator/evidence/AB2-gate/inventory-delta.py`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/00-sha.txt`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/01-install.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/02-check-react-types.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/03-lint.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/04-typecheck.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/05-criterion-suites.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/06-jest-full.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/06b-handoff-check.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/07-scripts-test.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/08-build.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/09-localization.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/10-android-export.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/10a-air-keys.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/10b-canon.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/10c-no-schema-change.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/11-git-diff-check.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/12-git-status.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/12b-install-local.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/13-negative-controls.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/14-git-status-final.log`
-- `orchestrator/evidence/AB2-gate/logs-9c3c547f/exits.txt`
-- `orchestrator/evidence/AB2-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB2-gate/negative-controls.py`
-- `orchestrator/evidence/AB2-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB2-gate/realign.sh`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/00-sha.txt`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/01-install.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/02-check-react-types.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/03-lint.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/04-typecheck.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/05-criterion-suites.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/06-jest-full.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/06b-handoff-check.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/07-scripts-test.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/08-build.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/09-localization.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/10-android-export.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/10a-air-keys.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/10b-canon.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/10c-no-schema-change.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/11-git-diff-check.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/12-git-status.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/12b-install-local.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/13-negative-controls.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/14-git-status-final.log`
-- `orchestrator/evidence/AB2-gate/superseded-e4d91dde/exits.txt`
-- `orchestrator/evidence/AB2.json`
-- `orchestrator/evidence/AB2b-gate/TRANSLATE.md`
-- `orchestrator/evidence/AB2b-gate/apply-keys.py`
-- `orchestrator/evidence/AB2b-gate/files.txt`
-- `orchestrator/evidence/AB2b-gate/gate.sh`
-- `orchestrator/evidence/AB2b-gate/glyphs.py`
-- `orchestrator/evidence/AB2b-gate/inventory-added-round1.json`
-- `orchestrator/evidence/AB2b-gate/inventory-added-round2.json`
-- `orchestrator/evidence/AB2b-gate/inventory-added.json`
-- `orchestrator/evidence/AB2b-gate/keys.json`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/00-sha.txt`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/01-install.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/02-check-react-types.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/03-lint.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/04-typecheck.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/05-criterion-suites.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/06-jest-full.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/06b-handoff-check.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/07-scripts-test.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/08-build.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/09-localization.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/10-android-export.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/10a-ab2b-keys.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/10c-no-schema-change.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/11-git-diff-check.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/12-git-status.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/12b-install-local.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/13-negative-controls.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/14-git-status-final.log`
-- `orchestrator/evidence/AB2b-gate/logs-ee2e88c9/exits.txt`
-- `orchestrator/evidence/AB2b-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB2b-gate/negative-controls.py`
-- `orchestrator/evidence/AB2b-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB2b-gate/realign.sh`
-- `orchestrator/evidence/AB2b-gate/translations/ar.json`
-- `orchestrator/evidence/AB2b-gate/translations/cs.json`
-- `orchestrator/evidence/AB2b-gate/translations/da.json`
-- `orchestrator/evidence/AB2b-gate/translations/de.json`
-- `orchestrator/evidence/AB2b-gate/translations/es-MX.json`
-- `orchestrator/evidence/AB2b-gate/translations/es.json`
-- `orchestrator/evidence/AB2b-gate/translations/et.json`
-- `orchestrator/evidence/AB2b-gate/translations/fr.json`
-- `orchestrator/evidence/AB2b-gate/translations/hi.json`
-- `orchestrator/evidence/AB2b-gate/translations/hu.json`
-- `orchestrator/evidence/AB2b-gate/translations/id.json`
-- `orchestrator/evidence/AB2b-gate/translations/it.json`
-- `orchestrator/evidence/AB2b-gate/translations/ja.json`
-- `orchestrator/evidence/AB2b-gate/translations/ko.json`
-- `orchestrator/evidence/AB2b-gate/translations/lt.json`
-- `orchestrator/evidence/AB2b-gate/translations/lv.json`
-- `orchestrator/evidence/AB2b-gate/translations/nb.json`
-- `orchestrator/evidence/AB2b-gate/translations/nl.json`
-- `orchestrator/evidence/AB2b-gate/translations/pl.json`
-- `orchestrator/evidence/AB2b-gate/translations/pt-BR.json`
-- `orchestrator/evidence/AB2b-gate/translations/ro.json`
-- `orchestrator/evidence/AB2b-gate/translations/sk.json`
-- `orchestrator/evidence/AB2b-gate/translations/sv.json`
-- `orchestrator/evidence/AB2b-gate/translations/th.json`
-- `orchestrator/evidence/AB2b-gate/translations/tr.json`
-- `orchestrator/evidence/AB2b-gate/translations/vi.json`
-- `orchestrator/evidence/AB2b-gate/translations/zh-Hans.json`
-- `orchestrator/evidence/AB2b-gate/translations/zh-Hant.json`
-- `orchestrator/evidence/AB2b.json`
-- `orchestrator/evidence/AB3a-gate/apply-keys.py`
-- `orchestrator/evidence/AB3a-gate/files.txt`
-- `orchestrator/evidence/AB3a-gate/gate.sh`
-- `orchestrator/evidence/AB3a-gate/glyphs.py`
-- `orchestrator/evidence/AB3a-gate/inventory-added-total.json`
-- `orchestrator/evidence/AB3a-gate/inventory-added.json`
-- `orchestrator/evidence/AB3a-gate/keys.json`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/00-sha.txt`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/01-install.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/02-check-react-types.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/03-lint.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/04-typecheck.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/05-criterion-suites.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/06-jest-full.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/06b-handoff-check.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/07-scripts-test.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/08-build.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/09-localization.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/10-android-export.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/10a-ab3a-keys.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/10b-no-service-change.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/11-git-diff-check.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/12-git-status.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/12b-install-local.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/13-negative-controls.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/14-git-status-final.log`
-- `orchestrator/evidence/AB3a-gate/logs-18339561/exits.txt`
-- `orchestrator/evidence/AB3a-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB3a-gate/negative-controls.py`
-- `orchestrator/evidence/AB3a-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB3a-gate/realign.sh`
-- `orchestrator/evidence/AB3a-gate/translations/ar.json`
-- `orchestrator/evidence/AB3a-gate/translations/cs.json`
-- `orchestrator/evidence/AB3a-gate/translations/da.json`
-- `orchestrator/evidence/AB3a-gate/translations/de.json`
-- `orchestrator/evidence/AB3a-gate/translations/es-MX.json`
-- `orchestrator/evidence/AB3a-gate/translations/es.json`
-- `orchestrator/evidence/AB3a-gate/translations/et.json`
-- `orchestrator/evidence/AB3a-gate/translations/fr.json`
-- `orchestrator/evidence/AB3a-gate/translations/hi.json`
-- `orchestrator/evidence/AB3a-gate/translations/hu.json`
-- `orchestrator/evidence/AB3a-gate/translations/id.json`
-- `orchestrator/evidence/AB3a-gate/translations/it.json`
-- `orchestrator/evidence/AB3a-gate/translations/ja.json`
-- `orchestrator/evidence/AB3a-gate/translations/ko.json`
-- `orchestrator/evidence/AB3a-gate/translations/lt.json`
-- `orchestrator/evidence/AB3a-gate/translations/lv.json`
-- `orchestrator/evidence/AB3a-gate/translations/nb.json`
-- `orchestrator/evidence/AB3a-gate/translations/nl.json`
-- `orchestrator/evidence/AB3a-gate/translations/pl.json`
-- `orchestrator/evidence/AB3a-gate/translations/pt-BR.json`
-- `orchestrator/evidence/AB3a-gate/translations/ro.json`
-- `orchestrator/evidence/AB3a-gate/translations/sk.json`
-- `orchestrator/evidence/AB3a-gate/translations/sv.json`
-- `orchestrator/evidence/AB3a-gate/translations/th.json`
-- `orchestrator/evidence/AB3a-gate/translations/tr.json`
-- `orchestrator/evidence/AB3a-gate/translations/vi.json`
-- `orchestrator/evidence/AB3a-gate/translations/zh-Hans.json`
-- `orchestrator/evidence/AB3a-gate/translations/zh-Hant.json`
-- `orchestrator/evidence/AB3a.json`
-- `orchestrator/evidence/AB3b-gate/TRANSLATE.md`
-- `orchestrator/evidence/AB3b-gate/apply-keys.py`
-- `orchestrator/evidence/AB3b-gate/files.txt`
-- `orchestrator/evidence/AB3b-gate/gate.sh`
-- `orchestrator/evidence/AB3b-gate/glyphs.py`
-- `orchestrator/evidence/AB3b-gate/inventory-added.json`
-- `orchestrator/evidence/AB3b-gate/keys.json`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/00-sha.txt`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/01-install.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/01b-install-local.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/02-check-react-types.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/03-lint.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/04-typecheck.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/05-criterion-suites.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/06-jest-full.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/06b-handoff-check.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/07-scripts-test.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/08-build.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/09-localization.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/10-android-export.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/10a-ab3b-keys.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/10b-no-service-change.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/11-git-diff-check.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/12-git-status.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/12b-install-local.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/13-negative-controls.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/14-git-status-final.log`
-- `orchestrator/evidence/AB3b-gate/logs-c997ce2a/exits.txt`
-- `orchestrator/evidence/AB3b-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB3b-gate/merge-inventory.cjs`
-- `orchestrator/evidence/AB3b-gate/negative-controls.py`
-- `orchestrator/evidence/AB3b-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB3b-gate/realign.sh`
-- `orchestrator/evidence/AB3b-gate/recategorize-why.cjs`
-- `orchestrator/evidence/AB3b-gate/translations/ar.json`
-- `orchestrator/evidence/AB3b-gate/translations/cs.json`
-- `orchestrator/evidence/AB3b-gate/translations/da.json`
-- `orchestrator/evidence/AB3b-gate/translations/de.json`
-- `orchestrator/evidence/AB3b-gate/translations/es-MX.json`
-- `orchestrator/evidence/AB3b-gate/translations/es.json`
-- `orchestrator/evidence/AB3b-gate/translations/et.json`
-- `orchestrator/evidence/AB3b-gate/translations/fr.json`
-- `orchestrator/evidence/AB3b-gate/translations/hi.json`
-- `orchestrator/evidence/AB3b-gate/translations/hu.json`
-- `orchestrator/evidence/AB3b-gate/translations/id.json`
-- `orchestrator/evidence/AB3b-gate/translations/it.json`
-- `orchestrator/evidence/AB3b-gate/translations/ja.json`
-- `orchestrator/evidence/AB3b-gate/translations/ko.json`
-- `orchestrator/evidence/AB3b-gate/translations/lt.json`
-- `orchestrator/evidence/AB3b-gate/translations/lv.json`
-- `orchestrator/evidence/AB3b-gate/translations/nb.json`
-- `orchestrator/evidence/AB3b-gate/translations/nl.json`
-- `orchestrator/evidence/AB3b-gate/translations/pl.json`
-- `orchestrator/evidence/AB3b-gate/translations/pt-BR.json`
-- `orchestrator/evidence/AB3b-gate/translations/ro.json`
-- `orchestrator/evidence/AB3b-gate/translations/sk.json`
-- `orchestrator/evidence/AB3b-gate/translations/sv.json`
-- `orchestrator/evidence/AB3b-gate/translations/th.json`
-- `orchestrator/evidence/AB3b-gate/translations/tr.json`
-- `orchestrator/evidence/AB3b-gate/translations/vi.json`
-- `orchestrator/evidence/AB3b-gate/translations/zh-Hans.json`
-- `orchestrator/evidence/AB3b-gate/translations/zh-Hant.json`
-- `orchestrator/evidence/AB3b.json`
-- `orchestrator/evidence/AB3c-gate/TRANSLATE.md`
-- `orchestrator/evidence/AB3c-gate/apply-keys.py`
-- `orchestrator/evidence/AB3c-gate/files.txt`
-- `orchestrator/evidence/AB3c-gate/gate.sh`
-- `orchestrator/evidence/AB3c-gate/glyphs.py`
-- `orchestrator/evidence/AB3c-gate/inventory-added.json`
-- `orchestrator/evidence/AB3c-gate/keys-fix.json`
-- `orchestrator/evidence/AB3c-gate/keys-fix2.json`
-- `orchestrator/evidence/AB3c-gate/keys-fix3.json`
-- `orchestrator/evidence/AB3c-gate/keys.json`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/06-jest-full.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/10b-no-new-rpc.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-14a0bf9a/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/06-jest-full.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/10b-no-new-rpc.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-14e4a5e0/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/06-jest-full.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/10b-no-service-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/13r-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/13r-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/13r-negative-controls-rerun.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-26e7341c/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/06m-d09-matrix.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/06x-exit.txt`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/06x-jest-full-after-gate.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/10b-no-new-rpc.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-2a12531c/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/06-jest-full.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/10b-no-new-rpc.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-68c46dfa/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/06m-d09-matrix.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/10b-no-service-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-b62dbc27/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/06-jest-full.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10a-ab3c-keys-rerun.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10b-no-service-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-c42ce3dd/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/06-jest-full.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/10b-no-new-rpc.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-ceca2340/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/06-jest-full.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/08-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/09-localization.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/10-android-export.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/10a-ab3c-keys.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/10b-no-service-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/10c-no-schema-change.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/11-git-diff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/12-git-status.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/12b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/13-negative-controls.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/14-git-status-final.log`
-- `orchestrator/evidence/AB3c-gate/logs-d98d5712/exits.txt`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/00-sha.txt`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/01-install.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/01b-install-local.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/02-check-react-types.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/03-lint.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/04-typecheck.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/05-criterion-suites.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/06-jest-full.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/06b-handoff-check.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/07-scripts-test.log`
-- `orchestrator/evidence/AB3c-gate/logs-ff267234/exits.txt`
-- `orchestrator/evidence/AB3c-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB3c-gate/negative-controls.py`
-- `orchestrator/evidence/AB3c-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB3c-gate/realign.sh`
-- `orchestrator/evidence/AB3c-gate/recategorize-why.cjs`
-- `orchestrator/evidence/AB3c-gate/translations-fix/ar.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/cs.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/da.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/de.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/es-MX.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/es.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/et.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/fr.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/hi.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/hu.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/id.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/it.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/ja.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/ko.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/lt.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/lv.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/nb.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/nl.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/pl.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/pt-BR.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/ro.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/sk.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/sv.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/th.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/tr.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/vi.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/zh-Hans.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix/zh-Hant.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/ar.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/cs.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/da.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/de.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/es-MX.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/es.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/et.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/fr.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/hi.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/hu.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/id.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/it.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/ja.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/ko.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/lt.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/lv.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/nb.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/nl.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/pl.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/pt-BR.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/ro.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/sk.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/sv.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/th.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/tr.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/vi.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/zh-Hans.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix2/zh-Hant.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/ar.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/cs.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/da.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/de.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/es-MX.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/es.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/et.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/fr.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/hi.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/hu.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/id.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/it.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/ja.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/ko.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/lt.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/lv.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/nb.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/nl.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/pl.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/pt-BR.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/ro.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/sk.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/sv.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/th.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/tr.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/vi.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/zh-Hans.json`
-- `orchestrator/evidence/AB3c-gate/translations-fix3/zh-Hant.json`
-- `orchestrator/evidence/AB3c-gate/translations/ar.json`
-- `orchestrator/evidence/AB3c-gate/translations/cs.json`
-- `orchestrator/evidence/AB3c-gate/translations/da.json`
-- `orchestrator/evidence/AB3c-gate/translations/de.json`
-- `orchestrator/evidence/AB3c-gate/translations/es-MX.json`
-- `orchestrator/evidence/AB3c-gate/translations/es.json`
-- `orchestrator/evidence/AB3c-gate/translations/et.json`
-- `orchestrator/evidence/AB3c-gate/translations/fr.json`
-- `orchestrator/evidence/AB3c-gate/translations/hi.json`
-- `orchestrator/evidence/AB3c-gate/translations/hu.json`
-- `orchestrator/evidence/AB3c-gate/translations/id.json`
-- `orchestrator/evidence/AB3c-gate/translations/it.json`
-- `orchestrator/evidence/AB3c-gate/translations/ja.json`
-- `orchestrator/evidence/AB3c-gate/translations/ko.json`
-- `orchestrator/evidence/AB3c-gate/translations/lt.json`
-- `orchestrator/evidence/AB3c-gate/translations/lv.json`
-- `orchestrator/evidence/AB3c-gate/translations/nb.json`
-- `orchestrator/evidence/AB3c-gate/translations/nl.json`
-- `orchestrator/evidence/AB3c-gate/translations/pl.json`
-- `orchestrator/evidence/AB3c-gate/translations/pt-BR.json`
-- `orchestrator/evidence/AB3c-gate/translations/ro.json`
-- `orchestrator/evidence/AB3c-gate/translations/sk.json`
-- `orchestrator/evidence/AB3c-gate/translations/sv.json`
-- `orchestrator/evidence/AB3c-gate/translations/th.json`
-- `orchestrator/evidence/AB3c-gate/translations/tr.json`
-- `orchestrator/evidence/AB3c-gate/translations/vi.json`
-- `orchestrator/evidence/AB3c-gate/translations/zh-Hans.json`
-- `orchestrator/evidence/AB3c-gate/translations/zh-Hant.json`
-- `orchestrator/evidence/AB3c.json`
-- `orchestrator/evidence/AB4-gate/apply-keys.py`
-- `orchestrator/evidence/AB4-gate/check-keys.py`
-- `orchestrator/evidence/AB4-gate/files.txt`
-- `orchestrator/evidence/AB4-gate/gate.sh`
-- `orchestrator/evidence/AB4-gate/inventory-added-total.json`
-- `orchestrator/evidence/AB4-gate/inventory-added.json`
-- `orchestrator/evidence/AB4-gate/keys.json`
-- `orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-2bf7516c/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/05c-req-133-screen-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-57f017dc/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/11b-git-diff-check-after-report-fix.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-599ed630/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-69368916-controls/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-69368916-controls/01-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-69368916-controls/02-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a-req133-alone/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a-req133-alone/01-req-133-screen-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-87c48a5a/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-9e094427/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-c3d4e921/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-c4c0fe36/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-cb905874-req133-alone/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-cb905874-req133-alone/01-req-133-screen-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-cb905874/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-fa028a1e/exits.txt`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/00-sha.txt`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/01-install.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/02-check-react-types.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/03-lint.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/04-typecheck.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/05-criterion-suites.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/06-jest-full.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/06b-handoff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/07-scripts-test.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/08-build.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/09-localization.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/09b-media.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/09c-offline.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/09d-database.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/10-android-export.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/10a-ab4-keys.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/10c-one-migration.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/10d-manifest.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/11-git-diff-check.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/12-git-status.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/12b-install-local.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/13-negative-controls.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/14-git-status-final.log`
-- `orchestrator/evidence/AB4-gate/logs-fc5edaaa/exits.txt`
-- `orchestrator/evidence/AB4-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB4-gate/negative-controls.py`
-- `orchestrator/evidence/AB4-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB4-gate/realign.sh`
-- `orchestrator/evidence/AB4-gate/translations/ar.json`
-- `orchestrator/evidence/AB4-gate/translations/cs.json`
-- `orchestrator/evidence/AB4-gate/translations/da.json`
-- `orchestrator/evidence/AB4-gate/translations/de.json`
-- `orchestrator/evidence/AB4-gate/translations/es-MX.json`
-- `orchestrator/evidence/AB4-gate/translations/es.json`
-- `orchestrator/evidence/AB4-gate/translations/et.json`
-- `orchestrator/evidence/AB4-gate/translations/fr.json`
-- `orchestrator/evidence/AB4-gate/translations/hi.json`
-- `orchestrator/evidence/AB4-gate/translations/hu.json`
-- `orchestrator/evidence/AB4-gate/translations/id.json`
-- `orchestrator/evidence/AB4-gate/translations/it.json`
-- `orchestrator/evidence/AB4-gate/translations/ja.json`
-- `orchestrator/evidence/AB4-gate/translations/ko.json`
-- `orchestrator/evidence/AB4-gate/translations/lt.json`
-- `orchestrator/evidence/AB4-gate/translations/lv.json`
-- `orchestrator/evidence/AB4-gate/translations/nb.json`
-- `orchestrator/evidence/AB4-gate/translations/nl.json`
-- `orchestrator/evidence/AB4-gate/translations/pl.json`
-- `orchestrator/evidence/AB4-gate/translations/pt-BR.json`
-- `orchestrator/evidence/AB4-gate/translations/ro.json`
-- `orchestrator/evidence/AB4-gate/translations/sk.json`
-- `orchestrator/evidence/AB4-gate/translations/sv.json`
-- `orchestrator/evidence/AB4-gate/translations/th.json`
-- `orchestrator/evidence/AB4-gate/translations/tr.json`
-- `orchestrator/evidence/AB4-gate/translations/vi.json`
-- `orchestrator/evidence/AB4-gate/translations/zh-Hans.json`
-- `orchestrator/evidence/AB4-gate/translations/zh-Hant.json`
-- `orchestrator/evidence/AB4-voice-notes/build-manifest.mjs`
-- `orchestrator/evidence/AB4-voice-notes/live-align.sql`
-- `orchestrator/evidence/AB4-voice-notes/live-read.json`
-- `orchestrator/evidence/AB4-voice-notes/live-shadow-reading.json`
-- `orchestrator/evidence/AB4-voice-notes/local-replay-reading.json`
-- `orchestrator/evidence/AB4-voice-notes/manifest.json`
-- `orchestrator/evidence/AB4-voice-notes/reading.sql`
-- `orchestrator/evidence/AB4-voice-notes/rollback.sql`
-- `orchestrator/evidence/AB4.json`
-- `orchestrator/evidence/AB4M-gate/gate.sh`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/00-install-local.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/00-sha.txt`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/01-install.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/02-check-react-types.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/03-lint.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/04-typecheck.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/05-criterion-suites.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/06-prepare.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/06b-handoff-check.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/07-shadow-and-manifest-rebuilt.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/08-approval-null-and-file-unchanged.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/09-git-diff-check.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/10-git-status.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/10b-install-local.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/11-negative-controls.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/12-git-status-final.log`
-- `orchestrator/evidence/AB4M-gate/logs-16aa2a77/exits.txt`
-- `orchestrator/evidence/AB4M-gate/logs-d2c73b50/00-sha.txt`
-- `orchestrator/evidence/AB4M-gate/logs-d2c73b50/13-line-height-scales-alone.log`
-- `orchestrator/evidence/AB4M-gate/logs-d2c73b50/14-full-jest.log`
-- `orchestrator/evidence/AB4M-gate/logs-d2c73b50/exits.txt`
-- `orchestrator/evidence/AB4M-gate/negative-controls.sh`
-- `orchestrator/evidence/AB4M.json`
-- `orchestrator/evidence/AB4P-gate/gate.sh`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/00-install-local.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/00-sha.txt`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/01-install.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/02-check-react-types.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/03-lint.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/04-typecheck.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/05-criterion-suites.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/06-jest-full.log.gz`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/06-jest-full.summary.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/06-prepare.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/06b-handoff-check.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/07-manifest-unchanged.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/08-approval-null.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/09-git-diff-check.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/10-git-status.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/10b-install-local.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/11-negative-controls.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/12-git-status-final.log`
-- `orchestrator/evidence/AB4P-gate/logs-3a3a88db/exits.txt`
-- `orchestrator/evidence/AB4P-gate/negative-controls.sh`
-- `orchestrator/evidence/AB4P-tooling/apply.mjs`
-- `orchestrator/evidence/AB4P-tooling/jsonb_md5.py`
-- `orchestrator/evidence/AB4P-voice-notes/00-plan.json`
-- `orchestrator/evidence/AB4P-voice-notes/01-precondition-check-only.json`
-- `orchestrator/evidence/AB4P-voice-notes/01-precondition.json`
-- `orchestrator/evidence/AB4P-voice-notes/01a-precondition-check-only-attempt1-blocked.json`
-- `orchestrator/evidence/AB4P-voice-notes/02-backup.json`
-- `orchestrator/evidence/AB4P-voice-notes/03-apply.json`
-- `orchestrator/evidence/AB4P-voice-notes/03-apply.sql`
-- `orchestrator/evidence/AB4P-voice-notes/04-postcondition.json`
-- `orchestrator/evidence/AB4P-voice-notes/applied.json`
-- `orchestrator/evidence/AB4P-voice-notes/read-first.json`
-- `orchestrator/evidence/AB4P-voice-notes/verdict.json`
-- `orchestrator/evidence/AB4P.json`
-- `orchestrator/evidence/AB5-gate/apply-keys.py`
-- `orchestrator/evidence/AB5-gate/check-keys.sh`
-- `orchestrator/evidence/AB5-gate/files.txt`
-- `orchestrator/evidence/AB5-gate/gate.sh`
-- `orchestrator/evidence/AB5-gate/glyphs.py`
-- `orchestrator/evidence/AB5-gate/inventory-added.json`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/00-install-local.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/00-sha.txt`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/01-install.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/02-check-react-types.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/03-lint.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/04-typecheck.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/05-criterion-suites.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/06-jest-full.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/06b-handoff-check.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/07-scripts-test.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/08-build.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/09-localization.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/10-android-export.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/10a-ab5-keys.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/10b-manifest-rebuilt.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/10c-glyphs.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/10d-approval-null.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/11-git-diff-check.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/12-git-status.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/12b-install-local.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/13-negative-controls.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/14-git-status-final.log`
-- `orchestrator/evidence/AB5-gate/logs-cf16e4ef/exits.txt`
-- `orchestrator/evidence/AB5-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB5-gate/negative-controls.py`
-- `orchestrator/evidence/AB5-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB5-gate/realign.sh`
-- `orchestrator/evidence/AB5-gate/translations.json`
-- `orchestrator/evidence/AB5-nearby/build-manifest.mjs`
-- `orchestrator/evidence/AB5-nearby/current-definitions.json`
-- `orchestrator/evidence/AB5-nearby/local-replay-reading.json`
-- `orchestrator/evidence/AB5-nearby/manifest.json`
-- `orchestrator/evidence/AB5-nearby/reading.sql`
-- `orchestrator/evidence/AB5-nearby/rollback.sql`
-- `orchestrator/evidence/AB5.json`
-- `orchestrator/evidence/AB5P-gate/gate.sh`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/00-install-local.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/00-sha.txt`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/01-install.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/02-check-react-types.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/03-lint.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/04-typecheck.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/05-criterion-suites.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/06-jest-full.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/06-prepare.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/06b-handoff-check.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/07-manifest-unchanged.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/08-approval-null.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/09-git-diff-check.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/10-git-status.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/10b-install-local.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/11-negative-controls.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/12-git-status-final.log`
-- `orchestrator/evidence/AB5P-gate/logs-0e223ed3/exits.txt`
-- `orchestrator/evidence/AB5P-gate/negative-controls.sh`
-- `orchestrator/evidence/AB5P-nearby/00-plan.json`
-- `orchestrator/evidence/AB5P-nearby/01-precondition-check-only.json`
-- `orchestrator/evidence/AB5P-nearby/01-precondition.json`
-- `orchestrator/evidence/AB5P-nearby/02-backup.json`
-- `orchestrator/evidence/AB5P-nearby/03-apply.json`
-- `orchestrator/evidence/AB5P-nearby/03-apply.sql`
-- `orchestrator/evidence/AB5P-nearby/04-postcondition.json`
-- `orchestrator/evidence/AB5P-nearby/applied.json`
-- `orchestrator/evidence/AB5P-nearby/read-first.json`
-- `orchestrator/evidence/AB5P-nearby/verdict.json`
-- `orchestrator/evidence/AB5P-tooling/apply.mjs`
-- `orchestrator/evidence/AB5P.json`
-- `orchestrator/evidence/AB6-gate/apply-keys.py`
-- `orchestrator/evidence/AB6-gate/apply-one-key.py`
-- `orchestrator/evidence/AB6-gate/code-values.json`
-- `orchestrator/evidence/AB6-gate/email-note.json`
-- `orchestrator/evidence/AB6-gate/files.txt`
-- `orchestrator/evidence/AB6-gate/gate.sh`
-- `orchestrator/evidence/AB6-gate/inventory-added.json`
-- `orchestrator/evidence/AB6-gate/keys.json`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/00-sha.txt`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/00b-install-local.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/01-install.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/02-check-react-types.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/03-lint.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/04-typecheck.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/05-criterion-suites.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/06-jest-full.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/06b-handoff-check.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/06c-line-height-scales-alone.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/07-scripts-test.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/08-build.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/08b-typecheck-after-build.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/09-localization.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/10-android-export.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/10a-ab6-keys.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/10b-no-credentials.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/11-git-diff-check.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/12-git-status.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/12b-install-local.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/13-negative-controls.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/13b-negative-controls.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/14-git-status-final.log`
-- `orchestrator/evidence/AB6-gate/logs-c669fdd1/exits.txt`
-- `orchestrator/evidence/AB6-gate/make-inventory-added.py`
-- `orchestrator/evidence/AB6-gate/make-translations.py`
-- `orchestrator/evidence/AB6-gate/negative-controls.py`
-- `orchestrator/evidence/AB6-gate/not-rendered.json`
-- `orchestrator/evidence/AB6-gate/realign-inventory.cjs`
-- `orchestrator/evidence/AB6-gate/realign.sh`
-- `orchestrator/evidence/AB6-gate/translations/ar.json`
-- `orchestrator/evidence/AB6-gate/translations/cs.json`
-- `orchestrator/evidence/AB6-gate/translations/da.json`
-- `orchestrator/evidence/AB6-gate/translations/de.json`
-- `orchestrator/evidence/AB6-gate/translations/es-MX.json`
-- `orchestrator/evidence/AB6-gate/translations/es.json`
-- `orchestrator/evidence/AB6-gate/translations/et.json`
-- `orchestrator/evidence/AB6-gate/translations/fr.json`
-- `orchestrator/evidence/AB6-gate/translations/hi.json`
-- `orchestrator/evidence/AB6-gate/translations/hu.json`
-- `orchestrator/evidence/AB6-gate/translations/id.json`
-- `orchestrator/evidence/AB6-gate/translations/it.json`
-- `orchestrator/evidence/AB6-gate/translations/ja.json`
-- `orchestrator/evidence/AB6-gate/translations/ko.json`
-- `orchestrator/evidence/AB6-gate/translations/lt.json`
-- `orchestrator/evidence/AB6-gate/translations/lv.json`
-- `orchestrator/evidence/AB6-gate/translations/nb.json`
-- `orchestrator/evidence/AB6-gate/translations/nl.json`
-- `orchestrator/evidence/AB6-gate/translations/pl.json`
-- `orchestrator/evidence/AB6-gate/translations/pt-BR.json`
-- `orchestrator/evidence/AB6-gate/translations/ro.json`
-- `orchestrator/evidence/AB6-gate/translations/sk.json`
-- `orchestrator/evidence/AB6-gate/translations/sv.json`
-- `orchestrator/evidence/AB6-gate/translations/th.json`
-- `orchestrator/evidence/AB6-gate/translations/tr.json`
-- `orchestrator/evidence/AB6-gate/translations/vi.json`
-- `orchestrator/evidence/AB6-gate/translations/zh-Hans.json`
-- `orchestrator/evidence/AB6-gate/translations/zh-Hant.json`
-- `orchestrator/evidence/AB6-gate/warning-key.json`
-- `orchestrator/evidence/AB6-notifications/build-manifest.mjs`
-- `orchestrator/evidence/AB6-notifications/current-definitions.json`
-- `orchestrator/evidence/AB6-notifications/live-align.sql`
-- `orchestrator/evidence/AB6-notifications/live-read.json`
-- `orchestrator/evidence/AB6-notifications/live-shadow-reading.json`
-- `orchestrator/evidence/AB6-notifications/local-replay-reading.json`
-- `orchestrator/evidence/AB6-notifications/manifest.json`
-- `orchestrator/evidence/AB6-notifications/reading.sql`
-- `orchestrator/evidence/AB6-notifications/rollback.sql`
-- `orchestrator/evidence/AB6.json`
-- `orchestrator/evidence/AB6M-gate/gate.sh`
-- `orchestrator/evidence/AB6M-gate/logs-704047d2/00-sha.txt`
-- `orchestrator/evidence/AB6M-gate/logs-704047d2/06-jest-full.filtered.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/00-install-local.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/00-sha.txt`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/01-install.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/02-check-react-types.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/03-lint.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/04-typecheck.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/05-criterion-suites.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/06-prepare.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/06b-handoff-check.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/07-shadow-and-manifest-rebuilt.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/08-approval-null-and-file-unchanged.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/09-git-diff-check.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/10-git-status.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/10b-install-local.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/11-negative-controls.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/12-git-status-final.log`
-- `orchestrator/evidence/AB6M-gate/logs-d96e0c3b/exits.txt`
-- `orchestrator/evidence/AB6M-gate/negative-controls.sh`
-- `orchestrator/evidence/AB6M.json`
-- `orchestrator/evidence/AB6P-gate/gate.sh`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/00-install-local.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/00-sha.txt`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/01-install.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/02-check-react-types.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/03-lint.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/04-typecheck.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/05-criterion-suites.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/06-jest-full.log.gz`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/06-jest-full.summary.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/06-prepare.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/06b-handoff-check.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/07-manifest-unchanged.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/08-approval-null.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/09-git-diff-check.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/10-git-status.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/10b-install-local.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/11-negative-controls.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/12-git-status-final.log`
-- `orchestrator/evidence/AB6P-gate/logs-92aaa1c1/exits.txt`
-- `orchestrator/evidence/AB6P-gate/negative-controls.sh`
-- `orchestrator/evidence/AB6P-notifications/00-plan.json`
-- `orchestrator/evidence/AB6P-notifications/01-precondition-check-only.json`
-- `orchestrator/evidence/AB6P-notifications/01-precondition.json`
-- `orchestrator/evidence/AB6P-notifications/02-backup.json`
-- `orchestrator/evidence/AB6P-notifications/03-apply.json`
-- `orchestrator/evidence/AB6P-notifications/03-apply.sql`
-- `orchestrator/evidence/AB6P-notifications/04-postcondition.json`
-- `orchestrator/evidence/AB6P-notifications/applied.json`
-- `orchestrator/evidence/AB6P-notifications/read-first.json`
-- `orchestrator/evidence/AB6P-notifications/verdict.json`
-- `orchestrator/evidence/AB6P-tooling/apply.mjs`
-- `orchestrator/evidence/AB6P-tooling/jsonb_md5.py`
-- `orchestrator/evidence/AB6P.json`
-- `orchestrator/evidence/C01-baseline.txt`
-- `orchestrator/evidence/C01-gate/baseline/01-install.log`
-- `orchestrator/evidence/C01-gate/baseline/02-check-react-types.log`
-- `orchestrator/evidence/C01-gate/baseline/03-lint.log`
-- `orchestrator/evidence/C01-gate/baseline/04-typecheck.log`
-- `orchestrator/evidence/C01-gate/baseline/05-jest-milesign.log`
-- `orchestrator/evidence/C01-gate/baseline/06-scripts-test.log`
-- `orchestrator/evidence/C01-gate/baseline/07-build.log`
-- `orchestrator/evidence/C01-gate/baseline/08-git-diff-check.log`
-- `orchestrator/evidence/C01-gate/baseline/09-git-status.log`
-- `orchestrator/evidence/C01-gate/baseline/10-database-gate.log`
-- `orchestrator/evidence/C01-gate/baseline/env.txt`
-- `orchestrator/evidence/C01-gate/baseline/exits.txt`
-- `orchestrator/evidence/C01-gate/reviewed/01-install.log`
-- `orchestrator/evidence/C01-gate/reviewed/02-check-react-types.log`
-- `orchestrator/evidence/C01-gate/reviewed/03-lint.log`
-- `orchestrator/evidence/C01-gate/reviewed/04-typecheck.log`
-- `orchestrator/evidence/C01-gate/reviewed/05-jest-milesign.log`
-- `orchestrator/evidence/C01-gate/reviewed/06-scripts-test.log`
-- `orchestrator/evidence/C01-gate/reviewed/07-build.log`
-- `orchestrator/evidence/C01-gate/reviewed/08-git-diff-check.log`
-- `orchestrator/evidence/C01-gate/reviewed/09-git-status.log`
-- `orchestrator/evidence/C01-gate/reviewed/10-database-gate.log`
-- `orchestrator/evidence/C01-gate/reviewed/env.txt`
-- `orchestrator/evidence/C01-gate/reviewed/exits.txt`
-- `orchestrator/evidence/C01-mutations/mutate.sh`
-- `orchestrator/evidence/C01-mutations/results-round2.txt`
-- `orchestrator/evidence/C01-mutations/results-round3.txt`
-- `orchestrator/evidence/C01-mutations/results.txt`
-- `orchestrator/evidence/C01.json`
-- `orchestrator/evidence/C02-fix1-node24/00-gate-stdout.txt`
-- `orchestrator/evidence/C02-fix1-node24/00-run-header.txt`
-- `orchestrator/evidence/C02-fix1-node24/01-install.log`
-- `orchestrator/evidence/C02-fix1-node24/02-react-types.log`
-- `orchestrator/evidence/C02-fix1-node24/03-lint.log`
-- `orchestrator/evidence/C02-fix1-node24/04-typecheck.log`
-- `orchestrator/evidence/C02-fix1-node24/05-jest-full.log`
-- `orchestrator/evidence/C02-fix1-node24/90-req-156-at-base-node24.log`
-- `orchestrator/evidence/C02-fix1-node24/91-req-156-at-base-node22.log`
-- `orchestrator/evidence/C02-fix1-node24/README.txt`
-- `orchestrator/evidence/C02-fix1-node24/exits.txt`
-- `orchestrator/evidence/C02-fix1-node24/smoke-criterion-suites.log`
-- `orchestrator/evidence/C02-fix1/00-run-header.txt`
-- `orchestrator/evidence/C02-fix1/01-install.log`
-- `orchestrator/evidence/C02-fix1/02-react-types.log`
-- `orchestrator/evidence/C02-fix1/03-lint.log`
-- `orchestrator/evidence/C02-fix1/04-typecheck.log`
-- `orchestrator/evidence/C02-fix1/05-jest-full.log`
-- `orchestrator/evidence/C02-fix1/06-scripts-test.log`
-- `orchestrator/evidence/C02-fix1/07-build.log`
-- `orchestrator/evidence/C02-fix1/08-git-diff-check.log`
-- `orchestrator/evidence/C02-fix1/09-git-status.log`
-- `orchestrator/evidence/C02-fix1/10-criterion-suites.log`
-- `orchestrator/evidence/C02-fix1/11-provenance-base.log`
-- `orchestrator/evidence/C02-fix1/12-provenance-last.log`
-- `orchestrator/evidence/C02-fix1/exits.txt`
-- `orchestrator/evidence/C02-fix1/gate.sh`
-- `orchestrator/evidence/C02.json`
-- `orchestrator/evidence/C03-gate/01-first-run-failing.log`
-- `orchestrator/evidence/C03-gate/02-lint.log`
-- `orchestrator/evidence/C03-gate/03-typecheck.log`
-- `orchestrator/evidence/C03-gate/04-jest-milesign.log`
-- `orchestrator/evidence/C03-gate/05-gate-part1.log`
-- `orchestrator/evidence/C03-gate/06-gate-part2.log`
-- `orchestrator/evidence/C03-gate/07-build.log`
-- `orchestrator/evidence/C03-gate/08-criterion-suites.log`
-- `orchestrator/evidence/C03-gate/merge-0686889/01-static.log`
-- `orchestrator/evidence/C03-gate/merge-0686889/02-jest-full.log`
-- `orchestrator/evidence/C03-gate/merge-0686889/03-scripts-test.log`
-- `orchestrator/evidence/C03-gate/merge-0686889/04-build.log`
-- `orchestrator/evidence/C03-gate/merge-0686889/05-criterion-suites.log`
-- `orchestrator/evidence/C03-gate/merge-28535a7/01-static.log`
-- `orchestrator/evidence/C03-gate/merge-28535a7/02-jest-full.log`
-- `orchestrator/evidence/C03-gate/merge-28535a7/03-scripts-test.log`
-- `orchestrator/evidence/C03-gate/merge-28535a7/04-build.log`
-- `orchestrator/evidence/C03-gate/merge-28535a7/05-criterion-suites.log`
-- `orchestrator/evidence/C03-gate/merge-f1c0f39/01-static.log`
-- `orchestrator/evidence/C03-gate/merge-f1c0f39/02-jest-full.log`
-- `orchestrator/evidence/C03-gate/merge-f1c0f39/03-scripts-test.log`
-- `orchestrator/evidence/C03-gate/merge-f1c0f39/04-build.log`
-- `orchestrator/evidence/C03-rerun-gate/00-regression-first-runs.md`
-- `orchestrator/evidence/C03-rerun-gate/00-sha.txt`
-- `orchestrator/evidence/C03-rerun-gate/01-install.log`
-- `orchestrator/evidence/C03-rerun-gate/02-check-react-types.log`
-- `orchestrator/evidence/C03-rerun-gate/03-lint.log`
-- `orchestrator/evidence/C03-rerun-gate/04-typecheck.log`
-- `orchestrator/evidence/C03-rerun-gate/05-jest-full.log`
-- `orchestrator/evidence/C03-rerun-gate/06-scripts-test.log`
-- `orchestrator/evidence/C03-rerun-gate/07-build.log`
-- `orchestrator/evidence/C03-rerun-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C03-rerun-gate/09-git-status.log`
-- `orchestrator/evidence/C03-rerun-gate/exits.txt`
-- `orchestrator/evidence/C03.json`
-- `orchestrator/evidence/C04-gate/CI-true-pnpm-install---frozen-lockfile-.log`
-- `orchestrator/evidence/C04-gate/build.log`
-- `orchestrator/evidence/C04-gate/jest-full.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/00-sha.txt`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/01-install.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/02-check-react-types.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/03-lint.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/04-typecheck-after-build.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/04-typecheck.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/05-jest-full.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/05a-jest-full-first-run-under-contention.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/06-scripts-test.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/07-build.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/08-git-diff-check.log`
-- `orchestrator/evidence/C04-gate/merge-bb9e158/09-req-156-fails-at-the-integration-head-too.log`
-- `orchestrator/evidence/C04-gate/pnpm---filter--workspace-milesign-run-lint-.log`
-- `orchestrator/evidence/C04-gate/pnpm-run-check-react-types-.log`
-- `orchestrator/evidence/C04-gate/pnpm-run-typecheck-.log`
-- `orchestrator/evidence/C04-gate/scripts-test.log`
-- `orchestrator/evidence/C04-gate/typecheck-after-build.log`
-- `orchestrator/evidence/C04-integration/01-install-after-u09.log`
-- `orchestrator/evidence/C04-integration/01-install.log`
-- `orchestrator/evidence/C04-integration/02-react-after-u09.log`
-- `orchestrator/evidence/C04-integration/02-react.log`
-- `orchestrator/evidence/C04-integration/03-lint-after-u09.log`
-- `orchestrator/evidence/C04-integration/03-lint.log`
-- `orchestrator/evidence/C04-integration/04-typecheck-after-u09.log`
-- `orchestrator/evidence/C04-integration/04-typecheck.log`
-- `orchestrator/evidence/C04-integration/04a-typecheck-nonstrict-after-u09.log`
-- `orchestrator/evidence/C04-integration/04b-typecheck-strict-after-u09.log`
-- `orchestrator/evidence/C04-integration/05b-targeted.env`
-- `orchestrator/evidence/C04-integration/05b-targeted.log`
-- `orchestrator/evidence/C04-integration/05c-targeted-after-u09.log`
-- `orchestrator/evidence/C04-integration/06-scripts-after-u09.log`
-- `orchestrator/evidence/C04-integration/07-build-after-u09.log`
-- `orchestrator/evidence/C04-integration/08-diff-after-u09.log`
-- `orchestrator/evidence/C04-integration/env-after-u09.txt`
-- `orchestrator/evidence/C04-integration/env.txt`
-- `orchestrator/evidence/C04-integration/gate-c04.sh.txt`
-- `orchestrator/evidence/C04-integration/summary.txt`
-- `orchestrator/evidence/C04.json`
-- `orchestrator/evidence/C05-fix1-gate/00-sha.txt`
-- `orchestrator/evidence/C05-fix1-gate/01-install.log`
-- `orchestrator/evidence/C05-fix1-gate/02-check-react-types.log`
-- `orchestrator/evidence/C05-fix1-gate/03-lint.log`
-- `orchestrator/evidence/C05-fix1-gate/04-typecheck.log`
-- `orchestrator/evidence/C05-fix1-gate/05-jest-full.log`
-- `orchestrator/evidence/C05-fix1-gate/06-scripts-test.log`
-- `orchestrator/evidence/C05-fix1-gate/07-build.log`
-- `orchestrator/evidence/C05-fix1-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C05-fix1-gate/09-git-status.log`
-- `orchestrator/evidence/C05-fix1-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C05-fix1-gate/11-provenance.log`
-- `orchestrator/evidence/C05-fix1-gate/criterion.json`
-- `orchestrator/evidence/C05-fix1-gate/exits.txt`
-- `orchestrator/evidence/C05-fix1-gate/gate.sh`
-- `orchestrator/evidence/C05-fix2-gate/00-sha.txt`
-- `orchestrator/evidence/C05-fix2-gate/01-install.log`
-- `orchestrator/evidence/C05-fix2-gate/02-check-react-types.log`
-- `orchestrator/evidence/C05-fix2-gate/03-lint.log`
-- `orchestrator/evidence/C05-fix2-gate/04-typecheck.log`
-- `orchestrator/evidence/C05-fix2-gate/05-jest-full.log`
-- `orchestrator/evidence/C05-fix2-gate/06-scripts-test.log`
-- `orchestrator/evidence/C05-fix2-gate/07-build.log`
-- `orchestrator/evidence/C05-fix2-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C05-fix2-gate/09-git-status.log`
-- `orchestrator/evidence/C05-fix2-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C05-fix2-gate/11-provenance.log`
-- `orchestrator/evidence/C05-fix2-gate/criterion.json`
-- `orchestrator/evidence/C05-fix2-gate/exits.txt`
-- `orchestrator/evidence/C05-fix2-gate/gate.sh`
-- `orchestrator/evidence/C05-gate/00-sha.txt`
-- `orchestrator/evidence/C05-gate/01-install.log`
-- `orchestrator/evidence/C05-gate/02-check-react-types.log`
-- `orchestrator/evidence/C05-gate/03-lint.log`
-- `orchestrator/evidence/C05-gate/04-typecheck.log`
-- `orchestrator/evidence/C05-gate/05-jest-full.log`
-- `orchestrator/evidence/C05-gate/06-scripts-test.log`
-- `orchestrator/evidence/C05-gate/07-build.log`
-- `orchestrator/evidence/C05-gate/08-tree.log`
-- `orchestrator/evidence/C05-gate/09-criterion-suites.log`
-- `orchestrator/evidence/C05-gate/10-provenance.log`
-- `orchestrator/evidence/C05.json`
-- `orchestrator/evidence/C06-fix1-gate/00-context.log`
-- `orchestrator/evidence/C06-fix1-gate/01.log`
-- `orchestrator/evidence/C06-fix1-gate/02.log`
-- `orchestrator/evidence/C06-fix1-gate/03.log`
-- `orchestrator/evidence/C06-fix1-gate/04.log`
-- `orchestrator/evidence/C06-fix1-gate/05.log`
-- `orchestrator/evidence/C06-fix1-gate/06.log`
-- `orchestrator/evidence/C06-fix1-gate/07.log`
-- `orchestrator/evidence/C06-fix1-gate/08.log`
-- `orchestrator/evidence/C06-fix1-gate/09.log`
-- `orchestrator/evidence/C06-fix1-gate/controller-core-4af25cb.log`
-- `orchestrator/evidence/C06-fix1-gate/criterion-suites.log`
-- `orchestrator/evidence/C06-fix1-gate/jest-full-4af25cb.log`
-- `orchestrator/evidence/C06-fix1-gate/negative-control.log`
-- `orchestrator/evidence/C06-fix1-gate/summary.log`
-- `orchestrator/evidence/C06-gate/00-context.log`
-- `orchestrator/evidence/C06-gate/01-install.log`
-- `orchestrator/evidence/C06-gate/02-check-react-types.log`
-- `orchestrator/evidence/C06-gate/03-lint.log`
-- `orchestrator/evidence/C06-gate/04-typecheck.log`
-- `orchestrator/evidence/C06-gate/05-jest-full.log`
-- `orchestrator/evidence/C06-gate/06-scripts-test.log`
-- `orchestrator/evidence/C06-gate/07-build.log`
-- `orchestrator/evidence/C06-gate/08-tree.log`
-- `orchestrator/evidence/C06-gate/09-criterion-suites.log`
-- `orchestrator/evidence/C06-gate/10-provenance.log`
-- `orchestrator/evidence/C06.json`
-- `orchestrator/evidence/C07-baseline.txt`
-- `orchestrator/evidence/C07-gate-jest.txt`
-- `orchestrator/evidence/C07.json`
-- `orchestrator/evidence/C08-fix1-gate/00-context.log`
-- `orchestrator/evidence/C08-fix1-gate/01.log`
-- `orchestrator/evidence/C08-fix1-gate/02.log`
-- `orchestrator/evidence/C08-fix1-gate/03.log`
-- `orchestrator/evidence/C08-fix1-gate/04.log`
-- `orchestrator/evidence/C08-fix1-gate/05.log`
-- `orchestrator/evidence/C08-fix1-gate/06.log`
-- `orchestrator/evidence/C08-fix1-gate/07.log`
-- `orchestrator/evidence/C08-fix1-gate/08.log`
-- `orchestrator/evidence/C08-fix1-gate/09.log`
-- `orchestrator/evidence/C08-fix1-gate/criterion-req-106.log`
-- `orchestrator/evidence/C08-fix1-gate/criterion-req-94.log`
-- `orchestrator/evidence/C08-fix1-gate/summary.log`
-- `orchestrator/evidence/C08-fix2-gate/01-install.log`
-- `orchestrator/evidence/C08-fix2-gate/02-check-react-types.log`
-- `orchestrator/evidence/C08-fix2-gate/03-lint.log`
-- `orchestrator/evidence/C08-fix2-gate/04-typecheck.log`
-- `orchestrator/evidence/C08-fix2-gate/05-jest-milesign.log`
-- `orchestrator/evidence/C08-fix2-gate/06-scripts-test.log`
-- `orchestrator/evidence/C08-fix2-gate/07-build.log`
-- `orchestrator/evidence/C08-fix2-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C08-fix2-gate/09-git-status-clean.log`
-- `orchestrator/evidence/C08-fix2-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C08-fix2-gate/env.txt`
-- `orchestrator/evidence/C08-fix2-gate/exits.txt`
-- `orchestrator/evidence/C08-fix3-gate/01-install.log`
-- `orchestrator/evidence/C08-fix3-gate/02-check-react-types.log`
-- `orchestrator/evidence/C08-fix3-gate/03-lint.log`
-- `orchestrator/evidence/C08-fix3-gate/04-typecheck.log`
-- `orchestrator/evidence/C08-fix3-gate/05-jest-milesign.log`
-- `orchestrator/evidence/C08-fix3-gate/06-scripts-test.log`
-- `orchestrator/evidence/C08-fix3-gate/07-build.log`
-- `orchestrator/evidence/C08-fix3-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C08-fix3-gate/09-git-status-clean.log`
-- `orchestrator/evidence/C08-fix3-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C08-fix3-gate/env.txt`
-- `orchestrator/evidence/C08-fix3-gate/exits.txt`
-- `orchestrator/evidence/C08-fix4-gate/01-install.log`
-- `orchestrator/evidence/C08-fix4-gate/02-check-react-types.log`
-- `orchestrator/evidence/C08-fix4-gate/03-lint.log`
-- `orchestrator/evidence/C08-fix4-gate/04-typecheck.log`
-- `orchestrator/evidence/C08-fix4-gate/05-jest-milesign.log`
-- `orchestrator/evidence/C08-fix4-gate/06-scripts-test.log`
-- `orchestrator/evidence/C08-fix4-gate/07-build.log`
-- `orchestrator/evidence/C08-fix4-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C08-fix4-gate/09-git-status-clean.log`
-- `orchestrator/evidence/C08-fix4-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C08-fix4-gate/env.txt`
-- `orchestrator/evidence/C08-fix4-gate/exits.txt`
-- `orchestrator/evidence/C08-fix5-gate/01-install.log`
-- `orchestrator/evidence/C08-fix5-gate/02-check-react-types.log`
-- `orchestrator/evidence/C08-fix5-gate/03-lint.log`
-- `orchestrator/evidence/C08-fix5-gate/04-typecheck.log`
-- `orchestrator/evidence/C08-fix5-gate/05-jest-milesign.log`
-- `orchestrator/evidence/C08-fix5-gate/06-scripts-test.log`
-- `orchestrator/evidence/C08-fix5-gate/07-build.log`
-- `orchestrator/evidence/C08-fix5-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C08-fix5-gate/09-git-status-clean.log`
-- `orchestrator/evidence/C08-fix5-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C08-fix5-gate/env.txt`
-- `orchestrator/evidence/C08-fix5-gate/exits.txt`
-- `orchestrator/evidence/C08-fix6-gate/01-install.log`
-- `orchestrator/evidence/C08-fix6-gate/02-check-react-types.log`
-- `orchestrator/evidence/C08-fix6-gate/03-lint.log`
-- `orchestrator/evidence/C08-fix6-gate/04-typecheck.log`
-- `orchestrator/evidence/C08-fix6-gate/05-jest-milesign.log`
-- `orchestrator/evidence/C08-fix6-gate/06-scripts-test.log`
-- `orchestrator/evidence/C08-fix6-gate/07-build.log`
-- `orchestrator/evidence/C08-fix6-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C08-fix6-gate/09-git-status-clean.log`
-- `orchestrator/evidence/C08-fix6-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C08-fix6-gate/env.txt`
-- `orchestrator/evidence/C08-fix6-gate/exits.txt`
-- `orchestrator/evidence/C08-fix7-gate/01-install.log`
-- `orchestrator/evidence/C08-fix7-gate/02-check-react-types.log`
-- `orchestrator/evidence/C08-fix7-gate/03-lint.log`
-- `orchestrator/evidence/C08-fix7-gate/04-typecheck.log`
-- `orchestrator/evidence/C08-fix7-gate/05-jest-milesign.log`
-- `orchestrator/evidence/C08-fix7-gate/06-scripts-test.log`
-- `orchestrator/evidence/C08-fix7-gate/07-build.log`
-- `orchestrator/evidence/C08-fix7-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C08-fix7-gate/09-git-status-clean.log`
-- `orchestrator/evidence/C08-fix7-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C08-fix7-gate/env.txt`
-- `orchestrator/evidence/C08-fix7-gate/exits.txt`
-- `orchestrator/evidence/C08-merge-gate/01-install.log`
-- `orchestrator/evidence/C08-merge-gate/02-check-react-types.log`
-- `orchestrator/evidence/C08-merge-gate/03-lint.log`
-- `orchestrator/evidence/C08-merge-gate/04-typecheck.log`
-- `orchestrator/evidence/C08-merge-gate/05-jest-milesign.log`
-- `orchestrator/evidence/C08-merge-gate/06-scripts-test.log`
-- `orchestrator/evidence/C08-merge-gate/07-build.log`
-- `orchestrator/evidence/C08-merge-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C08-merge-gate/09-git-status-clean.log`
-- `orchestrator/evidence/C08-merge-gate/10-criterion-suites.log`
-- `orchestrator/evidence/C08-merge-gate/env.txt`
-- `orchestrator/evidence/C08-merge-gate/exits.txt`
-- `orchestrator/evidence/C08-review-fix/01-req-106-before-fix.log`
-- `orchestrator/evidence/C08-review-fix/02-req-106-after-fix.log`
-- `orchestrator/evidence/C08-review-fix/03-req-106-before-fix2.log`
-- `orchestrator/evidence/C08-review-fix/04-probe.js`
-- `orchestrator/evidence/C08-review-fix/04-server-rule-probe-before-after-fix2.log`
-- `orchestrator/evidence/C08-review-fix/05-req-106-before-fix3.log`
-- `orchestrator/evidence/C08-review-fix/06-probe.js`
-- `orchestrator/evidence/C08-review-fix/06-server-rule-probe-before-after-fix3.log`
-- `orchestrator/evidence/C08-review-fix/07-req-106-before-fix4.log`
-- `orchestrator/evidence/C08-review-fix/08-probe.js`
-- `orchestrator/evidence/C08-review-fix/08-server-rule-probe-before-after-fix4.log`
-- `orchestrator/evidence/C08-review-fix/09-req-106-before-fix5.log`
-- `orchestrator/evidence/C08-review-fix/10-probe.js`
-- `orchestrator/evidence/C08-review-fix/10-server-rule-probe-before-after-fix5.log`
-- `orchestrator/evidence/C08-review-fix/11-req-106-before-fix6.log`
-- `orchestrator/evidence/C08-review-fix/12-probe.js`
-- `orchestrator/evidence/C08-review-fix/12-server-rule-probe-before-after-fix6.log`
-- `orchestrator/evidence/C08-review-fix/13-req-106-before-fix7.log`
-- `orchestrator/evidence/C08-review-fix/14-probe.js`
-- `orchestrator/evidence/C08-review-fix/14-server-rule-probe-before-after-fix7.log`
-- `orchestrator/evidence/C08.json`
-- `orchestrator/evidence/C09-gate/00-exit-codes.txt`
-- `orchestrator/evidence/C09-gate/00-sha.txt`
-- `orchestrator/evidence/C09-gate/01-install.log`
-- `orchestrator/evidence/C09-gate/02-check-react-types.log`
-- `orchestrator/evidence/C09-gate/03-lint.log`
-- `orchestrator/evidence/C09-gate/04-typecheck.log`
-- `orchestrator/evidence/C09-gate/05-jest-full.log`
-- `orchestrator/evidence/C09-gate/06-scripts-test.log`
-- `orchestrator/evidence/C09-gate/07-build.log`
-- `orchestrator/evidence/C09-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C09-gate/09-git-status.log`
-- `orchestrator/evidence/C09-gate/10-android-export.log`
-- `orchestrator/evidence/C09-gate/13-criterion-suites.log`
-- `orchestrator/evidence/C09.json`
-- `orchestrator/evidence/C10-fix1/00-req-37-fails-without-the-migration.log`
-- `orchestrator/evidence/C10-fix1/00-sha.txt`
-- `orchestrator/evidence/C10-fix1/01-req-45-fails-with-the-retaining-purge.log`
-- `orchestrator/evidence/C10-fix1/01a-tree-restored.txt`
-- `orchestrator/evidence/C10-fix1/02-install.log`
-- `orchestrator/evidence/C10-fix1/03-check-react-types.log`
-- `orchestrator/evidence/C10-fix1/04-lint.log`
-- `orchestrator/evidence/C10-fix1/05-typecheck.log`
-- `orchestrator/evidence/C10-fix1/06-jest-full.log`
-- `orchestrator/evidence/C10-fix1/07-scripts-test.log`
-- `orchestrator/evidence/C10-fix1/08-build.log`
-- `orchestrator/evidence/C10-fix1/09-git-diff-check.log`
-- `orchestrator/evidence/C10-fix1/10-criterion-suites.log`
-- `orchestrator/evidence/C10-fix1/11-git-status-short.log`
-- `orchestrator/evidence/C10-fix1/12-git-status-final.txt`
-- `orchestrator/evidence/C10-fix1/13-workflow-implementation-gate.log`
-- `orchestrator/evidence/C10-fix1/14-why-the-workflow-gate-failed.txt`
-- `orchestrator/evidence/C10-fix1/15-git-diff-check-main-is-inherited.txt`
-- `orchestrator/evidence/C10-fix1/16-git-status-final.txt`
-- `orchestrator/evidence/C10-fix1/exits.txt`
-- `orchestrator/evidence/C10-fix10/00-req-37-fails-with-the-five-id-list.log`
-- `orchestrator/evidence/C10-fix10/01-both-rules-classify-identically.txt`
-- `orchestrator/evidence/C10-fix10/10-sha.txt`
-- `orchestrator/evidence/C10-fix10/11-install.log`
-- `orchestrator/evidence/C10-fix10/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix10/13-lint.log`
-- `orchestrator/evidence/C10-fix10/14-typecheck.log`
-- `orchestrator/evidence/C10-fix10/15-jest-full.log`
-- `orchestrator/evidence/C10-fix10/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix10/17-build.log`
-- `orchestrator/evidence/C10-fix10/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix10/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix10/20-provenance.txt`
-- `orchestrator/evidence/C10-fix10/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix10/exits.txt`
-- `orchestrator/evidence/C10-fix11/00-req-37-fails-when-writes-are-counted-not-hashed.log`
-- `orchestrator/evidence/C10-fix11/01-req-37-fails-without-the-revoke-migration.log`
-- `orchestrator/evidence/C10-fix11/02-req-37-fails-when-person-slots-get-a-project-id.log`
-- `orchestrator/evidence/C10-fix11/03-tree-restored.txt`
-- `orchestrator/evidence/C10-fix11/10-sha.txt`
-- `orchestrator/evidence/C10-fix11/11-install.log`
-- `orchestrator/evidence/C10-fix11/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix11/13-lint.log`
-- `orchestrator/evidence/C10-fix11/14-typecheck.log`
-- `orchestrator/evidence/C10-fix11/15-jest-full.log`
-- `orchestrator/evidence/C10-fix11/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix11/17-build.log`
-- `orchestrator/evidence/C10-fix11/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix11/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix11/20-provenance.txt`
-- `orchestrator/evidence/C10-fix11/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix11/exits.txt`
-- `orchestrator/evidence/C10-fix12/00-req-37-fails-without-the-own-project-control.log`
-- `orchestrator/evidence/C10-fix12/01-req-37-fails-without-the-seeded-entity-kinds.log`
-- `orchestrator/evidence/C10-fix12/02-tree-restored.txt`
-- `orchestrator/evidence/C10-fix12/10-sha.txt`
-- `orchestrator/evidence/C10-fix12/11-install.log`
-- `orchestrator/evidence/C10-fix12/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix12/13-lint.log`
-- `orchestrator/evidence/C10-fix12/14-typecheck.log`
-- `orchestrator/evidence/C10-fix12/15-jest-full.log`
-- `orchestrator/evidence/C10-fix12/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix12/17-build.log`
-- `orchestrator/evidence/C10-fix12/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix12/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix12/20-provenance.txt`
-- `orchestrator/evidence/C10-fix12/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix12/exits.txt`
-- `orchestrator/evidence/C10-fix13/00-req-37-fails-without-the-null-safe-predicate.log`
-- `orchestrator/evidence/C10-fix13/01-req-37-fails-when-the-revoked-inventory-is-hand-written.log`
-- `orchestrator/evidence/C10-fix13/02-req-37-fails-without-the-ai-chain-and-the-organization.log`
-- `orchestrator/evidence/C10-fix13/03-tree-restored.txt`
-- `orchestrator/evidence/C10-fix13/10-sha.txt`
-- `orchestrator/evidence/C10-fix13/11-install.log`
-- `orchestrator/evidence/C10-fix13/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix13/13-lint.log`
-- `orchestrator/evidence/C10-fix13/14-typecheck.log`
-- `orchestrator/evidence/C10-fix13/15-jest-full.log`
-- `orchestrator/evidence/C10-fix13/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix13/17-build.log`
-- `orchestrator/evidence/C10-fix13/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix13/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix13/20-provenance.txt`
-- `orchestrator/evidence/C10-fix13/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix13/exits.txt`
-- `orchestrator/evidence/C10-fix14/00-req-37-fails-without-the-caller-check-on-interaction-work-state.log`
-- `orchestrator/evidence/C10-fix14/01-req-37-fails-when-the-refusal-rule-ignores-the-return-type.log`
-- `orchestrator/evidence/C10-fix14/02-tree-restored.txt`
-- `orchestrator/evidence/C10-fix14/10-sha.txt`
-- `orchestrator/evidence/C10-fix14/11-install.log`
-- `orchestrator/evidence/C10-fix14/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix14/13-lint.log`
-- `orchestrator/evidence/C10-fix14/14-typecheck.log`
-- `orchestrator/evidence/C10-fix14/15-jest-full.log`
-- `orchestrator/evidence/C10-fix14/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix14/17-build.log`
-- `orchestrator/evidence/C10-fix14/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix14/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix14/20-provenance.txt`
-- `orchestrator/evidence/C10-fix14/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix14/exits.txt`
-- `orchestrator/evidence/C10-fix3/00-req-45-fails-with-the-void-purge.log`
-- `orchestrator/evidence/C10-fix3/01-req-45-fails-without-the-purge-record.log`
-- `orchestrator/evidence/C10-fix3/02-req-37-fails-with-the-numeric-exclusion.log`
-- `orchestrator/evidence/C10-fix3/03-req-37-fails-with-the-banked-no-ops.log`
-- `orchestrator/evidence/C10-fix3/03a-tree-restored.txt`
-- `orchestrator/evidence/C10-fix3/10-sha.txt`
-- `orchestrator/evidence/C10-fix3/11-install.log`
-- `orchestrator/evidence/C10-fix3/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix3/13-lint.log`
-- `orchestrator/evidence/C10-fix3/14-typecheck.log`
-- `orchestrator/evidence/C10-fix3/15-jest-full.log`
-- `orchestrator/evidence/C10-fix3/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix3/17-build.log`
-- `orchestrator/evidence/C10-fix3/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix3/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix3/20-provenance.txt`
-- `orchestrator/evidence/C10-fix3/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix3/exits.txt`
-- `orchestrator/evidence/C10-fix4/00-req-45-fails-with-the-unawaited-startup-cleanup.log`
-- `orchestrator/evidence/C10-fix4/01-req-45-fails-with-the-racy-isLive.log`
-- `orchestrator/evidence/C10-fix4/02-both-fail-when-the-stored-session-overtakes.log`
-- `orchestrator/evidence/C10-fix4/02a-tree-restored.txt`
-- `orchestrator/evidence/C10-fix4/10-sha.txt`
-- `orchestrator/evidence/C10-fix4/11-install.log`
-- `orchestrator/evidence/C10-fix4/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix4/13-lint.log`
-- `orchestrator/evidence/C10-fix4/14-typecheck.log`
-- `orchestrator/evidence/C10-fix4/15-jest-full.log`
-- `orchestrator/evidence/C10-fix4/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix4/17-build.log`
-- `orchestrator/evidence/C10-fix4/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix4/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix4/20-provenance.txt`
-- `orchestrator/evidence/C10-fix4/22-git-status-final.txt`
-- `orchestrator/evidence/C10-fix4/exits.txt`
-- `orchestrator/evidence/C10-fix5/00-req-45-fails-when-the-purge-reports-success.log`
-- `orchestrator/evidence/C10-fix5/01-req-45-fails-when-the-gate-ignores-the-report.log`
-- `orchestrator/evidence/C10-fix5/01a-tree-restored.txt`
-- `orchestrator/evidence/C10-fix5/10-sha.txt`
-- `orchestrator/evidence/C10-fix5/11-install.log`
-- `orchestrator/evidence/C10-fix5/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix5/13-lint.log`
-- `orchestrator/evidence/C10-fix5/14-typecheck.log`
-- `orchestrator/evidence/C10-fix5/15-jest-full.log`
-- `orchestrator/evidence/C10-fix5/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix5/17-build.log`
-- `orchestrator/evidence/C10-fix5/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix5/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix5/20-provenance.txt`
-- `orchestrator/evidence/C10-fix5/22-git-status-final.txt`
-- `orchestrator/evidence/C10-fix5/exits.txt`
-- `orchestrator/evidence/C10-fix6/00-req-45-fails-when-unreadable-reads-as-empty.log`
-- `orchestrator/evidence/C10-fix6/01-req-45-fails-when-the-caller-drops-unknown.log`
-- `orchestrator/evidence/C10-fix6/02a-tree-restored.txt`
-- `orchestrator/evidence/C10-fix6/10-sha.txt`
-- `orchestrator/evidence/C10-fix6/11-install.log`
-- `orchestrator/evidence/C10-fix6/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix6/13-lint.log`
-- `orchestrator/evidence/C10-fix6/14-typecheck.log`
-- `orchestrator/evidence/C10-fix6/15-jest-full.log`
-- `orchestrator/evidence/C10-fix6/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix6/17-build.log`
-- `orchestrator/evidence/C10-fix6/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix6/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix6/20-provenance.txt`
-- `orchestrator/evidence/C10-fix6/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix6/exits.txt`
-- `orchestrator/evidence/C10-fix7/00-req-45-fails-when-a-failed-record-write-aborts-the-purge.log`
-- `orchestrator/evidence/C10-fix7/01-req-45-fails-when-only-the-record-is-consulted.log`
-- `orchestrator/evidence/C10-fix7/01a-tree-restored.txt`
-- `orchestrator/evidence/C10-fix7/02a-no-label-is-shadowed.txt`
-- `orchestrator/evidence/C10-fix7/10-sha.txt`
-- `orchestrator/evidence/C10-fix7/11-install.log`
-- `orchestrator/evidence/C10-fix7/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix7/13-lint.log`
-- `orchestrator/evidence/C10-fix7/14-typecheck.log`
-- `orchestrator/evidence/C10-fix7/15-jest-full.log`
-- `orchestrator/evidence/C10-fix7/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix7/17-build.log`
-- `orchestrator/evidence/C10-fix7/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix7/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix7/20-provenance.txt`
-- `orchestrator/evidence/C10-fix7/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix7/exits.txt`
-- `orchestrator/evidence/C10-fix8/00-req-37-fails-when-substantive-answers-count-as-refusals.log`
-- `orchestrator/evidence/C10-fix8/01a-claims-rederived.txt`
-- `orchestrator/evidence/C10-fix8/01b-tree-restored.txt`
-- `orchestrator/evidence/C10-fix8/10-sha.txt`
-- `orchestrator/evidence/C10-fix8/11-install.log`
-- `orchestrator/evidence/C10-fix8/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix8/13-lint.log`
-- `orchestrator/evidence/C10-fix8/14-typecheck.log`
-- `orchestrator/evidence/C10-fix8/15-jest-full.log`
-- `orchestrator/evidence/C10-fix8/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix8/17-build.log`
-- `orchestrator/evidence/C10-fix8/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix8/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix8/20-provenance.txt`
-- `orchestrator/evidence/C10-fix8/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix8/exits.txt`
-- `orchestrator/evidence/C10-fix9/00-req-37-fails-without-the-caller-checks.log`
-- `orchestrator/evidence/C10-fix9/01a-tree-restored.txt`
-- `orchestrator/evidence/C10-fix9/01b-classes-measured.txt`
-- `orchestrator/evidence/C10-fix9/02-req-133-fails-without-the-agreement-party-admission.log`
-- `orchestrator/evidence/C10-fix9/10-sha.txt`
-- `orchestrator/evidence/C10-fix9/11-install.log`
-- `orchestrator/evidence/C10-fix9/12-check-react-types.log`
-- `orchestrator/evidence/C10-fix9/13-lint.log`
-- `orchestrator/evidence/C10-fix9/14-typecheck.log`
-- `orchestrator/evidence/C10-fix9/15-jest-full.log`
-- `orchestrator/evidence/C10-fix9/16-scripts-test.log`
-- `orchestrator/evidence/C10-fix9/17-build.log`
-- `orchestrator/evidence/C10-fix9/18-git-diff-check.log`
-- `orchestrator/evidence/C10-fix9/19-criterion-suites.log`
-- `orchestrator/evidence/C10-fix9/20-provenance.txt`
-- `orchestrator/evidence/C10-fix9/21-git-status-final.txt`
-- `orchestrator/evidence/C10-fix9/exits.txt`
-- `orchestrator/evidence/C10-gate/00-regression-first-runs.md`
-- `orchestrator/evidence/C10-gate/00-sha.txt`
-- `orchestrator/evidence/C10-gate/01-install.log`
-- `orchestrator/evidence/C10-gate/02-check-react-types.log`
-- `orchestrator/evidence/C10-gate/03-lint.log`
-- `orchestrator/evidence/C10-gate/04-typecheck.log`
-- `orchestrator/evidence/C10-gate/05-jest-full.log`
-- `orchestrator/evidence/C10-gate/06-scripts-test.log`
-- `orchestrator/evidence/C10-gate/07-build.log`
-- `orchestrator/evidence/C10-gate/08-git-diff-check.log`
-- `orchestrator/evidence/C10-gate/09-git-status.log`
-- `orchestrator/evidence/C10-gate/exits.txt`
-- `orchestrator/evidence/C10-integration/01-install.log`
-- `orchestrator/evidence/C10-integration/02-react.log`
-- `orchestrator/evidence/C10-integration/03-lint.log`
-- `orchestrator/evidence/C10-integration/04-typecheck.log`
-- `orchestrator/evidence/C10-integration/05-jest-rerun.env`
-- `orchestrator/evidence/C10-integration/05-jest.log`
-- `orchestrator/evidence/C10-integration/06-scripts.log`
-- `orchestrator/evidence/C10-integration/07-build.log`
-- `orchestrator/evidence/C10-integration/08-diff.log`
-- `orchestrator/evidence/C10-integration/09-clean.log`
-- `orchestrator/evidence/C10-integration/10-req133-isolated.env`
-- `orchestrator/evidence/C10-integration/10-req133-isolated.log`
-- `orchestrator/evidence/C10-integration/env.txt`
-- `orchestrator/evidence/C10-integration/gate-c10-jest-attempt3.sh.txt`
-- `orchestrator/evidence/C10-integration/gate-c10.sh.txt`
-- `orchestrator/evidence/C10-integration/summary.txt`
-- `orchestrator/evidence/C10-ordering-contract.md`
-- `orchestrator/evidence/C10-provenance/00-provenance.txt`
-- `orchestrator/evidence/C10-provenance/01-criterion-suites-on-head.log`
-- `orchestrator/evidence/C10-unknown-is-not-clean.md`
-- `orchestrator/evidence/C10.json`
-- `orchestrator/evidence/D00-gate/00-sha.txt`
-- `orchestrator/evidence/D00-gate/01-install.log`
-- `orchestrator/evidence/D00-gate/02-check-react-types.log`
-- `orchestrator/evidence/D00-gate/03-lint.log`
-- `orchestrator/evidence/D00-gate/04-typecheck.log`
-- `orchestrator/evidence/D00-gate/05-jest-full.log`
-- `orchestrator/evidence/D00-gate/05b-handoff-check.log`
-- `orchestrator/evidence/D00-gate/06-scripts-test.log`
-- `orchestrator/evidence/D00-gate/07-build.log`
-- `orchestrator/evidence/D00-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D00-gate/08-git-diff-check.log`
-- `orchestrator/evidence/D00-gate/09-git-status.log`
-- `orchestrator/evidence/D00-gate/10-android-export.log`
-- `orchestrator/evidence/D00-gate/10b-localization.log`
-- `orchestrator/evidence/D00-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/D00-gate/11-criterion-suites.log`
-- `orchestrator/evidence/D00-gate/12-git-status-after.log`
-- `orchestrator/evidence/D00-gate/13-negative-controls.log`
-- `orchestrator/evidence/D00-gate/14-git-status-final.log`
-- `orchestrator/evidence/D00-gate/exits.txt`
-- `orchestrator/evidence/D00-gate/gate.sh`
-- `orchestrator/evidence/D00-gate/negative-controls.py`
-- `orchestrator/evidence/D00-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D00-gate/run1-oom/00-sha.txt`
-- `orchestrator/evidence/D00-gate/run1-oom/01-install.log`
-- `orchestrator/evidence/D00-gate/run1-oom/02-check-react-types.log`
-- `orchestrator/evidence/D00-gate/run1-oom/03-lint.log`
-- `orchestrator/evidence/D00-gate/run1-oom/04-typecheck.log`
-- `orchestrator/evidence/D00-gate/run1-oom/05-jest-full.log`
-- `orchestrator/evidence/D00-gate/run1-oom/05b-handoff-check.log`
-- `orchestrator/evidence/D00-gate/run1-oom/06-scripts-test.log`
-- `orchestrator/evidence/D00-gate/run1-oom/07-build.log`
-- `orchestrator/evidence/D00-gate/run1-oom/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D00-gate/run1-oom/08-git-diff-check.log`
-- `orchestrator/evidence/D00-gate/run1-oom/09-git-status.log`
-- `orchestrator/evidence/D00-gate/run1-oom/10-android-export.log`
-- `orchestrator/evidence/D00-gate/run1-oom/10b-localization.log`
-- `orchestrator/evidence/D00-gate/run1-oom/10c-no-schema-change.log`
-- `orchestrator/evidence/D00-gate/run1-oom/11-criterion-suites.log`
-- `orchestrator/evidence/D00-gate/run1-oom/12-git-status-after.log`
-- `orchestrator/evidence/D00-gate/run1-oom/13-negative-controls.log`
-- `orchestrator/evidence/D00-gate/run1-oom/14-git-status-final.log`
-- `orchestrator/evidence/D00-gate/run1-oom/exits.txt`
-- `orchestrator/evidence/D00.json`
-- `orchestrator/evidence/D01-gate/00-sha.txt`
-- `orchestrator/evidence/D01-gate/01-install.log`
-- `orchestrator/evidence/D01-gate/02-check-react-types.log`
-- `orchestrator/evidence/D01-gate/03-lint.log`
-- `orchestrator/evidence/D01-gate/04-typecheck.log`
-- `orchestrator/evidence/D01-gate/05-jest-full.log`
-- `orchestrator/evidence/D01-gate/05b-handoff-check.log`
-- `orchestrator/evidence/D01-gate/06-scripts-test.log`
-- `orchestrator/evidence/D01-gate/07-build.log`
-- `orchestrator/evidence/D01-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D01-gate/08-git-diff-check.log`
-- `orchestrator/evidence/D01-gate/09-git-status.log`
-- `orchestrator/evidence/D01-gate/10-android-export.log`
-- `orchestrator/evidence/D01-gate/10b-localization.log`
-- `orchestrator/evidence/D01-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/D01-gate/11-criterion-suites.log`
-- `orchestrator/evidence/D01-gate/12-git-status-after.log`
-- `orchestrator/evidence/D01-gate/13-negative-controls.log`
-- `orchestrator/evidence/D01-gate/14-git-status-final.log`
-- `orchestrator/evidence/D01-gate/exits.txt`
-- `orchestrator/evidence/D01-gate/gate.sh`
-- `orchestrator/evidence/D01-gate/inventory-added.json`
-- `orchestrator/evidence/D01-gate/negative-controls.py`
-- `orchestrator/evidence/D01-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D01.json`
-- `orchestrator/evidence/D02-gate/00-sha.txt`
-- `orchestrator/evidence/D02-gate/01-install.log`
-- `orchestrator/evidence/D02-gate/02-check-react-types.log`
-- `orchestrator/evidence/D02-gate/03-lint.log`
-- `orchestrator/evidence/D02-gate/04-typecheck.log`
-- `orchestrator/evidence/D02-gate/05-jest-full.log`
-- `orchestrator/evidence/D02-gate/05a-install-local.log`
-- `orchestrator/evidence/D02-gate/05b-handoff-check.log`
-- `orchestrator/evidence/D02-gate/05c-jest-shard-1-of-2.log`
-- `orchestrator/evidence/D02-gate/05d-jest-shard-2-of-2.log`
-- `orchestrator/evidence/D02-gate/06-scripts-test.log`
-- `orchestrator/evidence/D02-gate/07-build.log`
-- `orchestrator/evidence/D02-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D02-gate/08-git-diff-check.log`
-- `orchestrator/evidence/D02-gate/09-git-status.log`
-- `orchestrator/evidence/D02-gate/10-android-export.log`
-- `orchestrator/evidence/D02-gate/10b-localization.log`
-- `orchestrator/evidence/D02-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/D02-gate/11-criterion-suites.log`
-- `orchestrator/evidence/D02-gate/12-git-status-after.log`
-- `orchestrator/evidence/D02-gate/13-negative-controls.log`
-- `orchestrator/evidence/D02-gate/14-git-status-final.log`
-- `orchestrator/evidence/D02-gate/add-touch-floors.cjs`
-- `orchestrator/evidence/D02-gate/exits.txt`
-- `orchestrator/evidence/D02-gate/gate.sh`
-- `orchestrator/evidence/D02-gate/inventory-added.json`
-- `orchestrator/evidence/D02-gate/migrate-typography-spacing.cjs`
-- `orchestrator/evidence/D02-gate/negative-controls.py`
-- `orchestrator/evidence/D02-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D02.json`
-- `orchestrator/evidence/D03-gate/00-sha.txt`
-- `orchestrator/evidence/D03-gate/01-install.log`
-- `orchestrator/evidence/D03-gate/02-check-react-types.log`
-- `orchestrator/evidence/D03-gate/03-lint.log`
-- `orchestrator/evidence/D03-gate/04-typecheck.log`
-- `orchestrator/evidence/D03-gate/05-jest-full.log`
-- `orchestrator/evidence/D03-gate/05a-install-local.log`
-- `orchestrator/evidence/D03-gate/05b-handoff-check.log`
-- `orchestrator/evidence/D03-gate/05c-jest-shard-1-of-2.log`
-- `orchestrator/evidence/D03-gate/05d-jest-shard-2-of-2.log`
-- `orchestrator/evidence/D03-gate/06-scripts-test.log`
-- `orchestrator/evidence/D03-gate/07-build.log`
-- `orchestrator/evidence/D03-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D03-gate/08-git-diff-check.log`
-- `orchestrator/evidence/D03-gate/09-git-status.log`
-- `orchestrator/evidence/D03-gate/10-android-export.log`
-- `orchestrator/evidence/D03-gate/10b-localization.log`
-- `orchestrator/evidence/D03-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/D03-gate/11-criterion-suites.log`
-- `orchestrator/evidence/D03-gate/12-git-status-after.log`
-- `orchestrator/evidence/D03-gate/14-git-status-final.log`
-- `orchestrator/evidence/D03-gate/exits.txt`
-- `orchestrator/evidence/D03-gate/gate.sh`
-- `orchestrator/evidence/D03-gate/inventory-added.json`
-- `orchestrator/evidence/D03-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D03.json`
-- `orchestrator/evidence/D04-gate/00-sha.txt`
-- `orchestrator/evidence/D04-gate/01-install.log`
-- `orchestrator/evidence/D04-gate/02-check-react-types.log`
-- `orchestrator/evidence/D04-gate/03-lint.log`
-- `orchestrator/evidence/D04-gate/04-typecheck.log`
-- `orchestrator/evidence/D04-gate/05-jest-full.log`
-- `orchestrator/evidence/D04-gate/05a-install-local.log`
-- `orchestrator/evidence/D04-gate/05b-handoff-check.log`
-- `orchestrator/evidence/D04-gate/05c-jest-shard-1-of-2.log`
-- `orchestrator/evidence/D04-gate/05d-jest-shard-2-of-2.log`
-- `orchestrator/evidence/D04-gate/06-scripts-test.log`
-- `orchestrator/evidence/D04-gate/07-build.log`
-- `orchestrator/evidence/D04-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D04-gate/08-git-diff-check.log`
-- `orchestrator/evidence/D04-gate/09-git-status.log`
-- `orchestrator/evidence/D04-gate/10-android-export.log`
-- `orchestrator/evidence/D04-gate/10b-localization.log`
-- `orchestrator/evidence/D04-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/D04-gate/11-criterion-suites.log`
-- `orchestrator/evidence/D04-gate/11b-criterion-suites-d04.log`
-- `orchestrator/evidence/D04-gate/12-git-status-after.log`
-- `orchestrator/evidence/D04-gate/13-negative-controls.log`
-- `orchestrator/evidence/D04-gate/14-git-status-final.log`
-- `orchestrator/evidence/D04-gate/categorize-added.cjs`
-- `orchestrator/evidence/D04-gate/exits.txt`
-- `orchestrator/evidence/D04-gate/gate.sh`
-- `orchestrator/evidence/D04-gate/inventory-added.json`
-- `orchestrator/evidence/D04-gate/negative-controls.py`
-- `orchestrator/evidence/D04-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D04.json`
-- `orchestrator/evidence/D05-gate/00-sha.txt`
-- `orchestrator/evidence/D05-gate/01-install.log`
-- `orchestrator/evidence/D05-gate/02-check-react-types.log`
-- `orchestrator/evidence/D05-gate/03-lint.log`
-- `orchestrator/evidence/D05-gate/04-typecheck.log`
-- `orchestrator/evidence/D05-gate/05-jest-full.log`
-- `orchestrator/evidence/D05-gate/05a-install-local.log`
-- `orchestrator/evidence/D05-gate/05b-handoff-check.log`
-- `orchestrator/evidence/D05-gate/05c-jest-shard-1-of-2.log`
-- `orchestrator/evidence/D05-gate/05d-jest-shard-2-of-2.log`
-- `orchestrator/evidence/D05-gate/06-scripts-test.log`
-- `orchestrator/evidence/D05-gate/07-build.log`
-- `orchestrator/evidence/D05-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D05-gate/08-git-diff-check.log`
-- `orchestrator/evidence/D05-gate/09-git-status.log`
-- `orchestrator/evidence/D05-gate/10-android-export.log`
-- `orchestrator/evidence/D05-gate/10b-localization.log`
-- `orchestrator/evidence/D05-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/D05-gate/11-criterion-suites.log`
-- `orchestrator/evidence/D05-gate/11b-criterion-suites-d04.log`
-- `orchestrator/evidence/D05-gate/11c-criterion-suites-d05.log`
-- `orchestrator/evidence/D05-gate/12-git-status-after.log`
-- `orchestrator/evidence/D05-gate/14-git-status-final.log`
-- `orchestrator/evidence/D05-gate/exits.txt`
-- `orchestrator/evidence/D05-gate/gate.sh`
-- `orchestrator/evidence/D05-gate/inventory-added-review.json`
-- `orchestrator/evidence/D05-gate/inventory-added-review2.json`
-- `orchestrator/evidence/D05-gate/inventory-added.json`
-- `orchestrator/evidence/D05-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D05.json`
-- `orchestrator/evidence/D06-gate/00-sha.txt`
-- `orchestrator/evidence/D06-gate/01-install.log`
-- `orchestrator/evidence/D06-gate/02-check-react-types.log`
-- `orchestrator/evidence/D06-gate/03-lint.log`
-- `orchestrator/evidence/D06-gate/04-typecheck.log`
-- `orchestrator/evidence/D06-gate/05-jest-full.log`
-- `orchestrator/evidence/D06-gate/05a-install-local.log`
-- `orchestrator/evidence/D06-gate/05b-handoff-check.log`
-- `orchestrator/evidence/D06-gate/05c-jest-shard-1-of-2.log`
-- `orchestrator/evidence/D06-gate/05d-jest-shard-2-of-2.log`
-- `orchestrator/evidence/D06-gate/06-scripts-test.log`
-- `orchestrator/evidence/D06-gate/07-build.log`
-- `orchestrator/evidence/D06-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D06-gate/08-git-diff-check.log`
-- `orchestrator/evidence/D06-gate/09-git-status.log`
-- `orchestrator/evidence/D06-gate/10-android-export.log`
-- `orchestrator/evidence/D06-gate/10b-localization.log`
-- `orchestrator/evidence/D06-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/D06-gate/11-criterion-suites.log`
-- `orchestrator/evidence/D06-gate/11b-criterion-suites-d04.log`
-- `orchestrator/evidence/D06-gate/11c-criterion-suites-d05.log`
-- `orchestrator/evidence/D06-gate/11d-criterion-suites-d06.log`
-- `orchestrator/evidence/D06-gate/12-git-status-after.log`
-- `orchestrator/evidence/D06-gate/exits.txt`
-- `orchestrator/evidence/D06-gate/gate.sh`
-- `orchestrator/evidence/D06-gate/inventory-added-none.json`
-- `orchestrator/evidence/D06-gate/inventory-added.json`
-- `orchestrator/evidence/D06-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D06.json`
-- `orchestrator/evidence/D07-gate/00-sha.txt`
-- `orchestrator/evidence/D07-gate/01-install.log`
-- `orchestrator/evidence/D07-gate/02-check-react-types.log`
-- `orchestrator/evidence/D07-gate/03-lint.log`
-- `orchestrator/evidence/D07-gate/04-typecheck.log`
-- `orchestrator/evidence/D07-gate/05-jest-full.log`
-- `orchestrator/evidence/D07-gate/05a-install-local.log`
-- `orchestrator/evidence/D07-gate/05b-handoff-check.log`
-- `orchestrator/evidence/D07-gate/05c-jest-shard-1-of-2.log`
-- `orchestrator/evidence/D07-gate/05d-jest-shard-2-of-2.log`
-- `orchestrator/evidence/D07-gate/05e-jest-full-vps.log`
-- `orchestrator/evidence/D07-gate/05f-base-83009212-jest-full-vps.log`
-- `orchestrator/evidence/D07-gate/06-scripts-test.log`
-- `orchestrator/evidence/D07-gate/07-build.log`
-- `orchestrator/evidence/D07-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D07-gate/08-git-diff-check.log`
-- `orchestrator/evidence/D07-gate/09-git-status.log`
-- `orchestrator/evidence/D07-gate/10-android-export.log`
-- `orchestrator/evidence/D07-gate/10b-localization.log`
-- `orchestrator/evidence/D07-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/D07-gate/11-criterion-suites.log`
-- `orchestrator/evidence/D07-gate/11b-criterion-suites-d04.log`
-- `orchestrator/evidence/D07-gate/11c-criterion-suites-d05.log`
-- `orchestrator/evidence/D07-gate/11d-criterion-suites-d06.log`
-- `orchestrator/evidence/D07-gate/11e-criterion-suites-d07.log`
-- `orchestrator/evidence/D07-gate/12-git-status-after.log`
-- `orchestrator/evidence/D07-gate/controller-d65596df/android-export-d65596df51d7-1793520553879.log`
-- `orchestrator/evidence/D07-gate/controller-d65596df/core-d65596df51d7-1793520537477.log`
-- `orchestrator/evidence/D07-gate/controller-d65596df/localization-d65596df51d7-1793520590407.log`
-- `orchestrator/evidence/D07-gate/controller-d65596df/offline-d65596df51d7-1793520598606.log`
-- `orchestrator/evidence/D07-gate/exits.txt`
-- `orchestrator/evidence/D07-gate/final/00-sha.txt`
-- `orchestrator/evidence/D07-gate/final/01-install.log`
-- `orchestrator/evidence/D07-gate/final/03-lint.log`
-- `orchestrator/evidence/D07-gate/final/04-typecheck.log`
-- `orchestrator/evidence/D07-gate/final/11e-d07a1.log`
-- `orchestrator/evidence/D07-gate/final/exits.txt`
-- `orchestrator/evidence/D07-gate/gate-final.sh`
-- `orchestrator/evidence/D07-gate/gate.sh`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/00-sha.txt`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/01-install.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/02-check-react-types.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/03-lint.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/04-typecheck.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/05-jest-full.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/05a-install-local.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/05b-handoff-check.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/05c-jest-shard-1-of-2.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/05d-jest-shard-2-of-2.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/05e-jest-full-vps.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/06-scripts-test.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/07-build.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/07b-typecheck-after-build.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/08-git-diff-check.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/09-git-status.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/10-android-export.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/10b-localization.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/10c-no-schema-change.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/11-criterion-suites.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/11b-criterion-suites-d04.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/11c-criterion-suites-d05.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/11d-criterion-suites-d06.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/11e-criterion-suites-d07.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/12-git-status-after.log`
-- `orchestrator/evidence/D07-gate/gate4-d65596df/exits.txt`
-- `orchestrator/evidence/D07-gate/heap/d06-alone-before.log`
-- `orchestrator/evidence/D07-gate/heap/four-matrix-suites-after.log`
-- `orchestrator/evidence/D07-gate/heap/four-matrix-suites-before.log`
-- `orchestrator/evidence/D07-gate/heap/gate3-0cf1a8d6-05-jest-full-mac-oom.log`
-- `orchestrator/evidence/D07-gate/inventory-added-hooks.json`
-- `orchestrator/evidence/D07-gate/inventory-added-none.json`
-- `orchestrator/evidence/D07-gate/inventory-added.json`
-- `orchestrator/evidence/D07-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D07.json`
-- `orchestrator/evidence/D08-gate/gate.sh`
-- `orchestrator/evidence/D08-gate/inventory-added.json`
-- `orchestrator/evidence/D08-gate/negative-control-zero-amount.log`
-- `orchestrator/evidence/D08-gate/out/00-sha.txt`
-- `orchestrator/evidence/D08-gate/out/01-install.log`
-- `orchestrator/evidence/D08-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/D08-gate/out/03-lint.log`
-- `orchestrator/evidence/D08-gate/out/04-typecheck.log`
-- `orchestrator/evidence/D08-gate/out/05-jest-full.log`
-- `orchestrator/evidence/D08-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/D08-gate/out/05c-jest-killed-suite-runinband.log`
-- `orchestrator/evidence/D08-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/D08-gate/out/10b-localization.log`
-- `orchestrator/evidence/D08-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/D08-gate/out/11-d08a1.log`
-- `orchestrator/evidence/D08-gate/out/11b-media-offline.log`
-- `orchestrator/evidence/D08-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/D08-gate/out/exits.txt`
-- `orchestrator/evidence/D08-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D08.json`
-- `orchestrator/evidence/D09-gate/before-fix-redesign-d06-2026-11-02.log`
-- `orchestrator/evidence/D09-gate/gate.sh`
-- `orchestrator/evidence/D09-gate/inventory-added.json`
-- `orchestrator/evidence/D09-gate/out/00-sha.txt`
-- `orchestrator/evidence/D09-gate/out/01-install.log`
-- `orchestrator/evidence/D09-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/D09-gate/out/03-lint.log`
-- `orchestrator/evidence/D09-gate/out/04-typecheck.log`
-- `orchestrator/evidence/D09-gate/out/05-jest-full.log`
-- `orchestrator/evidence/D09-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/D09-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/D09-gate/out/10b-localization.log`
-- `orchestrator/evidence/D09-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/D09-gate/out/11-d09a1.log`
-- `orchestrator/evidence/D09-gate/out/11b-groups-and-accepted.log`
-- `orchestrator/evidence/D09-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/D09-gate/out/exits.txt`
-- `orchestrator/evidence/D09-gate/realign-inventory.cjs`
-- `orchestrator/evidence/D09.json`
-- `orchestrator/evidence/D09/mockup-colors.json`
-- `orchestrator/evidence/D09/mockup-colors.mjs`
-- `orchestrator/evidence/D09/web-shots/shoot.mjs`
-- `orchestrator/evidence/E01-baseline.txt`
-- `orchestrator/evidence/E01-gate/02-react-types.txt`
-- `orchestrator/evidence/E01-gate/03-lint.txt`
-- `orchestrator/evidence/E01-gate/04-typecheck.txt`
-- `orchestrator/evidence/E01-gate/05-jest.txt`
-- `orchestrator/evidence/E01-gate/06-scripts-test.txt`
-- `orchestrator/evidence/E01-gate/07-build.txt`
-- `orchestrator/evidence/E01.json`
-- `orchestrator/evidence/E02-baseline.txt`
-- `orchestrator/evidence/E02-gate/01-install.txt`
-- `orchestrator/evidence/E02-gate/02-react-types.txt`
-- `orchestrator/evidence/E02-gate/03-lint.txt`
-- `orchestrator/evidence/E02-gate/04-typecheck.txt`
-- `orchestrator/evidence/E02-gate/05-jest.txt`
-- `orchestrator/evidence/E02-gate/06-scripts-test.txt`
-- `orchestrator/evidence/E02-gate/07-build.txt`
-- `orchestrator/evidence/E02-gate/08-git.txt`
-- `orchestrator/evidence/E02.json`
-- `orchestrator/evidence/E03-baseline.txt`
-- `orchestrator/evidence/E03-gate/gate-1-6.txt`
-- `orchestrator/evidence/E03-gate/gate-1-7.txt`
-- `orchestrator/evidence/E03-gate/gate-7.txt`
-- `orchestrator/evidence/E03-gate/gate-8-9.txt`
-- `orchestrator/evidence/E03.json`
-- `orchestrator/evidence/E04-baseline.txt`
-- `orchestrator/evidence/E04-gate/README.txt`
-- `orchestrator/evidence/E04-gate/build.txt`
-- `orchestrator/evidence/E04-gate/gates-1-8.txt`
-- `orchestrator/evidence/E04-gate/jest.txt`
-- `orchestrator/evidence/E04.json`
-- `orchestrator/evidence/E05-gate/README.txt`
-- `orchestrator/evidence/E05-gate/build.txt`
-- `orchestrator/evidence/E05-gate/gates-1-8.txt`
-- `orchestrator/evidence/E05-gate/jest.txt`
-- `orchestrator/evidence/E05-gate/scripts-test.txt`
-- `orchestrator/evidence/E05.json`
-- `orchestrator/evidence/E06-baseline.txt`
-- `orchestrator/evidence/E06-gate/build.txt`
-- `orchestrator/evidence/E06-gate/git-diff-check.txt`
-- `orchestrator/evidence/E06-gate/head.txt`
-- `orchestrator/evidence/E06-gate/install.txt`
-- `orchestrator/evidence/E06-gate/jest.txt`
-- `orchestrator/evidence/E06-gate/lint.txt`
-- `orchestrator/evidence/E06-gate/react-types.txt`
-- `orchestrator/evidence/E06-gate/scripts-test.txt`
-- `orchestrator/evidence/E06-gate/typecheck.txt`
-- `orchestrator/evidence/E06.json`
-- `orchestrator/evidence/E07-baseline.txt`
-- `orchestrator/evidence/E07-gate/build.txt`
-- `orchestrator/evidence/E07-gate/git-diff-check.txt`
-- `orchestrator/evidence/E07-gate/head.txt`
-- `orchestrator/evidence/E07-gate/install.txt`
-- `orchestrator/evidence/E07-gate/jest.txt`
-- `orchestrator/evidence/E07-gate/lint.txt`
-- `orchestrator/evidence/E07-gate/react-types.txt`
-- `orchestrator/evidence/E07-gate/scripts-test.txt`
-- `orchestrator/evidence/E07-gate/typecheck.txt`
-- `orchestrator/evidence/E07.json`
-- `orchestrator/evidence/E08-baseline.txt`
-- `orchestrator/evidence/E08-gate/build.txt`
-- `orchestrator/evidence/E08-gate/git-diff-check.txt`
-- `orchestrator/evidence/E08-gate/head.txt`
-- `orchestrator/evidence/E08-gate/install.txt`
-- `orchestrator/evidence/E08-gate/jest.txt`
-- `orchestrator/evidence/E08-gate/lint.txt`
-- `orchestrator/evidence/E08-gate/react-types.txt`
-- `orchestrator/evidence/E08-gate/scripts-test.txt`
-- `orchestrator/evidence/E08-gate/typecheck.txt`
-- `orchestrator/evidence/E08.json`
-- `orchestrator/evidence/E09-baseline.txt`
-- `orchestrator/evidence/E09-gate/build.txt`
-- `orchestrator/evidence/E09-gate/git-diff-check.txt`
-- `orchestrator/evidence/E09-gate/head.txt`
-- `orchestrator/evidence/E09-gate/install.txt`
-- `orchestrator/evidence/E09-gate/jest.txt`
-- `orchestrator/evidence/E09-gate/lint.txt`
-- `orchestrator/evidence/E09-gate/react-types.txt`
-- `orchestrator/evidence/E09-gate/scripts-test.txt`
-- `orchestrator/evidence/E09-gate/typecheck.txt`
-- `orchestrator/evidence/E09.json`
-- `orchestrator/evidence/E10-baseline.txt`
-- `orchestrator/evidence/E10-gate/build.txt`
-- `orchestrator/evidence/E10-gate/git-diff-check.txt`
-- `orchestrator/evidence/E10-gate/head.txt`
-- `orchestrator/evidence/E10-gate/install.txt`
-- `orchestrator/evidence/E10-gate/jest.txt`
-- `orchestrator/evidence/E10-gate/lint.txt`
-- `orchestrator/evidence/E10-gate/react-types.txt`
-- `orchestrator/evidence/E10-gate/scripts-test.txt`
-- `orchestrator/evidence/E10-gate/typecheck.txt`
-- `orchestrator/evidence/E10.json`
-- `orchestrator/evidence/E11-baseline.txt`
-- `orchestrator/evidence/E11-gate/build.txt`
-- `orchestrator/evidence/E11-gate/git-diff-check.txt`
-- `orchestrator/evidence/E11-gate/head.txt`
-- `orchestrator/evidence/E11-gate/install.txt`
-- `orchestrator/evidence/E11-gate/jest.txt`
-- `orchestrator/evidence/E11-gate/lint.txt`
-- `orchestrator/evidence/E11-gate/react-types.txt`
-- `orchestrator/evidence/E11-gate/scripts-test.txt`
-- `orchestrator/evidence/E11-gate/typecheck.txt`
-- `orchestrator/evidence/E11.json`
-- `orchestrator/evidence/E12-baseline.txt`
-- `orchestrator/evidence/E12-gate/build.txt`
-- `orchestrator/evidence/E12-gate/git-diff-check.txt`
-- `orchestrator/evidence/E12-gate/head.txt`
-- `orchestrator/evidence/E12-gate/install.txt`
-- `orchestrator/evidence/E12-gate/jest.txt`
-- `orchestrator/evidence/E12-gate/lint.txt`
-- `orchestrator/evidence/E12-gate/react-types.txt`
-- `orchestrator/evidence/E12-gate/scripts-test.txt`
-- `orchestrator/evidence/E12-gate/typecheck.txt`
-- `orchestrator/evidence/E12-live-provider/attempt-1-payload.json`
-- `orchestrator/evidence/E12-live-provider/attempt-1-raw-response.json`
-- `orchestrator/evidence/E12-live-provider/attempt-1-server.log`
-- `orchestrator/evidence/E12-live-provider/attempt-1-summary.json`
-- `orchestrator/evidence/E12-live-provider/attempt-2-payload.json`
-- `orchestrator/evidence/E12-live-provider/attempt-2-raw-response.json`
-- `orchestrator/evidence/E12-live-provider/attempt-2-server.log`
-- `orchestrator/evidence/E12-live-provider/attempt-2-summary.json`
-- `orchestrator/evidence/E12-live-provider/run.mjs`
-- `orchestrator/evidence/E12.json`
-- `orchestrator/evidence/E13-gate/build.txt`
-- `orchestrator/evidence/E13-gate/git-diff-check.txt`
-- `orchestrator/evidence/E13-gate/head.txt`
-- `orchestrator/evidence/E13-gate/install.txt`
-- `orchestrator/evidence/E13-gate/jest.txt`
-- `orchestrator/evidence/E13-gate/lint.txt`
-- `orchestrator/evidence/E13-gate/react-types.txt`
-- `orchestrator/evidence/E13-gate/scripts-test.txt`
-- `orchestrator/evidence/E13-gate/typecheck.txt`
-- `orchestrator/evidence/E13.json`
-- `orchestrator/evidence/H01-gate/gate.sh`
-- `orchestrator/evidence/H01-gate/logs/00-sha.txt`
-- `orchestrator/evidence/H01-gate/logs/01-install.log`
-- `orchestrator/evidence/H01-gate/logs/02-check-react-types.log`
-- `orchestrator/evidence/H01-gate/logs/03-lint.log`
-- `orchestrator/evidence/H01-gate/logs/04-typecheck.log`
-- `orchestrator/evidence/H01-gate/logs/05-jest-full.log`
-- `orchestrator/evidence/H01-gate/logs/05b-handoff-check.log`
-- `orchestrator/evidence/H01-gate/logs/06-scripts-test.log`
-- `orchestrator/evidence/H01-gate/logs/07-build.log`
-- `orchestrator/evidence/H01-gate/logs/08-criterion-test.log`
-- `orchestrator/evidence/H01-gate/logs/08b-orchestrator-tests.log`
-- `orchestrator/evidence/H01-gate/logs/09-git-diff-check.log`
-- `orchestrator/evidence/H01-gate/logs/09b-whitespace-only.log`
-- `orchestrator/evidence/H01-gate/logs/09c-no-schema-change.log`
-- `orchestrator/evidence/H01-gate/logs/10-git-status.log`
-- `orchestrator/evidence/H01-gate/logs/10b-install-local.log`
-- `orchestrator/evidence/H01-gate/logs/11-negative-controls.log`
-- `orchestrator/evidence/H01-gate/logs/12-git-status-final.log`
-- `orchestrator/evidence/H01-gate/logs/exits.txt`
-- `orchestrator/evidence/H01-gate/logs/run1-05-jest-full-oom.log`
-- `orchestrator/evidence/H01-gate/logs/run1-exits.txt`
-- `orchestrator/evidence/H01-gate/logs/run10-exits.txt`
-- `orchestrator/evidence/H01-gate/logs/run2-exits.txt`
-- `orchestrator/evidence/H01-gate/logs/run3-exits.txt`
-- `orchestrator/evidence/H01-gate/logs/run4-exits.txt`
-- `orchestrator/evidence/H01-gate/logs/run6-exits.txt`
-- `orchestrator/evidence/H01-gate/logs/run8-exits.txt`
-- `orchestrator/evidence/H01-gate/negative-controls.py`
-- `orchestrator/evidence/H01.json`
-- `orchestrator/evidence/H02.json`
-- `orchestrator/evidence/H02/mac-v22-01-react-types.log`
-- `orchestrator/evidence/H02/mac-v22-02-lint.log`
-- `orchestrator/evidence/H02/mac-v22-03-typecheck.log`
-- `orchestrator/evidence/H02/mac-v22-04-jest.log`
-- `orchestrator/evidence/H02/mac-v22-05-scripts-test.log`
-- `orchestrator/evidence/H02/mac-v22-06-build.log`
-- `orchestrator/evidence/H02/mac-v22-07-diff-check.log`
-- `orchestrator/evidence/H02/mac-v22-req83.log`
-- `orchestrator/evidence/H02/mac-v24-01-react-types.log`
-- `orchestrator/evidence/H02/mac-v24-02-lint.log`
-- `orchestrator/evidence/H02/mac-v24-03-typecheck.log`
-- `orchestrator/evidence/H02/mac-v24-04-jest.log`
-- `orchestrator/evidence/H02/mac-v24-05-scripts-test.log`
-- `orchestrator/evidence/H02/mac-v24-06-build.log`
-- `orchestrator/evidence/H02/mac-v24-07-diff-check.log`
-- `orchestrator/evidence/H02/mac-v24-req83.log`
-- `orchestrator/evidence/H02/merge-gate-d1b3425c.log`
-- `orchestrator/evidence/H02/readline-probe.log`
-- `orchestrator/evidence/H02/readline-probe.mjs`
-- `orchestrator/evidence/H02/req83.sh`
-- `orchestrator/evidence/H02/run-all.sh`
-- `orchestrator/evidence/H02/step.sh`
-- `orchestrator/evidence/H02/steps.txt`
-- `orchestrator/evidence/H02/vps-req156-v22.23.2.log`
-- `orchestrator/evidence/H02/vps-req156-v24.20.0.log`
-- `orchestrator/evidence/H03-gate/gate.sh`
-- `orchestrator/evidence/H03-gate/logs-298634cd/00-sha.txt`
-- `orchestrator/evidence/H03-gate/logs-298634cd/01-install.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/02-check-react-types.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/03-lint.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/04-typecheck.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/05-criterion-suites.digest.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/06-jest-full.digest.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/06a-matrix-times.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/06b-handoff-check.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/07-scripts-test.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/08-build.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/08b-typecheck-after-build.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/09-test-only.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/09b-test-only-rerun.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/11-git-diff-check.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/12-git-status.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/12b-install-local.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/13-negative-controls.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/14-git-status-final.log`
-- `orchestrator/evidence/H03-gate/logs-298634cd/base-a39b751b-times.txt`
-- `orchestrator/evidence/H03-gate/logs-298634cd/exits.txt`
-- `orchestrator/evidence/H03-gate/matrix-times.py`
-- `orchestrator/evidence/H03-gate/negative-controls.py`
-- `orchestrator/evidence/H03-gate/vps-repro-531efb2f/build.tail.log`
-- `orchestrator/evidence/H03-gate/vps-repro-531efb2f/jest-w2.digest.log`
-- `orchestrator/evidence/H03-gate/vps-repro-531efb2f/root-typecheck.log`
-- `orchestrator/evidence/H03.json`
-- `orchestrator/evidence/I00-gate/00-sha.txt`
-- `orchestrator/evidence/I00-gate/01-install.log`
-- `orchestrator/evidence/I00-gate/02-check-react-types.log`
-- `orchestrator/evidence/I00-gate/03-lint.log`
-- `orchestrator/evidence/I00-gate/04-typecheck.log`
-- `orchestrator/evidence/I00-gate/05-jest-full.log`
-- `orchestrator/evidence/I00-gate/05b-handoff-check.log`
-- `orchestrator/evidence/I00-gate/06-scripts-test.log`
-- `orchestrator/evidence/I00-gate/07-build.log`
-- `orchestrator/evidence/I00-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I00-gate/08-git-diff-check.log`
-- `orchestrator/evidence/I00-gate/09-git-status.log`
-- `orchestrator/evidence/I00-gate/10-android-export.log`
-- `orchestrator/evidence/I00-gate/10b-localization.log`
-- `orchestrator/evidence/I00-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/I00-gate/11-criterion-suites.log`
-- `orchestrator/evidence/I00-gate/12-git-status-after.log`
-- `orchestrator/evidence/I00-gate/13-negative-controls.log`
-- `orchestrator/evidence/I00-gate/14-git-status-final.log`
-- `orchestrator/evidence/I00-gate/exits.txt`
-- `orchestrator/evidence/I00-gate/gate-tail.sh`
-- `orchestrator/evidence/I00-gate/gate.sh`
-- `orchestrator/evidence/I00-gate/inventory-added.json`
-- `orchestrator/evidence/I00-gate/negative-controls.py`
-- `orchestrator/evidence/I00-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I00.json`
-- `orchestrator/evidence/I01-gate/00-sha.txt`
-- `orchestrator/evidence/I01-gate/00c-req162-base-vs-head.log`
-- `orchestrator/evidence/I01-gate/00d-req106-random-storage-path.log`
-- `orchestrator/evidence/I01-gate/00e-req162-index-ratio.log`
-- `orchestrator/evidence/I01-gate/01-install.log`
-- `orchestrator/evidence/I01-gate/02-check-react-types.log`
-- `orchestrator/evidence/I01-gate/03-lint.log`
-- `orchestrator/evidence/I01-gate/04-typecheck.log`
-- `orchestrator/evidence/I01-gate/05-jest-full.log`
-- `orchestrator/evidence/I01-gate/05b-handoff-check.log`
-- `orchestrator/evidence/I01-gate/06-scripts-test.log`
-- `orchestrator/evidence/I01-gate/07-build.log`
-- `orchestrator/evidence/I01-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I01-gate/08-git-diff-check.log`
-- `orchestrator/evidence/I01-gate/09-git-status.log`
-- `orchestrator/evidence/I01-gate/10-android-export.log`
-- `orchestrator/evidence/I01-gate/10b-localization.log`
-- `orchestrator/evidence/I01-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/I01-gate/11-criterion-suites.log`
-- `orchestrator/evidence/I01-gate/12-git-status-after.log`
-- `orchestrator/evidence/I01-gate/13-negative-controls.log`
-- `orchestrator/evidence/I01-gate/14-git-status-final.log`
-- `orchestrator/evidence/I01-gate/ar-translations-added.json`
-- `orchestrator/evidence/I01-gate/exits.txt`
-- `orchestrator/evidence/I01-gate/gate.sh`
-- `orchestrator/evidence/I01-gate/inventory-added-ar.json`
-- `orchestrator/evidence/I01-gate/inventory-added.json`
-- `orchestrator/evidence/I01-gate/negative-controls.py`
-- `orchestrator/evidence/I01-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I01.json`
-- `orchestrator/evidence/I02-apk-size.json`
-- `orchestrator/evidence/I02-gate/00-sha.txt`
-- `orchestrator/evidence/I02-gate/01-install.log`
-- `orchestrator/evidence/I02-gate/02-check-react-types.log`
-- `orchestrator/evidence/I02-gate/03-lint.log`
-- `orchestrator/evidence/I02-gate/04-typecheck.log`
-- `orchestrator/evidence/I02-gate/05-jest-full.log`
-- `orchestrator/evidence/I02-gate/05b-handoff-check.log`
-- `orchestrator/evidence/I02-gate/06-scripts-test.log`
-- `orchestrator/evidence/I02-gate/07-build.log`
-- `orchestrator/evidence/I02-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I02-gate/08-git-diff-check.log`
-- `orchestrator/evidence/I02-gate/09-git-status.log`
-- `orchestrator/evidence/I02-gate/10-android-export.log`
-- `orchestrator/evidence/I02-gate/10b-localization.log`
-- `orchestrator/evidence/I02-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/I02-gate/11-criterion-suites.log`
-- `orchestrator/evidence/I02-gate/12-git-status-after.log`
-- `orchestrator/evidence/I02-gate/13-negative-controls.log`
-- `orchestrator/evidence/I02-gate/14-git-status-final.log`
-- `orchestrator/evidence/I02-gate/apk-size.py`
-- `orchestrator/evidence/I02-gate/exits.txt`
-- `orchestrator/evidence/I02-gate/gate.sh`
-- `orchestrator/evidence/I02-gate/inventory-added.json`
-- `orchestrator/evidence/I02-gate/negative-controls.py`
-- `orchestrator/evidence/I02-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I02.json`
-- `orchestrator/evidence/I10-gate/build-catalogs.mjs`
-- `orchestrator/evidence/I10-gate/categorise-added.cjs`
-- `orchestrator/evidence/I10-gate/gate.sh`
-- `orchestrator/evidence/I10-gate/i10-keys.json`
-- `orchestrator/evidence/I10-gate/inventory-added.json`
-- `orchestrator/evidence/I10-gate/negative-controls.py`
-- `orchestrator/evidence/I10-gate/out/00-sha.txt`
-- `orchestrator/evidence/I10-gate/out/01-install.log`
-- `orchestrator/evidence/I10-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I10-gate/out/03-lint.log`
-- `orchestrator/evidence/I10-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I10-gate/out/05-jest-full.log`
-- `orchestrator/evidence/I10-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I10-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I10-gate/out/07-build.log`
-- `orchestrator/evidence/I10-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I10-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I10-gate/out/09-git-status.log`
-- `orchestrator/evidence/I10-gate/out/10-android-export.log`
-- `orchestrator/evidence/I10-gate/out/10b-localization.log`
-- `orchestrator/evidence/I10-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/I10-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I10-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I10-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I10-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I10-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I10-gate/out/exits.txt`
-- `orchestrator/evidence/I10-gate/realign-dry.json`
-- `orchestrator/evidence/I10-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I10-gate/realign.sh`
-- `orchestrator/evidence/I10-gate/translations-added-de.json`
-- `orchestrator/evidence/I10-gate/translations-added-fr.json`
-- `orchestrator/evidence/I10-gate/translations-added-pl.json`
-- `orchestrator/evidence/I10-gate/translations-added.mjs`
-- `orchestrator/evidence/I10.json`
-- `orchestrator/evidence/I11-gate/build-catalogs.mjs`
-- `orchestrator/evidence/I11-gate/categorise-added.cjs`
-- `orchestrator/evidence/I11-gate/gate.sh`
-- `orchestrator/evidence/I11-gate/inventory-added.json`
-- `orchestrator/evidence/I11-gate/negative-controls.py`
-- `orchestrator/evidence/I11-gate/out/00-sha.txt`
-- `orchestrator/evidence/I11-gate/out/01-install.log`
-- `orchestrator/evidence/I11-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I11-gate/out/03-lint.log`
-- `orchestrator/evidence/I11-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I11-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/I11-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/I11-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I11-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I11-gate/out/07-build.log`
-- `orchestrator/evidence/I11-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I11-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I11-gate/out/09-git-status.log`
-- `orchestrator/evidence/I11-gate/out/10-android-export.log`
-- `orchestrator/evidence/I11-gate/out/10b-localization.log`
-- `orchestrator/evidence/I11-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/I11-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I11-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I11-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I11-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I11-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I11-gate/out/exits.txt`
-- `orchestrator/evidence/I11-gate/realign-dry.json`
-- `orchestrator/evidence/I11-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I11-gate/realign.sh`
-- `orchestrator/evidence/I11-gate/shortened.json`
-- `orchestrator/evidence/I11-gate/translations-added-es-MX.json`
-- `orchestrator/evidence/I11-gate/translations-added-es.json`
-- `orchestrator/evidence/I11-gate/translations-added-it.json`
-- `orchestrator/evidence/I11-gate/translations-added-nl.json`
-- `orchestrator/evidence/I11-gate/translations-added.mjs`
-- `orchestrator/evidence/I11.json`
-- `orchestrator/evidence/I12-gate/build-catalogs.mjs`
-- `orchestrator/evidence/I12-gate/categorise-added.cjs`
-- `orchestrator/evidence/I12-gate/gate.sh`
-- `orchestrator/evidence/I12-gate/inventory-added.json`
-- `orchestrator/evidence/I12-gate/negative-controls.py`
-- `orchestrator/evidence/I12-gate/out/00-sha.txt`
-- `orchestrator/evidence/I12-gate/out/01-install.log`
-- `orchestrator/evidence/I12-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I12-gate/out/03-lint.log`
-- `orchestrator/evidence/I12-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I12-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/I12-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/I12-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I12-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I12-gate/out/07-build.log`
-- `orchestrator/evidence/I12-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I12-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I12-gate/out/09-git-status.log`
-- `orchestrator/evidence/I12-gate/out/10-android-export.log`
-- `orchestrator/evidence/I12-gate/out/10b-localization.log`
-- `orchestrator/evidence/I12-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/I12-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I12-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I12-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I12-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I12-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I12-gate/out/exits.txt`
-- `orchestrator/evidence/I12-gate/realign-dry.json`
-- `orchestrator/evidence/I12-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I12-gate/realign.sh`
-- `orchestrator/evidence/I12-gate/shortened.json`
-- `orchestrator/evidence/I12-gate/translations-added-da.json`
-- `orchestrator/evidence/I12-gate/translations-added-nb.json`
-- `orchestrator/evidence/I12-gate/translations-added-pt-BR.json`
-- `orchestrator/evidence/I12-gate/translations-added-sv.json`
-- `orchestrator/evidence/I12-gate/translations-added.mjs`
-- `orchestrator/evidence/I12.json`
-- `orchestrator/evidence/I13-gate/build-catalogs.mjs`
-- `orchestrator/evidence/I13-gate/categorise-added.cjs`
-- `orchestrator/evidence/I13-gate/gate.sh`
-- `orchestrator/evidence/I13-gate/inventory-added.json`
-- `orchestrator/evidence/I13-gate/negative-controls.py`
-- `orchestrator/evidence/I13-gate/out/00-sha.txt`
-- `orchestrator/evidence/I13-gate/out/01-install.log`
-- `orchestrator/evidence/I13-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I13-gate/out/03-lint.log`
-- `orchestrator/evidence/I13-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I13-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/I13-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/I13-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I13-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I13-gate/out/07-build.log`
-- `orchestrator/evidence/I13-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I13-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I13-gate/out/09-git-status.log`
-- `orchestrator/evidence/I13-gate/out/10-android-export.log`
-- `orchestrator/evidence/I13-gate/out/10b-localization.log`
-- `orchestrator/evidence/I13-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/I13-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I13-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I13-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I13-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I13-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I13-gate/out/exits.txt`
-- `orchestrator/evidence/I13-gate/realign-dry.json`
-- `orchestrator/evidence/I13-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I13-gate/realign.sh`
-- `orchestrator/evidence/I13-gate/shortened.json`
-- `orchestrator/evidence/I13-gate/translations-added-cs.json`
-- `orchestrator/evidence/I13-gate/translations-added-ro.json`
-- `orchestrator/evidence/I13-gate/translations-added-sk.json`
-- `orchestrator/evidence/I13-gate/translations-added-tr.json`
-- `orchestrator/evidence/I13-gate/translations-added.mjs`
-- `orchestrator/evidence/I13.json`
-- `orchestrator/evidence/I14-gate/build-catalogs.mjs`
-- `orchestrator/evidence/I14-gate/categorise-added.cjs`
-- `orchestrator/evidence/I14-gate/gate.sh`
-- `orchestrator/evidence/I14-gate/inventory-added.json`
-- `orchestrator/evidence/I14-gate/negative-controls.py`
-- `orchestrator/evidence/I14-gate/out/00-sha.txt`
-- `orchestrator/evidence/I14-gate/out/01-install.log`
-- `orchestrator/evidence/I14-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I14-gate/out/03-lint.log`
-- `orchestrator/evidence/I14-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I14-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/I14-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/I14-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I14-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I14-gate/out/07-build.log`
-- `orchestrator/evidence/I14-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I14-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I14-gate/out/09-git-status.log`
-- `orchestrator/evidence/I14-gate/out/10-android-export.log`
-- `orchestrator/evidence/I14-gate/out/10b-localization.log`
-- `orchestrator/evidence/I14-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/I14-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I14-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I14-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I14-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I14-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I14-gate/out/exits.txt`
-- `orchestrator/evidence/I14-gate/realign-dry.json`
-- `orchestrator/evidence/I14-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I14-gate/realign.sh`
-- `orchestrator/evidence/I14-gate/shortened.json`
-- `orchestrator/evidence/I14-gate/translations-added-et.json`
-- `orchestrator/evidence/I14-gate/translations-added-hu.json`
-- `orchestrator/evidence/I14-gate/translations-added-lt.json`
-- `orchestrator/evidence/I14-gate/translations-added-lv.json`
-- `orchestrator/evidence/I14-gate/translations-added.mjs`
-- `orchestrator/evidence/I14.json`
-- `orchestrator/evidence/I15-gate/apply-ar.mjs`
-- `orchestrator/evidence/I15-gate/categorise-added.cjs`
-- `orchestrator/evidence/I15-gate/gate.sh`
-- `orchestrator/evidence/I15-gate/inventory-added.json`
-- `orchestrator/evidence/I15-gate/negative-controls.py`
-- `orchestrator/evidence/I15-gate/out/00-sha.txt`
-- `orchestrator/evidence/I15-gate/out/01-install.log`
-- `orchestrator/evidence/I15-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I15-gate/out/03-lint.log`
-- `orchestrator/evidence/I15-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I15-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/I15-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/I15-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I15-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I15-gate/out/07-build.log`
-- `orchestrator/evidence/I15-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I15-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I15-gate/out/09-git-status.log`
-- `orchestrator/evidence/I15-gate/out/10-android-export.log`
-- `orchestrator/evidence/I15-gate/out/10b-localization.log`
-- `orchestrator/evidence/I15-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/I15-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I15-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I15-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I15-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I15-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I15-gate/out/exits.txt`
-- `orchestrator/evidence/I15-gate/policy-notice.json`
-- `orchestrator/evidence/I15-gate/realign-dry.json`
-- `orchestrator/evidence/I15-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I15-gate/realign.sh`
-- `orchestrator/evidence/I15-gate/translator-changes.json`
-- `orchestrator/evidence/I15.json`
-- `orchestrator/evidence/I16-gate/build-catalogs.mjs`
-- `orchestrator/evidence/I16-gate/categorise-added.cjs`
-- `orchestrator/evidence/I16-gate/gate.sh`
-- `orchestrator/evidence/I16-gate/inventory-added.json`
-- `orchestrator/evidence/I16-gate/negative-controls.py`
-- `orchestrator/evidence/I16-gate/out/00-sha.txt`
-- `orchestrator/evidence/I16-gate/out/01-install.log`
-- `orchestrator/evidence/I16-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I16-gate/out/03-lint.log`
-- `orchestrator/evidence/I16-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I16-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/I16-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/I16-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I16-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I16-gate/out/07-build.log`
-- `orchestrator/evidence/I16-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I16-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I16-gate/out/09-git-status.log`
-- `orchestrator/evidence/I16-gate/out/10-android-export.log`
-- `orchestrator/evidence/I16-gate/out/10b-localization.log`
-- `orchestrator/evidence/I16-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/I16-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I16-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I16-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I16-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I16-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I16-gate/out/exits.txt`
-- `orchestrator/evidence/I16-gate/realign-dry.json`
-- `orchestrator/evidence/I16-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I16-gate/realign.sh`
-- `orchestrator/evidence/I16-gate/shortened.json`
-- `orchestrator/evidence/I16-gate/translations-added-ja.json`
-- `orchestrator/evidence/I16-gate/translations-added-ko.json`
-- `orchestrator/evidence/I16-gate/translations-added-zh-Hans.json`
-- `orchestrator/evidence/I16-gate/translations-added-zh-Hant.json`
-- `orchestrator/evidence/I16-gate/translations-added.mjs`
-- `orchestrator/evidence/I16.json`
-- `orchestrator/evidence/I17-gate/build-catalogs.mjs`
-- `orchestrator/evidence/I17-gate/categorise-added.cjs`
-- `orchestrator/evidence/I17-gate/gate.sh`
-- `orchestrator/evidence/I17-gate/glyphs.py`
-- `orchestrator/evidence/I17-gate/inventory-added.json`
-- `orchestrator/evidence/I17-gate/negative-controls.py`
-- `orchestrator/evidence/I17-gate/out/00-sha.txt`
-- `orchestrator/evidence/I17-gate/out/01-install.log`
-- `orchestrator/evidence/I17-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I17-gate/out/03-lint.log`
-- `orchestrator/evidence/I17-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I17-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/I17-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/I17-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I17-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I17-gate/out/07-build.log`
-- `orchestrator/evidence/I17-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I17-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I17-gate/out/09-git-status.log`
-- `orchestrator/evidence/I17-gate/out/10-android-export.log`
-- `orchestrator/evidence/I17-gate/out/10b-localization.log`
-- `orchestrator/evidence/I17-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/I17-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I17-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I17-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I17-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I17-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I17-gate/out/23-git-diff-check-main.log`
-- `orchestrator/evidence/I17-gate/out/24-git-diff-check-base.log`
-- `orchestrator/evidence/I17-gate/out/exits.txt`
-- `orchestrator/evidence/I17-gate/prune.mjs`
-- `orchestrator/evidence/I17-gate/realign-dry.json`
-- `orchestrator/evidence/I17-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I17-gate/realign.sh`
-- `orchestrator/evidence/I17-gate/translations-added-hi.json`
-- `orchestrator/evidence/I17-gate/translations-added-id.json`
-- `orchestrator/evidence/I17-gate/translations-added-th.json`
-- `orchestrator/evidence/I17-gate/translations-added-vi.json`
-- `orchestrator/evidence/I17-gate/translations-added.mjs`
-- `orchestrator/evidence/I17.json`
-- `orchestrator/evidence/I20-gate/categorise-added.cjs`
-- `orchestrator/evidence/I20-gate/gate.sh`
-- `orchestrator/evidence/I20-gate/inventory-added.json`
-- `orchestrator/evidence/I20-gate/inventory-font.cjs`
-- `orchestrator/evidence/I20-gate/inventory-i20.py`
-- `orchestrator/evidence/I20-gate/negative-controls.py`
-- `orchestrator/evidence/I20-gate/out/00-sha.txt`
-- `orchestrator/evidence/I20-gate/out/01-install.log`
-- `orchestrator/evidence/I20-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I20-gate/out/03-lint.log`
-- `orchestrator/evidence/I20-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I20-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/I20-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/I20-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I20-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I20-gate/out/07-build.log`
-- `orchestrator/evidence/I20-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I20-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I20-gate/out/09-git-status.log`
-- `orchestrator/evidence/I20-gate/out/10-android-export.log`
-- `orchestrator/evidence/I20-gate/out/10b-localization.log`
-- `orchestrator/evidence/I20-gate/out/10c-database.log`
-- `orchestrator/evidence/I20-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I20-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I20-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I20-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I20-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I20-gate/out/23-git-diff-check-main.log`
-- `orchestrator/evidence/I20-gate/out/24-git-diff-check-base.log`
-- `orchestrator/evidence/I20-gate/out/exits.txt`
-- `orchestrator/evidence/I20-gate/realign-inventory.cjs`
-- `orchestrator/evidence/I20-gate/realign.sh`
-- `orchestrator/evidence/I20-locales/build-manifest.mjs`
-- `orchestrator/evidence/I20-locales/live-snapshot.json`
-- `orchestrator/evidence/I20-locales/local-replay-reading.json`
-- `orchestrator/evidence/I20-locales/manifest.json`
-- `orchestrator/evidence/I20-locales/reading.sql`
-- `orchestrator/evidence/I20-locales/rollback.sql`
-- `orchestrator/evidence/I20-locales/tools/generate.mjs`
-- `orchestrator/evidence/I20-locales/tools/merge-translations.mjs`
-- `orchestrator/evidence/I20-locales/translations.json`
-- `orchestrator/evidence/I20.json`
-- `orchestrator/evidence/I22-gate/gate.sh`
-- `orchestrator/evidence/I22-gate/negative-controls.py`
-- `orchestrator/evidence/I22-gate/out/00-sha.txt`
-- `orchestrator/evidence/I22-gate/out/01-install.log`
-- `orchestrator/evidence/I22-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/I22-gate/out/03-lint.log`
-- `orchestrator/evidence/I22-gate/out/04-typecheck.log`
-- `orchestrator/evidence/I22-gate/out/05-jest-full.log`
-- `orchestrator/evidence/I22-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/I22-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/I22-gate/out/07-build.log`
-- `orchestrator/evidence/I22-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/I22-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/I22-gate/out/09-git-status.log`
-- `orchestrator/evidence/I22-gate/out/10-manifest-unchanged.log`
-- `orchestrator/evidence/I22-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/I22-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/I22-gate/out/12b-install-local.log`
-- `orchestrator/evidence/I22-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/I22-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/I22-gate/out/exits.txt`
-- `orchestrator/evidence/I22-production-apply/00-expected.json`
-- `orchestrator/evidence/I22-production-apply/01-precondition.json`
-- `orchestrator/evidence/I22-production-apply/02-apply.json`
-- `orchestrator/evidence/I22-production-apply/02-apply.sql`
-- `orchestrator/evidence/I22-production-apply/03-postcondition.json`
-- `orchestrator/evidence/I22-production-apply/04-independent-read.json`
-- `orchestrator/evidence/I22-production-apply/verdict.json`
-- `orchestrator/evidence/I22-tooling/apply.mjs`
-- `orchestrator/evidence/I22-tooling/independent-read.sql`
-- `orchestrator/evidence/I22.json`
-- `orchestrator/evidence/IOS0-gate/01-ios-export.log`
-- `orchestrator/evidence/IOS0-gate/02-citations.log`
-- `orchestrator/evidence/IOS0-gate/03-grep-ios1.log`
-- `orchestrator/evidence/IOS0-gate/04-product-diff.log`
-- `orchestrator/evidence/IOS0-gate/07-full-gate.log`
-- `orchestrator/evidence/IOS0-gate/check-citations.mjs`
-- `orchestrator/evidence/IOS0.json`
-- `orchestrator/evidence/R01-gate/00-sha.txt`
-- `orchestrator/evidence/R01-gate/01-install.log`
-- `orchestrator/evidence/R01-gate/02-check-react-types.log`
-- `orchestrator/evidence/R01-gate/03-lint.log`
-- `orchestrator/evidence/R01-gate/04-typecheck.log`
-- `orchestrator/evidence/R01-gate/05-jest-full.log`
-- `orchestrator/evidence/R01-gate/06-scripts-test.log`
-- `orchestrator/evidence/R01-gate/07-build.log`
-- `orchestrator/evidence/R01-gate/07a-android-export.log`
-- `orchestrator/evidence/R01-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R01-gate/09-git-status.log`
-- `orchestrator/evidence/R01-gate/10-localization.log`
-- `orchestrator/evidence/R01-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R01-gate/12-git-status-after.log`
-- `orchestrator/evidence/R01-gate/13-negative-controls.log`
-- `orchestrator/evidence/R01-gate/14-git-status-after-controls.log`
-- `orchestrator/evidence/R01-gate/15-database.log`
-- `orchestrator/evidence/R01-gate/16-git-status-final.log`
-- `orchestrator/evidence/R01-gate/exits.txt`
-- `orchestrator/evidence/R01-gate/gate.sh`
-- `orchestrator/evidence/R01-gate/negative-controls.sh`
-- `orchestrator/evidence/R01.json`
-- `orchestrator/evidence/R02-gate/00-sha.txt`
-- `orchestrator/evidence/R02-gate/01-install.log`
-- `orchestrator/evidence/R02-gate/02-check-react-types.log`
-- `orchestrator/evidence/R02-gate/03-lint.log`
-- `orchestrator/evidence/R02-gate/04-typecheck.log`
-- `orchestrator/evidence/R02-gate/05-jest-full.log`
-- `orchestrator/evidence/R02-gate/06-scripts-test.log`
-- `orchestrator/evidence/R02-gate/07-build.log`
-- `orchestrator/evidence/R02-gate/07a-android-export.log`
-- `orchestrator/evidence/R02-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R02-gate/09-git-status.log`
-- `orchestrator/evidence/R02-gate/10-media.log`
-- `orchestrator/evidence/R02-gate/11-database.log`
-- `orchestrator/evidence/R02-gate/12-criterion-suites.log`
-- `orchestrator/evidence/R02-gate/13-git-status-after.log`
-- `orchestrator/evidence/R02-gate/14-negative-controls.log`
-- `orchestrator/evidence/R02-gate/15-git-status-final.log`
-- `orchestrator/evidence/R02-gate/exits.txt`
-- `orchestrator/evidence/R02-gate/gate.sh`
-- `orchestrator/evidence/R02-gate/negative-controls.sh`
-- `orchestrator/evidence/R02-media-bucket/build-manifest.mjs`
-- `orchestrator/evidence/R02-media-bucket/live-photos-bucket.json`
-- `orchestrator/evidence/R02-media-bucket/manifest.json`
-- `orchestrator/evidence/R02.json`
-- `orchestrator/evidence/R03-gate/00-sha.txt`
-- `orchestrator/evidence/R03-gate/01-install.log`
-- `orchestrator/evidence/R03-gate/02-check-react-types.log`
-- `orchestrator/evidence/R03-gate/03-lint.log`
-- `orchestrator/evidence/R03-gate/04-typecheck.log`
-- `orchestrator/evidence/R03-gate/05-jest-full.log`
-- `orchestrator/evidence/R03-gate/06-scripts-test.log`
-- `orchestrator/evidence/R03-gate/07-build.log`
-- `orchestrator/evidence/R03-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R03-gate/09-git-status.log`
-- `orchestrator/evidence/R03-gate/10-criterion-suites.log`
-- `orchestrator/evidence/R03-gate/11-git-status-after.log`
-- `orchestrator/evidence/R03-gate/12-negative-controls.log`
-- `orchestrator/evidence/R03-gate/13-git-status-final.log`
-- `orchestrator/evidence/R03-gate/exits.txt`
-- `orchestrator/evidence/R03-gate/gate.sh`
-- `orchestrator/evidence/R03-gate/negative-controls.sh`
-- `orchestrator/evidence/R03-production-apply/01-precondition.json`
-- `orchestrator/evidence/R03-production-apply/02-apply.json`
-- `orchestrator/evidence/R03-production-apply/02-apply.sql`
-- `orchestrator/evidence/R03-production-apply/03-postcondition.json`
-- `orchestrator/evidence/R03-production-apply/04-independent-read.json`
-- `orchestrator/evidence/R03-production-apply/verdict.json`
-- `orchestrator/evidence/R03-tooling/apply.mjs`
-- `orchestrator/evidence/R03.json`
-- `orchestrator/evidence/R04-gate/00-sha.txt`
-- `orchestrator/evidence/R04-gate/01-install.log`
-- `orchestrator/evidence/R04-gate/02-check-react-types.log`
-- `orchestrator/evidence/R04-gate/03-lint.log`
-- `orchestrator/evidence/R04-gate/04-typecheck.log`
-- `orchestrator/evidence/R04-gate/05-jest-full.log`
-- `orchestrator/evidence/R04-gate/06-scripts-test.log`
-- `orchestrator/evidence/R04-gate/07-build.log`
-- `orchestrator/evidence/R04-gate/07a-android-export.log`
-- `orchestrator/evidence/R04-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R04-gate/09-git-status.log`
-- `orchestrator/evidence/R04-gate/10-media.log`
-- `orchestrator/evidence/R04-gate/11-localization.log`
-- `orchestrator/evidence/R04-gate/12-criterion-suites.log`
-- `orchestrator/evidence/R04-gate/13-git-status-after.log`
-- `orchestrator/evidence/R04-gate/14-negative-controls.log`
-- `orchestrator/evidence/R04-gate/15-git-status-final.log`
-- `orchestrator/evidence/R04-gate/exits.txt`
-- `orchestrator/evidence/R04-gate/gate.sh`
-- `orchestrator/evidence/R04-gate/negative-controls.sh`
-- `orchestrator/evidence/R04.json`
-- `orchestrator/evidence/R05-gate/00-sha.txt`
-- `orchestrator/evidence/R05-gate/01-install.log`
-- `orchestrator/evidence/R05-gate/02-check-react-types.log`
-- `orchestrator/evidence/R05-gate/03-lint.log`
-- `orchestrator/evidence/R05-gate/04-typecheck.log`
-- `orchestrator/evidence/R05-gate/05-jest-full.log`
-- `orchestrator/evidence/R05-gate/06-scripts-test.log`
-- `orchestrator/evidence/R05-gate/07-build.log`
-- `orchestrator/evidence/R05-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R05-gate/09-git-status.log`
-- `orchestrator/evidence/R05-gate/10-media.log`
-- `orchestrator/evidence/R05-gate/11-database.log`
-- `orchestrator/evidence/R05-gate/12-criterion-suites.log`
-- `orchestrator/evidence/R05-gate/13-git-status-after.log`
-- `orchestrator/evidence/R05-gate/14-negative-controls.log`
-- `orchestrator/evidence/R05-gate/15-git-status-final.log`
-- `orchestrator/evidence/R05-gate/exits.txt`
-- `orchestrator/evidence/R05-gate/gate.sh`
-- `orchestrator/evidence/R05-gate/negative-controls.sh`
-- `orchestrator/evidence/R05-thumbnail-delete-policy/build-manifest.mjs`
-- `orchestrator/evidence/R05-thumbnail-delete-policy/live-storage-object-policies.json`
-- `orchestrator/evidence/R05-thumbnail-delete-policy/local-replay-policies.json`
-- `orchestrator/evidence/R05-thumbnail-delete-policy/manifest.json`
-- `orchestrator/evidence/R05.json`
-- `orchestrator/evidence/R06-gate/00-sha.txt`
-- `orchestrator/evidence/R06-gate/01-install.log`
-- `orchestrator/evidence/R06-gate/02-check-react-types.log`
-- `orchestrator/evidence/R06-gate/03-lint.log`
-- `orchestrator/evidence/R06-gate/04-typecheck.log`
-- `orchestrator/evidence/R06-gate/05-jest-full.log`
-- `orchestrator/evidence/R06-gate/06-scripts-test.log`
-- `orchestrator/evidence/R06-gate/07-build.log`
-- `orchestrator/evidence/R06-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R06-gate/09-git-status.log`
-- `orchestrator/evidence/R06-gate/10-criterion-suites.log`
-- `orchestrator/evidence/R06-gate/11-git-status-after.log`
-- `orchestrator/evidence/R06-gate/12-negative-controls.log`
-- `orchestrator/evidence/R06-gate/13-git-status-final.log`
-- `orchestrator/evidence/R06-gate/exits.txt`
-- `orchestrator/evidence/R06-gate/gate.sh`
-- `orchestrator/evidence/R06-gate/negative-controls.sh`
-- `orchestrator/evidence/R06-production-apply/01-precondition.json`
-- `orchestrator/evidence/R06-production-apply/02-apply.json`
-- `orchestrator/evidence/R06-production-apply/02-apply.sql`
-- `orchestrator/evidence/R06-production-apply/03-postcondition.json`
-- `orchestrator/evidence/R06-production-apply/04-independent-read.json`
-- `orchestrator/evidence/R06-production-apply/verdict.json`
-- `orchestrator/evidence/R06-tooling/apply.mjs`
-- `orchestrator/evidence/R06.json`
-- `orchestrator/evidence/R07-gate/00-sha.txt`
-- `orchestrator/evidence/R07-gate/01-install.log`
-- `orchestrator/evidence/R07-gate/02-check-react-types.log`
-- `orchestrator/evidence/R07-gate/03-lint.log`
-- `orchestrator/evidence/R07-gate/04-typecheck.log`
-- `orchestrator/evidence/R07-gate/05-jest-full.log`
-- `orchestrator/evidence/R07-gate/06-scripts-test.log`
-- `orchestrator/evidence/R07-gate/07-build.log`
-- `orchestrator/evidence/R07-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R07-gate/09-git-status.log`
-- `orchestrator/evidence/R07-gate/10-android-export.log`
-- `orchestrator/evidence/R07-gate/11-offline.log`
-- `orchestrator/evidence/R07-gate/12-localization.log`
-- `orchestrator/evidence/R07-gate/13-criterion-suites.log`
-- `orchestrator/evidence/R07-gate/14-git-status-after.log`
-- `orchestrator/evidence/R07-gate/15-negative-controls.log`
-- `orchestrator/evidence/R07-gate/16-git-status-final.log`
-- `orchestrator/evidence/R07-gate/exits.txt`
-- `orchestrator/evidence/R07-gate/gate.sh`
-- `orchestrator/evidence/R07-gate/negative-controls.py`
-- `orchestrator/evidence/R07.json`
-- `orchestrator/evidence/R08-gate/00-sha.txt`
-- `orchestrator/evidence/R08-gate/01-install.log`
-- `orchestrator/evidence/R08-gate/02-check-react-types.log`
-- `orchestrator/evidence/R08-gate/03-lint.log`
-- `orchestrator/evidence/R08-gate/04-typecheck.log`
-- `orchestrator/evidence/R08-gate/05-jest-full.log`
-- `orchestrator/evidence/R08-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R08-gate/06-scripts-test.log`
-- `orchestrator/evidence/R08-gate/07-build.log`
-- `orchestrator/evidence/R08-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R08-gate/09-git-status.log`
-- `orchestrator/evidence/R08-gate/10-android-export.log`
-- `orchestrator/evidence/R08-gate/11-offline.log`
-- `orchestrator/evidence/R08-gate/12-localization.log`
-- `orchestrator/evidence/R08-gate/13-criterion-suites.log`
-- `orchestrator/evidence/R08-gate/14-git-status-after.log`
-- `orchestrator/evidence/R08-gate/15-negative-controls.log`
-- `orchestrator/evidence/R08-gate/16-git-status-final.log`
-- `orchestrator/evidence/R08-gate/exits.txt`
-- `orchestrator/evidence/R08-gate/gate.sh`
-- `orchestrator/evidence/R08-gate/negative-controls.py`
-- `orchestrator/evidence/R08.json`
-- `orchestrator/evidence/R09-gate/00-sha.txt`
-- `orchestrator/evidence/R09-gate/01-install.log`
-- `orchestrator/evidence/R09-gate/02-check-react-types.log`
-- `orchestrator/evidence/R09-gate/03-lint.log`
-- `orchestrator/evidence/R09-gate/04-typecheck.log`
-- `orchestrator/evidence/R09-gate/05-jest-full.log`
-- `orchestrator/evidence/R09-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R09-gate/06-scripts-test.log`
-- `orchestrator/evidence/R09-gate/07-build.log`
-- `orchestrator/evidence/R09-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R09-gate/09-git-status.log`
-- `orchestrator/evidence/R09-gate/10-android-export.log`
-- `orchestrator/evidence/R09-gate/11-offline.log`
-- `orchestrator/evidence/R09-gate/12-localization.log`
-- `orchestrator/evidence/R09-gate/13-criterion-suites.log`
-- `orchestrator/evidence/R09-gate/14-git-status-after.log`
-- `orchestrator/evidence/R09-gate/15-negative-controls.log`
-- `orchestrator/evidence/R09-gate/16-git-status-final.log`
-- `orchestrator/evidence/R09-gate/exits.txt`
-- `orchestrator/evidence/R09-gate/gate.sh`
-- `orchestrator/evidence/R09-gate/negative-controls.py`
-- `orchestrator/evidence/R09.json`
-- `orchestrator/evidence/R10-gate/00-sha.txt`
-- `orchestrator/evidence/R10-gate/01-install.log`
-- `orchestrator/evidence/R10-gate/02-check-react-types.log`
-- `orchestrator/evidence/R10-gate/03-lint.log`
-- `orchestrator/evidence/R10-gate/04-typecheck.log`
-- `orchestrator/evidence/R10-gate/05-jest-full.log`
-- `orchestrator/evidence/R10-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R10-gate/06-scripts-test.log`
-- `orchestrator/evidence/R10-gate/07-build.log`
-- `orchestrator/evidence/R10-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R10-gate/09-git-status.log`
-- `orchestrator/evidence/R10-gate/10-android-export.log`
-- `orchestrator/evidence/R10-gate/11-offline.log`
-- `orchestrator/evidence/R10-gate/12-localization.log`
-- `orchestrator/evidence/R10-gate/13-criterion-suites.log`
-- `orchestrator/evidence/R10-gate/14-git-status-after.log`
-- `orchestrator/evidence/R10-gate/15-negative-controls.log`
-- `orchestrator/evidence/R10-gate/16-git-status-final.log`
-- `orchestrator/evidence/R10-gate/exits.txt`
-- `orchestrator/evidence/R10-gate/gate.sh`
-- `orchestrator/evidence/R10-gate/negative-controls.py`
-- `orchestrator/evidence/R10.json`
-- `orchestrator/evidence/R11-gate/00-sha.txt`
-- `orchestrator/evidence/R11-gate/01-install.log`
-- `orchestrator/evidence/R11-gate/02-check-react-types.log`
-- `orchestrator/evidence/R11-gate/03-lint.log`
-- `orchestrator/evidence/R11-gate/04-typecheck.log`
-- `orchestrator/evidence/R11-gate/05-jest-full.log`
-- `orchestrator/evidence/R11-gate/06-scripts-test.log`
-- `orchestrator/evidence/R11-gate/07-build.log`
-- `orchestrator/evidence/R11-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R11-gate/09-git-status.log`
-- `orchestrator/evidence/R11-gate/10-criterion-suites.log`
-- `orchestrator/evidence/R11-gate/11-git-status-after.log`
-- `orchestrator/evidence/R11-gate/12-negative-controls.log`
-- `orchestrator/evidence/R11-gate/13-git-status-final.log`
-- `orchestrator/evidence/R11-gate/exits.txt`
-- `orchestrator/evidence/R11-gate/gate.sh`
-- `orchestrator/evidence/R11-gate/negative-controls.sh`
-- `orchestrator/evidence/R11-production-apply/00-expected.json`
-- `orchestrator/evidence/R11-production-apply/01-precondition.json`
-- `orchestrator/evidence/R11-production-apply/02-apply.json`
-- `orchestrator/evidence/R11-production-apply/02-apply.sql`
-- `orchestrator/evidence/R11-production-apply/03-postcondition.json`
-- `orchestrator/evidence/R11-production-apply/04-independent-read.json`
-- `orchestrator/evidence/R11-production-apply/verdict.json`
-- `orchestrator/evidence/R11-tooling/apply.mjs`
-- `orchestrator/evidence/R11.json`
-- `orchestrator/evidence/R12-gate/00-sha.txt`
-- `orchestrator/evidence/R12-gate/01-install.log`
-- `orchestrator/evidence/R12-gate/02-check-react-types.log`
-- `orchestrator/evidence/R12-gate/03-lint.log`
-- `orchestrator/evidence/R12-gate/04-typecheck.log`
-- `orchestrator/evidence/R12-gate/05-jest-full.log`
-- `orchestrator/evidence/R12-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R12-gate/06-scripts-test.log`
-- `orchestrator/evidence/R12-gate/07-build.log`
-- `orchestrator/evidence/R12-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R12-gate/09-git-status.log`
-- `orchestrator/evidence/R12-gate/10-android-export.log`
-- `orchestrator/evidence/R12-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R12-gate/12-git-status-after.log`
-- `orchestrator/evidence/R12-gate/13-negative-controls.log`
-- `orchestrator/evidence/R12-gate/14-git-status-final.log`
-- `orchestrator/evidence/R12-gate/exits.txt`
-- `orchestrator/evidence/R12-gate/gate.sh`
-- `orchestrator/evidence/R12-gate/negative-controls.py`
-- `orchestrator/evidence/R12.json`
-- `orchestrator/evidence/R13-gate/00-sha.txt`
-- `orchestrator/evidence/R13-gate/01-install.log`
-- `orchestrator/evidence/R13-gate/02-check-react-types.log`
-- `orchestrator/evidence/R13-gate/03-lint.log`
-- `orchestrator/evidence/R13-gate/04-typecheck.log`
-- `orchestrator/evidence/R13-gate/05-jest-full.log`
-- `orchestrator/evidence/R13-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R13-gate/06-scripts-test.log`
-- `orchestrator/evidence/R13-gate/07-build.log`
-- `orchestrator/evidence/R13-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R13-gate/09-git-status.log`
-- `orchestrator/evidence/R13-gate/10-android-export.log`
-- `orchestrator/evidence/R13-gate/10b-localization.log`
-- `orchestrator/evidence/R13-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R13-gate/12-git-status-after.log`
-- `orchestrator/evidence/R13-gate/13-negative-controls.log`
-- `orchestrator/evidence/R13-gate/14-git-status-final.log`
-- `orchestrator/evidence/R13-gate/exits.txt`
-- `orchestrator/evidence/R13-gate/gate.sh`
-- `orchestrator/evidence/R13-gate/negative-controls.py`
-- `orchestrator/evidence/R13.json`
-- `orchestrator/evidence/R14-gate/00-sha.txt`
-- `orchestrator/evidence/R14-gate/01-install.log`
-- `orchestrator/evidence/R14-gate/02-check-react-types.log`
-- `orchestrator/evidence/R14-gate/03-lint.log`
-- `orchestrator/evidence/R14-gate/04-typecheck.log`
-- `orchestrator/evidence/R14-gate/05-jest-full.log`
-- `orchestrator/evidence/R14-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R14-gate/06-scripts-test.log`
-- `orchestrator/evidence/R14-gate/07-build.log`
-- `orchestrator/evidence/R14-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R14-gate/09-git-status.log`
-- `orchestrator/evidence/R14-gate/10-android-export.log`
-- `orchestrator/evidence/R14-gate/10b-localization.log`
-- `orchestrator/evidence/R14-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R14-gate/12-git-status-after.log`
-- `orchestrator/evidence/R14-gate/13-negative-controls.log`
-- `orchestrator/evidence/R14-gate/14-git-status-final.log`
-- `orchestrator/evidence/R14-gate/exits.txt`
-- `orchestrator/evidence/R14-gate/gate.sh`
-- `orchestrator/evidence/R14-gate/negative-controls.py`
-- `orchestrator/evidence/R14.json`
-- `orchestrator/evidence/R15-gate/00-sha.txt`
-- `orchestrator/evidence/R15-gate/01-install.log`
-- `orchestrator/evidence/R15-gate/02-check-react-types.log`
-- `orchestrator/evidence/R15-gate/03-lint.log`
-- `orchestrator/evidence/R15-gate/04-typecheck.log`
-- `orchestrator/evidence/R15-gate/05-jest-full.log`
-- `orchestrator/evidence/R15-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R15-gate/06-scripts-test.log`
-- `orchestrator/evidence/R15-gate/07-build.log`
-- `orchestrator/evidence/R15-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R15-gate/09-git-status.log`
-- `orchestrator/evidence/R15-gate/10-android-export.log`
-- `orchestrator/evidence/R15-gate/10b-localization.log`
-- `orchestrator/evidence/R15-gate/10c-offline.log`
-- `orchestrator/evidence/R15-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R15-gate/12-git-status-after.log`
-- `orchestrator/evidence/R15-gate/13-negative-controls.log`
-- `orchestrator/evidence/R15-gate/14-git-status-final.log`
-- `orchestrator/evidence/R15-gate/exits.txt`
-- `orchestrator/evidence/R15-gate/gate.sh`
-- `orchestrator/evidence/R15-gate/negative-controls.py`
-- `orchestrator/evidence/R15.json`
-- `orchestrator/evidence/R16-gate/00-sha.txt`
-- `orchestrator/evidence/R16-gate/01-install.log`
-- `orchestrator/evidence/R16-gate/02-check-react-types.log`
-- `orchestrator/evidence/R16-gate/03-lint.log`
-- `orchestrator/evidence/R16-gate/04-typecheck.log`
-- `orchestrator/evidence/R16-gate/05-jest-full.log`
-- `orchestrator/evidence/R16-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R16-gate/06-scripts-test.log`
-- `orchestrator/evidence/R16-gate/07-build.log`
-- `orchestrator/evidence/R16-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R16-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R16-gate/09-git-status.log`
-- `orchestrator/evidence/R16-gate/10-android-export.log`
-- `orchestrator/evidence/R16-gate/10b-localization.log`
-- `orchestrator/evidence/R16-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R16-gate/12-git-status-after.log`
-- `orchestrator/evidence/R16-gate/13-negative-controls.log`
-- `orchestrator/evidence/R16-gate/14-git-status-final.log`
-- `orchestrator/evidence/R16-gate/exits.txt`
-- `orchestrator/evidence/R16-gate/gate.sh`
-- `orchestrator/evidence/R16-gate/negative-controls.py`
-- `orchestrator/evidence/R16.json`
-- `orchestrator/evidence/R17-gate/00-sha.txt`
-- `orchestrator/evidence/R17-gate/01-install.log`
-- `orchestrator/evidence/R17-gate/02-check-react-types.log`
-- `orchestrator/evidence/R17-gate/03-lint.log`
-- `orchestrator/evidence/R17-gate/04-typecheck.log`
-- `orchestrator/evidence/R17-gate/05-jest-full.log`
-- `orchestrator/evidence/R17-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R17-gate/06-scripts-test.log`
-- `orchestrator/evidence/R17-gate/07-build.log`
-- `orchestrator/evidence/R17-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R17-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R17-gate/09-git-status.log`
-- `orchestrator/evidence/R17-gate/10-android-export.log`
-- `orchestrator/evidence/R17-gate/10b-media.log`
-- `orchestrator/evidence/R17-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R17-gate/12-git-status-after.log`
-- `orchestrator/evidence/R17-gate/13-negative-controls.log`
-- `orchestrator/evidence/R17-gate/14-git-status-final.log`
-- `orchestrator/evidence/R17-gate/exits.txt`
-- `orchestrator/evidence/R17-gate/gate.sh`
-- `orchestrator/evidence/R17-gate/negative-controls.py`
-- `orchestrator/evidence/R17.json`
-- `orchestrator/evidence/R18-gate/00-sha.txt`
-- `orchestrator/evidence/R18-gate/01-install.log`
-- `orchestrator/evidence/R18-gate/02-check-react-types.log`
-- `orchestrator/evidence/R18-gate/03-lint.log`
-- `orchestrator/evidence/R18-gate/04-typecheck.log`
-- `orchestrator/evidence/R18-gate/05-jest-full.log`
-- `orchestrator/evidence/R18-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R18-gate/06-scripts-test.log`
-- `orchestrator/evidence/R18-gate/07-build.log`
-- `orchestrator/evidence/R18-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R18-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R18-gate/09-git-status.log`
-- `orchestrator/evidence/R18-gate/10-android-export.log`
-- `orchestrator/evidence/R18-gate/10b-localization.log`
-- `orchestrator/evidence/R18-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R18-gate/12-git-status-after.log`
-- `orchestrator/evidence/R18-gate/13-negative-controls.log`
-- `orchestrator/evidence/R18-gate/14-git-status-final.log`
-- `orchestrator/evidence/R18-gate/exits.txt`
-- `orchestrator/evidence/R18-gate/gate.sh`
-- `orchestrator/evidence/R18-gate/negative-controls.py`
-- `orchestrator/evidence/R18.json`
-- `orchestrator/evidence/R19-gate/00-sha.txt`
-- `orchestrator/evidence/R19-gate/01-install.log`
-- `orchestrator/evidence/R19-gate/02-check-react-types.log`
-- `orchestrator/evidence/R19-gate/03-lint.log`
-- `orchestrator/evidence/R19-gate/04-typecheck.log`
-- `orchestrator/evidence/R19-gate/05-jest-full.log`
-- `orchestrator/evidence/R19-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R19-gate/06-scripts-test.log`
-- `orchestrator/evidence/R19-gate/07-build.log`
-- `orchestrator/evidence/R19-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R19-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R19-gate/09-git-status.log`
-- `orchestrator/evidence/R19-gate/10-android-export.log`
-- `orchestrator/evidence/R19-gate/10b-localization.log`
-- `orchestrator/evidence/R19-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R19-gate/12-git-status-after.log`
-- `orchestrator/evidence/R19-gate/13-negative-controls.log`
-- `orchestrator/evidence/R19-gate/14-git-status-final.log`
-- `orchestrator/evidence/R19-gate/15-heap-profile.txt`
-- `orchestrator/evidence/R19-gate/exits.txt`
-- `orchestrator/evidence/R19-gate/gate.sh`
-- `orchestrator/evidence/R19-gate/negative-controls.py`
-- `orchestrator/evidence/R19.json`
-- `orchestrator/evidence/R20-gate/00-sha.txt`
-- `orchestrator/evidence/R20-gate/01-install.log`
-- `orchestrator/evidence/R20-gate/02-check-react-types.log`
-- `orchestrator/evidence/R20-gate/03-lint.log`
-- `orchestrator/evidence/R20-gate/04-typecheck.log`
-- `orchestrator/evidence/R20-gate/05-jest-full.log`
-- `orchestrator/evidence/R20-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R20-gate/06-scripts-test.log`
-- `orchestrator/evidence/R20-gate/07-build.log`
-- `orchestrator/evidence/R20-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R20-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R20-gate/09-git-status.log`
-- `orchestrator/evidence/R20-gate/10-android-export.log`
-- `orchestrator/evidence/R20-gate/10b-localization.log`
-- `orchestrator/evidence/R20-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R20-gate/12-git-status-after.log`
-- `orchestrator/evidence/R20-gate/13-negative-controls.log`
-- `orchestrator/evidence/R20-gate/14-git-status-final.log`
-- `orchestrator/evidence/R20-gate/exits.txt`
-- `orchestrator/evidence/R20-gate/gate.sh`
-- `orchestrator/evidence/R20-gate/negative-controls.py`
-- `orchestrator/evidence/R20-gate/probes/baseline-defect-at-1430687.txt`
-- `orchestrator/evidence/R20-gate/probes/baseline-defect.test.ts.txt`
-- `orchestrator/evidence/R20-gate/probes/csv-at-0cfe966.json`
-- `orchestrator/evidence/R20-gate/probes/csv-at-1430687.json`
-- `orchestrator/evidence/R20-gate/probes/csv-identity.template.ts.txt`
-- `orchestrator/evidence/R20-gate/probes/csv-identity.txt`
-- `orchestrator/evidence/R20.json`
-- `orchestrator/evidence/R21-gate/00-sha.txt`
-- `orchestrator/evidence/R21-gate/01-install.log`
-- `orchestrator/evidence/R21-gate/02-check-react-types.log`
-- `orchestrator/evidence/R21-gate/03-lint.log`
-- `orchestrator/evidence/R21-gate/04-typecheck.log`
-- `orchestrator/evidence/R21-gate/05-jest-full.log`
-- `orchestrator/evidence/R21-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R21-gate/06-scripts-test.log`
-- `orchestrator/evidence/R21-gate/07-build.log`
-- `orchestrator/evidence/R21-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R21-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R21-gate/09-git-status.log`
-- `orchestrator/evidence/R21-gate/10-android-export.log`
-- `orchestrator/evidence/R21-gate/10b-localization.log`
-- `orchestrator/evidence/R21-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R21-gate/12-git-status-after.log`
-- `orchestrator/evidence/R21-gate/13-negative-controls.log`
-- `orchestrator/evidence/R21-gate/14-git-status-final.log`
-- `orchestrator/evidence/R21-gate/exits.txt`
-- `orchestrator/evidence/R21-gate/gate.sh`
-- `orchestrator/evidence/R21-gate/negative-controls.py`
-- `orchestrator/evidence/R21-template-translations/live-snapshot.json`
-- `orchestrator/evidence/R21-template-translations/manifest.json`
-- `orchestrator/evidence/R21-template-translations/text-count-reconciliation.json`
-- `orchestrator/evidence/R21.json`
-- `orchestrator/evidence/R21B-gate/categorise-added.cjs`
-- `orchestrator/evidence/R21B-gate/gate.sh`
-- `orchestrator/evidence/R21B-gate/inventory-added.json`
-- `orchestrator/evidence/R21B-gate/negative-controls.py`
-- `orchestrator/evidence/R21B-gate/out/00-sha.txt`
-- `orchestrator/evidence/R21B-gate/out/01-install.log`
-- `orchestrator/evidence/R21B-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/R21B-gate/out/03-lint.log`
-- `orchestrator/evidence/R21B-gate/out/04-typecheck.log`
-- `orchestrator/evidence/R21B-gate/out/05-jest-full-shard1.log`
-- `orchestrator/evidence/R21B-gate/out/05-jest-full-shard2.log`
-- `orchestrator/evidence/R21B-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/R21B-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/R21B-gate/out/07-build.log`
-- `orchestrator/evidence/R21B-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R21B-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/R21B-gate/out/09-git-status.log`
-- `orchestrator/evidence/R21B-gate/out/10-android-export.log`
-- `orchestrator/evidence/R21B-gate/out/10b-localization.log`
-- `orchestrator/evidence/R21B-gate/out/10c-no-schema-change.log`
-- `orchestrator/evidence/R21B-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/R21B-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/R21B-gate/out/12b-install-local.log`
-- `orchestrator/evidence/R21B-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/R21B-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/R21B-gate/out/exits.txt`
-- `orchestrator/evidence/R21B-gate/realign-dry.json`
-- `orchestrator/evidence/R21B-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R21B-gate/realign.sh`
-- `orchestrator/evidence/R21B-gate/recategorise-drawn.cjs`
-- `orchestrator/evidence/R21B.json`
-- `orchestrator/evidence/R21C-gate/00-sha.txt`
-- `orchestrator/evidence/R21C-gate/01-install.log`
-- `orchestrator/evidence/R21C-gate/02-check-react-types.log`
-- `orchestrator/evidence/R21C-gate/03-lint.log`
-- `orchestrator/evidence/R21C-gate/04-typecheck.log`
-- `orchestrator/evidence/R21C-gate/05-jest-full.log`
-- `orchestrator/evidence/R21C-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R21C-gate/06-scripts-test.log`
-- `orchestrator/evidence/R21C-gate/07-build.log`
-- `orchestrator/evidence/R21C-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R21C-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R21C-gate/09-git-status.log`
-- `orchestrator/evidence/R21C-gate/10-android-export.log`
-- `orchestrator/evidence/R21C-gate/10b-localization.log`
-- `orchestrator/evidence/R21C-gate/10c-migration-unchanged.log`
-- `orchestrator/evidence/R21C-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R21C-gate/12-git-status-after.log`
-- `orchestrator/evidence/R21C-gate/13-negative-controls.log`
-- `orchestrator/evidence/R21C-gate/14-git-status-final.log`
-- `orchestrator/evidence/R21C-gate/controller-5c4ad16/core-jest-heap-oom.txt`
-- `orchestrator/evidence/R21C-gate/defect-on-base/template-translations-on-86d599d.log`
-- `orchestrator/evidence/R21C-gate/exits.txt`
-- `orchestrator/evidence/R21C-gate/gate.sh`
-- `orchestrator/evidence/R21C-gate/negative-controls.py`
-- `orchestrator/evidence/R21C-gate/rerun-336922f/00-sha.txt`
-- `orchestrator/evidence/R21C-gate/rerun-336922f/01-install.log`
-- `orchestrator/evidence/R21C-gate/rerun-336922f/05-jest-full.log`
-- `orchestrator/evidence/R21C-gate/rerun-336922f/exits.txt`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/00-sha.txt`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/01-install.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/02-check-react-types.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/03-lint.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/04-typecheck.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/05-jest-full.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/05b-handoff-check.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/06-scripts-test.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/07-build.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/08-git-diff-check.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/09-git-status.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/10-android-export.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/10b-localization.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/10c-migration-unchanged.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/11-criterion-suites.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/12-git-status-after.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/13-negative-controls.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/14-git-status-final.log`
-- `orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/exits.txt`
-- `orchestrator/evidence/R21C.json`
-- `orchestrator/evidence/R22-gate/00-sha.txt`
-- `orchestrator/evidence/R22-gate/01-install.log`
-- `orchestrator/evidence/R22-gate/02-check-react-types.log`
-- `orchestrator/evidence/R22-gate/03-lint.log`
-- `orchestrator/evidence/R22-gate/04-typecheck.log`
-- `orchestrator/evidence/R22-gate/05-jest-full.log`
-- `orchestrator/evidence/R22-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R22-gate/06-scripts-test.log`
-- `orchestrator/evidence/R22-gate/07-build.log`
-- `orchestrator/evidence/R22-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R22-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R22-gate/09-git-status.log`
-- `orchestrator/evidence/R22-gate/10-migration-unchanged.log`
-- `orchestrator/evidence/R22-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R22-gate/12-git-status-after.log`
-- `orchestrator/evidence/R22-gate/13-negative-controls.log`
-- `orchestrator/evidence/R22-gate/14-git-status-final.log`
-- `orchestrator/evidence/R22-gate/exits.txt`
-- `orchestrator/evidence/R22-gate/gate.sh`
-- `orchestrator/evidence/R22-gate/negative-controls.py`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/00-sha.txt`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/01-install.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/02-check-react-types.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/03-lint.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/04-typecheck.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/05-jest-full.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/05b-handoff-check.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/06-scripts-test.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/07-build.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/08-git-diff-check.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/09-git-status.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/10-migration-unchanged.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/11-criterion-suites.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/12-git-status-after.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/13-negative-controls.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/14-git-status-final.log`
-- `orchestrator/evidence/R22-gate/run-994de65-superseded/exits.txt`
-- `orchestrator/evidence/R22-production-apply/00-expected.json`
-- `orchestrator/evidence/R22-production-apply/01-precondition.json`
-- `orchestrator/evidence/R22-production-apply/02-apply.json`
-- `orchestrator/evidence/R22-production-apply/02-apply.sql`
-- `orchestrator/evidence/R22-production-apply/03-postcondition.json`
-- `orchestrator/evidence/R22-production-apply/04-independent-read.json`
-- `orchestrator/evidence/R22-production-apply/verdict.json`
-- `orchestrator/evidence/R22-tooling/apply.mjs`
-- `orchestrator/evidence/R22.json`
-- `orchestrator/evidence/R23-gate/00-sha.txt`
-- `orchestrator/evidence/R23-gate/01-install.log`
-- `orchestrator/evidence/R23-gate/02-check-react-types.log`
-- `orchestrator/evidence/R23-gate/03-lint.log`
-- `orchestrator/evidence/R23-gate/04-typecheck.log`
-- `orchestrator/evidence/R23-gate/05-jest-full.log`
-- `orchestrator/evidence/R23-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R23-gate/06-scripts-test.log`
-- `orchestrator/evidence/R23-gate/07-build.log`
-- `orchestrator/evidence/R23-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R23-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R23-gate/09-git-status.log`
-- `orchestrator/evidence/R23-gate/10-android-export.log`
-- `orchestrator/evidence/R23-gate/10b-localization.log`
-- `orchestrator/evidence/R23-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R23-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R23-gate/12-git-status-after.log`
-- `orchestrator/evidence/R23-gate/13-negative-controls.log`
-- `orchestrator/evidence/R23-gate/14-git-status-final.log`
-- `orchestrator/evidence/R23-gate/controller-7a94fc3/core-failures.txt`
-- `orchestrator/evidence/R23-gate/controller-7a94fc3/localization-failures.txt`
-- `orchestrator/evidence/R23-gate/defect-on-base/README.txt`
-- `orchestrator/evidence/R23-gate/defect-on-base/portfolio-public-text-on-23756203.log`
-- `orchestrator/evidence/R23-gate/defect-on-base/probe-portfolio-public-text.test.ts.txt`
-- `orchestrator/evidence/R23-gate/defect-on-base/probe-v101-layout.screen.test.tsx.txt`
-- `orchestrator/evidence/R23-gate/defect-on-base/v101-layout-on-23756203.log`
-- `orchestrator/evidence/R23-gate/exits.txt`
-- `orchestrator/evidence/R23-gate/gate.sh`
-- `orchestrator/evidence/R23-gate/negative-controls.py`
-- `orchestrator/evidence/R23-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R23-gate/rerun-jest.sh`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/00-sha.txt`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/01-install.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/02-check-react-types.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/03-lint.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/04-typecheck.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/05-jest-full.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/05b-handoff-check.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/06-scripts-test.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/07-build.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/08-git-diff-check.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/09-git-status.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/10-android-export.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/10b-localization.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/10c-no-schema-change.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/11-criterion-suites.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/12-git-status-after.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/13-negative-controls.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/14-git-status-final.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/exits.txt`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520-oom/00-sha.txt`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520-oom/05-jest-full.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520-oom/exits.txt`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520/00-sha.txt`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520/05-jest-full.log`
-- `orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520/exits.txt`
-- `orchestrator/evidence/R23.json`
-- `orchestrator/evidence/R24-gate/00-sha.txt`
-- `orchestrator/evidence/R24-gate/01-install.log`
-- `orchestrator/evidence/R24-gate/02-check-react-types.log`
-- `orchestrator/evidence/R24-gate/03-lint.log`
-- `orchestrator/evidence/R24-gate/04-typecheck.log`
-- `orchestrator/evidence/R24-gate/05-jest-full.log`
-- `orchestrator/evidence/R24-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R24-gate/06-scripts-test.log`
-- `orchestrator/evidence/R24-gate/07-build.log`
-- `orchestrator/evidence/R24-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R24-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R24-gate/09-git-status.log`
-- `orchestrator/evidence/R24-gate/10-android-export.log`
-- `orchestrator/evidence/R24-gate/10b-localization.log`
-- `orchestrator/evidence/R24-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R24-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R24-gate/12-git-status-after.log`
-- `orchestrator/evidence/R24-gate/13-negative-controls.log`
-- `orchestrator/evidence/R24-gate/14-git-status-final.log`
-- `orchestrator/evidence/R24-gate/defect-on-base/README.txt`
-- `orchestrator/evidence/R24-gate/defect-on-base/probe-store-data-safety.test.ts.txt`
-- `orchestrator/evidence/R24-gate/defect-on-base/store-data-safety-on-8fd1336c.log`
-- `orchestrator/evidence/R24-gate/exits.txt`
-- `orchestrator/evidence/R24-gate/gate.sh`
-- `orchestrator/evidence/R24-gate/inventory-added-round2.json`
-- `orchestrator/evidence/R24-gate/inventory-added-round3.json`
-- `orchestrator/evidence/R24-gate/inventory-added.json`
-- `orchestrator/evidence/R24-gate/negative-controls.py`
-- `orchestrator/evidence/R24-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/00-sha.txt`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/01-install.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/02-check-react-types.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/03-lint.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/04-typecheck.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/05-jest-full.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/05b-handoff-check.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/06-scripts-test.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/07-build.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/08-git-diff-check.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/09-git-status.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/10-android-export.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/10b-localization.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/10c-no-schema-change.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/11-criterion-suites.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/12-git-status-after.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/13-negative-controls.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/14-git-status-final.log`
-- `orchestrator/evidence/R24-gate/run-0330d10-superseded/exits.txt`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/00-sha.txt`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/01-install.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/02-check-react-types.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/03-lint.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/04-typecheck.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/05-jest-full.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/05b-handoff-check.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/06-scripts-test.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/07-build.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/08-git-diff-check.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/09-git-status.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/10-android-export.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/10b-localization.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/10c-no-schema-change.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/11-criterion-suites.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/12-git-status-after.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/13-negative-controls.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/14-git-status-final.log`
-- `orchestrator/evidence/R24-gate/run-d74859b-superseded/exits.txt`
-- `orchestrator/evidence/R24.json`
-- `orchestrator/evidence/R25-gate/00-sha.txt`
-- `orchestrator/evidence/R25-gate/01-install.log`
-- `orchestrator/evidence/R25-gate/02-check-react-types.log`
-- `orchestrator/evidence/R25-gate/03-lint.log`
-- `orchestrator/evidence/R25-gate/04-typecheck.log`
-- `orchestrator/evidence/R25-gate/05-jest-full.log`
-- `orchestrator/evidence/R25-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R25-gate/06-scripts-test.log`
-- `orchestrator/evidence/R25-gate/07-build.log`
-- `orchestrator/evidence/R25-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R25-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R25-gate/09-git-status.log`
-- `orchestrator/evidence/R25-gate/10-android-export.log`
-- `orchestrator/evidence/R25-gate/10b-localization.log`
-- `orchestrator/evidence/R25-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R25-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R25-gate/12-git-status-after.log`
-- `orchestrator/evidence/R25-gate/13-negative-controls.log`
-- `orchestrator/evidence/R25-gate/14-git-status-final.log`
-- `orchestrator/evidence/R25-gate/exits.txt`
-- `orchestrator/evidence/R25-gate/gate.sh`
-- `orchestrator/evidence/R25-gate/inventory-added.json`
-- `orchestrator/evidence/R25-gate/negative-controls.py`
-- `orchestrator/evidence/R25-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R25.json`
-- `orchestrator/evidence/R26-gate/categorise-added.cjs`
-- `orchestrator/evidence/R26-gate/gate.sh`
-- `orchestrator/evidence/R26-gate/inventory-added.json`
-- `orchestrator/evidence/R26-gate/negative-controls.py`
-- `orchestrator/evidence/R26-gate/out/00-sha.txt`
-- `orchestrator/evidence/R26-gate/out/01-install.log`
-- `orchestrator/evidence/R26-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/R26-gate/out/03-lint.log`
-- `orchestrator/evidence/R26-gate/out/04-typecheck.log`
-- `orchestrator/evidence/R26-gate/out/05-jest-full.log`
-- `orchestrator/evidence/R26-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/R26-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/R26-gate/out/07-build.log`
-- `orchestrator/evidence/R26-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R26-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/R26-gate/out/09-git-status.log`
-- `orchestrator/evidence/R26-gate/out/10-android-export.log`
-- `orchestrator/evidence/R26-gate/out/10b-localization.log`
-- `orchestrator/evidence/R26-gate/out/10c-offline.log`
-- `orchestrator/evidence/R26-gate/out/10d-database.log`
-- `orchestrator/evidence/R26-gate/out/10e-manifest-rebuild.log`
-- `orchestrator/evidence/R26-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/R26-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/R26-gate/out/12b-install-local.log`
-- `orchestrator/evidence/R26-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/R26-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/R26-gate/out/exits.txt`
-- `orchestrator/evidence/R26-gate/realign-dry.json`
-- `orchestrator/evidence/R26-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R26-gate/realign.sh`
-- `orchestrator/evidence/R26-moderation/build-manifest.mjs`
-- `orchestrator/evidence/R26-moderation/live-snapshot.json`
-- `orchestrator/evidence/R26-moderation/local-replay-reading.json`
-- `orchestrator/evidence/R26-moderation/manifest.json`
-- `orchestrator/evidence/R26-moderation/reading.sql`
-- `orchestrator/evidence/R26-moderation/rollback.sql`
-- `orchestrator/evidence/R26.json`
-- `orchestrator/evidence/R27-gate/gate.sh`
-- `orchestrator/evidence/R27-gate/negative-controls.py`
-- `orchestrator/evidence/R27-gate/out/00-sha.txt`
-- `orchestrator/evidence/R27-gate/out/01-install.log`
-- `orchestrator/evidence/R27-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/R27-gate/out/03-lint.log`
-- `orchestrator/evidence/R27-gate/out/04-typecheck.log`
-- `orchestrator/evidence/R27-gate/out/05-jest-full.log`
-- `orchestrator/evidence/R27-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/R27-gate/out/05c-jest-shard-1of2.log`
-- `orchestrator/evidence/R27-gate/out/05d-jest-shard-2of2.log`
-- `orchestrator/evidence/R27-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/R27-gate/out/07-build.log`
-- `orchestrator/evidence/R27-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R27-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/R27-gate/out/09-git-status.log`
-- `orchestrator/evidence/R27-gate/out/10-manifest-unchanged.log`
-- `orchestrator/evidence/R27-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/R27-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/R27-gate/out/12b-install-local.log`
-- `orchestrator/evidence/R27-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/R27-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/R27-gate/out/exits.txt`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/00-sha.txt`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/01-install.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/02-check-react-types.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/03-lint.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/04-typecheck.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/05-jest-full.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/05b-handoff-check.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/06-scripts-test.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/07-build.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/08-git-diff-check.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/09-git-status.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/10-manifest-unchanged.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/11-criterion-suites.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/12-git-status-after.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/12b-install-local.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/13-negative-controls.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/14-git-status-final.log`
-- `orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/exits.txt`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/00-sha.txt`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/01-install.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/02-check-react-types.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/03-lint.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/04-typecheck.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/05-jest-full.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/05b-handoff-check.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/06-scripts-test.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/07-build.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/08-git-diff-check.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/09-git-status.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/10-manifest-unchanged.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/11-criterion-suites.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/12-git-status-after.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/12b-install-local.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/13-negative-controls.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/14-git-status-final.log`
-- `orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/exits.txt`
-- `orchestrator/evidence/R27-gate/shards.sh`
-- `orchestrator/evidence/R27-production-apply/00-expected.json`
-- `orchestrator/evidence/R27-production-apply/01-precondition.json`
-- `orchestrator/evidence/R27-production-apply/02-apply.json`
-- `orchestrator/evidence/R27-production-apply/02-apply.sql`
-- `orchestrator/evidence/R27-production-apply/03-postcondition.json`
-- `orchestrator/evidence/R27-production-apply/04-independent-read.json`
-- `orchestrator/evidence/R27-production-apply/verdict.json`
-- `orchestrator/evidence/R27-tooling/apply.mjs`
-- `orchestrator/evidence/R27-tooling/independent-read.sql`
-- `orchestrator/evidence/R27.json`
-- `orchestrator/evidence/R28-gate/00-sha.txt`
-- `orchestrator/evidence/R28-gate/01-install.log`
-- `orchestrator/evidence/R28-gate/02-check-react-types.log`
-- `orchestrator/evidence/R28-gate/03-lint.log`
-- `orchestrator/evidence/R28-gate/04-typecheck.log`
-- `orchestrator/evidence/R28-gate/05-jest-full.log`
-- `orchestrator/evidence/R28-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R28-gate/06-scripts-test.log`
-- `orchestrator/evidence/R28-gate/07-build.log`
-- `orchestrator/evidence/R28-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R28-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R28-gate/09-git-status.log`
-- `orchestrator/evidence/R28-gate/10-android-export.log`
-- `orchestrator/evidence/R28-gate/10b-localization.log`
-- `orchestrator/evidence/R28-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R28-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R28-gate/12-git-status-after.log`
-- `orchestrator/evidence/R28-gate/13-negative-controls.log`
-- `orchestrator/evidence/R28-gate/14-git-status-final.log`
-- `orchestrator/evidence/R28-gate/exits.txt`
-- `orchestrator/evidence/R28-gate/gate.sh`
-- `orchestrator/evidence/R28-gate/negative-controls.py`
-- `orchestrator/evidence/R28-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R28.json`
-- `orchestrator/evidence/R28M-active-project-role/build-manifest.mjs`
-- `orchestrator/evidence/R28M-active-project-role/live-read.json`
-- `orchestrator/evidence/R28M-active-project-role/manifest.json`
-- `orchestrator/evidence/R28M-active-project-role/reading.sql`
-- `orchestrator/evidence/R28M-active-project-role/rollback.sql`
-- `orchestrator/evidence/R28M-gate/gate.sh`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/00-install-local.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/00-sha.txt`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/01-install.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/02-check-react-types.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/03-lint.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/04-typecheck.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/05-criterion-suites.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/06-prepare.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/06b-handoff-check.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/07-manifest-rebuilt.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/08-approval-null.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/09-git-diff-check.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/10-git-status.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/10b-install-local.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/11-negative-controls.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/12-git-status-final.log`
-- `orchestrator/evidence/R28M-gate/logs-883b2cdd/exits.txt`
-- `orchestrator/evidence/R28M-gate/logs-controller-fontscale/00-sha.txt`
-- `orchestrator/evidence/R28M-gate/logs-controller-fontscale/01-font-scale-live-change-alone.log`
-- `orchestrator/evidence/R28M-gate/logs-controller-oom/00-sha.txt`
-- `orchestrator/evidence/R28M-gate/logs-controller-oom/01-line-height-scales-alone.log`
-- `orchestrator/evidence/R28M-gate/logs-controller-timeout/00-sha.txt`
-- `orchestrator/evidence/R28M-gate/logs-controller-timeout/01-two-suites.log`
-- `orchestrator/evidence/R28M-gate/negative-controls.sh`
-- `orchestrator/evidence/R28M.json`
-- `orchestrator/evidence/R28P-active-project-role/00-plan.json`
-- `orchestrator/evidence/R28P-active-project-role/01-precondition-check-only.json`
-- `orchestrator/evidence/R28P-active-project-role/01-precondition.json`
-- `orchestrator/evidence/R28P-active-project-role/02-backup.json`
-- `orchestrator/evidence/R28P-active-project-role/03-apply.json`
-- `orchestrator/evidence/R28P-active-project-role/03-apply.sql`
-- `orchestrator/evidence/R28P-active-project-role/04-postcondition.json`
-- `orchestrator/evidence/R28P-active-project-role/applied.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt1-blocked/01-precondition.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt1-blocked/02-backup.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt1-blocked/blocked.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/01-precondition.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/02-backup.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/03-apply.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/03-apply.sql`
-- `orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/04-postcondition.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/05-rollback.json`
-- `orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/blocked.json`
-- `orchestrator/evidence/R28P-active-project-role/read-first.json`
-- `orchestrator/evidence/R28P-active-project-role/verdict.json`
-- `orchestrator/evidence/R28P-gate/gate.sh`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/00-install-local.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/00-sha.txt`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/01-install.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/02-check-react-types.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/03-lint.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/04-typecheck.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/05-criterion-suites.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/06-jest-full.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/06-prepare.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/06b-handoff-check.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/07-manifest-unchanged.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/08-approval-null.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/09-git-diff-check.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/10-git-status.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/10b-install-local.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/11-negative-controls.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/12-git-status-final.log`
-- `orchestrator/evidence/R28P-gate/logs-953631d1/exits.txt`
-- `orchestrator/evidence/R28P-gate/negative-controls.sh`
-- `orchestrator/evidence/R28P-tooling/apply.mjs`
-- `orchestrator/evidence/R28P.json`
-- `orchestrator/evidence/R29-gate/00-sha.txt`
-- `orchestrator/evidence/R29-gate/01-install.log`
-- `orchestrator/evidence/R29-gate/02-check-react-types.log`
-- `orchestrator/evidence/R29-gate/03-lint.log`
-- `orchestrator/evidence/R29-gate/04-typecheck.log`
-- `orchestrator/evidence/R29-gate/05-jest-full.log`
-- `orchestrator/evidence/R29-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R29-gate/06-scripts-test.log`
-- `orchestrator/evidence/R29-gate/07-build.log`
-- `orchestrator/evidence/R29-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R29-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R29-gate/09-git-status.log`
-- `orchestrator/evidence/R29-gate/10-android-export.log`
-- `orchestrator/evidence/R29-gate/10b-localization.log`
-- `orchestrator/evidence/R29-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R29-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R29-gate/12-git-status-after.log`
-- `orchestrator/evidence/R29-gate/13-negative-controls.log`
-- `orchestrator/evidence/R29-gate/14-git-status-final.log`
-- `orchestrator/evidence/R29-gate/exits.txt`
-- `orchestrator/evidence/R29-gate/gate.sh`
-- `orchestrator/evidence/R29-gate/negative-controls.py`
-- `orchestrator/evidence/R29.json`
-- `orchestrator/evidence/R30-gate/00-sha.txt`
-- `orchestrator/evidence/R30-gate/01-install.log`
-- `orchestrator/evidence/R30-gate/02-check-react-types.log`
-- `orchestrator/evidence/R30-gate/03-lint.log`
-- `orchestrator/evidence/R30-gate/04-typecheck.log`
-- `orchestrator/evidence/R30-gate/05-jest-full.log`
-- `orchestrator/evidence/R30-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R30-gate/06-scripts-test.log`
-- `orchestrator/evidence/R30-gate/07-build.log`
-- `orchestrator/evidence/R30-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R30-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R30-gate/09-git-status.log`
-- `orchestrator/evidence/R30-gate/10-android-export.log`
-- `orchestrator/evidence/R30-gate/10b-localization.log`
-- `orchestrator/evidence/R30-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R30-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R30-gate/12-git-status-after.log`
-- `orchestrator/evidence/R30-gate/13-negative-controls.log`
-- `orchestrator/evidence/R30-gate/14-git-status-final.log`
-- `orchestrator/evidence/R30-gate/exits.txt`
-- `orchestrator/evidence/R30-gate/gate.sh`
-- `orchestrator/evidence/R30-gate/inventory-added-review6.json`
-- `orchestrator/evidence/R30-gate/inventory-added.json`
-- `orchestrator/evidence/R30-gate/negative-controls.py`
-- `orchestrator/evidence/R30-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R30.json`
-- `orchestrator/evidence/R31-gate/00-sha.txt`
-- `orchestrator/evidence/R31-gate/00b-base-defect-repro.log`
-- `orchestrator/evidence/R31-gate/01-install.log`
-- `orchestrator/evidence/R31-gate/02-check-react-types.log`
-- `orchestrator/evidence/R31-gate/03-lint.log`
-- `orchestrator/evidence/R31-gate/04-typecheck.log`
-- `orchestrator/evidence/R31-gate/05-jest-full.log`
-- `orchestrator/evidence/R31-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R31-gate/06-scripts-test.log`
-- `orchestrator/evidence/R31-gate/07-build.log`
-- `orchestrator/evidence/R31-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R31-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R31-gate/09-git-status.log`
-- `orchestrator/evidence/R31-gate/10-android-export.log`
-- `orchestrator/evidence/R31-gate/10b-localization.log`
-- `orchestrator/evidence/R31-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R31-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R31-gate/12-git-status-after.log`
-- `orchestrator/evidence/R31-gate/13-negative-controls.log`
-- `orchestrator/evidence/R31-gate/14-git-status-final.log`
-- `orchestrator/evidence/R31-gate/exits.txt`
-- `orchestrator/evidence/R31-gate/gate.sh`
-- `orchestrator/evidence/R31-gate/inventory-added.json`
-- `orchestrator/evidence/R31-gate/negative-controls.py`
-- `orchestrator/evidence/R31-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R31.json`
-- `orchestrator/evidence/R32-active-project-role/manifest.json`
-- `orchestrator/evidence/R32-gate/00-sha.txt`
-- `orchestrator/evidence/R32-gate/00b-base-defect-repro.log`
-- `orchestrator/evidence/R32-gate/00c-req162-base-ab.log`
-- `orchestrator/evidence/R32-gate/00d-req162-ab-idle.log`
-- `orchestrator/evidence/R32-gate/01-install.log`
-- `orchestrator/evidence/R32-gate/02-check-react-types.log`
-- `orchestrator/evidence/R32-gate/03-lint.log`
-- `orchestrator/evidence/R32-gate/04-typecheck.log`
-- `orchestrator/evidence/R32-gate/05-jest-full.log`
-- `orchestrator/evidence/R32-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R32-gate/06-scripts-test.log`
-- `orchestrator/evidence/R32-gate/07-build.log`
-- `orchestrator/evidence/R32-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R32-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R32-gate/09-git-status.log`
-- `orchestrator/evidence/R32-gate/10-android-export.log`
-- `orchestrator/evidence/R32-gate/10b-localization.log`
-- `orchestrator/evidence/R32-gate/10c-schema-as-integration.log`
-- `orchestrator/evidence/R32-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R32-gate/12-git-status-after.log`
-- `orchestrator/evidence/R32-gate/12b-install-local.log`
-- `orchestrator/evidence/R32-gate/13-negative-controls.log`
-- `orchestrator/evidence/R32-gate/14-git-status-final.log`
-- `orchestrator/evidence/R32-gate/exits.txt`
-- `orchestrator/evidence/R32-gate/gate.sh`
-- `orchestrator/evidence/R32-gate/inventory-added.json`
-- `orchestrator/evidence/R32-gate/negative-controls.py`
-- `orchestrator/evidence/R32-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R32-gate/req162-probe/probe-set-clause.test.ts.txt`
-- `orchestrator/evidence/R32-gate/req162-probe/probe-wrappers.test.ts.txt`
-- `orchestrator/evidence/R32-gate/req162-probe/probe1.out.txt`
-- `orchestrator/evidence/R32-gate/req162-probe/probe2.out.txt`
-- `orchestrator/evidence/R32-gate/req162-probe/probe3.out.txt`
-- `orchestrator/evidence/R32-gate/req162-probe/probe4.out.txt`
-- `orchestrator/evidence/R32-gate/req162-probe/probe5.out.txt`
-- `orchestrator/evidence/R32-gate/run1-load-timeouts/05-jest-full.summary.log`
-- `orchestrator/evidence/R32-gate/run1-load-timeouts/11-criterion-suites.summary.log`
-- `orchestrator/evidence/R32-gate/run1-load-timeouts/11b-criterion-load-reruns.log`
-- `orchestrator/evidence/R32-gate/run1-load-timeouts/exits.txt`
-- `orchestrator/evidence/R32.json`
-- `orchestrator/evidence/R33-gate/00-sha.txt`
-- `orchestrator/evidence/R33-gate/00c-req162-ab.log`
-- `orchestrator/evidence/R33-gate/01-install.log`
-- `orchestrator/evidence/R33-gate/02-check-react-types.log`
-- `orchestrator/evidence/R33-gate/03-lint.log`
-- `orchestrator/evidence/R33-gate/04-typecheck.log`
-- `orchestrator/evidence/R33-gate/05-jest-full.log`
-- `orchestrator/evidence/R33-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R33-gate/06-scripts-test.log`
-- `orchestrator/evidence/R33-gate/07-build.log`
-- `orchestrator/evidence/R33-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R33-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R33-gate/09-git-status.log`
-- `orchestrator/evidence/R33-gate/10-android-export.log`
-- `orchestrator/evidence/R33-gate/10b-localization.log`
-- `orchestrator/evidence/R33-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R33-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R33-gate/12-git-status-after.log`
-- `orchestrator/evidence/R33-gate/13-negative-controls.log`
-- `orchestrator/evidence/R33-gate/14-git-status-final.log`
-- `orchestrator/evidence/R33-gate/exits.txt`
-- `orchestrator/evidence/R33-gate/gate.sh`
-- `orchestrator/evidence/R33-gate/inventory-added.json`
-- `orchestrator/evidence/R33-gate/negative-controls.py`
-- `orchestrator/evidence/R33-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R33.json`
-- `orchestrator/evidence/R34-gate/00-sha.txt`
-- `orchestrator/evidence/R34-gate/00c-base-product-ab.log`
-- `orchestrator/evidence/R34-gate/01-install.log`
-- `orchestrator/evidence/R34-gate/02-check-react-types.log`
-- `orchestrator/evidence/R34-gate/03-lint.log`
-- `orchestrator/evidence/R34-gate/04-typecheck.log`
-- `orchestrator/evidence/R34-gate/05-jest-full.log`
-- `orchestrator/evidence/R34-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R34-gate/06-scripts-test.log`
-- `orchestrator/evidence/R34-gate/07-build.log`
-- `orchestrator/evidence/R34-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R34-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R34-gate/09-git-status.log`
-- `orchestrator/evidence/R34-gate/10-android-export.log`
-- `orchestrator/evidence/R34-gate/10b-localization.log`
-- `orchestrator/evidence/R34-gate/10c-no-schema-change.log`
-- `orchestrator/evidence/R34-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R34-gate/12-git-status-after.log`
-- `orchestrator/evidence/R34-gate/13-negative-controls.log`
-- `orchestrator/evidence/R34-gate/14-git-status-final.log`
-- `orchestrator/evidence/R34-gate/exits.txt`
-- `orchestrator/evidence/R34-gate/gate.sh`
-- `orchestrator/evidence/R34-gate/inventory-added.json`
-- `orchestrator/evidence/R34-gate/negative-controls.py`
-- `orchestrator/evidence/R34-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R34.json`
-- `orchestrator/evidence/R35-gate/00-sha.txt`
-- `orchestrator/evidence/R35-gate/01-install.log`
-- `orchestrator/evidence/R35-gate/02-check-react-types.log`
-- `orchestrator/evidence/R35-gate/03-lint.log`
-- `orchestrator/evidence/R35-gate/04-typecheck.log`
-- `orchestrator/evidence/R35-gate/05-jest-full.log`
-- `orchestrator/evidence/R35-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R35-gate/06-scripts-test.log`
-- `orchestrator/evidence/R35-gate/07-build.log`
-- `orchestrator/evidence/R35-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R35-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R35-gate/09-git-status.log`
-- `orchestrator/evidence/R35-gate/10-android-export.log`
-- `orchestrator/evidence/R35-gate/10b-localization.log`
-- `orchestrator/evidence/R35-gate/10c-no-schema-or-dependency-change.log`
-- `orchestrator/evidence/R35-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R35-gate/12-git-status-after.log`
-- `orchestrator/evidence/R35-gate/12b-install-local.log`
-- `orchestrator/evidence/R35-gate/12c-base-product-ab.log`
-- `orchestrator/evidence/R35-gate/13-negative-controls.log`
-- `orchestrator/evidence/R35-gate/14-git-status-final.log`
-- `orchestrator/evidence/R35-gate/base-product-ab.sh`
-- `orchestrator/evidence/R35-gate/exits.txt`
-- `orchestrator/evidence/R35-gate/gate.sh`
-- `orchestrator/evidence/R35-gate/inventory-added.json`
-- `orchestrator/evidence/R35-gate/make-inventory-added.py`
-- `orchestrator/evidence/R35-gate/negative-controls.py`
-- `orchestrator/evidence/R35-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R35-gate/realign.sh`
-- `orchestrator/evidence/R35.json`
-- `orchestrator/evidence/R36-gate/00-sha.txt`
-- `orchestrator/evidence/R36-gate/01-install.log`
-- `orchestrator/evidence/R36-gate/02-check-react-types.log`
-- `orchestrator/evidence/R36-gate/03-lint.log`
-- `orchestrator/evidence/R36-gate/04-typecheck.log`
-- `orchestrator/evidence/R36-gate/05-jest-full.log`
-- `orchestrator/evidence/R36-gate/05b-handoff-check.log`
-- `orchestrator/evidence/R36-gate/05b2-base-666dc558-jest-full.log`
-- `orchestrator/evidence/R36-gate/05r-jest-full-rerun.log`
-- `orchestrator/evidence/R36-gate/05s1-jest-shard-1-of-2.log`
-- `orchestrator/evidence/R36-gate/05s2-jest-shard-2-of-2.log`
-- `orchestrator/evidence/R36-gate/06-scripts-test.log`
-- `orchestrator/evidence/R36-gate/07-build.log`
-- `orchestrator/evidence/R36-gate/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R36-gate/08-git-diff-check.log`
-- `orchestrator/evidence/R36-gate/09-git-status.log`
-- `orchestrator/evidence/R36-gate/10-android-export.log`
-- `orchestrator/evidence/R36-gate/10b-localization.log`
-- `orchestrator/evidence/R36-gate/10c-no-schema-and-one-dependency.log`
-- `orchestrator/evidence/R36-gate/11-criterion-suites.log`
-- `orchestrator/evidence/R36-gate/12-git-status-after.log`
-- `orchestrator/evidence/R36-gate/12b-install-local.log`
-- `orchestrator/evidence/R36-gate/12c-base-product-ab.log`
-- `orchestrator/evidence/R36-gate/13-negative-controls.log`
-- `orchestrator/evidence/R36-gate/14-git-status-final.log`
-- `orchestrator/evidence/R36-gate/base-product-ab.sh`
-- `orchestrator/evidence/R36-gate/exits.txt`
-- `orchestrator/evidence/R36-gate/gate.sh`
-- `orchestrator/evidence/R36-gate/negative-controls.py`
-- `orchestrator/evidence/R36.json`
-- `orchestrator/evidence/R37-gate/base-product-ab.sh`
-- `orchestrator/evidence/R37-gate/gate.sh`
-- `orchestrator/evidence/R37-gate/inventory-added.json`
-- `orchestrator/evidence/R37-gate/logs/00-sha.txt`
-- `orchestrator/evidence/R37-gate/logs/01-install.log`
-- `orchestrator/evidence/R37-gate/logs/02-check-react-types.log`
-- `orchestrator/evidence/R37-gate/logs/03-lint.log`
-- `orchestrator/evidence/R37-gate/logs/04-typecheck.log`
-- `orchestrator/evidence/R37-gate/logs/05-jest-full.log`
-- `orchestrator/evidence/R37-gate/logs/05b-handoff-check.log`
-- `orchestrator/evidence/R37-gate/logs/06-scripts-test.log`
-- `orchestrator/evidence/R37-gate/logs/07-build.log`
-- `orchestrator/evidence/R37-gate/logs/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R37-gate/logs/08-git-diff-check.log`
-- `orchestrator/evidence/R37-gate/logs/09-git-status.log`
-- `orchestrator/evidence/R37-gate/logs/10-android-export.log`
-- `orchestrator/evidence/R37-gate/logs/10b-localization.log`
-- `orchestrator/evidence/R37-gate/logs/10c-no-schema-or-dependency-change.log`
-- `orchestrator/evidence/R37-gate/logs/11-criterion-suites.log`
-- `orchestrator/evidence/R37-gate/logs/12-git-status-after.log`
-- `orchestrator/evidence/R37-gate/logs/12b-install-local.log`
-- `orchestrator/evidence/R37-gate/logs/12c-base-product-ab.log`
-- `orchestrator/evidence/R37-gate/logs/13-negative-controls.log`
-- `orchestrator/evidence/R37-gate/logs/14-git-status-final.log`
-- `orchestrator/evidence/R37-gate/logs/exits.txt`
-- `orchestrator/evidence/R37-gate/make-inventory-added.py`
-- `orchestrator/evidence/R37-gate/negative-controls.py`
-- `orchestrator/evidence/R37-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R37-gate/realign.sh`
-- `orchestrator/evidence/R37.json`
-- `orchestrator/evidence/R38-gate/base-product-ab.sh`
-- `orchestrator/evidence/R38-gate/gate.sh`
-- `orchestrator/evidence/R38-gate/inventory-added.json`
-- `orchestrator/evidence/R38-gate/logs/00-sha.txt`
-- `orchestrator/evidence/R38-gate/logs/01-install.log`
-- `orchestrator/evidence/R38-gate/logs/02-check-react-types.log`
-- `orchestrator/evidence/R38-gate/logs/03-lint.log`
-- `orchestrator/evidence/R38-gate/logs/04-typecheck.log`
-- `orchestrator/evidence/R38-gate/logs/05-jest-full.log`
-- `orchestrator/evidence/R38-gate/logs/05b-handoff-check.log`
-- `orchestrator/evidence/R38-gate/logs/05s1-jest-shard-1-of-2.log`
-- `orchestrator/evidence/R38-gate/logs/05s2-jest-shard-2-of-2.log`
-- `orchestrator/evidence/R38-gate/logs/06-scripts-test.log`
-- `orchestrator/evidence/R38-gate/logs/07-build.log`
-- `orchestrator/evidence/R38-gate/logs/07b-typecheck-after-build.log`
-- `orchestrator/evidence/R38-gate/logs/08-git-diff-check.log`
-- `orchestrator/evidence/R38-gate/logs/09-git-status.log`
-- `orchestrator/evidence/R38-gate/logs/10-android-export.log`
-- `orchestrator/evidence/R38-gate/logs/10b-localization.log`
-- `orchestrator/evidence/R38-gate/logs/10c-no-schema-or-dependency-change.log`
-- `orchestrator/evidence/R38-gate/logs/11-criterion-suites.log`
-- `orchestrator/evidence/R38-gate/logs/12-git-status-after.log`
-- `orchestrator/evidence/R38-gate/logs/12b-install-local.log`
-- `orchestrator/evidence/R38-gate/logs/12c-base-product-ab.log`
-- `orchestrator/evidence/R38-gate/logs/13-negative-controls.log`
-- `orchestrator/evidence/R38-gate/logs/14-git-status-final.log`
-- `orchestrator/evidence/R38-gate/logs/exits.txt`
-- `orchestrator/evidence/R38-gate/make-inventory-added.py`
-- `orchestrator/evidence/R38-gate/negative-controls.py`
-- `orchestrator/evidence/R38-gate/realign-inventory.cjs`
-- `orchestrator/evidence/R38-gate/realign.sh`
-- `orchestrator/evidence/R38.json`
-- `orchestrator/evidence/R39-gate/acceptance-screens.log`
-- `orchestrator/evidence/R39-gate/android-export.log`
-- `orchestrator/evidence/R39-gate/build.log`
-- `orchestrator/evidence/R39-gate/core-gates.log`
-- `orchestrator/evidence/R39-gate/full-jest.log`
-- `orchestrator/evidence/R39-gate/inventory-added.json`
-- `orchestrator/evidence/R39-gate/inventory-realign-empty.json`
-- `orchestrator/evidence/R39.json`
-- `orchestrator/evidence/R40-gate/acceptance-screens.log`
-- `orchestrator/evidence/R40-gate/android-export.log`
-- `orchestrator/evidence/R40-gate/build.log`
-- `orchestrator/evidence/R40-gate/core-gates.log`
-- `orchestrator/evidence/R40-gate/full-jest.log`
-- `orchestrator/evidence/R40-gate/inventory-added.json`
-- `orchestrator/evidence/R40-gate/localization.log`
-- `orchestrator/evidence/R40-gate/negative-controls.log`
-- `orchestrator/evidence/R40-gate/negative-controls.py`
-- `orchestrator/evidence/R40-gate/realign.sh`
-- `orchestrator/evidence/R40.json`
-- `orchestrator/evidence/R41-gate/categorise-ledgers.cjs`
-- `orchestrator/evidence/R41-gate/gate.sh`
-- `orchestrator/evidence/R41-gate/inventory-added.json`
-- `orchestrator/evidence/R41-gate/logs/controller-android-export.log`
-- `orchestrator/evidence/R41-gate/logs/controller-core.log`
-- `orchestrator/evidence/R41-gate/logs/controller-localization.log`
-- `orchestrator/evidence/R41-gate/logs/criterion-suites.log`
-- `orchestrator/evidence/R41-gate/logs/local-checks.txt`
-- `orchestrator/evidence/R41-gate/logs/negative-controls.log`
-- `orchestrator/evidence/R41-gate/logs/own-core.log`
-- `orchestrator/evidence/R41-gate/logs/own-gate-run1.txt`
-- `orchestrator/evidence/R41-gate/logs/redesign-matrix.log`
-- `orchestrator/evidence/R41-gate/negative-controls.py`
-- `orchestrator/evidence/R41-gate/realign.sh`
-- `orchestrator/evidence/R41.json`
-- `orchestrator/evidence/RC101-gate/gate.sh`
-- `orchestrator/evidence/RC101-gate/logs-515a0308/rerun-req173-line-height.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/00-sha.txt`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/01-install.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/01b-install-local.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/02-check-react-types.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/03-lint.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/04-typecheck.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/05-criterion-suites.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/06-jest-full.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/06b-handoff-check.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/07-scripts-test.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/08-build.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/08b-typecheck-after-build.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/09-localization.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/10-android-export.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/10a-version-and-scope.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/10b-no-schema-change.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/10c-candidate-on-disk.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/10d-no-credential-tracked.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/11-git-diff-check.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/12-git-status.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/13-negative-controls.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/14-git-status-final.log`
-- `orchestrator/evidence/RC101-gate/logs-e4d434d4/exits.txt`
-- `orchestrator/evidence/RC101-gate/negative-controls.sh`
-- `orchestrator/evidence/RC101.json`
-- `orchestrator/evidence/RC101/refresh-vulns.cjs`
-- `orchestrator/evidence/RC102-gate/gate.sh`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/00-sha.txt`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/01-install.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/01b-install-local.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/02-check-react-types.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/03-lint.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/04-typecheck.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/05-criterion-suites.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/06-jest-full.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/06b-handoff-check.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/07-scripts-test.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/08-build.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/08b-typecheck-after-build.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/09-localization.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/10-android-export.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/10a-version-and-scope.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/10b-no-schema-change.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/10c-candidate-on-disk.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/10d-no-credential-tracked.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/10e-pem-guard.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/11-git-diff-check.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/12-git-status.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/13-negative-controls.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/14-git-status-final.log`
-- `orchestrator/evidence/RC102-gate/logs-176b62d2/exits.txt`
-- `orchestrator/evidence/RC102-gate/negative-controls.sh`
-- `orchestrator/evidence/RC102.json`
-- `orchestrator/evidence/T00.json`
-- `orchestrator/evidence/T01-gate/accepted/01-install.log`
-- `orchestrator/evidence/T01-gate/accepted/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/accepted/03-lint.log`
-- `orchestrator/evidence/T01-gate/accepted/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/accepted/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/accepted/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/accepted/07-build.log`
-- `orchestrator/evidence/T01-gate/accepted/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/accepted/09-git-status.log`
-- `orchestrator/evidence/T01-gate/accepted/10-git-diff-check-main.log`
-- `orchestrator/evidence/T01-gate/accepted/11-git-status-short.log`
-- `orchestrator/evidence/T01-gate/accepted/env.txt`
-- `orchestrator/evidence/T01-gate/accepted/exits.txt`
-- `orchestrator/evidence/T01-gate/baseline/01-install.log`
-- `orchestrator/evidence/T01-gate/baseline/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/baseline/03-lint.log`
-- `orchestrator/evidence/T01-gate/baseline/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/baseline/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/baseline/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/baseline/07-build.log`
-- `orchestrator/evidence/T01-gate/baseline/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/baseline/09-git-status.log`
-- `orchestrator/evidence/T01-gate/baseline/env.txt`
-- `orchestrator/evidence/T01-gate/baseline/exits.txt`
-- `orchestrator/evidence/T01-gate/head-confirm/01-install.log`
-- `orchestrator/evidence/T01-gate/head-confirm/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/head-confirm/03-lint.log`
-- `orchestrator/evidence/T01-gate/head-confirm/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/head-confirm/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/head-confirm/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/head-confirm/07-build.log`
-- `orchestrator/evidence/T01-gate/head-confirm/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/head-confirm/09-git-status.log`
-- `orchestrator/evidence/T01-gate/head-confirm/10-git-diff-check-main.log`
-- `orchestrator/evidence/T01-gate/head-confirm/11-git-status-short.log`
-- `orchestrator/evidence/T01-gate/head-confirm/env.txt`
-- `orchestrator/evidence/T01-gate/head-confirm/exits.txt`
-- `orchestrator/evidence/T01-gate/head/01-install.log`
-- `orchestrator/evidence/T01-gate/head/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/head/03-lint.log`
-- `orchestrator/evidence/T01-gate/head/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/head/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/head/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/head/07-build.log`
-- `orchestrator/evidence/T01-gate/head/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/head/09-git-status.log`
-- `orchestrator/evidence/T01-gate/head/10-git-diff-check-main.log`
-- `orchestrator/evidence/T01-gate/head/11-git-status-short.log`
-- `orchestrator/evidence/T01-gate/head/env.txt`
-- `orchestrator/evidence/T01-gate/head/exits.txt`
-- `orchestrator/evidence/T01-gate/head2-confirm/01-install.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/03-lint.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/07-build.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/09-git-status.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/10-git-diff-check-main.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/11-git-status-short.log`
-- `orchestrator/evidence/T01-gate/head2-confirm/env.txt`
-- `orchestrator/evidence/T01-gate/head2-confirm/exits.txt`
-- `orchestrator/evidence/T01-gate/head2/01-install.log`
-- `orchestrator/evidence/T01-gate/head2/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/head2/03-lint.log`
-- `orchestrator/evidence/T01-gate/head2/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/head2/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/head2/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/head2/07-build.log`
-- `orchestrator/evidence/T01-gate/head2/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/head2/09-git-status.log`
-- `orchestrator/evidence/T01-gate/head2/10-git-diff-check-main.log`
-- `orchestrator/evidence/T01-gate/head2/11-git-status-short.log`
-- `orchestrator/evidence/T01-gate/head2/env.txt`
-- `orchestrator/evidence/T01-gate/head2/exits.txt`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/01-install.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/03-lint.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/07-build.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/09-git-status.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/10-git-diff-check-main.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/11-git-status-short.log`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/env.txt`
-- `orchestrator/evidence/T01-gate/merged-dirty-attempt/exits.txt`
-- `orchestrator/evidence/T01-gate/merged-first-run/01-install.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/03-lint.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/07-build.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/09-git-status.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/10-git-diff-check-main.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/11-git-status-short.log`
-- `orchestrator/evidence/T01-gate/merged-first-run/env.txt`
-- `orchestrator/evidence/T01-gate/merged-first-run/exits.txt`
-- `orchestrator/evidence/T01-gate/merged-first-run/stale-router-types.d.ts`
-- `orchestrator/evidence/T01-gate/merged/01-install.log`
-- `orchestrator/evidence/T01-gate/merged/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/merged/03-lint.log`
-- `orchestrator/evidence/T01-gate/merged/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/merged/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/merged/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/merged/07-build.log`
-- `orchestrator/evidence/T01-gate/merged/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/merged/09-git-status.log`
-- `orchestrator/evidence/T01-gate/merged/10-git-diff-check-main.log`
-- `orchestrator/evidence/T01-gate/merged/11-git-status-short.log`
-- `orchestrator/evidence/T01-gate/merged/commands.txt`
-- `orchestrator/evidence/T01-gate/merged/env.txt`
-- `orchestrator/evidence/T01-gate/merged/exits.txt`
-- `orchestrator/evidence/T01-gate/merged/probe-versions.sh`
-- `orchestrator/evidence/T01-gate/merged/versions.txt`
-- `orchestrator/evidence/T01-gate/reviewed/01-install.log`
-- `orchestrator/evidence/T01-gate/reviewed/02-check-react-types.log`
-- `orchestrator/evidence/T01-gate/reviewed/03-lint.log`
-- `orchestrator/evidence/T01-gate/reviewed/04-typecheck.log`
-- `orchestrator/evidence/T01-gate/reviewed/05-jest-milesign.log`
-- `orchestrator/evidence/T01-gate/reviewed/06-scripts-test.log`
-- `orchestrator/evidence/T01-gate/reviewed/07-build.log`
-- `orchestrator/evidence/T01-gate/reviewed/08-git-diff-check.log`
-- `orchestrator/evidence/T01-gate/reviewed/09-git-status.log`
-- `orchestrator/evidence/T01-gate/reviewed/env.txt`
-- `orchestrator/evidence/T01-gate/reviewed/exits.txt`
-- `orchestrator/evidence/T01-gate/whitespace-replay/01-adb4b35-without-gitattributes.log`
-- `orchestrator/evidence/T01-gate/whitespace-replay/02-adb4b35-with-gitattributes.log`
-- `orchestrator/evidence/T01-gate/whitespace-replay/03-fdc8613-with-gitattributes.log`
-- `orchestrator/evidence/T01-gate/whitespace-replay/commands.txt`
-- `orchestrator/evidence/T01-gate/whitespace-replay/env.txt`
-- `orchestrator/evidence/T01-gate/whitespace-replay/exits.txt`
-- `orchestrator/evidence/T01.json`
-- `orchestrator/evidence/T02-effects/01-live-migration-history.json`
-- `orchestrator/evidence/T02-effects/02-live-d1-material-delete-activity.json`
-- `orchestrator/evidence/T02-effects/03-live-d2-nine-indexes.json`
-- `orchestrator/evidence/T02-effects/04-live-d3-expenses-category.json`
-- `orchestrator/evidence/T02-effects/05-local-database-engine.txt`
-- `orchestrator/evidence/T02-effects/06-staging-target.json`
-- `orchestrator/evidence/T02-effects/README.md`
-- `orchestrator/evidence/T02-effects/env.txt`
-- `orchestrator/evidence/T02-gate/baseline/01-install.log`
-- `orchestrator/evidence/T02-gate/baseline/02-check-react-types.log`
-- `orchestrator/evidence/T02-gate/baseline/03-lint.log`
-- `orchestrator/evidence/T02-gate/baseline/04-typecheck.log`
-- `orchestrator/evidence/T02-gate/baseline/05-jest-milesign.log`
-- `orchestrator/evidence/T02-gate/baseline/06-scripts-test.log`
-- `orchestrator/evidence/T02-gate/baseline/07-build.log`
-- `orchestrator/evidence/T02-gate/baseline/08-git-diff-check.log`
-- `orchestrator/evidence/T02-gate/baseline/09-git-status.log`
-- `orchestrator/evidence/T02-gate/baseline/env.txt`
-- `orchestrator/evidence/T02-gate/baseline/exits.txt`
-- `orchestrator/evidence/T02-gate/reviewed/01-install.log`
-- `orchestrator/evidence/T02-gate/reviewed/02-check-react-types.log`
-- `orchestrator/evidence/T02-gate/reviewed/03-lint.log`
-- `orchestrator/evidence/T02-gate/reviewed/04-typecheck.log`
-- `orchestrator/evidence/T02-gate/reviewed/05-jest-milesign.log`
-- `orchestrator/evidence/T02-gate/reviewed/06-scripts-test.log`
-- `orchestrator/evidence/T02-gate/reviewed/07-build.log`
-- `orchestrator/evidence/T02-gate/reviewed/08-git-diff-check.log`
-- `orchestrator/evidence/T02-gate/reviewed/09-git-status.log`
-- `orchestrator/evidence/T02-gate/reviewed/env.txt`
-- `orchestrator/evidence/T02-gate/reviewed/exits.txt`
-- `orchestrator/evidence/T02.json`
-- `orchestrator/evidence/T03-gate/baseline/01-install.log`
-- `orchestrator/evidence/T03-gate/baseline/02-check-react-types.log`
-- `orchestrator/evidence/T03-gate/baseline/03-lint.log`
-- `orchestrator/evidence/T03-gate/baseline/04-typecheck.log`
-- `orchestrator/evidence/T03-gate/baseline/05-jest-milesign.log`
-- `orchestrator/evidence/T03-gate/baseline/06-scripts-test.log`
-- `orchestrator/evidence/T03-gate/baseline/07-build.log`
-- `orchestrator/evidence/T03-gate/baseline/08-git-diff-check.log`
-- `orchestrator/evidence/T03-gate/baseline/09-git-status.log`
-- `orchestrator/evidence/T03-gate/baseline/env.txt`
-- `orchestrator/evidence/T03-gate/baseline/exits.txt`
-- `orchestrator/evidence/T03-gate/reviewed/01-install.log`
-- `orchestrator/evidence/T03-gate/reviewed/02-check-react-types.log`
-- `orchestrator/evidence/T03-gate/reviewed/03-lint.log`
-- `orchestrator/evidence/T03-gate/reviewed/04-typecheck.log`
-- `orchestrator/evidence/T03-gate/reviewed/05-jest-milesign.log`
-- `orchestrator/evidence/T03-gate/reviewed/06-scripts-test.log`
-- `orchestrator/evidence/T03-gate/reviewed/07-build.log`
-- `orchestrator/evidence/T03-gate/reviewed/08-git-diff-check.log`
-- `orchestrator/evidence/T03-gate/reviewed/09-git-status.log`
-- `orchestrator/evidence/T03-gate/reviewed/env.txt`
-- `orchestrator/evidence/T03-gate/reviewed/exits.txt`
-- `orchestrator/evidence/T03.json`
-- `orchestrator/evidence/T04-gate/00-sha.txt`
-- `orchestrator/evidence/T04-gate/01-install.log`
-- `orchestrator/evidence/T04-gate/02-check-react-types.log`
-- `orchestrator/evidence/T04-gate/03-lint.log`
-- `orchestrator/evidence/T04-gate/04-typecheck.log`
-- `orchestrator/evidence/T04-gate/05-jest-full.log`
-- `orchestrator/evidence/T04-gate/06-scripts-test.log`
-- `orchestrator/evidence/T04-gate/07-build.log`
-- `orchestrator/evidence/T04-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T04-gate/09-git-status.log`
-- `orchestrator/evidence/T04-gate/10-criterion-suites.log`
-- `orchestrator/evidence/T04-gate/11-handoff-check.log`
-- `orchestrator/evidence/T04-gate/12-git-status-after.log`
-- `orchestrator/evidence/T04-gate/13-negative-controls.log`
-- `orchestrator/evidence/T04-gate/13-negative-controls.sh`
-- `orchestrator/evidence/T04-gate/14-secrets-scan.log`
-- `orchestrator/evidence/T04-gate/exits.txt`
-- `orchestrator/evidence/T04-production-plan/manifest.json`
-- `orchestrator/evidence/T04.json`
-- `orchestrator/evidence/T04L-gate/build.txt`
-- `orchestrator/evidence/T04L-gate/git-diff-check.txt`
-- `orchestrator/evidence/T04L-gate/head.txt`
-- `orchestrator/evidence/T04L-gate/install.txt`
-- `orchestrator/evidence/T04L-gate/jest.txt`
-- `orchestrator/evidence/T04L-gate/lint.txt`
-- `orchestrator/evidence/T04L-gate/react-types.txt`
-- `orchestrator/evidence/T04L-gate/scripts-test.txt`
-- `orchestrator/evidence/T04L-gate/typecheck.txt`
-- `orchestrator/evidence/T04L-local/01-local-migration-history.json`
-- `orchestrator/evidence/T04L-local/02-local-d1-material-delete-activity.json`
-- `orchestrator/evidence/T04L-local/03-local-d2-nine-indexes.json`
-- `orchestrator/evidence/T04L-local/04-local-d3-expenses-category.json`
-- `orchestrator/evidence/T04L-local/05-local-replay-engine.txt`
-- `orchestrator/evidence/T04L-local/README.md`
-- `orchestrator/evidence/T04L-local/env.txt`
-- `orchestrator/evidence/T04L-mutations.log`
-- `orchestrator/evidence/T04L-mutations.sh`
-- `orchestrator/evidence/T04L.json`
-- `orchestrator/evidence/T05-gate/baseline/01-install.log`
-- `orchestrator/evidence/T05-gate/baseline/02-check-react-types.log`
-- `orchestrator/evidence/T05-gate/baseline/03-lint.log`
-- `orchestrator/evidence/T05-gate/baseline/04-typecheck.log`
-- `orchestrator/evidence/T05-gate/baseline/05-jest-milesign.log`
-- `orchestrator/evidence/T05-gate/baseline/06-scripts-test.log`
-- `orchestrator/evidence/T05-gate/baseline/07-build.log`
-- `orchestrator/evidence/T05-gate/baseline/08-git-diff-check.log`
-- `orchestrator/evidence/T05-gate/baseline/09-git-status.log`
-- `orchestrator/evidence/T05-gate/baseline/env.txt`
-- `orchestrator/evidence/T05-gate/baseline/exits.txt`
-- `orchestrator/evidence/T05-gate/fix1-run1-e68f414/00-sha.txt`
-- `orchestrator/evidence/T05-gate/fix1-run1-e68f414/05-jest-full-excerpt.log`
-- `orchestrator/evidence/T05-gate/fix1-run1-e68f414/exits.txt`
-- `orchestrator/evidence/T05-gate/fix1/00-sha.txt`
-- `orchestrator/evidence/T05-gate/fix1/01-install.log`
-- `orchestrator/evidence/T05-gate/fix1/02-check-react-types.log`
-- `orchestrator/evidence/T05-gate/fix1/03-lint.log`
-- `orchestrator/evidence/T05-gate/fix1/04-typecheck.log`
-- `orchestrator/evidence/T05-gate/fix1/05-jest-full.log`
-- `orchestrator/evidence/T05-gate/fix1/06-scripts-test.log`
-- `orchestrator/evidence/T05-gate/fix1/07-build.log`
-- `orchestrator/evidence/T05-gate/fix1/08-git-diff-check.log`
-- `orchestrator/evidence/T05-gate/fix1/09-git-status.log`
-- `orchestrator/evidence/T05-gate/fix1/10-localization.log`
-- `orchestrator/evidence/T05-gate/fix1/11-android-export.log`
-- `orchestrator/evidence/T05-gate/fix1/12-criterion-suites.log`
-- `orchestrator/evidence/T05-gate/fix1/13-controller-test-commands.log`
-- `orchestrator/evidence/T05-gate/fix1/exits.txt`
-- `orchestrator/evidence/T05-gate/fix1/gate.sh.txt`
-- `orchestrator/evidence/T05-gate/reviewed/01-install.log`
-- `orchestrator/evidence/T05-gate/reviewed/02-check-react-types.log`
-- `orchestrator/evidence/T05-gate/reviewed/03-lint.log`
-- `orchestrator/evidence/T05-gate/reviewed/04-typecheck.log`
-- `orchestrator/evidence/T05-gate/reviewed/05-jest-milesign.log`
-- `orchestrator/evidence/T05-gate/reviewed/06-scripts-test.log`
-- `orchestrator/evidence/T05-gate/reviewed/07-build.log`
-- `orchestrator/evidence/T05-gate/reviewed/08-git-diff-check.log`
-- `orchestrator/evidence/T05-gate/reviewed/09-git-status.log`
-- `orchestrator/evidence/T05-gate/reviewed/10-gate-localization.log`
-- `orchestrator/evidence/T05-gate/reviewed/env.txt`
-- `orchestrator/evidence/T05-gate/reviewed/exits.txt`
-- `orchestrator/evidence/T05-mutations.log`
-- `orchestrator/evidence/T05-mutations.py`
-- `orchestrator/evidence/T05.json`
-- `orchestrator/evidence/T06-gate/baseline.txt`
-- `orchestrator/evidence/T06-gate/fix-45228a4/00-sha.txt`
-- `orchestrator/evidence/T06-gate/fix-45228a4/01-install.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/02-check-react-types.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/03-lint.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/04-typecheck.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/05-jest-full.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/05b-handoff-check.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/06-scripts-test.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/07-build.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/07b-typecheck-after-build.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/08-git-diff-check.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/09-git-status.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/10-android-export.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/10b-localization.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/10c-product-as-base.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/10d-product-scope.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/11-criterion-suites.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/12-git-status-after.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/12b-install-local.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/13-negative-controls.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/14-git-status-final.log`
-- `orchestrator/evidence/T06-gate/fix-45228a4/exits.txt`
-- `orchestrator/evidence/T06-gate/fix-6ede1d5/00-sha.txt`
-- `orchestrator/evidence/T06-gate/fix-6ede1d5/01-install.log`
-- `orchestrator/evidence/T06-gate/fix-6ede1d5/02-handoff-check.log`
-- `orchestrator/evidence/T06-gate/fix-6ede1d5/03-matrix-suites.log`
-- `orchestrator/evidence/T06-gate/fix-6ede1d5/04-git-status.log`
-- `orchestrator/evidence/T06-gate/fix-6ede1d5/exits.txt`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/00-sha.txt`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/01-install.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/02-check-react-types.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/03-lint.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/04-typecheck.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/05-jest-full.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/05b-handoff-check.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/06-scripts-test.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/07-build.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/07b-typecheck-after-build.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/08-git-diff-check.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/09-git-status.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/10-android-export.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/10b-localization.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/10c-product-as-base.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/11-criterion-suites.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/12-git-status-after.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/12b-install-local.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/13-negative-controls.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/14-git-status-final.log`
-- `orchestrator/evidence/T06-gate/fix-9cf3baf/exits.txt`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/00-sha.txt`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/01-install.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/02-check-react-types.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/03-lint.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/04-typecheck.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/05-jest-full.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/05b-handoff-check.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/06-scripts-test.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/07-build.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/07b-typecheck-after-build.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/08-git-diff-check.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/09-git-status.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/10-android-export.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/10b-localization.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/10c-product-as-base.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/11-criterion-suites.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/12-git-status-after.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/12b-install-local.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/13-negative-controls.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/14-git-status-final.log`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/exits.txt`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/gate.sh`
-- `orchestrator/evidence/T06-gate/fix-a00c9d8/negative-controls.sh`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/00-sha.txt`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/01-install.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/02-check-react-types.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/03-lint.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/04-typecheck.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/05-jest-full.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/05b-handoff-check.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/06-scripts-test.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/07-build.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/07b-typecheck-after-build.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/08-git-diff-check.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/09-git-status.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/10-android-export.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/10b-localization.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/10c-product-as-base.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/11-criterion-suites.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/12-git-status-after.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/12b-install-local.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/13-negative-controls.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/14-git-status-final.log`
-- `orchestrator/evidence/T06-gate/fix-b6c5cda/exits.txt`
-- `orchestrator/evidence/T06-gate/followup-stage-row-a11y.patch`
-- `orchestrator/evidence/T06-gate/gate-1-static.txt`
-- `orchestrator/evidence/T06-gate/gate-2-tests.txt`
-- `orchestrator/evidence/T06-gate/gate-3-build.txt`
-- `orchestrator/evidence/T06-gate/gate-4-localization.txt`
-- `orchestrator/evidence/T06-gate/gate-5-android-export.txt`
-- `orchestrator/evidence/T06-gate/gate-6-tree.txt`
-- `orchestrator/evidence/T06-gate/rerun-e3e4059/gate-1-static.txt`
-- `orchestrator/evidence/T06-gate/rerun-e3e4059/gate-2-tests.txt`
-- `orchestrator/evidence/T06-gate/rerun-e3e4059/gate-3-build.txt`
-- `orchestrator/evidence/T06-gate/rerun-e3e4059/gate-4-localization.txt`
-- `orchestrator/evidence/T06-gate/rerun-e3e4059/gate-5-android-export.txt`
-- `orchestrator/evidence/T06-gate/rerun-e3e4059/gate-6-tree.txt`
-- `orchestrator/evidence/T06.json`
-- `orchestrator/evidence/T06F-candidate-e5e2364-diagnosis.txt`
-- `orchestrator/evidence/T06F-gate/gate-0-first-run-typecheck-failure.txt`
-- `orchestrator/evidence/T06F-gate/gate-1-static.txt`
-- `orchestrator/evidence/T06F-gate/gate-2-tests.txt`
-- `orchestrator/evidence/T06F-gate/gate-3-build.txt`
-- `orchestrator/evidence/T06F-gate/gate-4-localization.txt`
-- `orchestrator/evidence/T06F-gate/gate-5-android-export.txt`
-- `orchestrator/evidence/T06F-gate/gate-6-tree.txt`
-- `orchestrator/evidence/T06F-gate/gate-7-typecheck-strict.txt`
-- `orchestrator/evidence/T06F-gate/gate-8-pristine-head.txt`
-- `orchestrator/evidence/T06F-mutations.log`
-- `orchestrator/evidence/T06F-mutations.py`
-- `orchestrator/evidence/T06F.json`
-- `orchestrator/evidence/T07-gate/00-regression-first-runs.md`
-- `orchestrator/evidence/T07-gate/00a-first-run-without-migration.log`
-- `orchestrator/evidence/T07-gate/00b-first-run-with-old-register-screen.log`
-- `orchestrator/evidence/T07-gate/00c-first-run-with-local-scope-signout.log`
-- `orchestrator/evidence/T07-gate/01-install.log`
-- `orchestrator/evidence/T07-gate/02-check-react-types.log`
-- `orchestrator/evidence/T07-gate/03-lint.log`
-- `orchestrator/evidence/T07-gate/04-typecheck.log`
-- `orchestrator/evidence/T07-gate/05-jest.log`
-- `orchestrator/evidence/T07-gate/06-scripts-test.log`
-- `orchestrator/evidence/T07-gate/07-build.log`
-- `orchestrator/evidence/T07-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T07-gate/09-android-export.log`
-- `orchestrator/evidence/T07.json`
-- `orchestrator/evidence/T08-gate/00-exit-codes.txt`
-- `orchestrator/evidence/T08-gate/00-first-runs.md`
-- `orchestrator/evidence/T08-gate/00-sha.txt`
-- `orchestrator/evidence/T08-gate/01-install.log`
-- `orchestrator/evidence/T08-gate/02-check-react-types.log`
-- `orchestrator/evidence/T08-gate/03-lint.log`
-- `orchestrator/evidence/T08-gate/04-typecheck.log`
-- `orchestrator/evidence/T08-gate/05-jest.log`
-- `orchestrator/evidence/T08-gate/06-scripts-test.log`
-- `orchestrator/evidence/T08-gate/07-build.log`
-- `orchestrator/evidence/T08-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T08-gate/09-database-gate.log`
-- `orchestrator/evidence/T08-gate/10-defects-reproduced.log`
-- `orchestrator/evidence/T08-gate/11-concurrency.log`
-- `orchestrator/evidence/T08.json`
-- `orchestrator/evidence/T09-fix1-gate/00-run-header.txt`
-- `orchestrator/evidence/T09-fix1-gate/01-install.log`
-- `orchestrator/evidence/T09-fix1-gate/02-react-types.log`
-- `orchestrator/evidence/T09-fix1-gate/03-lint.log`
-- `orchestrator/evidence/T09-fix1-gate/04-typecheck.log`
-- `orchestrator/evidence/T09-fix1-gate/05-jest-full.log`
-- `orchestrator/evidence/T09-fix1-gate/06-scripts-test.log`
-- `orchestrator/evidence/T09-fix1-gate/07-build.log`
-- `orchestrator/evidence/T09-fix1-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T09-fix1-gate/09-git-status.log`
-- `orchestrator/evidence/T09-fix1-gate/10-database-gate.log`
-- `orchestrator/evidence/T09-fix1-gate/11-criterion-suites.log`
-- `orchestrator/evidence/T09-fix1-gate/11b-criterion-counts.log`
-- `orchestrator/evidence/T09-fix1-gate/12-all-spec-suites.log`
-- `orchestrator/evidence/T09-fix1-gate/13-provenance-base.log`
-- `orchestrator/evidence/T09-fix1-gate/14-provenance-t09.log`
-- `orchestrator/evidence/T09-fix1-gate/15-extra-checks.log`
-- `orchestrator/evidence/T09-fix1-gate/16-head-jest-after-paperwork.log`
-- `orchestrator/evidence/T09-fix1-gate/exits.txt`
-- `orchestrator/evidence/T09-fix1-gate/extra-checks.sh.txt`
-- `orchestrator/evidence/T09-fix1-gate/gate.sh.txt`
-- `orchestrator/evidence/T09-fix1-gate/pre-fix-reproduction.sh.txt`
-- `orchestrator/evidence/T09-fix1-gate/pre-fix-reproduction.txt`
-- `orchestrator/evidence/T09.json`
-- `orchestrator/evidence/T10-fix1-gate/00-run-header.txt`
-- `orchestrator/evidence/T10-fix1-gate/01-install.log`
-- `orchestrator/evidence/T10-fix1-gate/02-react-types.log`
-- `orchestrator/evidence/T10-fix1-gate/03-lint.log`
-- `orchestrator/evidence/T10-fix1-gate/04-typecheck.log`
-- `orchestrator/evidence/T10-fix1-gate/05-jest-full.log`
-- `orchestrator/evidence/T10-fix1-gate/06-scripts-test.log`
-- `orchestrator/evidence/T10-fix1-gate/07-build.log`
-- `orchestrator/evidence/T10-fix1-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T10-fix1-gate/09-git-status.log`
-- `orchestrator/evidence/T10-fix1-gate/10-database-gate.log`
-- `orchestrator/evidence/T10-fix1-gate/11-criterion-suites.log`
-- `orchestrator/evidence/T10-fix1-gate/11b-criterion-counts.log`
-- `orchestrator/evidence/T10-fix1-gate/11c-render-suites.log`
-- `orchestrator/evidence/T10-fix1-gate/12-all-spec-suites.log`
-- `orchestrator/evidence/T10-fix1-gate/12b-all-screen-suites.log`
-- `orchestrator/evidence/T10-fix1-gate/13-provenance-base.log`
-- `orchestrator/evidence/T10-fix1-gate/14-provenance-t10.log`
-- `orchestrator/evidence/T10-fix1-gate/16-head-jest-after-paperwork.log`
-- `orchestrator/evidence/T10-fix1-gate/exits.txt`
-- `orchestrator/evidence/T10-fix1-gate/gate.sh.txt`
-- `orchestrator/evidence/T10-fix1-gate/pre-fix-reproduction.sh.txt`
-- `orchestrator/evidence/T10-fix1-gate/pre-fix-reproduction.txt`
-- `orchestrator/evidence/T10-fix2-gate/00-run-header.txt`
-- `orchestrator/evidence/T10-fix2-gate/01-install.log`
-- `orchestrator/evidence/T10-fix2-gate/02-react-types.log`
-- `orchestrator/evidence/T10-fix2-gate/03-lint.log`
-- `orchestrator/evidence/T10-fix2-gate/04-typecheck.log`
-- `orchestrator/evidence/T10-fix2-gate/05-jest-full.log`
-- `orchestrator/evidence/T10-fix2-gate/06-scripts-test.log`
-- `orchestrator/evidence/T10-fix2-gate/07-build.log`
-- `orchestrator/evidence/T10-fix2-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T10-fix2-gate/09-git-status.log`
-- `orchestrator/evidence/T10-fix2-gate/10-database-gate.log`
-- `orchestrator/evidence/T10-fix2-gate/11-criterion-suites.log`
-- `orchestrator/evidence/T10-fix2-gate/11b-criterion-counts.log`
-- `orchestrator/evidence/T10-fix2-gate/11c-render-suites.log`
-- `orchestrator/evidence/T10-fix2-gate/12-all-spec-suites.log`
-- `orchestrator/evidence/T10-fix2-gate/12b-all-screen-suites.log`
-- `orchestrator/evidence/T10-fix2-gate/13-provenance-base.log`
-- `orchestrator/evidence/T10-fix2-gate/14-provenance-t10.log`
-- `orchestrator/evidence/T10-fix2-gate/16-head-jest-after-paperwork.log`
-- `orchestrator/evidence/T10-fix2-gate/exits.txt`
-- `orchestrator/evidence/T10-fix2-gate/gate.sh.txt`
-- `orchestrator/evidence/T10-fix2-gate/neuter-guard.py.txt`
-- `orchestrator/evidence/T10-fix2-gate/neuter-perms.py.txt`
-- `orchestrator/evidence/T10-fix2-gate/pre-fix-reproduction.sh.txt`
-- `orchestrator/evidence/T10-fix2-gate/pre-fix-reproduction.txt`
-- `orchestrator/evidence/T10-fix3-gate/00-run-header.txt`
-- `orchestrator/evidence/T10-fix3-gate/01-install.log`
-- `orchestrator/evidence/T10-fix3-gate/02-react-types.log`
-- `orchestrator/evidence/T10-fix3-gate/03-lint.log`
-- `orchestrator/evidence/T10-fix3-gate/04-typecheck.log`
-- `orchestrator/evidence/T10-fix3-gate/05-jest-full.log`
-- `orchestrator/evidence/T10-fix3-gate/06-scripts-test.log`
-- `orchestrator/evidence/T10-fix3-gate/07-build.log`
-- `orchestrator/evidence/T10-fix3-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T10-fix3-gate/09-git-status.log`
-- `orchestrator/evidence/T10-fix3-gate/10-database-gate.log`
-- `orchestrator/evidence/T10-fix3-gate/11-criterion-suites.log`
-- `orchestrator/evidence/T10-fix3-gate/11b-criterion-counts.log`
-- `orchestrator/evidence/T10-fix3-gate/11c-render-suites.log`
-- `orchestrator/evidence/T10-fix3-gate/11d-workflow-suite.log`
-- `orchestrator/evidence/T10-fix3-gate/12-all-spec-suites.log`
-- `orchestrator/evidence/T10-fix3-gate/12b-all-screen-suites.log`
-- `orchestrator/evidence/T10-fix3-gate/13-provenance-base.log`
-- `orchestrator/evidence/T10-fix3-gate/14-provenance-t10.log`
-- `orchestrator/evidence/T10-fix3-gate/16-head-jest-after-paperwork.log`
-- `orchestrator/evidence/T10-fix3-gate/exits.txt`
-- `orchestrator/evidence/T10-fix3-gate/gate.sh.txt`
-- `orchestrator/evidence/T10-fix3-gate/pre-fix-reproduction.sh.txt`
-- `orchestrator/evidence/T10-fix3-gate/pre-fix-reproduction.txt`
-- `orchestrator/evidence/T10-gate/00-sha.txt`
-- `orchestrator/evidence/T10-gate/01-install.log`
-- `orchestrator/evidence/T10-gate/02-check-react-types.log`
-- `orchestrator/evidence/T10-gate/03-lint.log`
-- `orchestrator/evidence/T10-gate/04-typecheck.log`
-- `orchestrator/evidence/T10-gate/05-jest-full.log`
-- `orchestrator/evidence/T10-gate/06-scripts-test.log`
-- `orchestrator/evidence/T10-gate/07-build.log`
-- `orchestrator/evidence/T10-gate/08-tree.log`
-- `orchestrator/evidence/T10-gate/09-criterion-suites.log`
-- `orchestrator/evidence/T10-gate/10-provenance.log`
-- `orchestrator/evidence/T10-gate/11-database-gate.log`
-- `orchestrator/evidence/T10.json`
-- `orchestrator/evidence/T11-device/README.md`
-- `orchestrator/evidence/T11-device/android_phone_test_2026-10-18.md`
-- `orchestrator/evidence/T11-device/android_phone_test_2026-10-19.md`
-- `orchestrator/evidence/T11-device/android_phone_test_2026-10-20.md`
-- `orchestrator/evidence/T11-gate/00-sha.txt`
-- `orchestrator/evidence/T11-gate/01-install.log`
-- `orchestrator/evidence/T11-gate/02-check-react-types.log`
-- `orchestrator/evidence/T11-gate/03-lint.log`
-- `orchestrator/evidence/T11-gate/04-typecheck.log`
-- `orchestrator/evidence/T11-gate/05-jest-full.log`
-- `orchestrator/evidence/T11-gate/06-scripts-test.log`
-- `orchestrator/evidence/T11-gate/07-build.log`
-- `orchestrator/evidence/T11-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T11-gate/09-git-status.log`
-- `orchestrator/evidence/T11-gate/10-android-export.log`
-- `orchestrator/evidence/T11-gate/11-media.log`
-- `orchestrator/evidence/T11-gate/12-criterion-suites.log`
-- `orchestrator/evidence/T11-gate/13-handoff-check.log`
-- `orchestrator/evidence/T11-gate/14-git-status-after.log`
-- `orchestrator/evidence/T11-gate/15-negative-controls.log`
-- `orchestrator/evidence/T11-gate/16-git-status-final.log`
-- `orchestrator/evidence/T11-gate/exits.txt`
-- `orchestrator/evidence/T11-gate/gate.sh`
-- `orchestrator/evidence/T11-gate/negative-controls.py`
-- `orchestrator/evidence/T11-media-delete-row-first/live-snapshot.json`
-- `orchestrator/evidence/T11-media-delete-row-first/manifest.json`
-- `orchestrator/evidence/T11.json`
-- `orchestrator/evidence/T12-fix1-gate/00-context.log`
-- `orchestrator/evidence/T12-fix1-gate/01.log`
-- `orchestrator/evidence/T12-fix1-gate/02.log`
-- `orchestrator/evidence/T12-fix1-gate/03.log`
-- `orchestrator/evidence/T12-fix1-gate/04.log`
-- `orchestrator/evidence/T12-fix1-gate/05.log`
-- `orchestrator/evidence/T12-fix1-gate/06.log`
-- `orchestrator/evidence/T12-fix1-gate/07.log`
-- `orchestrator/evidence/T12-fix1-gate/08.log`
-- `orchestrator/evidence/T12-fix1-gate/09.log`
-- `orchestrator/evidence/T12-fix1-gate/criterion-suites.log`
-- `orchestrator/evidence/T12-fix1-gate/database-context.log`
-- `orchestrator/evidence/T12-fix1-gate/database.log`
-- `orchestrator/evidence/T12-fix1-gate/negative-control.log`
-- `orchestrator/evidence/T12-fix1-gate/summary.log`
-- `orchestrator/evidence/T12.json`
-- `orchestrator/evidence/T13-gate/categorise-added.cjs`
-- `orchestrator/evidence/T13-gate/gate.sh`
-- `orchestrator/evidence/T13-gate/inventory-added.json`
-- `orchestrator/evidence/T13-gate/inventory-t13.py`
-- `orchestrator/evidence/T13-gate/negative-controls.py`
-- `orchestrator/evidence/T13-gate/out/00-sha.txt`
-- `orchestrator/evidence/T13-gate/out/01-install.log`
-- `orchestrator/evidence/T13-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/T13-gate/out/03-lint.log`
-- `orchestrator/evidence/T13-gate/out/04-typecheck.log`
-- `orchestrator/evidence/T13-gate/out/05-jest-full.log`
-- `orchestrator/evidence/T13-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/T13-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/T13-gate/out/07-build.log`
-- `orchestrator/evidence/T13-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/T13-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/T13-gate/out/09-git-status.log`
-- `orchestrator/evidence/T13-gate/out/10-schema-and-deps-unchanged.log`
-- `orchestrator/evidence/T13-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/T13-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/T13-gate/out/12b-install-local.log`
-- `orchestrator/evidence/T13-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/T13-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/T13-gate/out/exits.txt`
-- `orchestrator/evidence/T13-gate/realign-inventory.cjs`
-- `orchestrator/evidence/T13-gate/realign.sh`
-- `orchestrator/evidence/T13.json`
-- `orchestrator/evidence/T13E-gate/categorise-added.cjs`
-- `orchestrator/evidence/T13E-gate/gate.sh`
-- `orchestrator/evidence/T13E-gate/inventory-added.json`
-- `orchestrator/evidence/T13E-gate/inventory-t13e.py`
-- `orchestrator/evidence/T13E-gate/negative-controls.py`
-- `orchestrator/evidence/T13E-gate/out/00-sha.txt`
-- `orchestrator/evidence/T13E-gate/out/01-install.log`
-- `orchestrator/evidence/T13E-gate/out/02-check-react-types.log`
-- `orchestrator/evidence/T13E-gate/out/03-lint.log`
-- `orchestrator/evidence/T13E-gate/out/04-typecheck.log`
-- `orchestrator/evidence/T13E-gate/out/05-jest-full.log`
-- `orchestrator/evidence/T13E-gate/out/05b-handoff-check.log`
-- `orchestrator/evidence/T13E-gate/out/06-scripts-test.log`
-- `orchestrator/evidence/T13E-gate/out/07-build.log`
-- `orchestrator/evidence/T13E-gate/out/07b-typecheck-after-build.log`
-- `orchestrator/evidence/T13E-gate/out/08-git-diff-check.log`
-- `orchestrator/evidence/T13E-gate/out/09-git-status.log`
-- `orchestrator/evidence/T13E-gate/out/10-schema-and-deps-unchanged.log`
-- `orchestrator/evidence/T13E-gate/out/11-criterion-suites.log`
-- `orchestrator/evidence/T13E-gate/out/11b-grep-provider-switch.log`
-- `orchestrator/evidence/T13E-gate/out/12-git-status-after.log`
-- `orchestrator/evidence/T13E-gate/out/12b-install-local.log`
-- `orchestrator/evidence/T13E-gate/out/13-negative-controls.log`
-- `orchestrator/evidence/T13E-gate/out/14-git-status-final.log`
-- `orchestrator/evidence/T13E-gate/out/exits.txt`
-- `orchestrator/evidence/T13E-gate/realign-inventory.cjs`
-- `orchestrator/evidence/T13E-gate/realign.sh`
-- `orchestrator/evidence/T13E-gate/shards.sh`
-- `orchestrator/evidence/T13E-gate/workers.sh`
-- `orchestrator/evidence/T13E.json`
-- `orchestrator/evidence/T13L-baseline.txt`
-- `orchestrator/evidence/T13L-gate/00-first-run-failed.log`
-- `orchestrator/evidence/T13L-gate/01-install.log`
-- `orchestrator/evidence/T13L-gate/02-check-react-types.log`
-- `orchestrator/evidence/T13L-gate/03-lint.log`
-- `orchestrator/evidence/T13L-gate/04-typecheck.log`
-- `orchestrator/evidence/T13L-gate/05-jest-milesign.log`
-- `orchestrator/evidence/T13L-gate/06-scripts-test.log`
-- `orchestrator/evidence/T13L-gate/07-build.log`
-- `orchestrator/evidence/T13L-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T13L-gate/09-git-status-clean.log`
-- `orchestrator/evidence/T13L-gate/env.txt`
-- `orchestrator/evidence/T13L-gate/exits.txt`
-- `orchestrator/evidence/T13L-gate/fix1/00-controller-run-c248850.log`
-- `orchestrator/evidence/T13L-gate/fix1/01-install.log`
-- `orchestrator/evidence/T13L-gate/fix1/02-check-react-types.log`
-- `orchestrator/evidence/T13L-gate/fix1/03-lint.log`
-- `orchestrator/evidence/T13L-gate/fix1/04-typecheck.log`
-- `orchestrator/evidence/T13L-gate/fix1/05-jest-milesign.log`
-- `orchestrator/evidence/T13L-gate/fix1/06-scripts-test.log`
-- `orchestrator/evidence/T13L-gate/fix1/07-build.log`
-- `orchestrator/evidence/T13L-gate/fix1/08-git-diff-check.log`
-- `orchestrator/evidence/T13L-gate/fix1/09-git-status-clean.log`
-- `orchestrator/evidence/T13L-gate/fix1/10-criterion-suites.log`
-- `orchestrator/evidence/T13L-gate/fix1/11-req-36-after-doc-fix.log`
-- `orchestrator/evidence/T13L-gate/fix1/env.txt`
-- `orchestrator/evidence/T13L-gate/fix1/exits.txt`
-- `orchestrator/evidence/T13L-gate/merged/01-install.log`
-- `orchestrator/evidence/T13L-gate/merged/02-check-react-types.log`
-- `orchestrator/evidence/T13L-gate/merged/03-lint.log`
-- `orchestrator/evidence/T13L-gate/merged/04-typecheck.log`
-- `orchestrator/evidence/T13L-gate/merged/05-jest-milesign.log`
-- `orchestrator/evidence/T13L-gate/merged/06-scripts-test.log`
-- `orchestrator/evidence/T13L-gate/merged/07-build.log`
-- `orchestrator/evidence/T13L-gate/merged/08-git-diff-check-at-record.log`
-- `orchestrator/evidence/T13L-gate/merged/08-git-diff-check.log`
-- `orchestrator/evidence/T13L-gate/merged/09-git-status-clean-at-record.log`
-- `orchestrator/evidence/T13L-gate/merged/09-git-status-clean.log`
-- `orchestrator/evidence/T13L-gate/merged/env.txt`
-- `orchestrator/evidence/T13L-gate/merged/exits.txt`
-- `orchestrator/evidence/T13L.json`
-- `orchestrator/evidence/T14-gate/build.txt`
-- `orchestrator/evidence/T14-gate/core.txt`
-- `orchestrator/evidence/T14-gate/diag/00-sha.txt`
-- `orchestrator/evidence/T14-gate/diag/01-install.log`
-- `orchestrator/evidence/T14-gate/diag/02-check-react-types.log`
-- `orchestrator/evidence/T14-gate/diag/03-lint.log`
-- `orchestrator/evidence/T14-gate/diag/04-typecheck.log`
-- `orchestrator/evidence/T14-gate/diag/05-jest-full.log`
-- `orchestrator/evidence/T14-gate/diag/06-scripts-test.log`
-- `orchestrator/evidence/T14-gate/diag/07-build.log`
-- `orchestrator/evidence/T14-gate/diag/08-git-diff-check.log`
-- `orchestrator/evidence/T14-gate/diag/09-git-status.log`
-- `orchestrator/evidence/T14-gate/diag/10-offline.log`
-- `orchestrator/evidence/T14-gate/diag/11-android-export.log`
-- `orchestrator/evidence/T14-gate/diag/12-controller-test-commands.log`
-- `orchestrator/evidence/T14-gate/diag/exits.txt`
-- `orchestrator/evidence/T14-gate/diag/gate.sh.txt`
-- `orchestrator/evidence/T14-gate/fix1/00-sha.txt`
-- `orchestrator/evidence/T14-gate/fix1/01-install.log`
-- `orchestrator/evidence/T14-gate/fix1/02-check-react-types.log`
-- `orchestrator/evidence/T14-gate/fix1/03-lint.log`
-- `orchestrator/evidence/T14-gate/fix1/04-typecheck.log`
-- `orchestrator/evidence/T14-gate/fix1/05-jest-full.log`
-- `orchestrator/evidence/T14-gate/fix1/06-scripts-test.log`
-- `orchestrator/evidence/T14-gate/fix1/07-build.log`
-- `orchestrator/evidence/T14-gate/fix1/08-git-diff-check.log`
-- `orchestrator/evidence/T14-gate/fix1/09-git-status.log`
-- `orchestrator/evidence/T14-gate/fix1/10-offline.log`
-- `orchestrator/evidence/T14-gate/fix1/11-android-export.log`
-- `orchestrator/evidence/T14-gate/fix1/12-controller-test-commands.log`
-- `orchestrator/evidence/T14-gate/fix1/exits.txt`
-- `orchestrator/evidence/T14-gate/fix1/gate.sh.txt`
-- `orchestrator/evidence/T14-gate/gate-android-export.txt`
-- `orchestrator/evidence/T14-gate/gate-database.txt`
-- `orchestrator/evidence/T14-gate/gate-localization.txt`
-- `orchestrator/evidence/T14-gate/gate-offline.txt`
-- `orchestrator/evidence/T14-gate/install.txt`
-- `orchestrator/evidence/T14-gate/jest.txt`
-- `orchestrator/evidence/T14-gate/lint.txt`
-- `orchestrator/evidence/T14-gate/owner/00-sha.txt`
-- `orchestrator/evidence/T14-gate/owner/01-install.log`
-- `orchestrator/evidence/T14-gate/owner/02-check-react-types.log`
-- `orchestrator/evidence/T14-gate/owner/03-lint.log`
-- `orchestrator/evidence/T14-gate/owner/04-typecheck.log`
-- `orchestrator/evidence/T14-gate/owner/05-jest-full.log`
-- `orchestrator/evidence/T14-gate/owner/06-scripts-test.log`
-- `orchestrator/evidence/T14-gate/owner/07-build.log`
-- `orchestrator/evidence/T14-gate/owner/08-git-diff-check.log`
-- `orchestrator/evidence/T14-gate/owner/09-git-status.log`
-- `orchestrator/evidence/T14-gate/owner/10-offline.log`
-- `orchestrator/evidence/T14-gate/owner/11-android-export.log`
-- `orchestrator/evidence/T14-gate/owner/12-controller-test-commands.log`
-- `orchestrator/evidence/T14-gate/owner/exits.txt`
-- `orchestrator/evidence/T14-gate/owner/gate.sh.txt`
-- `orchestrator/evidence/T14-gate/r2/00-sha.txt`
-- `orchestrator/evidence/T14-gate/r2/01-install.log`
-- `orchestrator/evidence/T14-gate/r2/02-check-react-types.log`
-- `orchestrator/evidence/T14-gate/r2/03-lint.log`
-- `orchestrator/evidence/T14-gate/r2/04-typecheck.log`
-- `orchestrator/evidence/T14-gate/r2/05-jest-full.log`
-- `orchestrator/evidence/T14-gate/r2/06-scripts-test.log`
-- `orchestrator/evidence/T14-gate/r2/07-build.log`
-- `orchestrator/evidence/T14-gate/r2/08-git-diff-check.log`
-- `orchestrator/evidence/T14-gate/r2/09-git-status.log`
-- `orchestrator/evidence/T14-gate/r2/10-offline.log`
-- `orchestrator/evidence/T14-gate/r2/11-android-export.log`
-- `orchestrator/evidence/T14-gate/r2/12-controller-test-commands.log`
-- `orchestrator/evidence/T14-gate/r2/exits.txt`
-- `orchestrator/evidence/T14-gate/r2/gate.sh.txt`
-- `orchestrator/evidence/T14-gate/react-types.txt`
-- `orchestrator/evidence/T14-gate/review/00-sha.txt`
-- `orchestrator/evidence/T14-gate/review/01-install.log`
-- `orchestrator/evidence/T14-gate/review/02-check-react-types.log`
-- `orchestrator/evidence/T14-gate/review/03-lint.log`
-- `orchestrator/evidence/T14-gate/review/04-typecheck.log`
-- `orchestrator/evidence/T14-gate/review/05-jest-full.log`
-- `orchestrator/evidence/T14-gate/review/06-scripts-test.log`
-- `orchestrator/evidence/T14-gate/review/07-build.log`
-- `orchestrator/evidence/T14-gate/review/08-git-diff-check.log`
-- `orchestrator/evidence/T14-gate/review/09-git-status.log`
-- `orchestrator/evidence/T14-gate/review/10-offline.log`
-- `orchestrator/evidence/T14-gate/review/11-android-export.log`
-- `orchestrator/evidence/T14-gate/review/12-controller-test-commands.log`
-- `orchestrator/evidence/T14-gate/review/exits.txt`
-- `orchestrator/evidence/T14-gate/review/gate.sh.txt`
-- `orchestrator/evidence/T14-gate/scripts-test.txt`
-- `orchestrator/evidence/T14-gate/typecheck.txt`
-- `orchestrator/evidence/T14.json`
-- `orchestrator/evidence/T15-gate/00-sha.txt`
-- `orchestrator/evidence/T15-gate/01-install.log`
-- `orchestrator/evidence/T15-gate/02-check-react-types.log`
-- `orchestrator/evidence/T15-gate/03-lint.log`
-- `orchestrator/evidence/T15-gate/04-typecheck.log`
-- `orchestrator/evidence/T15-gate/05-jest-full.log`
-- `orchestrator/evidence/T15-gate/06-scripts-test.log`
-- `orchestrator/evidence/T15-gate/07-build.log`
-- `orchestrator/evidence/T15-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T15-gate/09-git-status.log`
-- `orchestrator/evidence/T15-gate/10-offline.log`
-- `orchestrator/evidence/T15-gate/11-android-export.log`
-- `orchestrator/evidence/T15-gate/12-controller-test-commands.log`
-- `orchestrator/evidence/T15-gate/exits.txt`
-- `orchestrator/evidence/T15-gate/gate.sh.txt`
-- `orchestrator/evidence/T15.json`
-- `orchestrator/evidence/T16-baseline.txt`
-- `orchestrator/evidence/T16-fix1-gate/00-context.log`
-- `orchestrator/evidence/T16-fix1-gate/01.log`
-- `orchestrator/evidence/T16-fix1-gate/02.log`
-- `orchestrator/evidence/T16-fix1-gate/03.log`
-- `orchestrator/evidence/T16-fix1-gate/04.log`
-- `orchestrator/evidence/T16-fix1-gate/05.log`
-- `orchestrator/evidence/T16-fix1-gate/06.log`
-- `orchestrator/evidence/T16-fix1-gate/07.log`
-- `orchestrator/evidence/T16-fix1-gate/08.log`
-- `orchestrator/evidence/T16-fix1-gate/09.log`
-- `orchestrator/evidence/T16-fix1-gate/10.log`
-- `orchestrator/evidence/T16-fix1-gate/11.log`
-- `orchestrator/evidence/T16-fix1-gate/12.log`
-- `orchestrator/evidence/T16-fix1-gate/summary.log`
-- `orchestrator/evidence/T16-fix2-gate/00-context.log`
-- `orchestrator/evidence/T16-fix2-gate/01.log`
-- `orchestrator/evidence/T16-fix2-gate/02.log`
-- `orchestrator/evidence/T16-fix2-gate/03.log`
-- `orchestrator/evidence/T16-fix2-gate/04.log`
-- `orchestrator/evidence/T16-fix2-gate/05.log`
-- `orchestrator/evidence/T16-fix2-gate/06.log`
-- `orchestrator/evidence/T16-fix2-gate/07.log`
-- `orchestrator/evidence/T16-fix2-gate/08.log`
-- `orchestrator/evidence/T16-fix2-gate/09.log`
-- `orchestrator/evidence/T16-fix2-gate/10.log`
-- `orchestrator/evidence/T16-fix2-gate/11.log`
-- `orchestrator/evidence/T16-fix2-gate/12.log`
-- `orchestrator/evidence/T16-fix2-gate/13.log`
-- `orchestrator/evidence/T16-fix2-gate/summary.log`
-- `orchestrator/evidence/T16-fixes/01-req-97-no-lease-FAILED.log`
-- `orchestrator/evidence/T16-fixes/02-req-105-partial-queue-FAILED.log`
-- `orchestrator/evidence/T16-fixes/03-req-105-sweep-FAILED.log`
-- `orchestrator/evidence/T16-fixes/14-req-97-form-no-lease-FAILED.log`
-- `orchestrator/evidence/T16-fixes/15-req-97-media-no-lease-FAILED-on-128c493c.log`
-- `orchestrator/evidence/T16-fixes/16-req-105-partial-queue-FAILED-on-128c493c.log`
-- `orchestrator/evidence/T16-fixes/17-req-105-adoption-FAILED.log`
-- `orchestrator/evidence/T16-fixes/18-req-159-picker-screens-FAILED.log`
-- `orchestrator/evidence/T16-gate/02-check-react-types.log`
-- `orchestrator/evidence/T16-gate/03-lint.log`
-- `orchestrator/evidence/T16-gate/04-typecheck.log`
-- `orchestrator/evidence/T16-gate/05-jest-full-first-run-failed.log`
-- `orchestrator/evidence/T16-gate/05-jest-full.log`
-- `orchestrator/evidence/T16-gate/06-scripts-test.log`
-- `orchestrator/evidence/T16-gate/07-build.log`
-- `orchestrator/evidence/T16.json`
-- `orchestrator/evidence/T17-gate/00-sha.txt`
-- `orchestrator/evidence/T17-gate/01-install.log`
-- `orchestrator/evidence/T17-gate/02-check-react-types.log`
-- `orchestrator/evidence/T17-gate/03-lint.log`
-- `orchestrator/evidence/T17-gate/04-typecheck.log`
-- `orchestrator/evidence/T17-gate/05-jest-full.log`
-- `orchestrator/evidence/T17-gate/06-scripts-test.log`
-- `orchestrator/evidence/T17-gate/07-build.log`
-- `orchestrator/evidence/T17-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T17-gate/09-git-status.log`
-- `orchestrator/evidence/T17-gate/10-localization.log`
-- `orchestrator/evidence/T17-gate/11-android-export.log`
-- `orchestrator/evidence/T17-gate/12-criterion-suites.log`
-- `orchestrator/evidence/T17-gate/exits.txt`
-- `orchestrator/evidence/T17-gate/gate.sh`
-- `orchestrator/evidence/T17-mutations.log`
-- `orchestrator/evidence/T17-mutations.py`
-- `orchestrator/evidence/T17.json`
-- `orchestrator/evidence/T18-gate/00-sha.txt`
-- `orchestrator/evidence/T18-gate/01-install.log`
-- `orchestrator/evidence/T18-gate/02-check-react-types.log`
-- `orchestrator/evidence/T18-gate/03-lint.log`
-- `orchestrator/evidence/T18-gate/04-typecheck.log`
-- `orchestrator/evidence/T18-gate/05-jest-full.log`
-- `orchestrator/evidence/T18-gate/06-scripts-test.log`
-- `orchestrator/evidence/T18-gate/07-build.log`
-- `orchestrator/evidence/T18-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T18-gate/09-git-status.log`
-- `orchestrator/evidence/T18-gate/10-database.log`
-- `orchestrator/evidence/T18-gate/11-criterion-suites.log`
-- `orchestrator/evidence/T18-gate/12-git-status-after.log`
-- `orchestrator/evidence/T18-gate/13-negative-controls.log`
-- `orchestrator/evidence/T18-gate/14-git-status-final.log`
-- `orchestrator/evidence/T18-gate/exits.txt`
-- `orchestrator/evidence/T18-gate/gate.sh`
-- `orchestrator/evidence/T18-gate/negative-controls.sh`
-- `orchestrator/evidence/T18.json`
-- `orchestrator/evidence/T18L-attempt1-lint-failure.txt`
-- `orchestrator/evidence/T18L-gate/00-sha.txt`
-- `orchestrator/evidence/T18L-gate/01-install.log`
-- `orchestrator/evidence/T18L-gate/02-check-react-types.log`
-- `orchestrator/evidence/T18L-gate/03-lint.log`
-- `orchestrator/evidence/T18L-gate/04-typecheck.log`
-- `orchestrator/evidence/T18L-gate/05-jest-full.log`
-- `orchestrator/evidence/T18L-gate/06-scripts-test.log`
-- `orchestrator/evidence/T18L-gate/07-build.log`
-- `orchestrator/evidence/T18L-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T18L-gate/09-git-status.log`
-- `orchestrator/evidence/T18L-gate/10-database.log`
-- `orchestrator/evidence/T18L-gate/11-criterion-suites.log`
-- `orchestrator/evidence/T18L-gate/exits.txt`
-- `orchestrator/evidence/T18L-gate/gate.sh`
-- `orchestrator/evidence/T18L-gate/run1-d7531f2-failed/00-sha.txt`
-- `orchestrator/evidence/T18L-gate/run1-d7531f2-failed/05-jest-full-failures.log`
-- `orchestrator/evidence/T18L-gate/run1-d7531f2-failed/exits.txt`
-- `orchestrator/evidence/T18L-restore-rehearsal.json`
-- `orchestrator/evidence/T18L.json`
-- `orchestrator/evidence/T19-gate/00-sha.txt`
-- `orchestrator/evidence/T19-gate/01-install.log`
-- `orchestrator/evidence/T19-gate/02-check-react-types.log`
-- `orchestrator/evidence/T19-gate/03-lint.log`
-- `orchestrator/evidence/T19-gate/04-typecheck.log`
-- `orchestrator/evidence/T19-gate/05-jest-full.log`
-- `orchestrator/evidence/T19-gate/06-scripts-test.log`
-- `orchestrator/evidence/T19-gate/07-build.log`
-- `orchestrator/evidence/T19-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T19-gate/09-git-status.log`
-- `orchestrator/evidence/T19-gate/10-criterion-suites.log`
-- `orchestrator/evidence/T19-gate/11-git-status-after.log`
-- `orchestrator/evidence/T19-gate/exits.txt`
-- `orchestrator/evidence/T19-gate/gate.sh`
-- `orchestrator/evidence/T19-production-apply/01-pre-window.json`
-- `orchestrator/evidence/T19-production-apply/02-writes-stopped.json`
-- `orchestrator/evidence/T19-production-apply/03-backup.json`
-- `orchestrator/evidence/T19-production-apply/04-before-step-1.json`
-- `orchestrator/evidence/T19-production-apply/05-apply-log.json`
-- `orchestrator/evidence/T19-production-apply/06-after.json`
-- `orchestrator/evidence/T19-production-apply/07-writes-reopened.json`
-- `orchestrator/evidence/T19-tooling/apply.mjs`
-- `orchestrator/evidence/T19-tooling/catalog-check.mjs`
-- `orchestrator/evidence/T19-tooling/catalog-rows.sh`
-- `orchestrator/evidence/T19-tooling/env.sh`
-- `orchestrator/evidence/T19-tooling/gate.sh`
-- `orchestrator/evidence/T19-tooling/local-instance.sh`
-- `orchestrator/evidence/T19-tooling/pgdumpp`
-- `orchestrator/evidence/T19-tooling/probe.mjs`
-- `orchestrator/evidence/T19-tooling/psqll`
-- `orchestrator/evidence/T19-tooling/psqlp`
-- `orchestrator/evidence/T19-tooling/sanitize.mjs`
-- `orchestrator/evidence/T19-tooling/state.mjs`
-- `orchestrator/evidence/T19-tooling/window.sh`
-- `orchestrator/evidence/T19.json`
-- `orchestrator/evidence/T19P-gate/00-sha.txt`
-- `orchestrator/evidence/T19P-gate/01-install.log`
-- `orchestrator/evidence/T19P-gate/02-check-react-types.log`
-- `orchestrator/evidence/T19P-gate/03-lint.log`
-- `orchestrator/evidence/T19P-gate/04-typecheck.log`
-- `orchestrator/evidence/T19P-gate/05-jest-full.log`
-- `orchestrator/evidence/T19P-gate/06-scripts-test.log`
-- `orchestrator/evidence/T19P-gate/07-build.log`
-- `orchestrator/evidence/T19P-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T19P-gate/09-git-status.log`
-- `orchestrator/evidence/T19P-gate/10-criterion-suites.log`
-- `orchestrator/evidence/T19P-gate/11-git-status-after.log`
-- `orchestrator/evidence/T19P-gate/build-manifest.mjs`
-- `orchestrator/evidence/T19P-gate/exits.txt`
-- `orchestrator/evidence/T19P-gate/gate.sh`
-- `orchestrator/evidence/T19P-production-plan/01-live-catalog.json`
-- `orchestrator/evidence/T19P-production-plan/02-live-migration-history.json`
-- `orchestrator/evidence/T19P-production-plan/03-live-row-counts.json`
-- `orchestrator/evidence/T19P-production-plan/04-live-data-profile.json`
-- `orchestrator/evidence/T19P-production-plan/05-live-drift-ddl.json`
-- `orchestrator/evidence/T19P-production-plan/06-live-data-preconditions.json`
-- `orchestrator/evidence/T19P-production-plan/catalog.sql`
-- `orchestrator/evidence/T19P-production-plan/manifest.json`
-- `orchestrator/evidence/T19P.json`
-- `orchestrator/evidence/T20-candidate/candidate.json`
-- `orchestrator/evidence/T20-candidate/logs/00-build.txt`
-- `orchestrator/evidence/T20-candidate/logs/01-web-export.log`
-- `orchestrator/evidence/T20-candidate/logs/02-prebuild.log`
-- `orchestrator/evidence/T20-candidate/logs/02b-prebuild-tracked-diff.patch`
-- `orchestrator/evidence/T20-candidate/logs/03-gradle-bundle.log`
-- `orchestrator/evidence/T20-candidate/logs/04-aab-signer.txt`
-- `orchestrator/evidence/T20-candidate/logs/05-merged-AndroidManifest.xml`
-- `orchestrator/evidence/T20-candidate/logs/06-record.log`
-- `orchestrator/evidence/T20-candidate/logs/07-leak-check.txt`
-- `orchestrator/evidence/T20-candidate/verify-nginx.json`
-- `orchestrator/evidence/T20-candidate/verify-nginx.txt`
-- `orchestrator/evidence/T20-gate/controls.sh`
-- `orchestrator/evidence/T20-gate/gate.sh`
-- `orchestrator/evidence/T20-gate/recheck-b6d50096/req-170.log`
-- `orchestrator/evidence/T20-gate/recheck-b6d50096/result.txt`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/00-sha.txt`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/02-check-react-types.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/03-lint.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/04-typecheck.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/05-jest-full.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/05b-handoff-check.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/06-scripts-test.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/07-build.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/07b-typecheck-after-build.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/08-git-diff-check.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/09-git-status.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/10-android-export.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/10b-localization.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/10c-no-schema-change.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/11-criterion-suites.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/12-verify-nginx.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/12-verify-nginx/verify-nginx.json`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/12-verify-nginx/verify-nginx.txt`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/13-negative-controls.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/14-git-status-after.log`
-- `orchestrator/evidence/T20-gate/run-b1061ace670d/exits.txt`
-- `orchestrator/evidence/T20.json`
-- `orchestrator/evidence/T21-e2e/trace.json`
-- `orchestrator/evidence/T21-gate/gate.sh`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/00-sha.txt`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/01-install.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/02-check-react-types.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/03-lint.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/04-typecheck.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/05-criterion-suites.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/06-jest-full.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/06b-handoff-check.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/07-scripts-test.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/08-build.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/09-no-product-change.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/11-git-diff-check.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/12-git-status.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/12b-install-local.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/13-negative-controls.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/14-git-status-final.log`
-- `orchestrator/evidence/T21-gate/logs-3473cec5/exits.txt`
-- `orchestrator/evidence/T21-gate/negative-controls.py`
-- `orchestrator/evidence/T21-gate/superseded-c45653f3/00-sha.txt`
-- `orchestrator/evidence/T21-gate/superseded-c45653f3/13-negative-controls.summary.txt`
-- `orchestrator/evidence/T21-gate/superseded-c45653f3/exits.txt`
-- `orchestrator/evidence/T21-gate/superseded-c45653f3/jest-summary.txt`
-- `orchestrator/evidence/T21-review/build-ledger.cjs`
-- `orchestrator/evidence/T21-review/ledger.json`
-- `orchestrator/evidence/T21-sbom/build-sbom.cjs`
-- `orchestrator/evidence/T21-sbom/bundle-packages.cjs`
-- `orchestrator/evidence/T21-sbom/bundle-packages.json`
-- `orchestrator/evidence/T21-sbom/export-and-inspect.sh`
-- `orchestrator/evidence/T21-sbom/licenses.json`
-- `orchestrator/evidence/T21-sbom/native-modules.json`
-- `orchestrator/evidence/T21-sbom/sbom.cdx.json`
-- `orchestrator/evidence/T21-sbom/scan-history.sh`
-- `orchestrator/evidence/T21-sbom/secret-scan.cjs`
-- `orchestrator/evidence/T21-sbom/secret-scan.json`
-- `orchestrator/evidence/T21-sbom/vulnerabilities.json`
-- `orchestrator/evidence/T21.json`
-- `orchestrator/evidence/T21L-gate/00-sha.txt`
-- `orchestrator/evidence/T21L-gate/01-install.log`
-- `orchestrator/evidence/T21L-gate/02-check-react-types.log`
-- `orchestrator/evidence/T21L-gate/03-lint.log`
-- `orchestrator/evidence/T21L-gate/04-typecheck.log`
-- `orchestrator/evidence/T21L-gate/05-jest-full.log`
-- `orchestrator/evidence/T21L-gate/06-scripts-test.log`
-- `orchestrator/evidence/T21L-gate/07-build.log`
-- `orchestrator/evidence/T21L-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T21L-gate/09-git-status.log`
-- `orchestrator/evidence/T21L-gate/10-git-diff-check-main.log`
-- `orchestrator/evidence/T21L-gate/11-criterion-suites.log`
-- `orchestrator/evidence/T21L-gate/12-gate-vs-head.log`
-- `orchestrator/evidence/T21L-gate/exits.txt`
-- `orchestrator/evidence/T21L-gate/gate.sh.txt`
-- `orchestrator/evidence/T21L.json`
-- `orchestrator/evidence/T22L-gate/00-sha.txt`
-- `orchestrator/evidence/T22L-gate/01-install.log`
-- `orchestrator/evidence/T22L-gate/02-check-react-types.log`
-- `orchestrator/evidence/T22L-gate/03-lint.log`
-- `orchestrator/evidence/T22L-gate/04-typecheck.log`
-- `orchestrator/evidence/T22L-gate/05-jest-full.log`
-- `orchestrator/evidence/T22L-gate/06-scripts-test.log`
-- `orchestrator/evidence/T22L-gate/07-build.log`
-- `orchestrator/evidence/T22L-gate/08-git-diff-check.log`
-- `orchestrator/evidence/T22L-gate/09-git-status.log`
-- `orchestrator/evidence/T22L-gate/10-criterion-suites.log`
-- `orchestrator/evidence/T22L-gate/11-handoff-check.log`
-- `orchestrator/evidence/T22L-gate/12-handoff-resume.log`
-- `orchestrator/evidence/T22L-gate/13-matrix-require-complete.log`
-- `orchestrator/evidence/T22L-gate/14-git-status-after.log`
-- `orchestrator/evidence/T22L-gate/15-defect-base-clean-clone.log`
-- `orchestrator/evidence/T22L-gate/16-secrets-scan.log`
-- `orchestrator/evidence/T22L-gate/17-negative-control.log`
-- `orchestrator/evidence/T22L-gate/exits.txt`
-- `orchestrator/evidence/T22L.json`
-- `orchestrator/evidence/U00-gate/00-exit-codes.txt`
-- `orchestrator/evidence/U00-gate/00-sha.txt`
-- `orchestrator/evidence/U00-gate/01-install.log`
-- `orchestrator/evidence/U00-gate/02-check-react-types.log`
-- `orchestrator/evidence/U00-gate/03-lint.log`
-- `orchestrator/evidence/U00-gate/04-typecheck.log`
-- `orchestrator/evidence/U00-gate/05-jest.log`
-- `orchestrator/evidence/U00-gate/06-scripts-test.log`
-- `orchestrator/evidence/U00-gate/07-build.log`
-- `orchestrator/evidence/U00-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U00-gate/head/00-exit-codes.txt`
-- `orchestrator/evidence/U00-gate/head/00-sha.txt`
-- `orchestrator/evidence/U00-gate/head/01-install.log`
-- `orchestrator/evidence/U00-gate/head/02-check-react-types.log`
-- `orchestrator/evidence/U00-gate/head/03-lint.log`
-- `orchestrator/evidence/U00-gate/head/04-typecheck.log`
-- `orchestrator/evidence/U00-gate/head/05-jest.log`
-- `orchestrator/evidence/U00-gate/head/06-scripts-test.log`
-- `orchestrator/evidence/U00-gate/head/07-build.log`
-- `orchestrator/evidence/U00-gate/head/08-git-diff-check.log`
-- `orchestrator/evidence/U00-gate/merge/00-exit-codes.txt`
-- `orchestrator/evidence/U00-gate/merge/00-sha.txt`
-- `orchestrator/evidence/U00-gate/merge/01-install.log`
-- `orchestrator/evidence/U00-gate/merge/02-check-react-types.log`
-- `orchestrator/evidence/U00-gate/merge/03-lint.log`
-- `orchestrator/evidence/U00-gate/merge/04-typecheck.log`
-- `orchestrator/evidence/U00-gate/merge/05-jest.log`
-- `orchestrator/evidence/U00-gate/merge/06-scripts-test.log`
-- `orchestrator/evidence/U00-gate/merge/07-build.log`
-- `orchestrator/evidence/U00-gate/merge/08-git-diff-check.log`
-- `orchestrator/evidence/U00-gate/narrow/database.log`
-- `orchestrator/evidence/U00-gate/narrow/localization.log`
-- `orchestrator/evidence/U00-gate/narrow/media.log`
-- `orchestrator/evidence/U00-gate/narrow/offline.log`
-- `orchestrator/evidence/U00-mutations/1-route-removed.log`
-- `orchestrator/evidence/U00-mutations/2-copy-mutated.log`
-- `orchestrator/evidence/U00-mutations/3-partition-broken.log`
-- `orchestrator/evidence/U00-mutations/4-node-environment.log`
-- `orchestrator/evidence/U00-mutations/5-restored.log`
-- `orchestrator/evidence/U00-mutations/exits.txt`
-- `orchestrator/evidence/U00-mutations/mutations.sh`
-- `orchestrator/evidence/U00-mutations/node-env.config.js`
-- `orchestrator/evidence/U00.json`
-- `orchestrator/evidence/U01-gate/00-exit-codes.txt`
-- `orchestrator/evidence/U01-gate/00-sha.txt`
-- `orchestrator/evidence/U01-gate/01-install.log`
-- `orchestrator/evidence/U01-gate/02-check-react-types.log`
-- `orchestrator/evidence/U01-gate/03-lint.log`
-- `orchestrator/evidence/U01-gate/04-typecheck.log`
-- `orchestrator/evidence/U01-gate/05-jest.log`
-- `orchestrator/evidence/U01-gate/06-scripts-test.log`
-- `orchestrator/evidence/U01-gate/07-build.log`
-- `orchestrator/evidence/U01-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U01-gate/09-git-status.log`
-- `orchestrator/evidence/U01-gate/exits.txt`
-- `orchestrator/evidence/U01.json`
-- `orchestrator/evidence/U02-gate/00-sha.txt`
-- `orchestrator/evidence/U02-gate/01-install.log`
-- `orchestrator/evidence/U02-gate/02-check-react-types.log`
-- `orchestrator/evidence/U02-gate/03-lint.log`
-- `orchestrator/evidence/U02-gate/04-typecheck.log`
-- `orchestrator/evidence/U02-gate/05-jest-full.log`
-- `orchestrator/evidence/U02-gate/06-scripts-test.log`
-- `orchestrator/evidence/U02-gate/07-build.log`
-- `orchestrator/evidence/U02-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U02-gate/09-git-status.log`
-- `orchestrator/evidence/U02-gate/10-localization.log`
-- `orchestrator/evidence/U02-gate/11-criterion-suites.log`
-- `orchestrator/evidence/U02-gate/exits.txt`
-- `orchestrator/evidence/U02-gate/gate.sh`
-- `orchestrator/evidence/U02-gate/req-91-repro.txt`
-- `orchestrator/evidence/U02.json`
-- `orchestrator/evidence/U03-gate/00-sha.txt`
-- `orchestrator/evidence/U03-gate/01-install.log`
-- `orchestrator/evidence/U03-gate/02-check-react-types.log`
-- `orchestrator/evidence/U03-gate/03-lint.log`
-- `orchestrator/evidence/U03-gate/04-typecheck.log`
-- `orchestrator/evidence/U03-gate/05-jest-full.log`
-- `orchestrator/evidence/U03-gate/06-scripts-test.log`
-- `orchestrator/evidence/U03-gate/07-build.log`
-- `orchestrator/evidence/U03-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U03-gate/09-git-status.log`
-- `orchestrator/evidence/U03-gate/10-localization.log`
-- `orchestrator/evidence/U03-gate/11-criterion-suites.log`
-- `orchestrator/evidence/U03-gate/exits.txt`
-- `orchestrator/evidence/U03-gate/gate.sh`
-- `orchestrator/evidence/U03-mutations.log`
-- `orchestrator/evidence/U03-mutations.py`
-- `orchestrator/evidence/U03.json`
-- `orchestrator/evidence/U04-gate/00-sha.txt`
-- `orchestrator/evidence/U04-gate/01-install.log`
-- `orchestrator/evidence/U04-gate/02-check-react-types.log`
-- `orchestrator/evidence/U04-gate/03-lint.log`
-- `orchestrator/evidence/U04-gate/04-typecheck.log`
-- `orchestrator/evidence/U04-gate/05-jest-full.log`
-- `orchestrator/evidence/U04-gate/06-scripts-test.log`
-- `orchestrator/evidence/U04-gate/07-build.log`
-- `orchestrator/evidence/U04-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U04-gate/09-git-status.log`
-- `orchestrator/evidence/U04-gate/10-localization.log`
-- `orchestrator/evidence/U04-gate/11-criterion-suites.log`
-- `orchestrator/evidence/U04-gate/exits.txt`
-- `orchestrator/evidence/U04-gate/gate.sh`
-- `orchestrator/evidence/U04-gate/regression/req-120-screen-reverted-to-3e27021.log`
-- `orchestrator/evidence/U04-gate/regression/req-120-team-screen-reverted-to-1a87e26.log`
-- `orchestrator/evidence/U04.json`
-- `orchestrator/evidence/U05-gate/00-exit-codes.txt`
-- `orchestrator/evidence/U05-gate/00-sha.txt`
-- `orchestrator/evidence/U05-gate/01-install.log`
-- `orchestrator/evidence/U05-gate/02-check-react-types.log`
-- `orchestrator/evidence/U05-gate/03-lint.log`
-- `orchestrator/evidence/U05-gate/04-typecheck.log`
-- `orchestrator/evidence/U05-gate/05-jest-full.log`
-- `orchestrator/evidence/U05-gate/06-scripts-test.log`
-- `orchestrator/evidence/U05-gate/07-build.log`
-- `orchestrator/evidence/U05-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U05-gate/09-git-status.log`
-- `orchestrator/evidence/U05-gate/exits.txt`
-- `orchestrator/evidence/U05.json`
-- `orchestrator/evidence/U06-gate/00-sha.txt`
-- `orchestrator/evidence/U06-gate/01-install.log`
-- `orchestrator/evidence/U06-gate/02-check-react-types.log`
-- `orchestrator/evidence/U06-gate/03-lint.log`
-- `orchestrator/evidence/U06-gate/04-typecheck.log`
-- `orchestrator/evidence/U06-gate/05-jest-full.log`
-- `orchestrator/evidence/U06-gate/06-scripts-test.log`
-- `orchestrator/evidence/U06-gate/07-build.log`
-- `orchestrator/evidence/U06-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U06-gate/09-git-status.log`
-- `orchestrator/evidence/U06-gate/10-localization.log`
-- `orchestrator/evidence/U06-gate/11-typecheck-after-build.log`
-- `orchestrator/evidence/U06-gate/12-criterion-suites.log`
-- `orchestrator/evidence/U06-gate/exits.txt`
-- `orchestrator/evidence/U06-gate/gate.sh`
-- `orchestrator/evidence/U06-gate/steal-time-sample.txt`
-- `orchestrator/evidence/U06.json`
-- `orchestrator/evidence/U07-gate/00-sha.txt`
-- `orchestrator/evidence/U07-gate/01-install.log`
-- `orchestrator/evidence/U07-gate/02-check-react-types.log`
-- `orchestrator/evidence/U07-gate/03-lint.log`
-- `orchestrator/evidence/U07-gate/04-typecheck.log`
-- `orchestrator/evidence/U07-gate/05-jest-full.log`
-- `orchestrator/evidence/U07-gate/06-scripts-test.log`
-- `orchestrator/evidence/U07-gate/07-build.log`
-- `orchestrator/evidence/U07-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U07-gate/09-git-status.log`
-- `orchestrator/evidence/U07-gate/10-localization.log`
-- `orchestrator/evidence/U07-gate/11-criterion-suites.log`
-- `orchestrator/evidence/U07-gate/12-git-status-after.log`
-- `orchestrator/evidence/U07-gate/exits.txt`
-- `orchestrator/evidence/U07-gate/gate.sh.txt`
-- `orchestrator/evidence/U07-gate/run-0147f5e-1-flake/00-sha.txt`
-- `orchestrator/evidence/U07-gate/run-0147f5e-1-flake/05-jest-full.summary.txt`
-- `orchestrator/evidence/U07-gate/run-0147f5e-1-flake/exits.txt`
-- `orchestrator/evidence/U07-gate/when-quiet.sh.txt`
-- `orchestrator/evidence/U07-provenance/round-2.txt`
-- `orchestrator/evidence/U07.json`
-- `orchestrator/evidence/U08-gate/00-exit-codes.txt`
-- `orchestrator/evidence/U08-gate/00-identifiers.md`
-- `orchestrator/evidence/U08-gate/00-sha.txt`
-- `orchestrator/evidence/U08-gate/00-versions.txt`
-- `orchestrator/evidence/U08-gate/01-install.log`
-- `orchestrator/evidence/U08-gate/02-check-react-types.log`
-- `orchestrator/evidence/U08-gate/03-lint.log`
-- `orchestrator/evidence/U08-gate/04-typecheck.log`
-- `orchestrator/evidence/U08-gate/05-jest-full.log`
-- `orchestrator/evidence/U08-gate/06-scripts-test.log`
-- `orchestrator/evidence/U08-gate/07-build.log`
-- `orchestrator/evidence/U08-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U08-gate/09-git-status.log`
-- `orchestrator/evidence/U08-gate/10-localization.log`
-- `orchestrator/evidence/U08-gate/exits.txt`
-- `orchestrator/evidence/U08-gate/probe-versions.sh.txt`
-- `orchestrator/evidence/U08-gate/versions.txt`
-- `orchestrator/evidence/U08.json`
-- `orchestrator/evidence/U09-gate/00-sha.txt`
-- `orchestrator/evidence/U09-gate/01-install.log`
-- `orchestrator/evidence/U09-gate/02-check-react-types.log`
-- `orchestrator/evidence/U09-gate/03-lint.log`
-- `orchestrator/evidence/U09-gate/04-typecheck.log`
-- `orchestrator/evidence/U09-gate/05-jest-full.log`
-- `orchestrator/evidence/U09-gate/06-scripts-test.log`
-- `orchestrator/evidence/U09-gate/07-build.log`
-- `orchestrator/evidence/U09-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U09-gate/09-git-status.log`
-- `orchestrator/evidence/U09-gate/10-localization.log`
-- `orchestrator/evidence/U09-gate/11-criterion-suites.log`
-- `orchestrator/evidence/U09-gate/exits.txt`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/00-sha.txt`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/01-install.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/02-check-react-types.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/03-lint.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/04-typecheck.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/05-jest-full.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/06-scripts-test.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/07-build.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/08-git-diff-check.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/09-git-status.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/10-localization.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/11-criterion-suites.log`
-- `orchestrator/evidence/U09-gate/first-run-8753f2c/exits.txt`
-- `orchestrator/evidence/U09-gate/gate.sh.txt`
-- `orchestrator/evidence/U09-gate/second-run-0660304/00-sha.txt`
-- `orchestrator/evidence/U09-gate/second-run-0660304/01-install.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/02-check-react-types.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/03-lint.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/04-typecheck.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/05-jest-full.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/06-scripts-test.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/07-build.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/08-git-diff-check.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/09-git-status.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/10-localization.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/11-criterion-suites.log`
-- `orchestrator/evidence/U09-gate/second-run-0660304/exits.txt`
-- `orchestrator/evidence/U09.json`
-- `orchestrator/evidence/U10-gate/00-exit-codes.txt`
-- `orchestrator/evidence/U10-gate/00-sha.txt`
-- `orchestrator/evidence/U10-gate/01-install.log`
-- `orchestrator/evidence/U10-gate/02-check-react-types.log`
-- `orchestrator/evidence/U10-gate/03-lint.log`
-- `orchestrator/evidence/U10-gate/04-typecheck.log`
-- `orchestrator/evidence/U10-gate/05-jest-full.log`
-- `orchestrator/evidence/U10-gate/06-scripts-test.log`
-- `orchestrator/evidence/U10-gate/07-build.log`
-- `orchestrator/evidence/U10-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U10-gate/09-git-status.log`
-- `orchestrator/evidence/U10-gate/exits.txt`
-- `orchestrator/evidence/U10.json`
-- `orchestrator/evidence/U11-gate/00-identifiers.md`
-- `orchestrator/evidence/U11-gate/00-sha.txt`
-- `orchestrator/evidence/U11-gate/01-install.log`
-- `orchestrator/evidence/U11-gate/02-check-react-types.log`
-- `orchestrator/evidence/U11-gate/03-lint.log`
-- `orchestrator/evidence/U11-gate/04-typecheck.log`
-- `orchestrator/evidence/U11-gate/05-jest-full.log`
-- `orchestrator/evidence/U11-gate/06-scripts-test.log`
-- `orchestrator/evidence/U11-gate/07-build.log`
-- `orchestrator/evidence/U11-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U11-gate/09-git-status.log`
-- `orchestrator/evidence/U11-gate/10-localization.log`
-- `orchestrator/evidence/U11-gate/11-criterion-suites.log`
-- `orchestrator/evidence/U11-gate/exits.txt`
-- `orchestrator/evidence/U11-gate/gate.sh.txt`
-- `orchestrator/evidence/U11.json`
-- `orchestrator/evidence/U12-gate/00-sha.txt`
-- `orchestrator/evidence/U12-gate/01-install.log`
-- `orchestrator/evidence/U12-gate/02-check-react-types.log`
-- `orchestrator/evidence/U12-gate/03-lint.log`
-- `orchestrator/evidence/U12-gate/04-typecheck.log`
-- `orchestrator/evidence/U12-gate/05-jest-full.log`
-- `orchestrator/evidence/U12-gate/06-scripts-test.log`
-- `orchestrator/evidence/U12-gate/07-build.log`
-- `orchestrator/evidence/U12-gate/08-git-diff-check.log`
-- `orchestrator/evidence/U12-gate/09-git-status.log`
-- `orchestrator/evidence/U12-gate/10-localization.log`
-- `orchestrator/evidence/U12-gate/11-criterion-suites.log`
-- `orchestrator/evidence/U12-gate/baseline-09e6a91-jest-full.log`
-- `orchestrator/evidence/U12-gate/baseline-09e6a91-sha.txt`
-- `orchestrator/evidence/U12-gate/exits.txt`
-- `orchestrator/evidence/U12.json`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/00-sha.txt`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/01-install.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/02-check-react-types.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/03-lint.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/04-typecheck-milesign.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/05-typecheck.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/06-jest-full.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/07-scripts-test.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/08-build.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/09-git-diff-check.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/10-git-diff-check-main.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/11-git-status.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/12-localization.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/13-criterion-suite.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/14-mutation-repro.log`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/exits.txt`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/gate-when-quiet.sh.txt`
-- `orchestrator/evidence/U13-gate-superseded-77c8998/gate.sh.txt`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/00-sha.txt`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/01-install.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/02-check-react-types.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/03-lint.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/04-typecheck-milesign.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/05-typecheck.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/06-jest-full.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/07-scripts-test.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/08-build.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/09-git-diff-check.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/10-git-diff-check-main.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/11-git-status.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/12-localization.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/13-criterion-suite.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/14-mutation-repro.log`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/exits.txt`
-- `orchestrator/evidence/U13-gate-superseded-dede5ab/gate.sh.txt`
-- `orchestrator/evidence/U13-gate/00-sha.txt`
-- `orchestrator/evidence/U13-gate/01-install.log`
-- `orchestrator/evidence/U13-gate/02-check-react-types.log`
-- `orchestrator/evidence/U13-gate/03-lint.log`
-- `orchestrator/evidence/U13-gate/04-typecheck-milesign.log`
-- `orchestrator/evidence/U13-gate/05-typecheck.log`
-- `orchestrator/evidence/U13-gate/06-jest-full.log`
-- `orchestrator/evidence/U13-gate/07-scripts-test.log`
-- `orchestrator/evidence/U13-gate/08-build.log`
-- `orchestrator/evidence/U13-gate/09-git-diff-check.log`
-- `orchestrator/evidence/U13-gate/10-git-diff-check-main.log`
-- `orchestrator/evidence/U13-gate/11-git-status.log`
-- `orchestrator/evidence/U13-gate/12-localization.log`
-- `orchestrator/evidence/U13-gate/13-criterion-suite.log`
-- `orchestrator/evidence/U13-gate/14-mutation-repro.log`
-- `orchestrator/evidence/U13-gate/exits.txt`
-- `orchestrator/evidence/U13-gate/gate-when-quiet.sh.txt`
-- `orchestrator/evidence/U13-gate/gate.sh.txt`
-- `orchestrator/evidence/U13.json`
-- `orchestrator/evidence/UC1-gate/00-sha.txt`
-- `orchestrator/evidence/UC1-gate/01-install.log`
-- `orchestrator/evidence/UC1-gate/02-check-react-types.log`
-- `orchestrator/evidence/UC1-gate/03-lint.log`
-- `orchestrator/evidence/UC1-gate/04-typecheck.log`
-- `orchestrator/evidence/UC1-gate/05-jest-full.log`
-- `orchestrator/evidence/UC1-gate/06-scripts-test.log`
-- `orchestrator/evidence/UC1-gate/07-build.log`
-- `orchestrator/evidence/UC1-gate/08-git-diff-check.log`
-- `orchestrator/evidence/UC1-gate/09-git-status.log`
-- `orchestrator/evidence/UC1-gate/10-localization.log`
-- `orchestrator/evidence/UC1-gate/11-criterion-suites.log`
-- `orchestrator/evidence/UC1-gate/12-git-status-after.log`
-- `orchestrator/evidence/UC1-gate/exits.txt`
-- `orchestrator/evidence/UC1-gate/gate.sh.txt`
-- `orchestrator/evidence/UC1-gate/when-quiet.sh.txt`
-- `orchestrator/evidence/UC1-mutations/m1-no-door.log`
-- `orchestrator/evidence/UC1-mutations/m2-mark-read-local-only.log`
-- `orchestrator/evidence/UC1-mutations/m3-open-ignores-route.log`
-- `orchestrator/evidence/UC1-mutations/m4-toggle-not-saved.log`
-- `orchestrator/evidence/UC1.json`
-- `orchestrator/evidence/UC2-gate-run1-7a5d89b/00-sha.txt`
-- `orchestrator/evidence/UC2-gate-run1-7a5d89b/05-jest-full-excerpt.log`
-- `orchestrator/evidence/UC2-gate-run1-7a5d89b/exits.txt`
-- `orchestrator/evidence/UC2-gate/00-sha.txt`
-- `orchestrator/evidence/UC2-gate/01-install.log`
-- `orchestrator/evidence/UC2-gate/02-check-react-types.log`
-- `orchestrator/evidence/UC2-gate/03-lint.log`
-- `orchestrator/evidence/UC2-gate/04-typecheck.log`
-- `orchestrator/evidence/UC2-gate/05-jest-full.log`
-- `orchestrator/evidence/UC2-gate/06-scripts-test.log`
-- `orchestrator/evidence/UC2-gate/07-build.log`
-- `orchestrator/evidence/UC2-gate/08-git-diff-check.log`
-- `orchestrator/evidence/UC2-gate/09-git-status.log`
-- `orchestrator/evidence/UC2-gate/10-localization.log`
-- `orchestrator/evidence/UC2-gate/11-criterion-suites.log`
-- `orchestrator/evidence/UC2-gate/exits.txt`
-- `orchestrator/evidence/UC2-gate/gate.sh.txt`
-- `orchestrator/evidence/UC2-mutations/00-sha.txt`
-- `orchestrator/evidence/UC2-mutations/99-status-after.txt`
-- `orchestrator/evidence/UC2-mutations/m1-content-search-unscoped.log`
-- `orchestrator/evidence/UC2-mutations/m1a-applied.txt`
-- `orchestrator/evidence/UC2-mutations/m1a-rls-only-bypassed.log`
-- `orchestrator/evidence/UC2-mutations/m2-records-not-drawn.log`
-- `orchestrator/evidence/UC2-mutations/m3-admission-ignored.log`
-- `orchestrator/evidence/UC2-mutations/m4-any-own-address.log`
-- `orchestrator/evidence/UC2-mutations/m5-screen-ignores-admission.log`
-- `orchestrator/evidence/UC2-mutations/mutations.sh.txt`
-- `orchestrator/evidence/UC2.json`
-- `orchestrator/evidence/UC3-gate/00-sha.txt`
-- `orchestrator/evidence/UC3-gate/01-install.log`
-- `orchestrator/evidence/UC3-gate/02-check-react-types.log`
-- `orchestrator/evidence/UC3-gate/03-lint.log`
-- `orchestrator/evidence/UC3-gate/04-typecheck.log`
-- `orchestrator/evidence/UC3-gate/05-jest-full.log`
-- `orchestrator/evidence/UC3-gate/06-scripts-test.log`
-- `orchestrator/evidence/UC3-gate/07-build.log`
-- `orchestrator/evidence/UC3-gate/08-git-diff-check.log`
-- `orchestrator/evidence/UC3-gate/09-git-status.log`
-- `orchestrator/evidence/UC3-gate/10-localization.log`
-- `orchestrator/evidence/UC3-gate/11-criterion-suites.log`
-- `orchestrator/evidence/UC3-gate/12-git-status-after.log`
-- `orchestrator/evidence/UC3-gate/exits.txt`
-- `orchestrator/evidence/UC3-gate/gate.sh.txt`
-- `orchestrator/evidence/UC3-gate/when-quiet.sh.txt`
-- `orchestrator/evidence/UC3.json`
-- `orchestrator/evidence/UC4-gate/00-sha.txt`
-- `orchestrator/evidence/UC4-gate/01-install.log`
-- `orchestrator/evidence/UC4-gate/02-check-react-types.log`
-- `orchestrator/evidence/UC4-gate/03-lint.log`
-- `orchestrator/evidence/UC4-gate/04-typecheck.log`
-- `orchestrator/evidence/UC4-gate/05-jest-full.log`
-- `orchestrator/evidence/UC4-gate/06-scripts-test.log`
-- `orchestrator/evidence/UC4-gate/07-build.log`
-- `orchestrator/evidence/UC4-gate/08-git-diff-check.log`
-- `orchestrator/evidence/UC4-gate/09-git-status.log`
-- `orchestrator/evidence/UC4-gate/10-localization.log`
-- `orchestrator/evidence/UC4-gate/11-criterion-suites.log`
-- `orchestrator/evidence/UC4-gate/12-git-status-after.log`
-- `orchestrator/evidence/UC4-gate/13-negative-controls.log`
-- `orchestrator/evidence/UC4-gate/14-git-status-after-controls.log`
-- `orchestrator/evidence/UC4-gate/15-database.log`
-- `orchestrator/evidence/UC4-gate/16-git-status-final.log`
-- `orchestrator/evidence/UC4-gate/exits.txt`
-- `orchestrator/evidence/UC4-gate/gate.sh.txt`
-- `orchestrator/evidence/UC4-gate/negative-controls.sh`
-- `orchestrator/evidence/UC4-gate/r3-gate.sh.txt`
-- `orchestrator/evidence/UC4-gate/r4-gate.sh.txt`
-- `orchestrator/evidence/UC4-gate/run-r3a-de893ea-failed/00-sha.txt`
-- `orchestrator/evidence/UC4-gate/run-r3a-de893ea-failed/05-jest-full.summary.txt`
-- `orchestrator/evidence/UC4-gate/run-r3a-de893ea-failed/exits.txt`
-- `orchestrator/evidence/UC4-gate/run-r3b-d2d076f-superseded/00-sha.txt`
-- `orchestrator/evidence/UC4-gate/run-r3b-d2d076f-superseded/exits.txt`
-- `orchestrator/evidence/UC4-gate/run-r3c-c965fc4-superseded/00-sha.txt`
-- `orchestrator/evidence/UC4-gate/run-r3c-c965fc4-superseded/exits.txt`
-- `orchestrator/evidence/UC4-gate/run-r4a-e6fa5fe-superseded/00-sha.txt`
-- `orchestrator/evidence/UC4-gate/run-r4a-e6fa5fe-superseded/11-criterion-suites.log`
-- `orchestrator/evidence/UC4-gate/run-r4a-e6fa5fe-superseded/13-negative-controls.log`
-- `orchestrator/evidence/UC4-gate/run-r4a-e6fa5fe-superseded/exits.txt`
-- `orchestrator/evidence/UC4-gate/uc3-followup/with-fix.log`
-- `orchestrator/evidence/UC4-gate/uc3-followup/without-fix.log`
-- `orchestrator/evidence/UC4-gate/uc4-fix1/with-fix.log`
-- `orchestrator/evidence/UC4-gate/uc4-fix1/without-fix.log`
-- `orchestrator/evidence/UC4-gate/uc4-fix2/pending-counts-as-ready.log`
-- `orchestrator/evidence/UC4-gate/uc4-fix2/reviewed-screen-0f1f1b4.log`
-- `orchestrator/evidence/UC4-gate/uc4-fix2/with-fix.log`
-- `orchestrator/evidence/UC4-gate/when-quiet.sh.txt`
-- `orchestrator/evidence/UC4.json`
-- `orchestrator/lib/acceptance-matrix.mjs`
-- `orchestrator/lib/cezar-driver.mjs`
-- `orchestrator/lib/controller-snapshot.mjs`
-- `orchestrator/lib/controller.mjs`
-- `orchestrator/lib/gate.mjs`
-- `orchestrator/lib/git.mjs`
-- `orchestrator/lib/handoff.mjs`
-- `orchestrator/lib/methods.mjs`
-- `orchestrator/lib/registry.mjs`
-- `orchestrator/lib/state.mjs`
-- `orchestrator/lib/verify.mjs`
-- `orchestrator/registry.json`
-- `orchestrator/reports/.gitkeep`
-- `orchestrator/reports/A01.md`
-- `orchestrator/reports/AB1.md`
-- `orchestrator/reports/AB2.md`
-- `orchestrator/reports/AB2b.md`
-- `orchestrator/reports/AB3a.md`
-- `orchestrator/reports/AB3b.md`
-- `orchestrator/reports/AB3c.md`
-- `orchestrator/reports/AB4.md`
-- `orchestrator/reports/AB4M.md`
-- `orchestrator/reports/AB4P.md`
-- `orchestrator/reports/AB5.md`
-- `orchestrator/reports/AB5P.md`
-- `orchestrator/reports/AB6.md`
-- `orchestrator/reports/AB6M.md`
-- `orchestrator/reports/AB6P.md`
-- `orchestrator/reports/C01.md`
-- `orchestrator/reports/C02.md`
-- `orchestrator/reports/C03.md`
-- `orchestrator/reports/C04.md`
-- `orchestrator/reports/C05.md`
-- `orchestrator/reports/C06.md`
-- `orchestrator/reports/C07.md`
-- `orchestrator/reports/C08.md`
-- `orchestrator/reports/C09.md`
-- `orchestrator/reports/C10.md`
-- `orchestrator/reports/D00.md`
-- `orchestrator/reports/D01.md`
-- `orchestrator/reports/D02.md`
-- `orchestrator/reports/D03.md`
-- `orchestrator/reports/D04.md`
-- `orchestrator/reports/D05.md`
-- `orchestrator/reports/D06.md`
-- `orchestrator/reports/D07.md`
-- `orchestrator/reports/D08.md`
-- `orchestrator/reports/D09.md`
-- `orchestrator/reports/E01.md`
-- `orchestrator/reports/E02.md`
-- `orchestrator/reports/E03.md`
-- `orchestrator/reports/E04.md`
-- `orchestrator/reports/E05.md`
-- `orchestrator/reports/E06.md`
-- `orchestrator/reports/E07.md`
-- `orchestrator/reports/E08.md`
-- `orchestrator/reports/E09.md`
-- `orchestrator/reports/E10.md`
-- `orchestrator/reports/E11.md`
-- `orchestrator/reports/E12.md`
-- `orchestrator/reports/E13.md`
-- `orchestrator/reports/H01.md`
-- `orchestrator/reports/H02.md`
-- `orchestrator/reports/H03.md`
-- `orchestrator/reports/I00.md`
-- `orchestrator/reports/I01.md`
-- `orchestrator/reports/I02.md`
-- `orchestrator/reports/I10.md`
-- `orchestrator/reports/I11.md`
-- `orchestrator/reports/I12.md`
-- `orchestrator/reports/I13.md`
-- `orchestrator/reports/I14.md`
-- `orchestrator/reports/I15.md`
-- `orchestrator/reports/I16.md`
-- `orchestrator/reports/I17.md`
-- `orchestrator/reports/I20.md`
-- `orchestrator/reports/I22.md`
-- `orchestrator/reports/IOS0.md`
-- `orchestrator/reports/R01.md`
-- `orchestrator/reports/R02.md`
-- `orchestrator/reports/R03.md`
-- `orchestrator/reports/R04.md`
-- `orchestrator/reports/R05.md`
-- `orchestrator/reports/R06.md`
-- `orchestrator/reports/R07.md`
-- `orchestrator/reports/R08.md`
-- `orchestrator/reports/R09.md`
-- `orchestrator/reports/R10.md`
-- `orchestrator/reports/R11.md`
-- `orchestrator/reports/R12.md`
-- `orchestrator/reports/R13.md`
-- `orchestrator/reports/R14.md`
-- `orchestrator/reports/R15.md`
-- `orchestrator/reports/R16.md`
-- `orchestrator/reports/R17.md`
-- `orchestrator/reports/R18.md`
-- `orchestrator/reports/R19.md`
-- `orchestrator/reports/R20.md`
-- `orchestrator/reports/R21.md`
-- `orchestrator/reports/R21B.md`
-- `orchestrator/reports/R21C.md`
-- `orchestrator/reports/R22.md`
-- `orchestrator/reports/R23.md`
-- `orchestrator/reports/R24.md`
-- `orchestrator/reports/R25.md`
-- `orchestrator/reports/R26.md`
-- `orchestrator/reports/R27.md`
-- `orchestrator/reports/R28.md`
-- `orchestrator/reports/R28M.md`
-- `orchestrator/reports/R28P.md`
-- `orchestrator/reports/R29.md`
-- `orchestrator/reports/R30.md`
-- `orchestrator/reports/R31.md`
-- `orchestrator/reports/R32.md`
-- `orchestrator/reports/R33.md`
-- `orchestrator/reports/R34.md`
-- `orchestrator/reports/R35.md`
-- `orchestrator/reports/R36.md`
-- `orchestrator/reports/R37.md`
-- `orchestrator/reports/R38.md`
-- `orchestrator/reports/R39.md`
-- `orchestrator/reports/R40.md`
-- `orchestrator/reports/R41.md`
-- `orchestrator/reports/RC101.md`
-- `orchestrator/reports/RC102.md`
-- `orchestrator/reports/SETUP.md`
-- `orchestrator/reports/T00.md`
-- `orchestrator/reports/T01.md`
-- `orchestrator/reports/T02.md`
-- `orchestrator/reports/T03.md`
-- `orchestrator/reports/T04.md`
-- `orchestrator/reports/T04L.md`
-- `orchestrator/reports/T05.md`
-- `orchestrator/reports/T06.md`
-- `orchestrator/reports/T06F.md`
-- `orchestrator/reports/T07.md`
-- `orchestrator/reports/T08.md`
-- `orchestrator/reports/T09.md`
-- `orchestrator/reports/T10.md`
-- `orchestrator/reports/T11.md`
-- `orchestrator/reports/T12.md`
-- `orchestrator/reports/T13.md`
-- `orchestrator/reports/T13E.md`
-- `orchestrator/reports/T13L.md`
-- `orchestrator/reports/T14.md`
-- `orchestrator/reports/T15.md`
-- `orchestrator/reports/T16.md`
-- `orchestrator/reports/T17.md`
-- `orchestrator/reports/T18.md`
-- `orchestrator/reports/T18L.md`
-- `orchestrator/reports/T19.md`
-- `orchestrator/reports/T19P.md`
-- `orchestrator/reports/T20.md`
-- `orchestrator/reports/T21.md`
-- `orchestrator/reports/T21L.md`
-- `orchestrator/reports/T22L.md`
-- `orchestrator/reports/U00.md`
-- `orchestrator/reports/U01.md`
-- `orchestrator/reports/U02.md`
-- `orchestrator/reports/U03.md`
-- `orchestrator/reports/U04.md`
-- `orchestrator/reports/U05.md`
-- `orchestrator/reports/U06.md`
-- `orchestrator/reports/U07.md`
-- `orchestrator/reports/U08.md`
-- `orchestrator/reports/U09.md`
-- `orchestrator/reports/U10.md`
-- `orchestrator/reports/U11.md`
-- `orchestrator/reports/U12.md`
-- `orchestrator/reports/U13.md`
-- `orchestrator/reports/UC1.md`
-- `orchestrator/reports/UC2.md`
-- `orchestrator/reports/UC3.md`
-- `orchestrator/reports/UC4.md`
-- `orchestrator/reviews/.gitkeep`
-- `orchestrator/systemd/milesign-orchestrator.service`
-- `orchestrator/test/h01-whitespace-debt.test.mjs`
-- `orchestrator/test/harness.mjs`
-- `orchestrator/test/real-e2e.mjs`
-- `orchestrator/test/scenarios.test.mjs`
-- `package.json`
-- `pnpm-lock.yaml`
-- `pnpm-workspace.yaml`
-- `scripts/package.json`
-- `scripts/src/retention-purge-workflow.test.ts`
+- M	.agents/memory/MEMORY.md
+- M	.agents/memory/milesign-auth-flow.md
+- A	.gitattributes
+- A	.github/workflows/retention-purge.yml
+- M	.gitignore
+- A	LICENSE
+- A	STATUS.md
+- M	artifacts/api-server/package.json
+- M	artifacts/milesign/.gitignore
+- M	artifacts/milesign/__tests__/activityLog.test.ts
+- M	artifacts/milesign/__tests__/app-icon.test.tsx
+- M	artifacts/milesign/__tests__/appDialogHost.test.tsx
+- M	artifacts/milesign/__tests__/appDialogHostCompiledRuntime.test.tsx
+- M	artifacts/milesign/__tests__/calendar.test.ts
+- M	artifacts/milesign/__tests__/calendarCreateEvent.test.tsx
+- M	artifacts/milesign/__tests__/commentActivity.test.ts
+- M	artifacts/milesign/__tests__/contractorEditSave.test.tsx
+- M	artifacts/milesign/__tests__/contractorRemoval.test.ts
+- M	artifacts/milesign/__tests__/deleteConfirmationFlows.test.tsx
+- M	artifacts/milesign/__tests__/designTokens.test.ts
+- A	artifacts/milesign/__tests__/dialogFocusLifecycle.test.tsx
+- A	artifacts/milesign/__tests__/fixtures/ai/plan-draft-a01-grammar-3b.json
+- A	artifacts/milesign/__tests__/fixtures/ai/plan-draft-live-3b.json
+- A	artifacts/milesign/__tests__/fixtures/android-prebuild-c956cf7/AndroidManifest.xml
+- A	artifacts/milesign/__tests__/fixtures/android-prebuild-c956cf7/MainActivity.kt
+- A	artifacts/milesign/__tests__/fixtures/android-prebuild-c956cf7/MainApplication.kt
+- A	artifacts/milesign/__tests__/fixtures/h03-matrix-base-tests.json
+- A	artifacts/milesign/__tests__/fixtures/media/README.md
+- A	artifacts/milesign/__tests__/fixtures/media/malicious.exe
+- A	artifacts/milesign/__tests__/fixtures/media/malicious.sh
+- A	artifacts/milesign/__tests__/fixtures/media/pixel.gif
+- A	artifacts/milesign/__tests__/fixtures/media/pixel.jpg
+- A	artifacts/milesign/__tests__/fixtures/media/pixel.png
+- A	artifacts/milesign/__tests__/fixtures/media/pixel.webp
+- A	artifacts/milesign/__tests__/fixtures/media/sample.avif
+- A	artifacts/milesign/__tests__/fixtures/media/sample.csv
+- A	artifacts/milesign/__tests__/fixtures/media/sample.doc
+- A	artifacts/milesign/__tests__/fixtures/media/sample.docx
+- A	artifacts/milesign/__tests__/fixtures/media/sample.heic
+- A	artifacts/milesign/__tests__/fixtures/media/sample.heif
+- A	artifacts/milesign/__tests__/fixtures/media/sample.mov
+- A	artifacts/milesign/__tests__/fixtures/media/sample.mp4
+- A	artifacts/milesign/__tests__/fixtures/media/sample.pdf
+- A	artifacts/milesign/__tests__/fixtures/media/sample.ppt
+- A	artifacts/milesign/__tests__/fixtures/media/sample.pptx
+- A	artifacts/milesign/__tests__/fixtures/media/sample.txt
+- A	artifacts/milesign/__tests__/fixtures/media/sample.xls
+- A	artifacts/milesign/__tests__/fixtures/media/sample.xlsx
+- A	artifacts/milesign/__tests__/fixtures/ocr/receipt-en.txt
+- A	artifacts/milesign/__tests__/fixtures/ocr/receipt-uk.txt
+- A	artifacts/milesign/__tests__/fixtures/script-font-samples.json
+- A	artifacts/milesign/__tests__/fixtures/t06/project-index-e3e4059.tsx.txt
+- A	artifacts/milesign/__tests__/i18nCatalogs.test.ts
+- A	artifacts/milesign/__tests__/i18nFormat.test.ts
+- A	artifacts/milesign/__tests__/i18nNarrowLayout.test.ts
+- M	artifacts/milesign/__tests__/insertReturningClient.test.ts
+- A	artifacts/milesign/__tests__/interfaceLevel.test.ts
+- A	artifacts/milesign/__tests__/inviteSurvivesSignIn.test.tsx
+- A	artifacts/milesign/__tests__/jestProjects.test.ts
+- M	artifacts/milesign/__tests__/layout.test.tsx
+- A	artifacts/milesign/__tests__/localePreference.test.ts
+- M	artifacts/milesign/__tests__/materialStatuses.test.ts
+- M	artifacts/milesign/__tests__/materials.test.ts
+- M	artifacts/milesign/__tests__/media.test.ts
+- A	artifacts/milesign/__tests__/migrationCrossProjectReplay.test.ts
+- M	artifacts/milesign/__tests__/money.test.ts
+- M	artifacts/milesign/__tests__/moneyInputForms.test.tsx
+- A	artifacts/milesign/__tests__/offlineSyncQueue.test.ts
+- M	artifacts/milesign/__tests__/profileSurface.test.tsx
+- M	artifacts/milesign/__tests__/projectEditRolePresentation.test.tsx
+- A	artifacts/milesign/__tests__/projectLocale.test.ts
+- M	artifacts/milesign/__tests__/projectNextAction.test.ts
+- M	artifacts/milesign/__tests__/projectOverviewDiscoverability.test.tsx
+- M	artifacts/milesign/__tests__/projectOverviewLiveHub.test.tsx
+- M	artifacts/milesign/__tests__/projectOverviewModel.test.ts
+- A	artifacts/milesign/__tests__/projectTemplatesLocaleFallback.test.ts
+- M	artifacts/milesign/__tests__/protectedRouteGuards.test.tsx
+- A	artifacts/milesign/__tests__/retentionJobRunner.test.ts
+- M	artifacts/milesign/__tests__/screenLoadingStates.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab2-level-tokens.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab2b-level-transition.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab2b-onboarding-level.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab3a-advanced-overview.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab3b-balanced-navigation.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab3b-balanced-screens.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab3c-simple-hidden.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab3c-simple-navigation.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab3c-simple-screens.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab4-entries-feed.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab5-nearby-card.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab6-invite-report-delivery.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/ab6-notification-centre.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/account-name-and-onboarding.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/app-calendar.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/appearance-settings.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/auth-footer-alignment.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/calendar-date-display.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/calendar-date-picker.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/component-library.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/direction-restart-route.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/first-launch-language.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/first-look-visual-clarity.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/font-scale-live-change.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/font-scale-live-recompute.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/font-scale-remount.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/fx1-open-in-app.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/google-sign-in-availability.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/harness.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/interface-level-settings.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/keyboard-safe-forms.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/large-font-no-clipping.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/layout-cards-chips.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/legal-and-licenses.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/line-height-scales.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/moderation.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/portfolio-guided-flow.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-d05.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-d06.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-d07.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-d08.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-matrix-2.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-matrix-3.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-matrix-4.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-matrix-5.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-matrix-6.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/redesign-matrix.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/registration-policy-acceptance.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-106.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-107.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-108.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-110.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-112.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-113.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-114.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-115.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-116.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-117.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-118.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-119.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-120.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-121.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-122.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-123.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-124.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-125.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-126.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-127.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-128.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-129.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-130.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-131.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-132.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-133.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-134.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-135.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-136.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-137.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-138.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-139.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-140.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-141.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-46.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-49-level-journey.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-66.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-67.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-68.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-69.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-76.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-89.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-90.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-91.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/req-94.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/rtl-layout.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/script-font-switch.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/settings-language-selector.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/settings-row-layout.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/settings-rows-email-back.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/shared-date-field.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/stage-work-quick-toggle.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/support/acceptanceScreen.ts
+- A	artifacts/milesign/__tests__/screens/support/acceptanceWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/accountWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/accountabilityWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/agreementWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/aiWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/collaborationWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/d07World.tsx
+- A	artifacts/milesign/__tests__/screens/support/d08World.tsx
+- A	artifacts/milesign/__tests__/screens/support/d09World.tsx
+- A	artifacts/milesign/__tests__/screens/support/datePicker.ts
+- A	artifacts/milesign/__tests__/screens/support/exportWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/fakeSupabase.ts
+- A	artifacts/milesign/__tests__/screens/support/financeWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/marketplaceWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/nativeMocks.tsx
+- A	artifacts/milesign/__tests__/screens/support/notificationScreenWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/platformWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/react-test-renderer.d.ts
+- A	artifacts/milesign/__tests__/screens/support/replaySupabase.ts
+- A	artifacts/milesign/__tests__/screens/support/reputationWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/screenHarness.tsx
+- A	artifacts/milesign/__tests__/screens/support/searchWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/simpleWorld.ts
+- A	artifacts/milesign/__tests__/screens/support/supplyWorld.ts
+- A	artifacts/milesign/__tests__/screens/t06-project-home-language.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/text-fit-project.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/theme-switch-immediate.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/touch-targets-rendered.screen.test.tsx
+- A	artifacts/milesign/__tests__/screens/v101-layout.screen.test.tsx
+- M	artifacts/milesign/__tests__/settingsSurface.test.tsx
+- A	artifacts/milesign/__tests__/spec/ab2-air-preset.test.ts
+- A	artifacts/milesign/__tests__/spec/ab2-level-tokens.test.ts
+- A	artifacts/milesign/__tests__/spec/ab2b-level-hint.test.ts
+- A	artifacts/milesign/__tests__/spec/ab3c-simple-hidden.test.ts
+- A	artifacts/milesign/__tests__/spec/ab4-capture-entry.test.ts
+- A	artifacts/milesign/__tests__/spec/ab4-voice-notes-live-plan.test.ts
+- A	artifacts/milesign/__tests__/spec/ab4-voice-storage.test.ts
+- A	artifacts/milesign/__tests__/spec/ab5-nearby-aggregates.test.ts
+- A	artifacts/milesign/__tests__/spec/ab6-notification-matrix.test.ts
+- A	artifacts/milesign/__tests__/spec/ab6-notification-migration.test.ts
+- A	artifacts/milesign/__tests__/spec/ab6-notifications-live-plan.test.ts
+- A	artifacts/milesign/__tests__/spec/ab6-push.test.ts
+- A	artifacts/milesign/__tests__/spec/active-project-role-live-plan.test.ts
+- A	artifacts/milesign/__tests__/spec/android-device-start.test.ts
+- A	artifacts/milesign/__tests__/spec/android-locale-resources.test.ts
+- A	artifacts/milesign/__tests__/spec/camera-upload-size.test.ts
+- A	artifacts/milesign/__tests__/spec/date-picker-android-theme.test.ts
+- A	artifacts/milesign/__tests__/spec/direction-restart-route.test.ts
+- A	artifacts/milesign/__tests__/spec/document-layout-fits-page.test.ts
+- A	artifacts/milesign/__tests__/spec/documents-module-boundary.test.ts
+- A	artifacts/milesign/__tests__/spec/export-open-share.test.ts
+- A	artifacts/milesign/__tests__/spec/forms-dates-labels-localized.test.ts
+- A	artifacts/milesign/__tests__/spec/fx1-open-file-locally.test.ts
+- A	artifacts/milesign/__tests__/spec/fx1-storage-url-exits.test.ts
+- A	artifacts/milesign/__tests__/spec/h03-matrix-shards.test.ts
+- A	artifacts/milesign/__tests__/spec/lazy-catalogs.test.ts
+- A	artifacts/milesign/__tests__/spec/locale-registry.test.ts
+- A	artifacts/milesign/__tests__/spec/locale-theme-upgrade.test.ts
+- A	artifacts/milesign/__tests__/spec/locales-i10.test.ts
+- A	artifacts/milesign/__tests__/spec/locales-i11.test.ts
+- A	artifacts/milesign/__tests__/spec/locales-i12.test.ts
+- A	artifacts/milesign/__tests__/spec/locales-i13.test.ts
+- A	artifacts/milesign/__tests__/spec/locales-i14.test.ts
+- A	artifacts/milesign/__tests__/spec/locales-i15.test.ts
+- A	artifacts/milesign/__tests__/spec/locales-i16.test.ts
+- A	artifacts/milesign/__tests__/spec/locales-i17.test.ts
+- A	artifacts/milesign/__tests__/spec/localization-ast-audit.test.ts
+- A	artifacts/milesign/__tests__/spec/localization-inventory.test.ts
+- A	artifacts/milesign/__tests__/spec/moderation-reports-blocks.test.ts
+- A	artifacts/milesign/__tests__/spec/offline-cold-start-dashboard.test.ts
+- A	artifacts/milesign/__tests__/spec/offline-workitem-and-portfolio.test.ts
+- A	artifacts/milesign/__tests__/spec/package-name.test.ts
+- A	artifacts/milesign/__tests__/spec/photo-from-file-manager.test.ts
+- A	artifacts/milesign/__tests__/spec/photos-bucket-mime.test.ts
+- A	artifacts/milesign/__tests__/spec/plurals-labels-contrast.test.ts
+- A	artifacts/milesign/__tests__/spec/policy-links-in-app.test.ts
+- A	artifacts/milesign/__tests__/spec/portfolio-public-text.test.ts
+- A	artifacts/milesign/__tests__/spec/project-screens-localized.test.ts
+- A	artifacts/milesign/__tests__/spec/redesign-d00.test.ts
+- A	artifacts/milesign/__tests__/spec/reject-evidence-format-message.test.tsx
+- A	artifacts/milesign/__tests__/spec/req-100.test.ts
+- A	artifacts/milesign/__tests__/spec/req-101.test.ts
+- A	artifacts/milesign/__tests__/spec/req-102.test.ts
+- A	artifacts/milesign/__tests__/spec/req-103.test.ts
+- A	artifacts/milesign/__tests__/spec/req-104.test.ts
+- A	artifacts/milesign/__tests__/spec/req-105.test.ts
+- A	artifacts/milesign/__tests__/spec/req-106.test.ts
+- A	artifacts/milesign/__tests__/spec/req-107.test.ts
+- A	artifacts/milesign/__tests__/spec/req-108.test.ts
+- A	artifacts/milesign/__tests__/spec/req-109.test.ts
+- A	artifacts/milesign/__tests__/spec/req-110.test.ts
+- A	artifacts/milesign/__tests__/spec/req-111-template.test.ts
+- A	artifacts/milesign/__tests__/spec/req-111.test.ts
+- A	artifacts/milesign/__tests__/spec/req-112.test.ts
+- A	artifacts/milesign/__tests__/spec/req-113.test.ts
+- A	artifacts/milesign/__tests__/spec/req-114.test.ts
+- A	artifacts/milesign/__tests__/spec/req-115.test.ts
+- A	artifacts/milesign/__tests__/spec/req-116.test.ts
+- A	artifacts/milesign/__tests__/spec/req-117.test.ts
+- A	artifacts/milesign/__tests__/spec/req-118.test.ts
+- A	artifacts/milesign/__tests__/spec/req-119.test.ts
+- A	artifacts/milesign/__tests__/spec/req-120.test.ts
+- A	artifacts/milesign/__tests__/spec/req-121.test.ts
+- A	artifacts/milesign/__tests__/spec/req-122.test.ts
+- A	artifacts/milesign/__tests__/spec/req-123.test.ts
+- A	artifacts/milesign/__tests__/spec/req-124.test.ts
+- A	artifacts/milesign/__tests__/spec/req-125.test.ts
+- A	artifacts/milesign/__tests__/spec/req-126.test.ts
+- A	artifacts/milesign/__tests__/spec/req-127.test.ts
+- A	artifacts/milesign/__tests__/spec/req-128.test.ts
+- A	artifacts/milesign/__tests__/spec/req-129.test.ts
+- A	artifacts/milesign/__tests__/spec/req-130.test.ts
+- A	artifacts/milesign/__tests__/spec/req-131.test.ts
+- A	artifacts/milesign/__tests__/spec/req-132.test.ts
+- A	artifacts/milesign/__tests__/spec/req-133.test.ts
+- A	artifacts/milesign/__tests__/spec/req-134.test.ts
+- A	artifacts/milesign/__tests__/spec/req-135.test.ts
+- A	artifacts/milesign/__tests__/spec/req-136.test.ts
+- A	artifacts/milesign/__tests__/spec/req-137.test.ts
+- A	artifacts/milesign/__tests__/spec/req-138.test.ts
+- A	artifacts/milesign/__tests__/spec/req-139.test.ts
+- A	artifacts/milesign/__tests__/spec/req-140.test.ts
+- A	artifacts/milesign/__tests__/spec/req-141.test.ts
+- A	artifacts/milesign/__tests__/spec/req-156.test.ts
+- A	artifacts/milesign/__tests__/spec/req-157.test.ts
+- A	artifacts/milesign/__tests__/spec/req-158.test.ts
+- A	artifacts/milesign/__tests__/spec/req-159.test.ts
+- A	artifacts/milesign/__tests__/spec/req-160.test.ts
+- A	artifacts/milesign/__tests__/spec/req-161.test.ts
+- A	artifacts/milesign/__tests__/spec/req-162.test.ts
+- A	artifacts/milesign/__tests__/spec/req-163.test.ts
+- A	artifacts/milesign/__tests__/spec/req-164.test.ts
+- A	artifacts/milesign/__tests__/spec/req-165.test.ts
+- A	artifacts/milesign/__tests__/spec/req-166.test.ts
+- A	artifacts/milesign/__tests__/spec/req-167.test.ts
+- A	artifacts/milesign/__tests__/spec/req-168-live-plan.test.ts
+- A	artifacts/milesign/__tests__/spec/req-168.test.ts
+- A	artifacts/milesign/__tests__/spec/req-169.test.ts
+- A	artifacts/milesign/__tests__/spec/req-170.test.ts
+- A	artifacts/milesign/__tests__/spec/req-171.test.ts
+- A	artifacts/milesign/__tests__/spec/req-173.test.ts
+- A	artifacts/milesign/__tests__/spec/req-174.test.ts
+- A	artifacts/milesign/__tests__/spec/req-25-brevo.test.ts
+- A	artifacts/milesign/__tests__/spec/req-25-interface.test.ts
+- A	artifacts/milesign/__tests__/spec/req-25-smtp-env.test.ts
+- A	artifacts/milesign/__tests__/spec/req-26-fcm.test.ts
+- A	artifacts/milesign/__tests__/spec/req-31.test.ts
+- A	artifacts/milesign/__tests__/spec/req-32.test.ts
+- A	artifacts/milesign/__tests__/spec/req-33.test.ts
+- A	artifacts/milesign/__tests__/spec/req-34.test.ts
+- A	artifacts/milesign/__tests__/spec/req-35.test.ts
+- A	artifacts/milesign/__tests__/spec/req-36.test.ts
+- A	artifacts/milesign/__tests__/spec/req-37.test.ts
+- A	artifacts/milesign/__tests__/spec/req-38.test.ts
+- A	artifacts/milesign/__tests__/spec/req-39.test.ts
+- A	artifacts/milesign/__tests__/spec/req-40.test.ts
+- A	artifacts/milesign/__tests__/spec/req-41.test.ts
+- A	artifacts/milesign/__tests__/spec/req-42.test.ts
+- A	artifacts/milesign/__tests__/spec/req-43.test.ts
+- A	artifacts/milesign/__tests__/spec/req-44.test.ts
+- A	artifacts/milesign/__tests__/spec/req-45.test.ts
+- A	artifacts/milesign/__tests__/spec/req-46.test.ts
+- A	artifacts/milesign/__tests__/spec/req-47.test.ts
+- A	artifacts/milesign/__tests__/spec/req-48.test.ts
+- A	artifacts/milesign/__tests__/spec/req-49.test.ts
+- A	artifacts/milesign/__tests__/spec/req-50.test.ts
+- A	artifacts/milesign/__tests__/spec/req-51.test.ts
+- A	artifacts/milesign/__tests__/spec/req-52.test.ts
+- A	artifacts/milesign/__tests__/spec/req-53.test.ts
+- A	artifacts/milesign/__tests__/spec/req-54.test.ts
+- A	artifacts/milesign/__tests__/spec/req-55-concurrency.test.ts
+- A	artifacts/milesign/__tests__/spec/req-55.test.ts
+- A	artifacts/milesign/__tests__/spec/req-56-concurrency.test.ts
+- A	artifacts/milesign/__tests__/spec/req-56.test.ts
+- A	artifacts/milesign/__tests__/spec/req-57.test.ts
+- A	artifacts/milesign/__tests__/spec/req-58.test.ts
+- A	artifacts/milesign/__tests__/spec/req-59.test.ts
+- A	artifacts/milesign/__tests__/spec/req-60.test.ts
+- A	artifacts/milesign/__tests__/spec/req-61.test.ts
+- A	artifacts/milesign/__tests__/spec/req-62.test.ts
+- A	artifacts/milesign/__tests__/spec/req-63.test.ts
+- A	artifacts/milesign/__tests__/spec/req-64.test.ts
+- A	artifacts/milesign/__tests__/spec/req-65.test.ts
+- A	artifacts/milesign/__tests__/spec/req-66.test.ts
+- A	artifacts/milesign/__tests__/spec/req-67.test.ts
+- A	artifacts/milesign/__tests__/spec/req-68.test.ts
+- A	artifacts/milesign/__tests__/spec/req-69.test.ts
+- A	artifacts/milesign/__tests__/spec/req-70.test.ts
+- A	artifacts/milesign/__tests__/spec/req-71.test.ts
+- A	artifacts/milesign/__tests__/spec/req-72.test.ts
+- A	artifacts/milesign/__tests__/spec/req-73.test.ts
+- A	artifacts/milesign/__tests__/spec/req-74.test.ts
+- A	artifacts/milesign/__tests__/spec/req-75.test.ts
+- A	artifacts/milesign/__tests__/spec/req-76.test.ts
+- A	artifacts/milesign/__tests__/spec/req-77.test.ts
+- A	artifacts/milesign/__tests__/spec/req-78.test.ts
+- A	artifacts/milesign/__tests__/spec/req-79.test.ts
+- A	artifacts/milesign/__tests__/spec/req-80.test.ts
+- A	artifacts/milesign/__tests__/spec/req-81.test.ts
+- A	artifacts/milesign/__tests__/spec/req-82.test.ts
+- A	artifacts/milesign/__tests__/spec/req-83.test.ts
+- A	artifacts/milesign/__tests__/spec/req-84.test.ts
+- A	artifacts/milesign/__tests__/spec/req-85.test.ts
+- A	artifacts/milesign/__tests__/spec/req-86.test.ts
+- A	artifacts/milesign/__tests__/spec/req-87.test.ts
+- A	artifacts/milesign/__tests__/spec/req-88.test.ts
+- A	artifacts/milesign/__tests__/spec/req-89.test.ts
+- A	artifacts/milesign/__tests__/spec/req-9.test.ts
+- A	artifacts/milesign/__tests__/spec/req-90.test.ts
+- A	artifacts/milesign/__tests__/spec/req-91.test.ts
+- A	artifacts/milesign/__tests__/spec/req-92.test.ts
+- A	artifacts/milesign/__tests__/spec/req-93.test.ts
+- A	artifacts/milesign/__tests__/spec/req-94.test.ts
+- A	artifacts/milesign/__tests__/spec/req-95.test.ts
+- A	artifacts/milesign/__tests__/spec/req-96.test.ts
+- A	artifacts/milesign/__tests__/spec/req-97.test.ts
+- A	artifacts/milesign/__tests__/spec/req-98.test.ts
+- A	artifacts/milesign/__tests__/spec/req-99.test.ts
+- A	artifacts/milesign/__tests__/spec/restart-background-theme.test.ts
+- A	artifacts/milesign/__tests__/spec/script-fonts.test.ts
+- A	artifacts/milesign/__tests__/spec/server-locales.test.ts
+- A	artifacts/milesign/__tests__/spec/single-date-field.test.ts
+- A	artifacts/milesign/__tests__/spec/splash-and-offline-overview.test.ts
+- A	artifacts/milesign/__tests__/spec/store-data-safety.test.ts
+- A	artifacts/milesign/__tests__/spec/submit-for-acceptance-role.test.ts
+- A	artifacts/milesign/__tests__/spec/template-translations.test.ts
+- A	artifacts/milesign/__tests__/spec/theme-engine.test.ts
+- A	artifacts/milesign/__tests__/spec/thumbnail-delete-policy.test.ts
+- A	artifacts/milesign/__tests__/spec/typography-spacing-layout.test.ts
+- A	artifacts/milesign/__tests__/spec/upload-progress-and-tiles.test.ts
+- A	artifacts/milesign/__tests__/spec/video-thumbnail-delete-policy.test.ts
+- A	artifacts/milesign/__tests__/spec/video-thumbnail.test.ts
+- A	artifacts/milesign/__tests__/spec/work-item-expense-form.test.ts
+- A	artifacts/milesign/__tests__/spec/writing-direction-consistency.test.ts
+- M	artifacts/milesign/__tests__/stageCompleteAction.test.tsx
+- M	artifacts/milesign/__tests__/stageDetailContext.test.tsx
+- A	artifacts/milesign/__tests__/storagePurgeDrain.test.ts
+- M	artifacts/milesign/__tests__/tabsNavigation.test.tsx
+- A	artifacts/milesign/__tests__/testUtils/accessibilityAudit.ts
+- A	artifacts/milesign/__tests__/testUtils/accountWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/agreementWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/aiWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/appCalendarDriver.ts
+- A	artifacts/milesign/__tests__/testUtils/cjkAdvance.ts
+- A	artifacts/milesign/__tests__/testUtils/copyLiteralAudit.ts
+- A	artifacts/milesign/__tests__/testUtils/deviceZone.ts
+- A	artifacts/milesign/__tests__/testUtils/directionalStyleAudit.ts
+- A	artifacts/milesign/__tests__/testUtils/fakeAuthServer.ts
+- A	artifacts/milesign/__tests__/testUtils/fontFile.ts
+- A	artifacts/milesign/__tests__/testUtils/gateReport.ts
+- A	artifacts/milesign/__tests__/testUtils/handoffWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/jpegExifFixture.ts
+- A	artifacts/milesign/__tests__/testUtils/laterPlannedMigrations.ts
+- A	artifacts/milesign/__tests__/testUtils/lifecycleSeed.ts
+- A	artifacts/milesign/__tests__/testUtils/lineHeightAudit.ts
+- A	artifacts/milesign/__tests__/testUtils/liveShapedSeed.ts
+- A	artifacts/milesign/__tests__/testUtils/localOnlyClosure.ts
+- A	artifacts/milesign/__tests__/testUtils/marketplaceWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/mediaSeed.ts
+- A	artifacts/milesign/__tests__/testUtils/narrowLayout.ts
+- A	artifacts/milesign/__tests__/testUtils/nodeRender.ts
+- A	artifacts/milesign/__tests__/testUtils/notificationWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/offlineForms.ts
+- A	artifacts/milesign/__tests__/testUtils/offlineFormsReal.ts
+- A	artifacts/milesign/__tests__/testUtils/offlineMediaWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/offlineWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/pdfText.ts
+- A	artifacts/milesign/__tests__/testUtils/pgConcurrent.ts
+- A	artifacts/milesign/__tests__/testUtils/pgConcurrentServer.mjs
+- A	artifacts/milesign/__tests__/testUtils/pgMediaSupabase.ts
+- A	artifacts/milesign/__tests__/testUtils/pgReplay.ts
+- A	artifacts/milesign/__tests__/testUtils/pgReplaySeed.ts
+- A	artifacts/milesign/__tests__/testUtils/pgReplayWorker.mjs
+- A	artifacts/milesign/__tests__/testUtils/platformWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/redesignMatrix.tsx
+- A	artifacts/milesign/__tests__/testUtils/releaseWorld.ts
+- A	artifacts/milesign/__tests__/testUtils/renderedCall.ts
+- A	artifacts/milesign/__tests__/testUtils/roleMatrix.ts
+- A	artifacts/milesign/__tests__/testUtils/screenMatrix.ts
+- A	artifacts/milesign/__tests__/testUtils/simpleHidden.ts
+- A	artifacts/milesign/__tests__/testUtils/statefulHooks.ts
+- A	artifacts/milesign/__tests__/testUtils/styleValueResolver.ts
+- A	artifacts/milesign/__tests__/testUtils/syncCentreHarness.ts
+- A	artifacts/milesign/__tests__/testUtils/textColumns.ts
+- A	artifacts/milesign/__tests__/testUtils/textFlow.cjs
+- A	artifacts/milesign/__tests__/testUtils/visibleTextScan.cjs
+- A	artifacts/milesign/__tests__/testUtils/yogaLayout.mjs
+- M	artifacts/milesign/__tests__/webValidationFeedback.test.tsx
+- A	artifacts/milesign/__tests__/webshots/d09.webshots.tsx
+- A	artifacts/milesign/__tests__/webshots/domEnvironment.js
+- A	artifacts/milesign/__tests__/webshots/jest.config.js
+- M	artifacts/milesign/__tests__/workItemDetailStates.test.tsx
+- M	artifacts/milesign/__tests__/workItemRejectionEvidence.test.tsx
+- M	artifacts/milesign/__tests__/workItems.test.ts
+- A	artifacts/milesign/app.config.js
+- M	artifacts/milesign/app.json
+- M	artifacts/milesign/app/(auth)/_layout.tsx
+- A	artifacts/milesign/app/(auth)/confirm.tsx
+- A	artifacts/milesign/app/(auth)/forgot-password.tsx
+- M	artifacts/milesign/app/(auth)/login.tsx
+- M	artifacts/milesign/app/(auth)/register.tsx
+- A	artifacts/milesign/app/(auth)/reset-password.tsx
+- M	artifacts/milesign/app/(tabs)/_layout.tsx
+- A	artifacts/milesign/app/(tabs)/activity.tsx
+- M	artifacts/milesign/app/(tabs)/calendar.tsx
+- M	artifacts/milesign/app/(tabs)/index.tsx
+- A	artifacts/milesign/app/(tabs)/more.tsx
+- A	artifacts/milesign/app/(tabs)/notifications.tsx
+- A	artifacts/milesign/app/(tabs)/owner.tsx
+- A	artifacts/milesign/app/(tabs)/people.tsx
+- M	artifacts/milesign/app/(tabs)/profile.tsx
+- M	artifacts/milesign/app/(tabs)/projects.tsx
+- M	artifacts/milesign/app/(tabs)/settings.tsx
+- A	artifacts/milesign/app/(tabs)/today.tsx
+- M	artifacts/milesign/app/+not-found.tsx
+- M	artifacts/milesign/app/_layout.tsx
+- A	artifacts/milesign/app/account/_layout.tsx
+- A	artifacts/milesign/app/account/contexts.tsx
+- A	artifacts/milesign/app/account/organization/[id].tsx
+- A	artifacts/milesign/app/account/team/[id].tsx
+- A	artifacts/milesign/app/admin/_layout.tsx
+- A	artifacts/milesign/app/admin/index.tsx
+- A	artifacts/milesign/app/change-password.tsx
+- A	artifacts/milesign/app/delete-account.tsx
+- A	artifacts/milesign/app/invite.tsx
+- A	artifacts/milesign/app/language.tsx
+- A	artifacts/milesign/app/marketplace.tsx
+- A	artifacts/milesign/app/onboarding.tsx
+- A	artifacts/milesign/app/policy/[id].tsx
+- A	artifacts/milesign/app/profile/_layout.tsx
+- A	artifacts/milesign/app/profile/plan.tsx
+- A	artifacts/milesign/app/profile/portfolio.tsx
+- A	artifacts/milesign/app/profile/reputation.tsx
+- A	artifacts/milesign/app/profile/review.tsx
+- M	artifacts/milesign/app/project/[id]/_layout.tsx
+- A	artifacts/milesign/app/project/[id]/acceptance.tsx
+- A	artifacts/milesign/app/project/[id]/activity.tsx
+- A	artifacts/milesign/app/project/[id]/agreement-change.tsx
+- A	artifacts/milesign/app/project/[id]/agreement.tsx
+- A	artifacts/milesign/app/project/[id]/ai-draft.tsx
+- A	artifacts/milesign/app/project/[id]/analytics.tsx
+- M	artifacts/milesign/app/project/[id]/budget.tsx
+- A	artifacts/milesign/app/project/[id]/capture.tsx
+- A	artifacts/milesign/app/project/[id]/chat.tsx
+- A	artifacts/milesign/app/project/[id]/checklists.tsx
+- M	artifacts/milesign/app/project/[id]/contractors.tsx
+- A	artifacts/milesign/app/project/[id]/defects.tsx
+- A	artifacts/milesign/app/project/[id]/delegation.tsx
+- A	artifacts/milesign/app/project/[id]/dependencies.tsx
+- A	artifacts/milesign/app/project/[id]/disputes.tsx
+- M	artifacts/milesign/app/project/[id]/documents.tsx
+- A	artifacts/milesign/app/project/[id]/entries.tsx
+- M	artifacts/milesign/app/project/[id]/expenses.tsx
+- A	artifacts/milesign/app/project/[id]/export.tsx
+- M	artifacts/milesign/app/project/[id]/index.tsx
+- A	artifacts/milesign/app/project/[id]/listings.tsx
+- A	artifacts/milesign/app/project/[id]/material-requests.tsx
+- M	artifacts/milesign/app/project/[id]/materials.tsx
+- A	artifacts/milesign/app/project/[id]/offers.tsx
+- M	artifacts/milesign/app/project/[id]/participants.tsx
+- A	artifacts/milesign/app/project/[id]/payments.tsx
+- M	artifacts/milesign/app/project/[id]/photos.tsx
+- A	artifacts/milesign/app/project/[id]/receipts.tsx
+- M	artifacts/milesign/app/project/[id]/stage/[stageId].tsx
+- M	artifacts/milesign/app/project/[id]/stages.tsx
+- A	artifacts/milesign/app/project/[id]/stock.tsx
+- A	artifacts/milesign/app/project/[id]/summary.tsx
+- A	artifacts/milesign/app/project/[id]/templates.tsx
+- A	artifacts/milesign/app/project/[id]/work.tsx
+- A	artifacts/milesign/app/search.tsx
+- A	artifacts/milesign/app/settings/_layout.tsx
+- A	artifacts/milesign/app/settings/appearance.tsx
+- A	artifacts/milesign/app/settings/interface-level.tsx
+- A	artifacts/milesign/app/settings/language.tsx
+- A	artifacts/milesign/app/settings/legal.tsx
+- A	artifacts/milesign/app/settings/level-change.tsx
+- A	artifacts/milesign/app/settings/licence/[id].tsx
+- A	artifacts/milesign/app/settings/licences.tsx
+- A	artifacts/milesign/app/settings/locale.tsx
+- A	artifacts/milesign/app/support.tsx
+- A	artifacts/milesign/app/sync.tsx
+- M	artifacts/milesign/app/work-item/[id].tsx
+- M	artifacts/milesign/app/work-item/_layout.tsx
+- A	artifacts/milesign/assets/fonts/NotoSansArabic_400Regular.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansArabic_600SemiBold.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansDevanagari_400Regular.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansDevanagari_600SemiBold.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansJP_400Regular.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansJP_600SemiBold.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansKR_400Regular.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansKR_600SemiBold.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansSC_400Regular.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansSC_600SemiBold.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansTC_400Regular.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansTC_600SemiBold.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansThai_400Regular.ttf
+- A	artifacts/milesign/assets/fonts/NotoSansThai_600SemiBold.ttf
+- A	artifacts/milesign/assets/fonts/OFL.txt
+- A	artifacts/milesign/assets/fonts/licenses.json
+- A	artifacts/milesign/assets/fonts/manifest.json
+- A	artifacts/milesign/assets/licenses/components.json
+- M	artifacts/milesign/components/ErrorFallback.tsx
+- A	artifacts/milesign/components/LevelGate.tsx
+- A	artifacts/milesign/components/LevelGateCard.tsx
+- A	artifacts/milesign/components/SystemBars.tsx
+- A	artifacts/milesign/components/TranslationReport.tsx
+- A	artifacts/milesign/components/auth/AgeConfirmation.tsx
+- A	artifacts/milesign/components/auth/PolicyAcceptance.tsx
+- A	artifacts/milesign/components/auth/PolicyAgreement.tsx
+- A	artifacts/milesign/components/balanced/BalancedBlocks.tsx
+- A	artifacts/milesign/components/balanced/BalancedOverview.tsx
+- A	artifacts/milesign/components/levels/LevelSuggestion.tsx
+- A	artifacts/milesign/components/media/VoiceNotePlayer.tsx
+- A	artifacts/milesign/components/media/VoiceRecorderControl.tsx
+- A	artifacts/milesign/components/moderation/BlockedAccounts.tsx
+- A	artifacts/milesign/components/moderation/ModerationActions.tsx
+- A	artifacts/milesign/components/moderation/queryKeys.ts
+- A	artifacts/milesign/components/notifications/InAppBanner.tsx
+- A	artifacts/milesign/components/notifications/InviteRoleCard.tsx
+- A	artifacts/milesign/components/notifications/NeedsActionStrip.tsx
+- A	artifacts/milesign/components/notifications/NotificationDeliverySheet.tsx
+- A	artifacts/milesign/components/notifications/NotificationMatrixSettings.tsx
+- A	artifacts/milesign/components/notifications/NotificationOverlay.tsx
+- A	artifacts/milesign/components/offline/DeviceCopyNotice.tsx
+- A	artifacts/milesign/components/offline/SyncStateBadge.tsx
+- A	artifacts/milesign/components/overview/AdvancedOverviewBlocks.tsx
+- A	artifacts/milesign/components/policy/PolicyDocumentModal.tsx
+- A	artifacts/milesign/components/portfolio/PortfolioFlowSteps.tsx
+- M	artifacts/milesign/components/project/ActivityFeed.tsx
+- M	artifacts/milesign/components/project/AttachmentsCard.tsx
+- M	artifacts/milesign/components/project/BudgetSummary.tsx
+- A	artifacts/milesign/components/project/CaptureSourceSheet.tsx
+- M	artifacts/milesign/components/project/CommentThread.tsx
+- M	artifacts/milesign/components/project/ContractorCard.tsx
+- A	artifacts/milesign/components/project/ExportFileActions.tsx
+- M	artifacts/milesign/components/project/ProjectCard.tsx
+- A	artifacts/milesign/components/project/ProjectCover.tsx
+- A	artifacts/milesign/components/project/ProjectFieldChoosers.tsx
+- M	artifacts/milesign/components/project/StageCard.tsx
+- M	artifacts/milesign/components/project/WorkItemCard.tsx
+- A	artifacts/milesign/components/project/recentPhotoTiles.tsx
+- A	artifacts/milesign/components/settings/NearbyOptOutRow.tsx
+- A	artifacts/milesign/components/simple/SimpleNotebook.tsx
+- A	artifacts/milesign/components/simple/SimpleObjectSwitcher.tsx
+- A	artifacts/milesign/components/simple/SimplePhotos.tsx
+- A	artifacts/milesign/components/simple/SimpleStages.tsx
+- A	artifacts/milesign/components/ui/AppCalendar.tsx
+- M	artifacts/milesign/components/ui/AppDialogHost.tsx
+- M	artifacts/milesign/components/ui/AppIcon.tsx
+- A	artifacts/milesign/components/ui/Avatar.tsx
+- A	artifacts/milesign/components/ui/BackButton.tsx
+- M	artifacts/milesign/components/ui/Badge.tsx
+- A	artifacts/milesign/components/ui/BrandHeader.tsx
+- M	artifacts/milesign/components/ui/Button.tsx
+- M	artifacts/milesign/components/ui/Card.tsx
+- A	artifacts/milesign/components/ui/Checkbox.tsx
+- A	artifacts/milesign/components/ui/Chip.tsx
+- M	artifacts/milesign/components/ui/ConfirmDialog.tsx
+- A	artifacts/milesign/components/ui/DatePickerField.tsx
+- A	artifacts/milesign/components/ui/Dialog.tsx
+- M	artifacts/milesign/components/ui/EmptyState.tsx
+- M	artifacts/milesign/components/ui/FloatingActionButton.tsx
+- A	artifacts/milesign/components/ui/Header.tsx
+- A	artifacts/milesign/components/ui/IconButton.tsx
+- A	artifacts/milesign/components/ui/IconTile.tsx
+- M	artifacts/milesign/components/ui/Input.tsx
+- A	artifacts/milesign/components/ui/KeyboardSafeFormContext.ts
+- A	artifacts/milesign/components/ui/ListRow.tsx
+- A	artifacts/milesign/components/ui/ListSearch.tsx
+- A	artifacts/milesign/components/ui/MediaPreviewModal.tsx
+- A	artifacts/milesign/components/ui/MediaTile.tsx
+- A	artifacts/milesign/components/ui/MenuRow.tsx
+- A	artifacts/milesign/components/ui/Money.tsx
+- A	artifacts/milesign/components/ui/PlayableVideoTile.tsx
+- M	artifacts/milesign/components/ui/ProgressBar.tsx
+- A	artifacts/milesign/components/ui/RadioOption.tsx
+- A	artifacts/milesign/components/ui/Screen.tsx
+- A	artifacts/milesign/components/ui/ScreenState.tsx
+- A	artifacts/milesign/components/ui/Section.tsx
+- A	artifacts/milesign/components/ui/TabBarIcon.tsx
+- A	artifacts/milesign/components/ui/TabBarLabel.tsx
+- A	artifacts/milesign/components/ui/TextLink.tsx
+- A	artifacts/milesign/components/ui/VideoPlayerModal.tsx
+- A	artifacts/milesign/constants/accessibility.ts
+- A	artifacts/milesign/constants/brand.ts
+- M	artifacts/milesign/constants/colors.ts
+- A	artifacts/milesign/constants/interfaceLevel.ts
+- A	artifacts/milesign/constants/layout.ts
+- A	artifacts/milesign/constants/nearby.ts
+- A	artifacts/milesign/constants/performance.ts
+- A	artifacts/milesign/constants/screenStateCoverage.ts
+- A	artifacts/milesign/constants/scriptFonts.ts
+- A	artifacts/milesign/constants/textFit.ts
+- A	artifacts/milesign/constants/theme.ts
+- A	artifacts/milesign/constants/themeCoverage.ts
+- A	artifacts/milesign/constants/themeSettings.ts
+- A	artifacts/milesign/constants/typography.ts
+- A	artifacts/milesign/content/policies/documents.ts
+- A	artifacts/milesign/content/policies/hosting.json
+- A	artifacts/milesign/content/policies/operator.json
+- A	artifacts/milesign/content/policies/published.json
+- A	artifacts/milesign/content/store/google-play.json
+- M	artifacts/milesign/context/AuthContext.tsx
+- A	artifacts/milesign/context/InterfaceLevelContext.tsx
+- A	artifacts/milesign/context/LocaleContext.tsx
+- A	artifacts/milesign/context/ThemeContext.tsx
+- A	artifacts/milesign/hooks/navigationCarry.ts
+- A	artifacts/milesign/hooks/useAccessibleProjects.ts
+- A	artifacts/milesign/hooks/useAdvancedOverview.ts
+- A	artifacts/milesign/hooks/useAppearanceDraft.ts
+- M	artifacts/milesign/hooks/useColors.ts
+- A	artifacts/milesign/hooks/useCommentStream.ts
+- M	artifacts/milesign/hooks/useDisplayName.ts
+- A	artifacts/milesign/hooks/useDisplayScale.ts
+- A	artifacts/milesign/hooks/useFontScaleRemount.ts
+- A	artifacts/milesign/hooks/useGoogleSignInAvailable.ts
+- A	artifacts/milesign/hooks/useHiddenContent.ts
+- A	artifacts/milesign/hooks/useLayout.ts
+- A	artifacts/milesign/hooks/useLevelHint.ts
+- A	artifacts/milesign/hooks/useLevelTokens.ts
+- A	artifacts/milesign/hooks/useLoadDeadline.ts
+- A	artifacts/milesign/hooks/useMyBlocks.ts
+- A	artifacts/milesign/hooks/useNearbyCounts.ts
+- A	artifacts/milesign/hooks/useNetworkStatus.ts
+- A	artifacts/milesign/hooks/useNotificationSignals.ts
+- A	artifacts/milesign/hooks/useOfflineRows.ts
+- A	artifacts/milesign/hooks/useProjectLifecycleFlow.ts
+- M	artifacts/milesign/hooks/useProjectOverview.ts
+- A	artifacts/milesign/hooks/useProjectTabs.ts
+- A	artifacts/milesign/hooks/usePushNotifications.ts
+- A	artifacts/milesign/hooks/useRecordSheets.ts
+- A	artifacts/milesign/hooks/useResignedMediaUrls.ts
+- A	artifacts/milesign/hooks/useScaledStyles.ts
+- A	artifacts/milesign/hooks/useScriptFonts.ts
+- A	artifacts/milesign/hooks/useSimpleLevel.ts
+- A	artifacts/milesign/hooks/useSingleFlight.ts
+- A	artifacts/milesign/hooks/useStackHeaderOptions.tsx
+- A	artifacts/milesign/hooks/useStackedLayout.ts
+- A	artifacts/milesign/hooks/useStagePlan.ts
+- A	artifacts/milesign/hooks/useTranslation.ts
+- A	artifacts/milesign/hooks/useWorkItemPanels.ts
+- A	artifacts/milesign/i18n/activeLocale.ts
+- A	artifacts/milesign/i18n/catalog.ts
+- A	artifacts/milesign/i18n/catalogs/ar-AE.ts
+- A	artifacts/milesign/i18n/catalogs/ar.ts
+- A	artifacts/milesign/i18n/catalogs/cs.ts
+- A	artifacts/milesign/i18n/catalogs/da.ts
+- A	artifacts/milesign/i18n/catalogs/de.ts
+- A	artifacts/milesign/i18n/catalogs/en-GB.ts
+- A	artifacts/milesign/i18n/catalogs/en.ts
+- A	artifacts/milesign/i18n/catalogs/es-MX.ts
+- A	artifacts/milesign/i18n/catalogs/es.ts
+- A	artifacts/milesign/i18n/catalogs/et.ts
+- A	artifacts/milesign/i18n/catalogs/fr.ts
+- A	artifacts/milesign/i18n/catalogs/hi.ts
+- A	artifacts/milesign/i18n/catalogs/hu.ts
+- A	artifacts/milesign/i18n/catalogs/id.ts
+- A	artifacts/milesign/i18n/catalogs/it.ts
+- A	artifacts/milesign/i18n/catalogs/ja.ts
+- A	artifacts/milesign/i18n/catalogs/ko.ts
+- A	artifacts/milesign/i18n/catalogs/lt.ts
+- A	artifacts/milesign/i18n/catalogs/lv.ts
+- A	artifacts/milesign/i18n/catalogs/nb.ts
+- A	artifacts/milesign/i18n/catalogs/nl.ts
+- A	artifacts/milesign/i18n/catalogs/pl.ts
+- A	artifacts/milesign/i18n/catalogs/pt-BR.ts
+- A	artifacts/milesign/i18n/catalogs/ro.ts
+- A	artifacts/milesign/i18n/catalogs/sk.ts
+- A	artifacts/milesign/i18n/catalogs/sv.ts
+- A	artifacts/milesign/i18n/catalogs/th.ts
+- A	artifacts/milesign/i18n/catalogs/tr.ts
+- A	artifacts/milesign/i18n/catalogs/uk.ts
+- A	artifacts/milesign/i18n/catalogs/vi.ts
+- A	artifacts/milesign/i18n/catalogs/zh-Hans.ts
+- A	artifacts/milesign/i18n/catalogs/zh-Hant.ts
+- A	artifacts/milesign/i18n/copyRef.ts
+- A	artifacts/milesign/i18n/direction.ts
+- A	artifacts/milesign/i18n/enumLabels.ts
+- A	artifacts/milesign/i18n/format.ts
+- A	artifacts/milesign/i18n/locales.ts
+- A	artifacts/milesign/i18n/nativeReview.ts
+- A	artifacts/milesign/i18n/plural.ts
+- A	artifacts/milesign/i18n/routeCoverage.ts
+- A	artifacts/milesign/i18n/serverMessages.ts
+- A	artifacts/milesign/i18n/translate.ts
+- M	artifacts/milesign/jest.config.js
+- A	artifacts/milesign/lib/accountPurge.ts
+- A	artifacts/milesign/lib/authFlows.ts
+- A	artifacts/milesign/lib/authLinks.ts
+- A	artifacts/milesign/lib/authProviders.ts
+- A	artifacts/milesign/lib/authStorage.ts
+- A	artifacts/milesign/lib/captureEntry.ts
+- A	artifacts/milesign/lib/deviceLocale.ts
+- A	artifacts/milesign/lib/diagnostics.ts
+- A	artifacts/milesign/lib/directionRestart.ts
+- A	artifacts/milesign/lib/documentScriptFonts.ts
+- A	artifacts/milesign/lib/documents/README.md
+- A	artifacts/milesign/lib/documents/core/cellText.ts
+- A	artifacts/milesign/lib/documents/core/checks.ts
+- A	artifacts/milesign/lib/documents/core/create.ts
+- A	artifacts/milesign/lib/documents/core/model.ts
+- A	artifacts/milesign/lib/documents/core/registry.ts
+- A	artifacts/milesign/lib/documents/csv/tableExport.ts
+- A	artifacts/milesign/lib/documents/formats.ts
+- A	artifacts/milesign/lib/documents/index.ts
+- A	artifacts/milesign/lib/documents/pdf/layout.ts
+- A	artifacts/milesign/lib/documents/pdf/pdfDocument.ts
+- A	artifacts/milesign/lib/documents/pdf/renderPdf.ts
+- A	artifacts/milesign/lib/documents/pdf/reportCharacters.ts
+- A	artifacts/milesign/lib/documents/pdf/reportFont.generated.ts
+- A	artifacts/milesign/lib/documents/pdf/reportFont.ts
+- A	artifacts/milesign/lib/documents/pdf/scripts.ts
+- A	artifacts/milesign/lib/documents/pdf/truetype.ts
+- A	artifacts/milesign/lib/documents/reports/projectReports.ts
+- A	artifacts/milesign/lib/documents/run.ts
+- A	artifacts/milesign/lib/documents/scripts/build-report-font.mjs
+- A	artifacts/milesign/lib/email/transactionalEmail.ts
+- A	artifacts/milesign/lib/handOverCache.ts
+- A	artifacts/milesign/lib/interfaceLevelPreference.ts
+- A	artifacts/milesign/lib/interfaceLevelStore.ts
+- A	artifacts/milesign/lib/inviteLinks.ts
+- A	artifacts/milesign/lib/levelHintPreference.ts
+- A	artifacts/milesign/lib/localePreference.ts
+- A	artifacts/milesign/lib/mediaCaptureAdapter.ts
+- A	artifacts/milesign/lib/mediaFileStore.ts
+- A	artifacts/milesign/lib/networkStatus.ts
+- A	artifacts/milesign/lib/offline/conflictResolution.ts
+- A	artifacts/milesign/lib/offline/deviceIdentity.ts
+- A	artifacts/milesign/lib/offline/domainWrites.ts
+- A	artifacts/milesign/lib/offline/draftRecovery.ts
+- A	artifacts/milesign/lib/offline/localStore.ts
+- A	artifacts/milesign/lib/offline/mediaDrain.ts
+- A	artifacts/milesign/lib/offline/mediaPorts.ts
+- A	artifacts/milesign/lib/offline/mediaQueue.ts
+- A	artifacts/milesign/lib/offline/mediaWrites.ts
+- A	artifacts/milesign/lib/offline/mutationQueue.ts
+- A	artifacts/milesign/lib/offline/offlineLease.ts
+- A	artifacts/milesign/lib/offline/syncEngine.ts
+- A	artifacts/milesign/lib/offline/webDrafts.ts
+- A	artifacts/milesign/lib/openExternally.ts
+- A	artifacts/milesign/lib/pendingInvite.ts
+- A	artifacts/milesign/lib/pickedFileCopy.ts
+- A	artifacts/milesign/lib/projectAccessGuard.ts
+- A	artifacts/milesign/lib/pushNotifications.ts
+- A	artifacts/milesign/lib/reportFile.ts
+- A	artifacts/milesign/lib/reportFileActions.ts
+- A	artifacts/milesign/lib/rootBackground.ts
+- A	artifacts/milesign/lib/scriptFonts.ts
+- A	artifacts/milesign/lib/simpleObjectPreference.ts
+- M	artifacts/milesign/lib/supabase.ts
+- A	artifacts/milesign/lib/textScript.ts
+- A	artifacts/milesign/lib/themePreference.ts
+- A	artifacts/milesign/lib/themeStore.ts
+- A	artifacts/milesign/lib/videoThumbnail.ts
+- A	artifacts/milesign/lib/voicePlayer.ts
+- A	artifacts/milesign/lib/voiceRecorderAdapter.ts
+- A	artifacts/milesign/lib/voiceRecording.ts
+- A	artifacts/milesign/locales/en.json
+- A	artifacts/milesign/locales/uk.json
+- M	artifacts/milesign/metro.config.js
+- M	artifacts/milesign/package.json
+- A	artifacts/milesign/plugins/withDatePickerTheme.js
+- A	artifacts/milesign/plugins/withLiveFontScale.js
+- A	artifacts/milesign/plugins/withThemedWindowBackground.js
+- A	artifacts/milesign/release/build-candidate.sh
+- A	artifacts/milesign/release/candidate.cjs
+- A	artifacts/milesign/release/deploy-web.sh
+- A	artifacts/milesign/release/gradle/upload-signing.init.gradle
+- A	artifacts/milesign/release/nginx/milesign.conf.template
+- A	artifacts/milesign/release/redact.cjs
+- A	artifacts/milesign/release/syntheticCheck.cjs
+- A	artifacts/milesign/release/systemd/milesign-synthetic-check.service
+- A	artifacts/milesign/release/systemd/milesign-synthetic-check.timer
+- A	artifacts/milesign/release/systemd/milesign-web.service
+- A	artifacts/milesign/release/verify-nginx.sh
+- A	artifacts/milesign/release/webHost.cjs
+- A	artifacts/milesign/scripts/backup/backupSet.ts
+- A	artifacts/milesign/scripts/fonts/build-script-fonts.py
+- A	artifacts/milesign/scripts/licenses/build-component-licences.mjs
+- A	artifacts/milesign/scripts/licenses/expo.LICENSE
+- A	artifacts/milesign/scripts/observe-local-effects.mjs
+- A	artifacts/milesign/scripts/run-retention-purge.ts
+- A	artifacts/milesign/server/accountDeletionPage.js
+- A	artifacts/milesign/server/aiAdapter.js
+- A	artifacts/milesign/server/brevoTransport.js
+- A	artifacts/milesign/server/emailConfig.js
+- A	artifacts/milesign/server/emailTemplates.js
+- A	artifacts/milesign/server/fcmCredentials.js
+- A	artifacts/milesign/server/fcmPush.js
+- A	artifacts/milesign/server/ocrFields.js
+- A	artifacts/milesign/server/policyPages.js
+- A	artifacts/milesign/server/publicListing.js
+- A	artifacts/milesign/server/pushWorker.js
+- A	artifacts/milesign/server/pushWorkerMain.js
+- M	artifacts/milesign/server/serve.js
+- A	artifacts/milesign/server/smtpTransport.js
+- M	artifacts/milesign/server/templates/landing-page.html
+- A	artifacts/milesign/services/accountDeletion.ts
+- A	artifacts/milesign/services/accountProfile.ts
+- M	artifacts/milesign/services/activityLog.ts
+- A	artifacts/milesign/services/agreementPayments.ts
+- A	artifacts/milesign/services/agreements.ts
+- A	artifacts/milesign/services/aiPlanDrafts.ts
+- M	artifacts/milesign/services/budget.ts
+- M	artifacts/milesign/services/calendar.ts
+- A	artifacts/milesign/services/capabilities.ts
+- A	artifacts/milesign/services/chat.ts
+- A	artifacts/milesign/services/chatStream.ts
+- A	artifacts/milesign/services/checklists.ts
+- A	artifacts/milesign/services/commentStream.ts
+- M	artifacts/milesign/services/comments.ts
+- M	artifacts/milesign/services/contractors.ts
+- M	artifacts/milesign/services/corrections.ts
+- A	artifacts/milesign/services/disputes.ts
+- A	artifacts/milesign/services/entitlements.ts
+- A	artifacts/milesign/services/financeAnalytics.ts
+- A	artifacts/milesign/services/marketplace.ts
+- A	artifacts/milesign/services/materialLedger.ts
+- A	artifacts/milesign/services/materialRequests.ts
+- M	artifacts/milesign/services/materials.ts
+- M	artifacts/milesign/services/media.ts
+- A	artifacts/milesign/services/mediaPaths.ts
+- A	artifacts/milesign/services/mediaUpload.ts
+- M	artifacts/milesign/services/mediaUrls.ts
+- A	artifacts/milesign/services/moderation.ts
+- A	artifacts/milesign/services/nearby.ts
+- A	artifacts/milesign/services/notifications.ts
+- A	artifacts/milesign/services/ocrExtractions.ts
+- A	artifacts/milesign/services/offlineMediaTransfer.ts
+- A	artifacts/milesign/services/offlineSync.ts
+- A	artifacts/milesign/services/organizations.ts
+- M	artifacts/milesign/services/participants.ts
+- A	artifacts/milesign/services/platformAdmin.ts
+- A	artifacts/milesign/services/policyAcceptance.ts
+- A	artifacts/milesign/services/portfolio.ts
+- M	artifacts/milesign/services/profile.ts
+- A	artifacts/milesign/services/projectReports.ts
+- A	artifacts/milesign/services/projectTemplates.ts
+- M	artifacts/milesign/services/projects.ts
+- A	artifacts/milesign/services/publicListing.ts
+- A	artifacts/milesign/services/pushDevices.ts
+- A	artifacts/milesign/services/reportExports.ts
+- A	artifacts/milesign/services/reputation.ts
+- A	artifacts/milesign/services/retentionJob.ts
+- M	artifacts/milesign/services/reviews.ts
+- A	artifacts/milesign/services/search.ts
+- M	artifacts/milesign/services/stages.ts
+- A	artifacts/milesign/services/storagePurge.ts
+- A	artifacts/milesign/services/submissions.ts
+- A	artifacts/milesign/services/teams.ts
+- A	artifacts/milesign/services/voiceNotes.ts
+- A	artifacts/milesign/services/workDefects.ts
+- A	artifacts/milesign/services/workDependencies.ts
+- M	artifacts/milesign/services/workItems.ts
+- A	artifacts/milesign/services/workSeries.ts
+- A	artifacts/milesign/supabase/migrations/20260928120000_cross_project_integrity.sql
+- A	artifacts/milesign/supabase/migrations/20260928140000_server_authorization_hardening.sql
+- A	artifacts/milesign/supabase/migrations/20260929090000_account_state_session_gate.sql
+- A	artifacts/milesign/supabase/migrations/20260930090000_role_matrix_hardening.sql
+- A	artifacts/milesign/supabase/migrations/20260930100000_invitation_link_secrets.sql
+- A	artifacts/milesign/supabase/migrations/20260930110000_ownership_transfer.sql
+- A	artifacts/milesign/supabase/migrations/20260930120000_project_property_type.sql
+- A	artifacts/milesign/supabase/migrations/20260930130000_plan_change_history.sql
+- A	artifacts/milesign/supabase/migrations/20260930140000_money_model_integrity.sql
+- A	artifacts/milesign/supabase/migrations/20260930150000_contractor_removal_preserves_history.sql
+- A	artifacts/milesign/supabase/migrations/20261001090000_accepted_evidence_and_project_lifecycle.sql
+- A	artifacts/milesign/supabase/migrations/20261001110000_work_submission_lifecycle.sql
+- A	artifacts/milesign/supabase/migrations/20261001120000_notification_center.sql
+- A	artifacts/milesign/supabase/migrations/20261002090000_work_item_calendar_sync.sql
+- A	artifacts/milesign/supabase/migrations/20261002100000_comment_stream.sql
+- A	artifacts/milesign/supabase/migrations/20261002110000_project_calendar_event_context.sql
+- A	artifacts/milesign/supabase/migrations/20261002120000_authorized_search.sql
+- A	artifacts/milesign/supabase/migrations/20261002130000_public_listing_privacy.sql
+- A	artifacts/milesign/supabase/migrations/20261002140000_media_integrity_and_limits.sql
+- A	artifacts/milesign/supabase/migrations/20261002150000_offline_sync_contract.sql
+- A	artifacts/milesign/supabase/migrations/20261003090000_project_templates.sql
+- A	artifacts/milesign/supabase/migrations/20261003100000_work_checklists_and_recurrence.sql
+- A	artifacts/milesign/supabase/migrations/20261003110000_work_dependencies_and_load.sql
+- A	artifacts/milesign/supabase/migrations/20261004090000_finance_analytics.sql
+- A	artifacts/milesign/supabase/migrations/20261004100000_material_stock_ledger.sql
+- A	artifacts/milesign/supabase/migrations/20261004110000_material_requests.sql
+- A	artifacts/milesign/supabase/migrations/20261004120000_report_exports.sql
+- A	artifacts/milesign/supabase/migrations/20261005090000_accounts_teams_organizations.sql
+- A	artifacts/milesign/supabase/migrations/20261006090000_listings_search_and_offers.sql
+- A	artifacts/milesign/supabase/migrations/20261007090000_agreement_versions_and_activation.sql
+- A	artifacts/milesign/supabase/migrations/20261008090000_external_payment_records.sql
+- A	artifacts/milesign/supabase/migrations/20261009090000_defects_and_disputes.sql
+- A	artifacts/milesign/supabase/migrations/20261010090000_reputation_portfolio_and_reviews.sql
+- A	artifacts/milesign/supabase/migrations/20261011090000_structured_chat_and_delegation.sql
+- A	artifacts/milesign/supabase/migrations/20261012090000_platform_admin_and_entitlements.sql
+- A	artifacts/milesign/supabase/migrations/20261013090000_ai_drafts_reports_and_ocr.sql
+- A	artifacts/milesign/supabase/migrations/20261014090000_material_procurement_and_finance_privacy.sql
+- A	artifacts/milesign/supabase/migrations/20261015090000_project_market_model.sql
+- A	artifacts/milesign/supabase/migrations/20261016090000_contractor_removal_guard_follows_the_catalog.sql
+- A	artifacts/milesign/supabase/migrations/20261017090000_lifecycle_version_advances_and_audit_keeps_its_place.sql
+- A	artifacts/milesign/supabase/migrations/20261017093000_work_item_project_lookup_requires_participation.sql
+- A	artifacts/milesign/supabase/migrations/20261017094000_settled_work_terms_and_stage_pointers.sql
+- A	artifacts/milesign/supabase/migrations/20261017100000_project_purge_removes_stored_bytes.sql
+- A	artifacts/milesign/supabase/migrations/20261017110000_privileged_predicates_refuse_outsiders.sql
+- A	artifacts/milesign/supabase/migrations/20261018090000_minimal_grants_for_subject_predicates.sql
+- A	artifacts/milesign/supabase/migrations/20261019090000_organization_admin_predicate_is_null_safe.sql
+- A	artifacts/milesign/supabase/migrations/20261020090000_interaction_work_state_answers_only_a_party.sql
+- A	artifacts/milesign/supabase/migrations/20261021090000_material_purchase_lock_and_price_privacy.sql
+- A	artifacts/milesign/supabase/migrations/20261022090000_notification_delivery_claim_lease.sql
+- A	artifacts/milesign/supabase/migrations/20261023090000_push_devices_and_account_binding.sql
+- A	artifacts/milesign/supabase/migrations/20261024090000_listing_free_text_privacy.sql
+- A	artifacts/milesign/supabase/migrations/20261025090000_account_deletion.sql
+- A	artifacts/milesign/supabase/migrations/20261026090000_ocr_extractions_listed_for_their_project.sql
+- A	artifacts/milesign/supabase/migrations/20261027090000_negative_access_hardening.sql
+- A	artifacts/milesign/supabase/migrations/20261027100000_media_and_activity_page_indexes.sql
+- A	artifacts/milesign/supabase/migrations/20261028090000_offline_lease_owner_decision_and_material_columns.sql
+- A	artifacts/milesign/supabase/migrations/20261029090000_photos_bucket_media_mime_types.sql
+- A	artifacts/milesign/supabase/migrations/20261030090000_photos_thumbnail_delete_follows_recording.sql
+- A	artifacts/milesign/supabase/migrations/20261031090000_media_delete_row_first.sql
+- A	artifacts/milesign/supabase/migrations/20261101090000_project_template_translations.sql
+- A	artifacts/milesign/supabase/migrations/20261102090000_active_project_role_plpgsql.sql
+- A	artifacts/milesign/supabase/migrations/20261103090000_content_reports_and_account_blocks.sql
+- A	artifacts/milesign/supabase/migrations/20261104090000_server_locales.sql
+- A	artifacts/milesign/supabase/migrations/20261105090000_nearby_brigade_counts.sql
+- A	artifacts/milesign/supabase/migrations/20261106090000_voice_notes.sql
+- A	artifacts/milesign/supabase/migrations/20261107090000_notification_digest_and_moderation_actions.sql
+- A	artifacts/milesign/supabase/replay/supabase_platform.sql
+- M	artifacts/milesign/types/database.types.ts
+- A	artifacts/milesign/utils/accountContexts.ts
+- A	artifacts/milesign/utils/accountDeletion.ts
+- M	artifacts/milesign/utils/activityLabels.ts
+- A	artifacts/milesign/utils/adminScreens.ts
+- A	artifacts/milesign/utils/advancedOverview.ts
+- A	artifacts/milesign/utils/agreementPayments.ts
+- A	artifacts/milesign/utils/agreements.ts
+- A	artifacts/milesign/utils/aiPlanDraft.ts
+- A	artifacts/milesign/utils/aiScreens.ts
+- A	artifacts/milesign/utils/appCalendar.ts
+- M	artifacts/milesign/utils/appDialogs.ts
+- A	artifacts/milesign/utils/appearance.ts
+- A	artifacts/milesign/utils/balancedLevel.ts
+- A	artifacts/milesign/utils/byteSize.ts
+- A	artifacts/milesign/utils/calendarEvents.ts
+- A	artifacts/milesign/utils/capabilityDelegation.ts
+- A	artifacts/milesign/utils/chatThread.ts
+- A	artifacts/milesign/utils/color.ts
+- M	artifacts/milesign/utils/commentActivity.ts
+- A	artifacts/milesign/utils/commentThread.ts
+- M	artifacts/milesign/utils/contractorRemoval.ts
+- A	artifacts/milesign/utils/contractorWork.ts
+- M	artifacts/milesign/utils/dateInput.ts
+- A	artifacts/milesign/utils/defectWorkflow.ts
+- A	artifacts/milesign/utils/dialogFocus.ts
+- A	artifacts/milesign/utils/disputeCourse.ts
+- M	artifacts/milesign/utils/documentNames.ts
+- A	artifacts/milesign/utils/entitlements.ts
+- A	artifacts/milesign/utils/errorReport.ts
+- A	artifacts/milesign/utils/financeAnalytics.ts
+- A	artifacts/milesign/utils/imageExif.ts
+- A	artifacts/milesign/utils/levelChange.ts
+- A	artifacts/milesign/utils/levelHint.ts
+- A	artifacts/milesign/utils/linkedSentence.ts
+- A	artifacts/milesign/utils/liveUpdates.ts
+- A	artifacts/milesign/utils/localeSearch.ts
+- A	artifacts/milesign/utils/marketProfile.ts
+- A	artifacts/milesign/utils/marketplace.ts
+- A	artifacts/milesign/utils/materialLedger.ts
+- A	artifacts/milesign/utils/materialRecord.ts
+- A	artifacts/milesign/utils/materialRequests.ts
+- M	artifacts/milesign/utils/materialStatuses.ts
+- A	artifacts/milesign/utils/materialUnits.ts
+- D	artifacts/milesign/utils/materials.ts
+- A	artifacts/milesign/utils/mediaCapture.ts
+- A	artifacts/milesign/utils/mediaFormats.ts
+- A	artifacts/milesign/utils/mediaLibrary.ts
+- A	artifacts/milesign/utils/mediaLimits.ts
+- A	artifacts/milesign/utils/mediaTransfer.ts
+- A	artifacts/milesign/utils/minimumAge.ts
+- M	artifacts/milesign/utils/money.ts
+- A	artifacts/milesign/utils/moneyRecord.ts
+- A	artifacts/milesign/utils/navigationMap.ts
+- A	artifacts/milesign/utils/notificationCenter.ts
+- A	artifacts/milesign/utils/notificationMatrix.ts
+- A	artifacts/milesign/utils/ocrReview.ts
+- A	artifacts/milesign/utils/offlineConflicts.ts
+- A	artifacts/milesign/utils/offlineDomain.ts
+- A	artifacts/milesign/utils/offlineMatrix.ts
+- A	artifacts/milesign/utils/offlineMutation.ts
+- A	artifacts/milesign/utils/offlineProjects.ts
+- A	artifacts/milesign/utils/offlineRows.ts
+- A	artifacts/milesign/utils/offlineStorage.ts
+- A	artifacts/milesign/utils/offlineWriteAnnounce.ts
+- A	artifacts/milesign/utils/onboarding.ts
+- A	artifacts/milesign/utils/openPolicy.ts
+- A	artifacts/milesign/utils/openSourceLicences.ts
+- A	artifacts/milesign/utils/optimistic.ts
+- A	artifacts/milesign/utils/organizationScope.ts
+- M	artifacts/milesign/utils/permissions.ts
+- A	artifacts/milesign/utils/platformAdmin.ts
+- A	artifacts/milesign/utils/policyAcceptance.ts
+- A	artifacts/milesign/utils/policyLinks.ts
+- A	artifacts/milesign/utils/policyReader.ts
+- A	artifacts/milesign/utils/policyTemplate.ts
+- A	artifacts/milesign/utils/portfolioFlow.ts
+- A	artifacts/milesign/utils/projectDates.ts
+- A	artifacts/milesign/utils/projectHome.ts
+- A	artifacts/milesign/utils/projectLifecycle.ts
+- A	artifacts/milesign/utils/projectList.ts
+- A	artifacts/milesign/utils/projectLocale.ts
+- A	artifacts/milesign/utils/projectMarket.ts
+- A	artifacts/milesign/utils/projectMoney.ts
+- M	artifacts/milesign/utils/projectOverview.ts
+- A	artifacts/milesign/utils/projectRecord.ts
+- A	artifacts/milesign/utils/projectSummary.ts
+- A	artifacts/milesign/utils/projectTemplates.ts
+- A	artifacts/milesign/utils/publicListing.ts
+- A	artifacts/milesign/utils/pushDevices.ts
+- A	artifacts/milesign/utils/reminders.ts
+- A	artifacts/milesign/utils/reputationScreens.ts
+- A	artifacts/milesign/utils/retryPolicy.ts
+- A	artifacts/milesign/utils/screenState.ts
+- A	artifacts/milesign/utils/search.ts
+- A	artifacts/milesign/utils/settingsControls.ts
+- A	artifacts/milesign/utils/sha256.ts
+- A	artifacts/milesign/utils/simpleLevel.ts
+- A	artifacts/milesign/utils/stageRecord.ts
+- A	artifacts/milesign/utils/submitGuard.ts
+- A	artifacts/milesign/utils/supportChannel.ts
+- A	artifacts/milesign/utils/syncCenter.ts
+- A	artifacts/milesign/utils/teamRoster.ts
+- A	artifacts/milesign/utils/themeBuilder.ts
+- A	artifacts/milesign/utils/tones.ts
+- A	artifacts/milesign/utils/translationReport.ts
+- A	artifacts/milesign/utils/transportSecurity.ts
+- A	artifacts/milesign/utils/uploadErrors.ts
+- A	artifacts/milesign/utils/uploadPipeline.ts
+- A	artifacts/milesign/utils/uploadProgress.ts
+- M	artifacts/milesign/utils/userErrors.ts
+- A	artifacts/milesign/utils/voiceNote.ts
+- A	artifacts/milesign/utils/workAcceptance.ts
+- A	artifacts/milesign/utils/workChecklist.ts
+- A	artifacts/milesign/utils/workDependencies.ts
+- A	artifacts/milesign/utils/workItemRecord.ts
+- A	artifacts/milesign/utils/workProgress.ts
+- A	artifacts/milesign/utils/workSeries.ts
+- M	artifacts/mockup-sandbox/package.json
+- A	attached_assets/MILESIGN_ACCESS_TEMPLATE.json
+- A	attached_assets/MILESIGN_CONTINUE_AND_FIX.txt
+- A	attached_assets/MILESIGN_DESIGN_AGENT_SPEC.md
+- A	attached_assets/MILESIGN_MASTER_SPEC.md
+- A	docs/ACCESS_GAPS.md
+- A	docs/AI_HOST_CAPABILITY.md
+- A	docs/backup_and_restore.md
+- A	docs/data_model_dictionary.md
+- A	docs/decisions/H02-node-runtime-brief.md
+- A	docs/design/ab6_notifications_gap.md
+- A	docs/design/ab_series.md
+- A	docs/design/finance_values.md
+- A	docs/design/interface_levels.md
+- A	docs/design/redesign_report.md
+- A	docs/design/reference/owner-style-2026-10-29/README.md
+- A	docs/design/reference/owner-style-2026-10-29/ref-01.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-02.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-03.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-04.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-05.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-06.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-07.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-08.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-09.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-10.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-11.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-12.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-13.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-14.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-15.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-16.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-17.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-18.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-19.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-20.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-21.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-22.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-23.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-24.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-25.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-26.png
+- A	docs/design/reference/owner-style-2026-10-29/ref-27.png
+- A	docs/design/route_map.md
+- A	docs/design/screenshots/d09/compare/ref-01-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-02-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-03-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-04-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-05-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-06-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-07-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-08-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-09-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-10-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-11-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-12-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-13-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-14-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-15-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-16-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-17-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-18-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-19-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-20-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-21-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-22-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-23-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-24-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-25-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-26-side-by-side.jpg
+- A	docs/design/screenshots/d09/compare/ref-27-side-by-side.jpg
+- A	docs/design/screenshots/d09/screens/01-overview--blue-cool-light--390.jpg
+- A	docs/design/screenshots/d09/screens/01-overview--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/01-overview--green-neutral-dark--390.jpg
+- A	docs/design/screenshots/d09/screens/01-overview--light--320.jpg
+- A	docs/design/screenshots/d09/screens/01-overview--light--360.jpg
+- A	docs/design/screenshots/d09/screens/01-overview--light--390.jpg
+- A	docs/design/screenshots/d09/screens/01-overview--light--430.jpg
+- A	docs/design/screenshots/d09/screens/01-overview--light--600.jpg
+- A	docs/design/screenshots/d09/screens/02-projects--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/02-projects--light--320.jpg
+- A	docs/design/screenshots/d09/screens/02-projects--light--360.jpg
+- A	docs/design/screenshots/d09/screens/02-projects--light--390.jpg
+- A	docs/design/screenshots/d09/screens/02-projects--light--430.jpg
+- A	docs/design/screenshots/d09/screens/02-projects--light--600.jpg
+- A	docs/design/screenshots/d09/screens/03-project-overview--blue-cool-light--390.jpg
+- A	docs/design/screenshots/d09/screens/03-project-overview--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/03-project-overview--green-neutral-dark--390.jpg
+- A	docs/design/screenshots/d09/screens/03-project-overview--light--320.jpg
+- A	docs/design/screenshots/d09/screens/03-project-overview--light--360.jpg
+- A	docs/design/screenshots/d09/screens/03-project-overview--light--390.jpg
+- A	docs/design/screenshots/d09/screens/03-project-overview--light--430.jpg
+- A	docs/design/screenshots/d09/screens/03-project-overview--light--600.jpg
+- A	docs/design/screenshots/d09/screens/04-project-stages--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/04-project-stages--light--320.jpg
+- A	docs/design/screenshots/d09/screens/04-project-stages--light--360.jpg
+- A	docs/design/screenshots/d09/screens/04-project-stages--light--390.jpg
+- A	docs/design/screenshots/d09/screens/04-project-stages--light--430.jpg
+- A	docs/design/screenshots/d09/screens/04-project-stages--light--600.jpg
+- A	docs/design/screenshots/d09/screens/05-project-finances--blue-cool-light--390.jpg
+- A	docs/design/screenshots/d09/screens/05-project-finances--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/05-project-finances--green-neutral-dark--390.jpg
+- A	docs/design/screenshots/d09/screens/05-project-finances--light--320.jpg
+- A	docs/design/screenshots/d09/screens/05-project-finances--light--360.jpg
+- A	docs/design/screenshots/d09/screens/05-project-finances--light--390.jpg
+- A	docs/design/screenshots/d09/screens/05-project-finances--light--430.jpg
+- A	docs/design/screenshots/d09/screens/05-project-finances--light--600.jpg
+- A	docs/design/screenshots/d09/screens/06-project-people--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/06-project-people--light--320.jpg
+- A	docs/design/screenshots/d09/screens/06-project-people--light--360.jpg
+- A	docs/design/screenshots/d09/screens/06-project-people--light--390.jpg
+- A	docs/design/screenshots/d09/screens/06-project-people--light--430.jpg
+- A	docs/design/screenshots/d09/screens/06-project-people--light--600.jpg
+- A	docs/design/screenshots/d09/screens/07-project-files--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/07-project-files--light--320.jpg
+- A	docs/design/screenshots/d09/screens/07-project-files--light--360.jpg
+- A	docs/design/screenshots/d09/screens/07-project-files--light--390.jpg
+- A	docs/design/screenshots/d09/screens/07-project-files--light--430.jpg
+- A	docs/design/screenshots/d09/screens/07-project-files--light--600.jpg
+- A	docs/design/screenshots/d09/screens/08-calendar--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/08-calendar--light--320.jpg
+- A	docs/design/screenshots/d09/screens/08-calendar--light--360.jpg
+- A	docs/design/screenshots/d09/screens/08-calendar--light--390.jpg
+- A	docs/design/screenshots/d09/screens/08-calendar--light--430.jpg
+- A	docs/design/screenshots/d09/screens/08-calendar--light--600.jpg
+- A	docs/design/screenshots/d09/screens/09-activity--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/09-activity--light--320.jpg
+- A	docs/design/screenshots/d09/screens/09-activity--light--360.jpg
+- A	docs/design/screenshots/d09/screens/09-activity--light--390.jpg
+- A	docs/design/screenshots/d09/screens/09-activity--light--430.jpg
+- A	docs/design/screenshots/d09/screens/09-activity--light--600.jpg
+- A	docs/design/screenshots/d09/screens/10-settings--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/10-settings--light--320.jpg
+- A	docs/design/screenshots/d09/screens/10-settings--light--360.jpg
+- A	docs/design/screenshots/d09/screens/10-settings--light--390.jpg
+- A	docs/design/screenshots/d09/screens/10-settings--light--430.jpg
+- A	docs/design/screenshots/d09/screens/10-settings--light--600.jpg
+- A	docs/design/screenshots/d09/screens/11-appearance--dark--390.jpg
+- A	docs/design/screenshots/d09/screens/11-appearance--light--320.jpg
+- A	docs/design/screenshots/d09/screens/11-appearance--light--360.jpg
+- A	docs/design/screenshots/d09/screens/11-appearance--light--390.jpg
+- A	docs/design/screenshots/d09/screens/11-appearance--light--430.jpg
+- A	docs/design/screenshots/d09/screens/11-appearance--light--600.jpg
+- A	docs/design/screenshots/d09/shots.json
+- A	docs/domain_data_ownership.md
+- A	docs/effects_matrix_d1_d2_d3.md
+- A	docs/email/PROVIDER_SWITCH.md
+- A	docs/execution_protocol.md
+- A	docs/google_sign_in_setup.md
+- A	docs/i18n_native_review.md
+- A	docs/ios/ios_readiness_audit.md
+- A	docs/localization_inventory.json
+- A	docs/localization_inventory.md
+- A	docs/media_private_access.md
+- A	docs/migration_strategy.md
+- A	docs/notifications_delivery_setup.md
+- A	docs/owner_decisions.json
+- M	docs/phase1_closure_plan.md
+- A	docs/production_change_plan.md
+- A	docs/production_change_plan_active_project_role.md
+- A	docs/production_change_plan_locales.md
+- A	docs/production_change_plan_media_bucket.md
+- A	docs/production_change_plan_media_delete_row_first.md
+- A	docs/production_change_plan_moderation.md
+- A	docs/production_change_plan_nearby.md
+- A	docs/production_change_plan_notifications.md
+- A	docs/production_change_plan_template_translations.md
+- A	docs/production_change_plan_thumbnail_delete.md
+- A	docs/production_change_plan_voice_notes.md
+- A	docs/qa/rc101_internal_testing.md
+- A	docs/qa/rc102_internal_testing.md
+- A	docs/release/RELEASE_CANDIDATE.md
+- A	docs/release/RUNBOOK.md
+- A	docs/release/SIGNING.md
+- A	docs/release/WEB_DEPLOY.md
+- A	docs/security/storage_url_exposure.md
+- A	docs/store/google_play_listing.md
+- M	lib/api-client-react/package.json
+- M	lib/api-spec/package.json
+- M	lib/api-zod/package.json
+- M	lib/db/package.json
+- A	orchestrator/README.md
+- A	orchestrator/build-registry.mjs
+- A	orchestrator/cli.mjs
+- A	orchestrator/controller-snapshot.json
+- A	orchestrator/evidence/.gitkeep
+- A	orchestrator/evidence/A01-gate/build.txt
+- A	orchestrator/evidence/A01-gate/clean-tree.txt
+- A	orchestrator/evidence/A01-gate/git-diff-check.txt
+- A	orchestrator/evidence/A01-gate/head.txt
+- A	orchestrator/evidence/A01-gate/install.txt
+- A	orchestrator/evidence/A01-gate/jest.txt
+- A	orchestrator/evidence/A01-gate/lint.txt
+- A	orchestrator/evidence/A01-gate/react-types.txt
+- A	orchestrator/evidence/A01-gate/scripts-test.txt
+- A	orchestrator/evidence/A01-gate/selfcheck.mjs.txt
+- A	orchestrator/evidence/A01-gate/selfcheck.txt
+- A	orchestrator/evidence/A01-gate/typecheck.txt
+- A	orchestrator/evidence/A01-measurements/01-host.txt
+- A	orchestrator/evidence/A01-measurements/02-llama-bench-t2.txt
+- A	orchestrator/evidence/A01-measurements/03-llama-bench-t1-and-reverse.txt
+- A	orchestrator/evidence/A01-measurements/04-reverse-contention.txt
+- A	orchestrator/evidence/A01-measurements/05-end-to-end-draft-runs.txt
+- A	orchestrator/evidence/A01-measurements/06-llama-server-endpoint.txt
+- A	orchestrator/evidence/A01-measurements/07-grammar-constrained.txt
+- A	orchestrator/evidence/A01-measurements/08-contention-agent-side.txt
+- A	orchestrator/evidence/A01-measurements/08b-discarded-first-contention-attempt.txt
+- A	orchestrator/evidence/A01-measurements/09-prompt-137-shaped.txt
+- A	orchestrator/evidence/A01-measurements/10-schema-137.json
+- A	orchestrator/evidence/A01-measurements/11-grammar-3b-output.json
+- A	orchestrator/evidence/A01.json
+- A	orchestrator/evidence/AB1-gate/files.txt
+- A	orchestrator/evidence/AB1-gate/gate.sh
+- A	orchestrator/evidence/AB1-gate/inventory-added.json
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/00-sha.txt
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/01-install.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/02-check-react-types.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/03-lint.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/04-typecheck.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/05-criterion-suites.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/06-jest-full.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/06b-handoff-check.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/07-scripts-test.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/08-build.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/09-localization.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/10-android-export.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/10a-level-keys.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/10c-no-schema-change.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/11-git-diff-check.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/12-git-status.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/12b-install-local.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/13-negative-controls.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/14-git-status-final.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/15-race-control-after-gate.log
+- A	orchestrator/evidence/AB1-gate/logs-b694f47c/exits.txt
+- A	orchestrator/evidence/AB1-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB1-gate/negative-controls.py
+- A	orchestrator/evidence/AB1-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB1-gate/realign.sh
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/00-sha.txt
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/01-install.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/02-check-react-types.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/03-lint.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/04-typecheck.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/05-criterion-suites.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/06-jest-full.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/06b-handoff-check.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/07-scripts-test.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/08-build.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/09-localization.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/10-android-export.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/10a-level-keys.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/10c-no-schema-change.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/11-git-diff-check.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/12-git-status.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/12b-install-local.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/13-negative-controls.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/14-git-status-final.log
+- A	orchestrator/evidence/AB1-gate/superseded-896e2c37/exits.txt
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/00-sha.txt
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/01-install.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/02-check-react-types.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/03-lint.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/04-typecheck.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/05-criterion-suites.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/06-jest-full.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/06b-handoff-check.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/07-scripts-test.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/08-build.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/09-localization.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/10-android-export.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/10a-level-keys.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/10c-no-schema-change.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/11-git-diff-check.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/12-git-status.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/12b-install-local.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/13-negative-controls.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/14-git-status-final.log
+- A	orchestrator/evidence/AB1-gate/superseded-d04c044a/exits.txt
+- A	orchestrator/evidence/AB1.json
+- A	orchestrator/evidence/AB2-gate/files.txt
+- A	orchestrator/evidence/AB2-gate/gate.sh
+- A	orchestrator/evidence/AB2-gate/inventory-delta.json
+- A	orchestrator/evidence/AB2-gate/inventory-delta.py
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/00-sha.txt
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/01-install.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/02-check-react-types.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/03-lint.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/04-typecheck.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/05-criterion-suites.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/06-jest-full.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/06b-handoff-check.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/07-scripts-test.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/08-build.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/09-localization.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/10-android-export.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/10a-air-keys.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/10b-canon.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/10c-no-schema-change.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/11-git-diff-check.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/12-git-status.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/12b-install-local.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/13-negative-controls.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/14-git-status-final.log
+- A	orchestrator/evidence/AB2-gate/logs-9c3c547f/exits.txt
+- A	orchestrator/evidence/AB2-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB2-gate/negative-controls.py
+- A	orchestrator/evidence/AB2-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB2-gate/realign.sh
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/00-sha.txt
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/01-install.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/02-check-react-types.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/03-lint.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/04-typecheck.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/05-criterion-suites.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/06-jest-full.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/06b-handoff-check.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/07-scripts-test.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/08-build.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/09-localization.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/10-android-export.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/10a-air-keys.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/10b-canon.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/10c-no-schema-change.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/11-git-diff-check.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/12-git-status.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/12b-install-local.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/13-negative-controls.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/14-git-status-final.log
+- A	orchestrator/evidence/AB2-gate/superseded-e4d91dde/exits.txt
+- A	orchestrator/evidence/AB2.json
+- A	orchestrator/evidence/AB2b-gate/TRANSLATE.md
+- A	orchestrator/evidence/AB2b-gate/apply-keys.py
+- A	orchestrator/evidence/AB2b-gate/files.txt
+- A	orchestrator/evidence/AB2b-gate/gate.sh
+- A	orchestrator/evidence/AB2b-gate/glyphs.py
+- A	orchestrator/evidence/AB2b-gate/inventory-added-round1.json
+- A	orchestrator/evidence/AB2b-gate/inventory-added-round2.json
+- A	orchestrator/evidence/AB2b-gate/inventory-added.json
+- A	orchestrator/evidence/AB2b-gate/keys.json
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/00-sha.txt
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/01-install.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/02-check-react-types.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/03-lint.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/04-typecheck.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/05-criterion-suites.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/06-jest-full.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/06b-handoff-check.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/07-scripts-test.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/08-build.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/09-localization.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/10-android-export.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/10a-ab2b-keys.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/10c-no-schema-change.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/11-git-diff-check.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/12-git-status.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/12b-install-local.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/13-negative-controls.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/14-git-status-final.log
+- A	orchestrator/evidence/AB2b-gate/logs-ee2e88c9/exits.txt
+- A	orchestrator/evidence/AB2b-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB2b-gate/negative-controls.py
+- A	orchestrator/evidence/AB2b-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB2b-gate/realign.sh
+- A	orchestrator/evidence/AB2b-gate/translations/ar.json
+- A	orchestrator/evidence/AB2b-gate/translations/cs.json
+- A	orchestrator/evidence/AB2b-gate/translations/da.json
+- A	orchestrator/evidence/AB2b-gate/translations/de.json
+- A	orchestrator/evidence/AB2b-gate/translations/es-MX.json
+- A	orchestrator/evidence/AB2b-gate/translations/es.json
+- A	orchestrator/evidence/AB2b-gate/translations/et.json
+- A	orchestrator/evidence/AB2b-gate/translations/fr.json
+- A	orchestrator/evidence/AB2b-gate/translations/hi.json
+- A	orchestrator/evidence/AB2b-gate/translations/hu.json
+- A	orchestrator/evidence/AB2b-gate/translations/id.json
+- A	orchestrator/evidence/AB2b-gate/translations/it.json
+- A	orchestrator/evidence/AB2b-gate/translations/ja.json
+- A	orchestrator/evidence/AB2b-gate/translations/ko.json
+- A	orchestrator/evidence/AB2b-gate/translations/lt.json
+- A	orchestrator/evidence/AB2b-gate/translations/lv.json
+- A	orchestrator/evidence/AB2b-gate/translations/nb.json
+- A	orchestrator/evidence/AB2b-gate/translations/nl.json
+- A	orchestrator/evidence/AB2b-gate/translations/pl.json
+- A	orchestrator/evidence/AB2b-gate/translations/pt-BR.json
+- A	orchestrator/evidence/AB2b-gate/translations/ro.json
+- A	orchestrator/evidence/AB2b-gate/translations/sk.json
+- A	orchestrator/evidence/AB2b-gate/translations/sv.json
+- A	orchestrator/evidence/AB2b-gate/translations/th.json
+- A	orchestrator/evidence/AB2b-gate/translations/tr.json
+- A	orchestrator/evidence/AB2b-gate/translations/vi.json
+- A	orchestrator/evidence/AB2b-gate/translations/zh-Hans.json
+- A	orchestrator/evidence/AB2b-gate/translations/zh-Hant.json
+- A	orchestrator/evidence/AB2b.json
+- A	orchestrator/evidence/AB3a-gate/apply-keys.py
+- A	orchestrator/evidence/AB3a-gate/files.txt
+- A	orchestrator/evidence/AB3a-gate/gate.sh
+- A	orchestrator/evidence/AB3a-gate/glyphs.py
+- A	orchestrator/evidence/AB3a-gate/inventory-added-total.json
+- A	orchestrator/evidence/AB3a-gate/inventory-added.json
+- A	orchestrator/evidence/AB3a-gate/keys.json
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/00-sha.txt
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/01-install.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/02-check-react-types.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/03-lint.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/04-typecheck.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/05-criterion-suites.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/06-jest-full.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/06b-handoff-check.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/07-scripts-test.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/08-build.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/09-localization.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/10-android-export.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/10a-ab3a-keys.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/10b-no-service-change.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/11-git-diff-check.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/12-git-status.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/12b-install-local.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/13-negative-controls.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/14-git-status-final.log
+- A	orchestrator/evidence/AB3a-gate/logs-18339561/exits.txt
+- A	orchestrator/evidence/AB3a-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB3a-gate/negative-controls.py
+- A	orchestrator/evidence/AB3a-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB3a-gate/realign.sh
+- A	orchestrator/evidence/AB3a-gate/translations/ar.json
+- A	orchestrator/evidence/AB3a-gate/translations/cs.json
+- A	orchestrator/evidence/AB3a-gate/translations/da.json
+- A	orchestrator/evidence/AB3a-gate/translations/de.json
+- A	orchestrator/evidence/AB3a-gate/translations/es-MX.json
+- A	orchestrator/evidence/AB3a-gate/translations/es.json
+- A	orchestrator/evidence/AB3a-gate/translations/et.json
+- A	orchestrator/evidence/AB3a-gate/translations/fr.json
+- A	orchestrator/evidence/AB3a-gate/translations/hi.json
+- A	orchestrator/evidence/AB3a-gate/translations/hu.json
+- A	orchestrator/evidence/AB3a-gate/translations/id.json
+- A	orchestrator/evidence/AB3a-gate/translations/it.json
+- A	orchestrator/evidence/AB3a-gate/translations/ja.json
+- A	orchestrator/evidence/AB3a-gate/translations/ko.json
+- A	orchestrator/evidence/AB3a-gate/translations/lt.json
+- A	orchestrator/evidence/AB3a-gate/translations/lv.json
+- A	orchestrator/evidence/AB3a-gate/translations/nb.json
+- A	orchestrator/evidence/AB3a-gate/translations/nl.json
+- A	orchestrator/evidence/AB3a-gate/translations/pl.json
+- A	orchestrator/evidence/AB3a-gate/translations/pt-BR.json
+- A	orchestrator/evidence/AB3a-gate/translations/ro.json
+- A	orchestrator/evidence/AB3a-gate/translations/sk.json
+- A	orchestrator/evidence/AB3a-gate/translations/sv.json
+- A	orchestrator/evidence/AB3a-gate/translations/th.json
+- A	orchestrator/evidence/AB3a-gate/translations/tr.json
+- A	orchestrator/evidence/AB3a-gate/translations/vi.json
+- A	orchestrator/evidence/AB3a-gate/translations/zh-Hans.json
+- A	orchestrator/evidence/AB3a-gate/translations/zh-Hant.json
+- A	orchestrator/evidence/AB3a.json
+- A	orchestrator/evidence/AB3b-gate/TRANSLATE.md
+- A	orchestrator/evidence/AB3b-gate/apply-keys.py
+- A	orchestrator/evidence/AB3b-gate/files.txt
+- A	orchestrator/evidence/AB3b-gate/gate.sh
+- A	orchestrator/evidence/AB3b-gate/glyphs.py
+- A	orchestrator/evidence/AB3b-gate/inventory-added.json
+- A	orchestrator/evidence/AB3b-gate/keys.json
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/00-sha.txt
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/01-install.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/01b-install-local.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/02-check-react-types.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/03-lint.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/04-typecheck.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/05-criterion-suites.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/06-jest-full.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/06b-handoff-check.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/07-scripts-test.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/08-build.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/09-localization.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/10-android-export.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/10a-ab3b-keys.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/10b-no-service-change.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/11-git-diff-check.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/12-git-status.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/12b-install-local.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/13-negative-controls.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/14-git-status-final.log
+- A	orchestrator/evidence/AB3b-gate/logs-c997ce2a/exits.txt
+- A	orchestrator/evidence/AB3b-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB3b-gate/merge-inventory.cjs
+- A	orchestrator/evidence/AB3b-gate/negative-controls.py
+- A	orchestrator/evidence/AB3b-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB3b-gate/realign.sh
+- A	orchestrator/evidence/AB3b-gate/recategorize-why.cjs
+- A	orchestrator/evidence/AB3b-gate/translations/ar.json
+- A	orchestrator/evidence/AB3b-gate/translations/cs.json
+- A	orchestrator/evidence/AB3b-gate/translations/da.json
+- A	orchestrator/evidence/AB3b-gate/translations/de.json
+- A	orchestrator/evidence/AB3b-gate/translations/es-MX.json
+- A	orchestrator/evidence/AB3b-gate/translations/es.json
+- A	orchestrator/evidence/AB3b-gate/translations/et.json
+- A	orchestrator/evidence/AB3b-gate/translations/fr.json
+- A	orchestrator/evidence/AB3b-gate/translations/hi.json
+- A	orchestrator/evidence/AB3b-gate/translations/hu.json
+- A	orchestrator/evidence/AB3b-gate/translations/id.json
+- A	orchestrator/evidence/AB3b-gate/translations/it.json
+- A	orchestrator/evidence/AB3b-gate/translations/ja.json
+- A	orchestrator/evidence/AB3b-gate/translations/ko.json
+- A	orchestrator/evidence/AB3b-gate/translations/lt.json
+- A	orchestrator/evidence/AB3b-gate/translations/lv.json
+- A	orchestrator/evidence/AB3b-gate/translations/nb.json
+- A	orchestrator/evidence/AB3b-gate/translations/nl.json
+- A	orchestrator/evidence/AB3b-gate/translations/pl.json
+- A	orchestrator/evidence/AB3b-gate/translations/pt-BR.json
+- A	orchestrator/evidence/AB3b-gate/translations/ro.json
+- A	orchestrator/evidence/AB3b-gate/translations/sk.json
+- A	orchestrator/evidence/AB3b-gate/translations/sv.json
+- A	orchestrator/evidence/AB3b-gate/translations/th.json
+- A	orchestrator/evidence/AB3b-gate/translations/tr.json
+- A	orchestrator/evidence/AB3b-gate/translations/vi.json
+- A	orchestrator/evidence/AB3b-gate/translations/zh-Hans.json
+- A	orchestrator/evidence/AB3b-gate/translations/zh-Hant.json
+- A	orchestrator/evidence/AB3b.json
+- A	orchestrator/evidence/AB3c-gate/TRANSLATE.md
+- A	orchestrator/evidence/AB3c-gate/apply-keys.py
+- A	orchestrator/evidence/AB3c-gate/files.txt
+- A	orchestrator/evidence/AB3c-gate/gate.sh
+- A	orchestrator/evidence/AB3c-gate/glyphs.py
+- A	orchestrator/evidence/AB3c-gate/inventory-added.json
+- A	orchestrator/evidence/AB3c-gate/keys-fix.json
+- A	orchestrator/evidence/AB3c-gate/keys-fix2.json
+- A	orchestrator/evidence/AB3c-gate/keys-fix3.json
+- A	orchestrator/evidence/AB3c-gate/keys.json
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/06-jest-full.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/10b-no-new-rpc.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-14a0bf9a/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/06-jest-full.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/10b-no-new-rpc.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-14e4a5e0/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/06-jest-full.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/10b-no-service-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/13r-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/13r-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/13r-negative-controls-rerun.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-26e7341c/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/06m-d09-matrix.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/06x-exit.txt
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/06x-jest-full-after-gate.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/10b-no-new-rpc.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-2a12531c/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/06-jest-full.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/10b-no-new-rpc.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-68c46dfa/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/06m-d09-matrix.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/10b-no-service-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-b62dbc27/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/06-jest-full.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10a-ab3c-keys-rerun.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10b-no-service-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-c42ce3dd/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/06-jest-full.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/10b-no-new-rpc.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-ceca2340/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/06-jest-full.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/08-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/09-localization.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/10-android-export.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/10a-ab3c-keys.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/10b-no-service-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/10c-no-schema-change.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/11-git-diff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/12-git-status.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/12b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/13-negative-controls.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/14-git-status-final.log
+- A	orchestrator/evidence/AB3c-gate/logs-d98d5712/exits.txt
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/00-sha.txt
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/01-install.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/01b-install-local.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/02-check-react-types.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/03-lint.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/04-typecheck.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/05-criterion-suites.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/06-jest-full.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/06b-handoff-check.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/07-scripts-test.log
+- A	orchestrator/evidence/AB3c-gate/logs-ff267234/exits.txt
+- A	orchestrator/evidence/AB3c-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB3c-gate/negative-controls.py
+- A	orchestrator/evidence/AB3c-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB3c-gate/realign.sh
+- A	orchestrator/evidence/AB3c-gate/recategorize-why.cjs
+- A	orchestrator/evidence/AB3c-gate/translations-fix/ar.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/cs.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/da.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/de.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/es-MX.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/es.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/et.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/fr.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/hi.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/hu.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/id.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/it.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/ja.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/ko.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/lt.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/lv.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/nb.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/nl.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/pl.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/pt-BR.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/ro.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/sk.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/sv.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/th.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/tr.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/vi.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/zh-Hans.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix/zh-Hant.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/ar.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/cs.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/da.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/de.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/es-MX.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/es.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/et.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/fr.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/hi.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/hu.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/id.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/it.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/ja.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/ko.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/lt.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/lv.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/nb.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/nl.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/pl.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/pt-BR.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/ro.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/sk.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/sv.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/th.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/tr.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/vi.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/zh-Hans.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix2/zh-Hant.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/ar.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/cs.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/da.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/de.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/es-MX.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/es.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/et.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/fr.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/hi.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/hu.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/id.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/it.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/ja.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/ko.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/lt.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/lv.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/nb.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/nl.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/pl.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/pt-BR.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/ro.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/sk.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/sv.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/th.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/tr.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/vi.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/zh-Hans.json
+- A	orchestrator/evidence/AB3c-gate/translations-fix3/zh-Hant.json
+- A	orchestrator/evidence/AB3c-gate/translations/ar.json
+- A	orchestrator/evidence/AB3c-gate/translations/cs.json
+- A	orchestrator/evidence/AB3c-gate/translations/da.json
+- A	orchestrator/evidence/AB3c-gate/translations/de.json
+- A	orchestrator/evidence/AB3c-gate/translations/es-MX.json
+- A	orchestrator/evidence/AB3c-gate/translations/es.json
+- A	orchestrator/evidence/AB3c-gate/translations/et.json
+- A	orchestrator/evidence/AB3c-gate/translations/fr.json
+- A	orchestrator/evidence/AB3c-gate/translations/hi.json
+- A	orchestrator/evidence/AB3c-gate/translations/hu.json
+- A	orchestrator/evidence/AB3c-gate/translations/id.json
+- A	orchestrator/evidence/AB3c-gate/translations/it.json
+- A	orchestrator/evidence/AB3c-gate/translations/ja.json
+- A	orchestrator/evidence/AB3c-gate/translations/ko.json
+- A	orchestrator/evidence/AB3c-gate/translations/lt.json
+- A	orchestrator/evidence/AB3c-gate/translations/lv.json
+- A	orchestrator/evidence/AB3c-gate/translations/nb.json
+- A	orchestrator/evidence/AB3c-gate/translations/nl.json
+- A	orchestrator/evidence/AB3c-gate/translations/pl.json
+- A	orchestrator/evidence/AB3c-gate/translations/pt-BR.json
+- A	orchestrator/evidence/AB3c-gate/translations/ro.json
+- A	orchestrator/evidence/AB3c-gate/translations/sk.json
+- A	orchestrator/evidence/AB3c-gate/translations/sv.json
+- A	orchestrator/evidence/AB3c-gate/translations/th.json
+- A	orchestrator/evidence/AB3c-gate/translations/tr.json
+- A	orchestrator/evidence/AB3c-gate/translations/vi.json
+- A	orchestrator/evidence/AB3c-gate/translations/zh-Hans.json
+- A	orchestrator/evidence/AB3c-gate/translations/zh-Hant.json
+- A	orchestrator/evidence/AB3c.json
+- A	orchestrator/evidence/AB4-gate/apply-keys.py
+- A	orchestrator/evidence/AB4-gate/check-keys.py
+- A	orchestrator/evidence/AB4-gate/files.txt
+- A	orchestrator/evidence/AB4-gate/gate.sh
+- A	orchestrator/evidence/AB4-gate/inventory-added-total.json
+- A	orchestrator/evidence/AB4-gate/inventory-added.json
+- A	orchestrator/evidence/AB4-gate/keys.json
+- A	orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-0cebea3c-gate1-stopped/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-2bf7516c/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/05c-req-133-screen-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-57f017dc/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/11b-git-diff-check-after-report-fix.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-599ed630/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-69368916-controls/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-69368916-controls/01-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-69368916-controls/02-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a-req133-alone/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a-req133-alone/01-req-133-screen-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-87c48a5a/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-9e094427/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-bc3dd27f-gate2/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-c3d4e921/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-c4c0fe36/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-cb905874-req133-alone/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-cb905874-req133-alone/01-req-133-screen-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-cb905874/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-fa028a1e/exits.txt
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/00-sha.txt
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/01-install.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/02-check-react-types.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/03-lint.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/04-typecheck.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/05-criterion-suites.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/06-jest-full.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/06b-handoff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/07-scripts-test.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/08-build.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/09-localization.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/09b-media.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/09c-offline.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/09d-database.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/10-android-export.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/10a-ab4-keys.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/10c-one-migration.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/10d-manifest.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/11-git-diff-check.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/12-git-status.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/12b-install-local.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/13-negative-controls.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/14-git-status-final.log
+- A	orchestrator/evidence/AB4-gate/logs-fc5edaaa/exits.txt
+- A	orchestrator/evidence/AB4-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB4-gate/negative-controls.py
+- A	orchestrator/evidence/AB4-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB4-gate/realign.sh
+- A	orchestrator/evidence/AB4-gate/translations/ar.json
+- A	orchestrator/evidence/AB4-gate/translations/cs.json
+- A	orchestrator/evidence/AB4-gate/translations/da.json
+- A	orchestrator/evidence/AB4-gate/translations/de.json
+- A	orchestrator/evidence/AB4-gate/translations/es-MX.json
+- A	orchestrator/evidence/AB4-gate/translations/es.json
+- A	orchestrator/evidence/AB4-gate/translations/et.json
+- A	orchestrator/evidence/AB4-gate/translations/fr.json
+- A	orchestrator/evidence/AB4-gate/translations/hi.json
+- A	orchestrator/evidence/AB4-gate/translations/hu.json
+- A	orchestrator/evidence/AB4-gate/translations/id.json
+- A	orchestrator/evidence/AB4-gate/translations/it.json
+- A	orchestrator/evidence/AB4-gate/translations/ja.json
+- A	orchestrator/evidence/AB4-gate/translations/ko.json
+- A	orchestrator/evidence/AB4-gate/translations/lt.json
+- A	orchestrator/evidence/AB4-gate/translations/lv.json
+- A	orchestrator/evidence/AB4-gate/translations/nb.json
+- A	orchestrator/evidence/AB4-gate/translations/nl.json
+- A	orchestrator/evidence/AB4-gate/translations/pl.json
+- A	orchestrator/evidence/AB4-gate/translations/pt-BR.json
+- A	orchestrator/evidence/AB4-gate/translations/ro.json
+- A	orchestrator/evidence/AB4-gate/translations/sk.json
+- A	orchestrator/evidence/AB4-gate/translations/sv.json
+- A	orchestrator/evidence/AB4-gate/translations/th.json
+- A	orchestrator/evidence/AB4-gate/translations/tr.json
+- A	orchestrator/evidence/AB4-gate/translations/vi.json
+- A	orchestrator/evidence/AB4-gate/translations/zh-Hans.json
+- A	orchestrator/evidence/AB4-gate/translations/zh-Hant.json
+- A	orchestrator/evidence/AB4-voice-notes/build-manifest.mjs
+- A	orchestrator/evidence/AB4-voice-notes/live-align.sql
+- A	orchestrator/evidence/AB4-voice-notes/live-read.json
+- A	orchestrator/evidence/AB4-voice-notes/live-shadow-reading.json
+- A	orchestrator/evidence/AB4-voice-notes/local-replay-reading.json
+- A	orchestrator/evidence/AB4-voice-notes/manifest.json
+- A	orchestrator/evidence/AB4-voice-notes/reading.sql
+- A	orchestrator/evidence/AB4-voice-notes/rollback.sql
+- A	orchestrator/evidence/AB4.json
+- A	orchestrator/evidence/AB4M-gate/gate.sh
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/00-install-local.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/00-sha.txt
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/01-install.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/02-check-react-types.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/03-lint.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/04-typecheck.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/05-criterion-suites.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/06-prepare.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/06b-handoff-check.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/07-shadow-and-manifest-rebuilt.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/08-approval-null-and-file-unchanged.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/09-git-diff-check.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/10-git-status.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/10b-install-local.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/11-negative-controls.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/12-git-status-final.log
+- A	orchestrator/evidence/AB4M-gate/logs-16aa2a77/exits.txt
+- A	orchestrator/evidence/AB4M-gate/logs-d2c73b50/00-sha.txt
+- A	orchestrator/evidence/AB4M-gate/logs-d2c73b50/13-line-height-scales-alone.log
+- A	orchestrator/evidence/AB4M-gate/logs-d2c73b50/14-full-jest.log
+- A	orchestrator/evidence/AB4M-gate/logs-d2c73b50/exits.txt
+- A	orchestrator/evidence/AB4M-gate/negative-controls.sh
+- A	orchestrator/evidence/AB4M.json
+- A	orchestrator/evidence/AB4P-gate/gate.sh
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/00-install-local.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/00-sha.txt
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/01-install.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/02-check-react-types.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/03-lint.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/04-typecheck.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/05-criterion-suites.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/06-jest-full.log.gz
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/06-jest-full.summary.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/06-prepare.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/06b-handoff-check.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/07-manifest-unchanged.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/08-approval-null.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/09-git-diff-check.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/10-git-status.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/10b-install-local.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/11-negative-controls.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/12-git-status-final.log
+- A	orchestrator/evidence/AB4P-gate/logs-3a3a88db/exits.txt
+- A	orchestrator/evidence/AB4P-gate/negative-controls.sh
+- A	orchestrator/evidence/AB4P-tooling/apply.mjs
+- A	orchestrator/evidence/AB4P-tooling/jsonb_md5.py
+- A	orchestrator/evidence/AB4P-voice-notes/00-plan.json
+- A	orchestrator/evidence/AB4P-voice-notes/01-precondition-check-only.json
+- A	orchestrator/evidence/AB4P-voice-notes/01-precondition.json
+- A	orchestrator/evidence/AB4P-voice-notes/01a-precondition-check-only-attempt1-blocked.json
+- A	orchestrator/evidence/AB4P-voice-notes/02-backup.json
+- A	orchestrator/evidence/AB4P-voice-notes/03-apply.json
+- A	orchestrator/evidence/AB4P-voice-notes/03-apply.sql
+- A	orchestrator/evidence/AB4P-voice-notes/04-postcondition.json
+- A	orchestrator/evidence/AB4P-voice-notes/applied.json
+- A	orchestrator/evidence/AB4P-voice-notes/read-first.json
+- A	orchestrator/evidence/AB4P-voice-notes/verdict.json
+- A	orchestrator/evidence/AB4P.json
+- A	orchestrator/evidence/AB5-gate/apply-keys.py
+- A	orchestrator/evidence/AB5-gate/check-keys.sh
+- A	orchestrator/evidence/AB5-gate/files.txt
+- A	orchestrator/evidence/AB5-gate/gate.sh
+- A	orchestrator/evidence/AB5-gate/glyphs.py
+- A	orchestrator/evidence/AB5-gate/inventory-added.json
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/00-install-local.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/00-sha.txt
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/01-install.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/02-check-react-types.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/03-lint.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/04-typecheck.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/05-criterion-suites.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/06-jest-full.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/06b-handoff-check.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/07-scripts-test.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/08-build.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/09-localization.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/10-android-export.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/10a-ab5-keys.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/10b-manifest-rebuilt.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/10c-glyphs.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/10d-approval-null.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/11-git-diff-check.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/12-git-status.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/12b-install-local.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/13-negative-controls.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/14-git-status-final.log
+- A	orchestrator/evidence/AB5-gate/logs-cf16e4ef/exits.txt
+- A	orchestrator/evidence/AB5-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB5-gate/negative-controls.py
+- A	orchestrator/evidence/AB5-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB5-gate/realign.sh
+- A	orchestrator/evidence/AB5-gate/translations.json
+- A	orchestrator/evidence/AB5-nearby/build-manifest.mjs
+- A	orchestrator/evidence/AB5-nearby/current-definitions.json
+- A	orchestrator/evidence/AB5-nearby/local-replay-reading.json
+- A	orchestrator/evidence/AB5-nearby/manifest.json
+- A	orchestrator/evidence/AB5-nearby/reading.sql
+- A	orchestrator/evidence/AB5-nearby/rollback.sql
+- A	orchestrator/evidence/AB5.json
+- A	orchestrator/evidence/AB5P-gate/gate.sh
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/00-install-local.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/00-sha.txt
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/01-install.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/02-check-react-types.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/03-lint.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/04-typecheck.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/05-criterion-suites.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/06-jest-full.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/06-prepare.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/06b-handoff-check.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/07-manifest-unchanged.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/08-approval-null.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/09-git-diff-check.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/10-git-status.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/10b-install-local.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/11-negative-controls.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/12-git-status-final.log
+- A	orchestrator/evidence/AB5P-gate/logs-0e223ed3/exits.txt
+- A	orchestrator/evidence/AB5P-gate/negative-controls.sh
+- A	orchestrator/evidence/AB5P-nearby/00-plan.json
+- A	orchestrator/evidence/AB5P-nearby/01-precondition-check-only.json
+- A	orchestrator/evidence/AB5P-nearby/01-precondition.json
+- A	orchestrator/evidence/AB5P-nearby/02-backup.json
+- A	orchestrator/evidence/AB5P-nearby/03-apply.json
+- A	orchestrator/evidence/AB5P-nearby/03-apply.sql
+- A	orchestrator/evidence/AB5P-nearby/04-postcondition.json
+- A	orchestrator/evidence/AB5P-nearby/applied.json
+- A	orchestrator/evidence/AB5P-nearby/read-first.json
+- A	orchestrator/evidence/AB5P-nearby/verdict.json
+- A	orchestrator/evidence/AB5P-tooling/apply.mjs
+- A	orchestrator/evidence/AB5P.json
+- A	orchestrator/evidence/AB6-gate/apply-keys.py
+- A	orchestrator/evidence/AB6-gate/apply-one-key.py
+- A	orchestrator/evidence/AB6-gate/code-values.json
+- A	orchestrator/evidence/AB6-gate/email-note.json
+- A	orchestrator/evidence/AB6-gate/files.txt
+- A	orchestrator/evidence/AB6-gate/gate.sh
+- A	orchestrator/evidence/AB6-gate/inventory-added.json
+- A	orchestrator/evidence/AB6-gate/keys.json
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/00-sha.txt
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/00b-install-local.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/01-install.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/02-check-react-types.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/03-lint.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/04-typecheck.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/05-criterion-suites.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/06-jest-full.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/06b-handoff-check.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/06c-line-height-scales-alone.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/07-scripts-test.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/08-build.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/08b-typecheck-after-build.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/09-localization.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/10-android-export.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/10a-ab6-keys.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/10b-no-credentials.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/11-git-diff-check.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/12-git-status.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/12b-install-local.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/13-negative-controls.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/13b-negative-controls.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/14-git-status-final.log
+- A	orchestrator/evidence/AB6-gate/logs-c669fdd1/exits.txt
+- A	orchestrator/evidence/AB6-gate/make-inventory-added.py
+- A	orchestrator/evidence/AB6-gate/make-translations.py
+- A	orchestrator/evidence/AB6-gate/negative-controls.py
+- A	orchestrator/evidence/AB6-gate/not-rendered.json
+- A	orchestrator/evidence/AB6-gate/realign-inventory.cjs
+- A	orchestrator/evidence/AB6-gate/realign.sh
+- A	orchestrator/evidence/AB6-gate/translations/ar.json
+- A	orchestrator/evidence/AB6-gate/translations/cs.json
+- A	orchestrator/evidence/AB6-gate/translations/da.json
+- A	orchestrator/evidence/AB6-gate/translations/de.json
+- A	orchestrator/evidence/AB6-gate/translations/es-MX.json
+- A	orchestrator/evidence/AB6-gate/translations/es.json
+- A	orchestrator/evidence/AB6-gate/translations/et.json
+- A	orchestrator/evidence/AB6-gate/translations/fr.json
+- A	orchestrator/evidence/AB6-gate/translations/hi.json
+- A	orchestrator/evidence/AB6-gate/translations/hu.json
+- A	orchestrator/evidence/AB6-gate/translations/id.json
+- A	orchestrator/evidence/AB6-gate/translations/it.json
+- A	orchestrator/evidence/AB6-gate/translations/ja.json
+- A	orchestrator/evidence/AB6-gate/translations/ko.json
+- A	orchestrator/evidence/AB6-gate/translations/lt.json
+- A	orchestrator/evidence/AB6-gate/translations/lv.json
+- A	orchestrator/evidence/AB6-gate/translations/nb.json
+- A	orchestrator/evidence/AB6-gate/translations/nl.json
+- A	orchestrator/evidence/AB6-gate/translations/pl.json
+- A	orchestrator/evidence/AB6-gate/translations/pt-BR.json
+- A	orchestrator/evidence/AB6-gate/translations/ro.json
+- A	orchestrator/evidence/AB6-gate/translations/sk.json
+- A	orchestrator/evidence/AB6-gate/translations/sv.json
+- A	orchestrator/evidence/AB6-gate/translations/th.json
+- A	orchestrator/evidence/AB6-gate/translations/tr.json
+- A	orchestrator/evidence/AB6-gate/translations/vi.json
+- A	orchestrator/evidence/AB6-gate/translations/zh-Hans.json
+- A	orchestrator/evidence/AB6-gate/translations/zh-Hant.json
+- A	orchestrator/evidence/AB6-gate/warning-key.json
+- A	orchestrator/evidence/AB6-notifications/build-manifest.mjs
+- A	orchestrator/evidence/AB6-notifications/current-definitions.json
+- A	orchestrator/evidence/AB6-notifications/live-align.sql
+- A	orchestrator/evidence/AB6-notifications/live-read.json
+- A	orchestrator/evidence/AB6-notifications/live-shadow-reading.json
+- A	orchestrator/evidence/AB6-notifications/local-replay-reading.json
+- A	orchestrator/evidence/AB6-notifications/manifest.json
+- A	orchestrator/evidence/AB6-notifications/reading.sql
+- A	orchestrator/evidence/AB6-notifications/rollback.sql
+- A	orchestrator/evidence/AB6.json
+- A	orchestrator/evidence/AB6M-gate/gate.sh
+- A	orchestrator/evidence/AB6M-gate/logs-704047d2/00-sha.txt
+- A	orchestrator/evidence/AB6M-gate/logs-704047d2/06-jest-full.filtered.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/00-install-local.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/00-sha.txt
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/01-install.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/02-check-react-types.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/03-lint.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/04-typecheck.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/05-criterion-suites.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/06-prepare.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/06b-handoff-check.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/07-shadow-and-manifest-rebuilt.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/08-approval-null-and-file-unchanged.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/09-git-diff-check.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/10-git-status.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/10b-install-local.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/11-negative-controls.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/12-git-status-final.log
+- A	orchestrator/evidence/AB6M-gate/logs-d96e0c3b/exits.txt
+- A	orchestrator/evidence/AB6M-gate/negative-controls.sh
+- A	orchestrator/evidence/AB6M.json
+- A	orchestrator/evidence/AB6P-gate/gate.sh
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/00-install-local.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/00-sha.txt
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/01-install.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/02-check-react-types.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/03-lint.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/04-typecheck.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/05-criterion-suites.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/06-jest-full.log.gz
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/06-jest-full.summary.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/06-prepare.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/06b-handoff-check.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/07-manifest-unchanged.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/08-approval-null.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/09-git-diff-check.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/10-git-status.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/10b-install-local.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/11-negative-controls.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/12-git-status-final.log
+- A	orchestrator/evidence/AB6P-gate/logs-92aaa1c1/exits.txt
+- A	orchestrator/evidence/AB6P-gate/negative-controls.sh
+- A	orchestrator/evidence/AB6P-notifications/00-plan.json
+- A	orchestrator/evidence/AB6P-notifications/01-precondition-check-only.json
+- A	orchestrator/evidence/AB6P-notifications/01-precondition.json
+- A	orchestrator/evidence/AB6P-notifications/02-backup.json
+- A	orchestrator/evidence/AB6P-notifications/03-apply.json
+- A	orchestrator/evidence/AB6P-notifications/03-apply.sql
+- A	orchestrator/evidence/AB6P-notifications/04-postcondition.json
+- A	orchestrator/evidence/AB6P-notifications/applied.json
+- A	orchestrator/evidence/AB6P-notifications/read-first.json
+- A	orchestrator/evidence/AB6P-notifications/verdict.json
+- A	orchestrator/evidence/AB6P-tooling/apply.mjs
+- A	orchestrator/evidence/AB6P-tooling/jsonb_md5.py
+- A	orchestrator/evidence/AB6P.json
+- A	orchestrator/evidence/C01-baseline.txt
+- A	orchestrator/evidence/C01-gate/baseline/01-install.log
+- A	orchestrator/evidence/C01-gate/baseline/02-check-react-types.log
+- A	orchestrator/evidence/C01-gate/baseline/03-lint.log
+- A	orchestrator/evidence/C01-gate/baseline/04-typecheck.log
+- A	orchestrator/evidence/C01-gate/baseline/05-jest-milesign.log
+- A	orchestrator/evidence/C01-gate/baseline/06-scripts-test.log
+- A	orchestrator/evidence/C01-gate/baseline/07-build.log
+- A	orchestrator/evidence/C01-gate/baseline/08-git-diff-check.log
+- A	orchestrator/evidence/C01-gate/baseline/09-git-status.log
+- A	orchestrator/evidence/C01-gate/baseline/10-database-gate.log
+- A	orchestrator/evidence/C01-gate/baseline/env.txt
+- A	orchestrator/evidence/C01-gate/baseline/exits.txt
+- A	orchestrator/evidence/C01-gate/reviewed/01-install.log
+- A	orchestrator/evidence/C01-gate/reviewed/02-check-react-types.log
+- A	orchestrator/evidence/C01-gate/reviewed/03-lint.log
+- A	orchestrator/evidence/C01-gate/reviewed/04-typecheck.log
+- A	orchestrator/evidence/C01-gate/reviewed/05-jest-milesign.log
+- A	orchestrator/evidence/C01-gate/reviewed/06-scripts-test.log
+- A	orchestrator/evidence/C01-gate/reviewed/07-build.log
+- A	orchestrator/evidence/C01-gate/reviewed/08-git-diff-check.log
+- A	orchestrator/evidence/C01-gate/reviewed/09-git-status.log
+- A	orchestrator/evidence/C01-gate/reviewed/10-database-gate.log
+- A	orchestrator/evidence/C01-gate/reviewed/env.txt
+- A	orchestrator/evidence/C01-gate/reviewed/exits.txt
+- A	orchestrator/evidence/C01-mutations/mutate.sh
+- A	orchestrator/evidence/C01-mutations/results-round2.txt
+- A	orchestrator/evidence/C01-mutations/results-round3.txt
+- A	orchestrator/evidence/C01-mutations/results.txt
+- A	orchestrator/evidence/C01.json
+- A	orchestrator/evidence/C02-fix1-node24/00-gate-stdout.txt
+- A	orchestrator/evidence/C02-fix1-node24/00-run-header.txt
+- A	orchestrator/evidence/C02-fix1-node24/01-install.log
+- A	orchestrator/evidence/C02-fix1-node24/02-react-types.log
+- A	orchestrator/evidence/C02-fix1-node24/03-lint.log
+- A	orchestrator/evidence/C02-fix1-node24/04-typecheck.log
+- A	orchestrator/evidence/C02-fix1-node24/05-jest-full.log
+- A	orchestrator/evidence/C02-fix1-node24/90-req-156-at-base-node24.log
+- A	orchestrator/evidence/C02-fix1-node24/91-req-156-at-base-node22.log
+- A	orchestrator/evidence/C02-fix1-node24/README.txt
+- A	orchestrator/evidence/C02-fix1-node24/exits.txt
+- A	orchestrator/evidence/C02-fix1-node24/smoke-criterion-suites.log
+- A	orchestrator/evidence/C02-fix1/00-run-header.txt
+- A	orchestrator/evidence/C02-fix1/01-install.log
+- A	orchestrator/evidence/C02-fix1/02-react-types.log
+- A	orchestrator/evidence/C02-fix1/03-lint.log
+- A	orchestrator/evidence/C02-fix1/04-typecheck.log
+- A	orchestrator/evidence/C02-fix1/05-jest-full.log
+- A	orchestrator/evidence/C02-fix1/06-scripts-test.log
+- A	orchestrator/evidence/C02-fix1/07-build.log
+- A	orchestrator/evidence/C02-fix1/08-git-diff-check.log
+- A	orchestrator/evidence/C02-fix1/09-git-status.log
+- A	orchestrator/evidence/C02-fix1/10-criterion-suites.log
+- A	orchestrator/evidence/C02-fix1/11-provenance-base.log
+- A	orchestrator/evidence/C02-fix1/12-provenance-last.log
+- A	orchestrator/evidence/C02-fix1/exits.txt
+- A	orchestrator/evidence/C02-fix1/gate.sh
+- A	orchestrator/evidence/C02.json
+- A	orchestrator/evidence/C03-gate/01-first-run-failing.log
+- A	orchestrator/evidence/C03-gate/02-lint.log
+- A	orchestrator/evidence/C03-gate/03-typecheck.log
+- A	orchestrator/evidence/C03-gate/04-jest-milesign.log
+- A	orchestrator/evidence/C03-gate/05-gate-part1.log
+- A	orchestrator/evidence/C03-gate/06-gate-part2.log
+- A	orchestrator/evidence/C03-gate/07-build.log
+- A	orchestrator/evidence/C03-gate/08-criterion-suites.log
+- A	orchestrator/evidence/C03-gate/merge-0686889/01-static.log
+- A	orchestrator/evidence/C03-gate/merge-0686889/02-jest-full.log
+- A	orchestrator/evidence/C03-gate/merge-0686889/03-scripts-test.log
+- A	orchestrator/evidence/C03-gate/merge-0686889/04-build.log
+- A	orchestrator/evidence/C03-gate/merge-0686889/05-criterion-suites.log
+- A	orchestrator/evidence/C03-gate/merge-28535a7/01-static.log
+- A	orchestrator/evidence/C03-gate/merge-28535a7/02-jest-full.log
+- A	orchestrator/evidence/C03-gate/merge-28535a7/03-scripts-test.log
+- A	orchestrator/evidence/C03-gate/merge-28535a7/04-build.log
+- A	orchestrator/evidence/C03-gate/merge-28535a7/05-criterion-suites.log
+- A	orchestrator/evidence/C03-gate/merge-f1c0f39/01-static.log
+- A	orchestrator/evidence/C03-gate/merge-f1c0f39/02-jest-full.log
+- A	orchestrator/evidence/C03-gate/merge-f1c0f39/03-scripts-test.log
+- A	orchestrator/evidence/C03-gate/merge-f1c0f39/04-build.log
+- A	orchestrator/evidence/C03-rerun-gate/00-regression-first-runs.md
+- A	orchestrator/evidence/C03-rerun-gate/00-sha.txt
+- A	orchestrator/evidence/C03-rerun-gate/01-install.log
+- A	orchestrator/evidence/C03-rerun-gate/02-check-react-types.log
+- A	orchestrator/evidence/C03-rerun-gate/03-lint.log
+- A	orchestrator/evidence/C03-rerun-gate/04-typecheck.log
+- A	orchestrator/evidence/C03-rerun-gate/05-jest-full.log
+- A	orchestrator/evidence/C03-rerun-gate/06-scripts-test.log
+- A	orchestrator/evidence/C03-rerun-gate/07-build.log
+- A	orchestrator/evidence/C03-rerun-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C03-rerun-gate/09-git-status.log
+- A	orchestrator/evidence/C03-rerun-gate/exits.txt
+- A	orchestrator/evidence/C03.json
+- A	orchestrator/evidence/C04-gate/CI-true-pnpm-install---frozen-lockfile-.log
+- A	orchestrator/evidence/C04-gate/build.log
+- A	orchestrator/evidence/C04-gate/jest-full.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/00-sha.txt
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/01-install.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/02-check-react-types.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/03-lint.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/04-typecheck-after-build.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/04-typecheck.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/05-jest-full.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/05a-jest-full-first-run-under-contention.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/06-scripts-test.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/07-build.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/08-git-diff-check.log
+- A	orchestrator/evidence/C04-gate/merge-bb9e158/09-req-156-fails-at-the-integration-head-too.log
+- A	orchestrator/evidence/C04-gate/pnpm---filter--workspace-milesign-run-lint-.log
+- A	orchestrator/evidence/C04-gate/pnpm-run-check-react-types-.log
+- A	orchestrator/evidence/C04-gate/pnpm-run-typecheck-.log
+- A	orchestrator/evidence/C04-gate/scripts-test.log
+- A	orchestrator/evidence/C04-gate/typecheck-after-build.log
+- A	orchestrator/evidence/C04-integration/01-install-after-u09.log
+- A	orchestrator/evidence/C04-integration/01-install.log
+- A	orchestrator/evidence/C04-integration/02-react-after-u09.log
+- A	orchestrator/evidence/C04-integration/02-react.log
+- A	orchestrator/evidence/C04-integration/03-lint-after-u09.log
+- A	orchestrator/evidence/C04-integration/03-lint.log
+- A	orchestrator/evidence/C04-integration/04-typecheck-after-u09.log
+- A	orchestrator/evidence/C04-integration/04-typecheck.log
+- A	orchestrator/evidence/C04-integration/04a-typecheck-nonstrict-after-u09.log
+- A	orchestrator/evidence/C04-integration/04b-typecheck-strict-after-u09.log
+- A	orchestrator/evidence/C04-integration/05b-targeted.env
+- A	orchestrator/evidence/C04-integration/05b-targeted.log
+- A	orchestrator/evidence/C04-integration/05c-targeted-after-u09.log
+- A	orchestrator/evidence/C04-integration/06-scripts-after-u09.log
+- A	orchestrator/evidence/C04-integration/07-build-after-u09.log
+- A	orchestrator/evidence/C04-integration/08-diff-after-u09.log
+- A	orchestrator/evidence/C04-integration/env-after-u09.txt
+- A	orchestrator/evidence/C04-integration/env.txt
+- A	orchestrator/evidence/C04-integration/gate-c04.sh.txt
+- A	orchestrator/evidence/C04-integration/summary.txt
+- A	orchestrator/evidence/C04.json
+- A	orchestrator/evidence/C05-fix1-gate/00-sha.txt
+- A	orchestrator/evidence/C05-fix1-gate/01-install.log
+- A	orchestrator/evidence/C05-fix1-gate/02-check-react-types.log
+- A	orchestrator/evidence/C05-fix1-gate/03-lint.log
+- A	orchestrator/evidence/C05-fix1-gate/04-typecheck.log
+- A	orchestrator/evidence/C05-fix1-gate/05-jest-full.log
+- A	orchestrator/evidence/C05-fix1-gate/06-scripts-test.log
+- A	orchestrator/evidence/C05-fix1-gate/07-build.log
+- A	orchestrator/evidence/C05-fix1-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C05-fix1-gate/09-git-status.log
+- A	orchestrator/evidence/C05-fix1-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C05-fix1-gate/11-provenance.log
+- A	orchestrator/evidence/C05-fix1-gate/criterion.json
+- A	orchestrator/evidence/C05-fix1-gate/exits.txt
+- A	orchestrator/evidence/C05-fix1-gate/gate.sh
+- A	orchestrator/evidence/C05-fix2-gate/00-sha.txt
+- A	orchestrator/evidence/C05-fix2-gate/01-install.log
+- A	orchestrator/evidence/C05-fix2-gate/02-check-react-types.log
+- A	orchestrator/evidence/C05-fix2-gate/03-lint.log
+- A	orchestrator/evidence/C05-fix2-gate/04-typecheck.log
+- A	orchestrator/evidence/C05-fix2-gate/05-jest-full.log
+- A	orchestrator/evidence/C05-fix2-gate/06-scripts-test.log
+- A	orchestrator/evidence/C05-fix2-gate/07-build.log
+- A	orchestrator/evidence/C05-fix2-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C05-fix2-gate/09-git-status.log
+- A	orchestrator/evidence/C05-fix2-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C05-fix2-gate/11-provenance.log
+- A	orchestrator/evidence/C05-fix2-gate/criterion.json
+- A	orchestrator/evidence/C05-fix2-gate/exits.txt
+- A	orchestrator/evidence/C05-fix2-gate/gate.sh
+- A	orchestrator/evidence/C05-gate/00-sha.txt
+- A	orchestrator/evidence/C05-gate/01-install.log
+- A	orchestrator/evidence/C05-gate/02-check-react-types.log
+- A	orchestrator/evidence/C05-gate/03-lint.log
+- A	orchestrator/evidence/C05-gate/04-typecheck.log
+- A	orchestrator/evidence/C05-gate/05-jest-full.log
+- A	orchestrator/evidence/C05-gate/06-scripts-test.log
+- A	orchestrator/evidence/C05-gate/07-build.log
+- A	orchestrator/evidence/C05-gate/08-tree.log
+- A	orchestrator/evidence/C05-gate/09-criterion-suites.log
+- A	orchestrator/evidence/C05-gate/10-provenance.log
+- A	orchestrator/evidence/C05.json
+- A	orchestrator/evidence/C06-fix1-gate/00-context.log
+- A	orchestrator/evidence/C06-fix1-gate/01.log
+- A	orchestrator/evidence/C06-fix1-gate/02.log
+- A	orchestrator/evidence/C06-fix1-gate/03.log
+- A	orchestrator/evidence/C06-fix1-gate/04.log
+- A	orchestrator/evidence/C06-fix1-gate/05.log
+- A	orchestrator/evidence/C06-fix1-gate/06.log
+- A	orchestrator/evidence/C06-fix1-gate/07.log
+- A	orchestrator/evidence/C06-fix1-gate/08.log
+- A	orchestrator/evidence/C06-fix1-gate/09.log
+- A	orchestrator/evidence/C06-fix1-gate/controller-core-4af25cb.log
+- A	orchestrator/evidence/C06-fix1-gate/criterion-suites.log
+- A	orchestrator/evidence/C06-fix1-gate/jest-full-4af25cb.log
+- A	orchestrator/evidence/C06-fix1-gate/negative-control.log
+- A	orchestrator/evidence/C06-fix1-gate/summary.log
+- A	orchestrator/evidence/C06-gate/00-context.log
+- A	orchestrator/evidence/C06-gate/01-install.log
+- A	orchestrator/evidence/C06-gate/02-check-react-types.log
+- A	orchestrator/evidence/C06-gate/03-lint.log
+- A	orchestrator/evidence/C06-gate/04-typecheck.log
+- A	orchestrator/evidence/C06-gate/05-jest-full.log
+- A	orchestrator/evidence/C06-gate/06-scripts-test.log
+- A	orchestrator/evidence/C06-gate/07-build.log
+- A	orchestrator/evidence/C06-gate/08-tree.log
+- A	orchestrator/evidence/C06-gate/09-criterion-suites.log
+- A	orchestrator/evidence/C06-gate/10-provenance.log
+- A	orchestrator/evidence/C06.json
+- A	orchestrator/evidence/C07-baseline.txt
+- A	orchestrator/evidence/C07-gate-jest.txt
+- A	orchestrator/evidence/C07.json
+- A	orchestrator/evidence/C08-fix1-gate/00-context.log
+- A	orchestrator/evidence/C08-fix1-gate/01.log
+- A	orchestrator/evidence/C08-fix1-gate/02.log
+- A	orchestrator/evidence/C08-fix1-gate/03.log
+- A	orchestrator/evidence/C08-fix1-gate/04.log
+- A	orchestrator/evidence/C08-fix1-gate/05.log
+- A	orchestrator/evidence/C08-fix1-gate/06.log
+- A	orchestrator/evidence/C08-fix1-gate/07.log
+- A	orchestrator/evidence/C08-fix1-gate/08.log
+- A	orchestrator/evidence/C08-fix1-gate/09.log
+- A	orchestrator/evidence/C08-fix1-gate/criterion-req-106.log
+- A	orchestrator/evidence/C08-fix1-gate/criterion-req-94.log
+- A	orchestrator/evidence/C08-fix1-gate/summary.log
+- A	orchestrator/evidence/C08-fix2-gate/01-install.log
+- A	orchestrator/evidence/C08-fix2-gate/02-check-react-types.log
+- A	orchestrator/evidence/C08-fix2-gate/03-lint.log
+- A	orchestrator/evidence/C08-fix2-gate/04-typecheck.log
+- A	orchestrator/evidence/C08-fix2-gate/05-jest-milesign.log
+- A	orchestrator/evidence/C08-fix2-gate/06-scripts-test.log
+- A	orchestrator/evidence/C08-fix2-gate/07-build.log
+- A	orchestrator/evidence/C08-fix2-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C08-fix2-gate/09-git-status-clean.log
+- A	orchestrator/evidence/C08-fix2-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C08-fix2-gate/env.txt
+- A	orchestrator/evidence/C08-fix2-gate/exits.txt
+- A	orchestrator/evidence/C08-fix3-gate/01-install.log
+- A	orchestrator/evidence/C08-fix3-gate/02-check-react-types.log
+- A	orchestrator/evidence/C08-fix3-gate/03-lint.log
+- A	orchestrator/evidence/C08-fix3-gate/04-typecheck.log
+- A	orchestrator/evidence/C08-fix3-gate/05-jest-milesign.log
+- A	orchestrator/evidence/C08-fix3-gate/06-scripts-test.log
+- A	orchestrator/evidence/C08-fix3-gate/07-build.log
+- A	orchestrator/evidence/C08-fix3-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C08-fix3-gate/09-git-status-clean.log
+- A	orchestrator/evidence/C08-fix3-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C08-fix3-gate/env.txt
+- A	orchestrator/evidence/C08-fix3-gate/exits.txt
+- A	orchestrator/evidence/C08-fix4-gate/01-install.log
+- A	orchestrator/evidence/C08-fix4-gate/02-check-react-types.log
+- A	orchestrator/evidence/C08-fix4-gate/03-lint.log
+- A	orchestrator/evidence/C08-fix4-gate/04-typecheck.log
+- A	orchestrator/evidence/C08-fix4-gate/05-jest-milesign.log
+- A	orchestrator/evidence/C08-fix4-gate/06-scripts-test.log
+- A	orchestrator/evidence/C08-fix4-gate/07-build.log
+- A	orchestrator/evidence/C08-fix4-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C08-fix4-gate/09-git-status-clean.log
+- A	orchestrator/evidence/C08-fix4-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C08-fix4-gate/env.txt
+- A	orchestrator/evidence/C08-fix4-gate/exits.txt
+- A	orchestrator/evidence/C08-fix5-gate/01-install.log
+- A	orchestrator/evidence/C08-fix5-gate/02-check-react-types.log
+- A	orchestrator/evidence/C08-fix5-gate/03-lint.log
+- A	orchestrator/evidence/C08-fix5-gate/04-typecheck.log
+- A	orchestrator/evidence/C08-fix5-gate/05-jest-milesign.log
+- A	orchestrator/evidence/C08-fix5-gate/06-scripts-test.log
+- A	orchestrator/evidence/C08-fix5-gate/07-build.log
+- A	orchestrator/evidence/C08-fix5-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C08-fix5-gate/09-git-status-clean.log
+- A	orchestrator/evidence/C08-fix5-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C08-fix5-gate/env.txt
+- A	orchestrator/evidence/C08-fix5-gate/exits.txt
+- A	orchestrator/evidence/C08-fix6-gate/01-install.log
+- A	orchestrator/evidence/C08-fix6-gate/02-check-react-types.log
+- A	orchestrator/evidence/C08-fix6-gate/03-lint.log
+- A	orchestrator/evidence/C08-fix6-gate/04-typecheck.log
+- A	orchestrator/evidence/C08-fix6-gate/05-jest-milesign.log
+- A	orchestrator/evidence/C08-fix6-gate/06-scripts-test.log
+- A	orchestrator/evidence/C08-fix6-gate/07-build.log
+- A	orchestrator/evidence/C08-fix6-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C08-fix6-gate/09-git-status-clean.log
+- A	orchestrator/evidence/C08-fix6-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C08-fix6-gate/env.txt
+- A	orchestrator/evidence/C08-fix6-gate/exits.txt
+- A	orchestrator/evidence/C08-fix7-gate/01-install.log
+- A	orchestrator/evidence/C08-fix7-gate/02-check-react-types.log
+- A	orchestrator/evidence/C08-fix7-gate/03-lint.log
+- A	orchestrator/evidence/C08-fix7-gate/04-typecheck.log
+- A	orchestrator/evidence/C08-fix7-gate/05-jest-milesign.log
+- A	orchestrator/evidence/C08-fix7-gate/06-scripts-test.log
+- A	orchestrator/evidence/C08-fix7-gate/07-build.log
+- A	orchestrator/evidence/C08-fix7-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C08-fix7-gate/09-git-status-clean.log
+- A	orchestrator/evidence/C08-fix7-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C08-fix7-gate/env.txt
+- A	orchestrator/evidence/C08-fix7-gate/exits.txt
+- A	orchestrator/evidence/C08-merge-gate/01-install.log
+- A	orchestrator/evidence/C08-merge-gate/02-check-react-types.log
+- A	orchestrator/evidence/C08-merge-gate/03-lint.log
+- A	orchestrator/evidence/C08-merge-gate/04-typecheck.log
+- A	orchestrator/evidence/C08-merge-gate/05-jest-milesign.log
+- A	orchestrator/evidence/C08-merge-gate/06-scripts-test.log
+- A	orchestrator/evidence/C08-merge-gate/07-build.log
+- A	orchestrator/evidence/C08-merge-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C08-merge-gate/09-git-status-clean.log
+- A	orchestrator/evidence/C08-merge-gate/10-criterion-suites.log
+- A	orchestrator/evidence/C08-merge-gate/env.txt
+- A	orchestrator/evidence/C08-merge-gate/exits.txt
+- A	orchestrator/evidence/C08-review-fix/01-req-106-before-fix.log
+- A	orchestrator/evidence/C08-review-fix/02-req-106-after-fix.log
+- A	orchestrator/evidence/C08-review-fix/03-req-106-before-fix2.log
+- A	orchestrator/evidence/C08-review-fix/04-probe.js
+- A	orchestrator/evidence/C08-review-fix/04-server-rule-probe-before-after-fix2.log
+- A	orchestrator/evidence/C08-review-fix/05-req-106-before-fix3.log
+- A	orchestrator/evidence/C08-review-fix/06-probe.js
+- A	orchestrator/evidence/C08-review-fix/06-server-rule-probe-before-after-fix3.log
+- A	orchestrator/evidence/C08-review-fix/07-req-106-before-fix4.log
+- A	orchestrator/evidence/C08-review-fix/08-probe.js
+- A	orchestrator/evidence/C08-review-fix/08-server-rule-probe-before-after-fix4.log
+- A	orchestrator/evidence/C08-review-fix/09-req-106-before-fix5.log
+- A	orchestrator/evidence/C08-review-fix/10-probe.js
+- A	orchestrator/evidence/C08-review-fix/10-server-rule-probe-before-after-fix5.log
+- A	orchestrator/evidence/C08-review-fix/11-req-106-before-fix6.log
+- A	orchestrator/evidence/C08-review-fix/12-probe.js
+- A	orchestrator/evidence/C08-review-fix/12-server-rule-probe-before-after-fix6.log
+- A	orchestrator/evidence/C08-review-fix/13-req-106-before-fix7.log
+- A	orchestrator/evidence/C08-review-fix/14-probe.js
+- A	orchestrator/evidence/C08-review-fix/14-server-rule-probe-before-after-fix7.log
+- A	orchestrator/evidence/C08.json
+- A	orchestrator/evidence/C09-gate/00-exit-codes.txt
+- A	orchestrator/evidence/C09-gate/00-sha.txt
+- A	orchestrator/evidence/C09-gate/01-install.log
+- A	orchestrator/evidence/C09-gate/02-check-react-types.log
+- A	orchestrator/evidence/C09-gate/03-lint.log
+- A	orchestrator/evidence/C09-gate/04-typecheck.log
+- A	orchestrator/evidence/C09-gate/05-jest-full.log
+- A	orchestrator/evidence/C09-gate/06-scripts-test.log
+- A	orchestrator/evidence/C09-gate/07-build.log
+- A	orchestrator/evidence/C09-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C09-gate/09-git-status.log
+- A	orchestrator/evidence/C09-gate/10-android-export.log
+- A	orchestrator/evidence/C09-gate/13-criterion-suites.log
+- A	orchestrator/evidence/C09.json
+- A	orchestrator/evidence/C10-fix1/00-req-37-fails-without-the-migration.log
+- A	orchestrator/evidence/C10-fix1/00-sha.txt
+- A	orchestrator/evidence/C10-fix1/01-req-45-fails-with-the-retaining-purge.log
+- A	orchestrator/evidence/C10-fix1/01a-tree-restored.txt
+- A	orchestrator/evidence/C10-fix1/02-install.log
+- A	orchestrator/evidence/C10-fix1/03-check-react-types.log
+- A	orchestrator/evidence/C10-fix1/04-lint.log
+- A	orchestrator/evidence/C10-fix1/05-typecheck.log
+- A	orchestrator/evidence/C10-fix1/06-jest-full.log
+- A	orchestrator/evidence/C10-fix1/07-scripts-test.log
+- A	orchestrator/evidence/C10-fix1/08-build.log
+- A	orchestrator/evidence/C10-fix1/09-git-diff-check.log
+- A	orchestrator/evidence/C10-fix1/10-criterion-suites.log
+- A	orchestrator/evidence/C10-fix1/11-git-status-short.log
+- A	orchestrator/evidence/C10-fix1/12-git-status-final.txt
+- A	orchestrator/evidence/C10-fix1/13-workflow-implementation-gate.log
+- A	orchestrator/evidence/C10-fix1/14-why-the-workflow-gate-failed.txt
+- A	orchestrator/evidence/C10-fix1/15-git-diff-check-main-is-inherited.txt
+- A	orchestrator/evidence/C10-fix1/16-git-status-final.txt
+- A	orchestrator/evidence/C10-fix1/exits.txt
+- A	orchestrator/evidence/C10-fix10/00-req-37-fails-with-the-five-id-list.log
+- A	orchestrator/evidence/C10-fix10/01-both-rules-classify-identically.txt
+- A	orchestrator/evidence/C10-fix10/10-sha.txt
+- A	orchestrator/evidence/C10-fix10/11-install.log
+- A	orchestrator/evidence/C10-fix10/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix10/13-lint.log
+- A	orchestrator/evidence/C10-fix10/14-typecheck.log
+- A	orchestrator/evidence/C10-fix10/15-jest-full.log
+- A	orchestrator/evidence/C10-fix10/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix10/17-build.log
+- A	orchestrator/evidence/C10-fix10/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix10/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix10/20-provenance.txt
+- A	orchestrator/evidence/C10-fix10/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix10/exits.txt
+- A	orchestrator/evidence/C10-fix11/00-req-37-fails-when-writes-are-counted-not-hashed.log
+- A	orchestrator/evidence/C10-fix11/01-req-37-fails-without-the-revoke-migration.log
+- A	orchestrator/evidence/C10-fix11/02-req-37-fails-when-person-slots-get-a-project-id.log
+- A	orchestrator/evidence/C10-fix11/03-tree-restored.txt
+- A	orchestrator/evidence/C10-fix11/10-sha.txt
+- A	orchestrator/evidence/C10-fix11/11-install.log
+- A	orchestrator/evidence/C10-fix11/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix11/13-lint.log
+- A	orchestrator/evidence/C10-fix11/14-typecheck.log
+- A	orchestrator/evidence/C10-fix11/15-jest-full.log
+- A	orchestrator/evidence/C10-fix11/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix11/17-build.log
+- A	orchestrator/evidence/C10-fix11/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix11/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix11/20-provenance.txt
+- A	orchestrator/evidence/C10-fix11/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix11/exits.txt
+- A	orchestrator/evidence/C10-fix12/00-req-37-fails-without-the-own-project-control.log
+- A	orchestrator/evidence/C10-fix12/01-req-37-fails-without-the-seeded-entity-kinds.log
+- A	orchestrator/evidence/C10-fix12/02-tree-restored.txt
+- A	orchestrator/evidence/C10-fix12/10-sha.txt
+- A	orchestrator/evidence/C10-fix12/11-install.log
+- A	orchestrator/evidence/C10-fix12/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix12/13-lint.log
+- A	orchestrator/evidence/C10-fix12/14-typecheck.log
+- A	orchestrator/evidence/C10-fix12/15-jest-full.log
+- A	orchestrator/evidence/C10-fix12/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix12/17-build.log
+- A	orchestrator/evidence/C10-fix12/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix12/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix12/20-provenance.txt
+- A	orchestrator/evidence/C10-fix12/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix12/exits.txt
+- A	orchestrator/evidence/C10-fix13/00-req-37-fails-without-the-null-safe-predicate.log
+- A	orchestrator/evidence/C10-fix13/01-req-37-fails-when-the-revoked-inventory-is-hand-written.log
+- A	orchestrator/evidence/C10-fix13/02-req-37-fails-without-the-ai-chain-and-the-organization.log
+- A	orchestrator/evidence/C10-fix13/03-tree-restored.txt
+- A	orchestrator/evidence/C10-fix13/10-sha.txt
+- A	orchestrator/evidence/C10-fix13/11-install.log
+- A	orchestrator/evidence/C10-fix13/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix13/13-lint.log
+- A	orchestrator/evidence/C10-fix13/14-typecheck.log
+- A	orchestrator/evidence/C10-fix13/15-jest-full.log
+- A	orchestrator/evidence/C10-fix13/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix13/17-build.log
+- A	orchestrator/evidence/C10-fix13/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix13/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix13/20-provenance.txt
+- A	orchestrator/evidence/C10-fix13/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix13/exits.txt
+- A	orchestrator/evidence/C10-fix14/00-req-37-fails-without-the-caller-check-on-interaction-work-state.log
+- A	orchestrator/evidence/C10-fix14/01-req-37-fails-when-the-refusal-rule-ignores-the-return-type.log
+- A	orchestrator/evidence/C10-fix14/02-tree-restored.txt
+- A	orchestrator/evidence/C10-fix14/10-sha.txt
+- A	orchestrator/evidence/C10-fix14/11-install.log
+- A	orchestrator/evidence/C10-fix14/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix14/13-lint.log
+- A	orchestrator/evidence/C10-fix14/14-typecheck.log
+- A	orchestrator/evidence/C10-fix14/15-jest-full.log
+- A	orchestrator/evidence/C10-fix14/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix14/17-build.log
+- A	orchestrator/evidence/C10-fix14/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix14/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix14/20-provenance.txt
+- A	orchestrator/evidence/C10-fix14/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix14/exits.txt
+- A	orchestrator/evidence/C10-fix3/00-req-45-fails-with-the-void-purge.log
+- A	orchestrator/evidence/C10-fix3/01-req-45-fails-without-the-purge-record.log
+- A	orchestrator/evidence/C10-fix3/02-req-37-fails-with-the-numeric-exclusion.log
+- A	orchestrator/evidence/C10-fix3/03-req-37-fails-with-the-banked-no-ops.log
+- A	orchestrator/evidence/C10-fix3/03a-tree-restored.txt
+- A	orchestrator/evidence/C10-fix3/10-sha.txt
+- A	orchestrator/evidence/C10-fix3/11-install.log
+- A	orchestrator/evidence/C10-fix3/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix3/13-lint.log
+- A	orchestrator/evidence/C10-fix3/14-typecheck.log
+- A	orchestrator/evidence/C10-fix3/15-jest-full.log
+- A	orchestrator/evidence/C10-fix3/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix3/17-build.log
+- A	orchestrator/evidence/C10-fix3/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix3/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix3/20-provenance.txt
+- A	orchestrator/evidence/C10-fix3/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix3/exits.txt
+- A	orchestrator/evidence/C10-fix4/00-req-45-fails-with-the-unawaited-startup-cleanup.log
+- A	orchestrator/evidence/C10-fix4/01-req-45-fails-with-the-racy-isLive.log
+- A	orchestrator/evidence/C10-fix4/02-both-fail-when-the-stored-session-overtakes.log
+- A	orchestrator/evidence/C10-fix4/02a-tree-restored.txt
+- A	orchestrator/evidence/C10-fix4/10-sha.txt
+- A	orchestrator/evidence/C10-fix4/11-install.log
+- A	orchestrator/evidence/C10-fix4/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix4/13-lint.log
+- A	orchestrator/evidence/C10-fix4/14-typecheck.log
+- A	orchestrator/evidence/C10-fix4/15-jest-full.log
+- A	orchestrator/evidence/C10-fix4/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix4/17-build.log
+- A	orchestrator/evidence/C10-fix4/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix4/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix4/20-provenance.txt
+- A	orchestrator/evidence/C10-fix4/22-git-status-final.txt
+- A	orchestrator/evidence/C10-fix4/exits.txt
+- A	orchestrator/evidence/C10-fix5/00-req-45-fails-when-the-purge-reports-success.log
+- A	orchestrator/evidence/C10-fix5/01-req-45-fails-when-the-gate-ignores-the-report.log
+- A	orchestrator/evidence/C10-fix5/01a-tree-restored.txt
+- A	orchestrator/evidence/C10-fix5/10-sha.txt
+- A	orchestrator/evidence/C10-fix5/11-install.log
+- A	orchestrator/evidence/C10-fix5/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix5/13-lint.log
+- A	orchestrator/evidence/C10-fix5/14-typecheck.log
+- A	orchestrator/evidence/C10-fix5/15-jest-full.log
+- A	orchestrator/evidence/C10-fix5/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix5/17-build.log
+- A	orchestrator/evidence/C10-fix5/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix5/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix5/20-provenance.txt
+- A	orchestrator/evidence/C10-fix5/22-git-status-final.txt
+- A	orchestrator/evidence/C10-fix5/exits.txt
+- A	orchestrator/evidence/C10-fix6/00-req-45-fails-when-unreadable-reads-as-empty.log
+- A	orchestrator/evidence/C10-fix6/01-req-45-fails-when-the-caller-drops-unknown.log
+- A	orchestrator/evidence/C10-fix6/02a-tree-restored.txt
+- A	orchestrator/evidence/C10-fix6/10-sha.txt
+- A	orchestrator/evidence/C10-fix6/11-install.log
+- A	orchestrator/evidence/C10-fix6/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix6/13-lint.log
+- A	orchestrator/evidence/C10-fix6/14-typecheck.log
+- A	orchestrator/evidence/C10-fix6/15-jest-full.log
+- A	orchestrator/evidence/C10-fix6/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix6/17-build.log
+- A	orchestrator/evidence/C10-fix6/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix6/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix6/20-provenance.txt
+- A	orchestrator/evidence/C10-fix6/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix6/exits.txt
+- A	orchestrator/evidence/C10-fix7/00-req-45-fails-when-a-failed-record-write-aborts-the-purge.log
+- A	orchestrator/evidence/C10-fix7/01-req-45-fails-when-only-the-record-is-consulted.log
+- A	orchestrator/evidence/C10-fix7/01a-tree-restored.txt
+- A	orchestrator/evidence/C10-fix7/02a-no-label-is-shadowed.txt
+- A	orchestrator/evidence/C10-fix7/10-sha.txt
+- A	orchestrator/evidence/C10-fix7/11-install.log
+- A	orchestrator/evidence/C10-fix7/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix7/13-lint.log
+- A	orchestrator/evidence/C10-fix7/14-typecheck.log
+- A	orchestrator/evidence/C10-fix7/15-jest-full.log
+- A	orchestrator/evidence/C10-fix7/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix7/17-build.log
+- A	orchestrator/evidence/C10-fix7/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix7/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix7/20-provenance.txt
+- A	orchestrator/evidence/C10-fix7/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix7/exits.txt
+- A	orchestrator/evidence/C10-fix8/00-req-37-fails-when-substantive-answers-count-as-refusals.log
+- A	orchestrator/evidence/C10-fix8/01a-claims-rederived.txt
+- A	orchestrator/evidence/C10-fix8/01b-tree-restored.txt
+- A	orchestrator/evidence/C10-fix8/10-sha.txt
+- A	orchestrator/evidence/C10-fix8/11-install.log
+- A	orchestrator/evidence/C10-fix8/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix8/13-lint.log
+- A	orchestrator/evidence/C10-fix8/14-typecheck.log
+- A	orchestrator/evidence/C10-fix8/15-jest-full.log
+- A	orchestrator/evidence/C10-fix8/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix8/17-build.log
+- A	orchestrator/evidence/C10-fix8/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix8/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix8/20-provenance.txt
+- A	orchestrator/evidence/C10-fix8/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix8/exits.txt
+- A	orchestrator/evidence/C10-fix9/00-req-37-fails-without-the-caller-checks.log
+- A	orchestrator/evidence/C10-fix9/01a-tree-restored.txt
+- A	orchestrator/evidence/C10-fix9/01b-classes-measured.txt
+- A	orchestrator/evidence/C10-fix9/02-req-133-fails-without-the-agreement-party-admission.log
+- A	orchestrator/evidence/C10-fix9/10-sha.txt
+- A	orchestrator/evidence/C10-fix9/11-install.log
+- A	orchestrator/evidence/C10-fix9/12-check-react-types.log
+- A	orchestrator/evidence/C10-fix9/13-lint.log
+- A	orchestrator/evidence/C10-fix9/14-typecheck.log
+- A	orchestrator/evidence/C10-fix9/15-jest-full.log
+- A	orchestrator/evidence/C10-fix9/16-scripts-test.log
+- A	orchestrator/evidence/C10-fix9/17-build.log
+- A	orchestrator/evidence/C10-fix9/18-git-diff-check.log
+- A	orchestrator/evidence/C10-fix9/19-criterion-suites.log
+- A	orchestrator/evidence/C10-fix9/20-provenance.txt
+- A	orchestrator/evidence/C10-fix9/21-git-status-final.txt
+- A	orchestrator/evidence/C10-fix9/exits.txt
+- A	orchestrator/evidence/C10-gate/00-regression-first-runs.md
+- A	orchestrator/evidence/C10-gate/00-sha.txt
+- A	orchestrator/evidence/C10-gate/01-install.log
+- A	orchestrator/evidence/C10-gate/02-check-react-types.log
+- A	orchestrator/evidence/C10-gate/03-lint.log
+- A	orchestrator/evidence/C10-gate/04-typecheck.log
+- A	orchestrator/evidence/C10-gate/05-jest-full.log
+- A	orchestrator/evidence/C10-gate/06-scripts-test.log
+- A	orchestrator/evidence/C10-gate/07-build.log
+- A	orchestrator/evidence/C10-gate/08-git-diff-check.log
+- A	orchestrator/evidence/C10-gate/09-git-status.log
+- A	orchestrator/evidence/C10-gate/exits.txt
+- A	orchestrator/evidence/C10-integration/01-install.log
+- A	orchestrator/evidence/C10-integration/02-react.log
+- A	orchestrator/evidence/C10-integration/03-lint.log
+- A	orchestrator/evidence/C10-integration/04-typecheck.log
+- A	orchestrator/evidence/C10-integration/05-jest-rerun.env
+- A	orchestrator/evidence/C10-integration/05-jest.log
+- A	orchestrator/evidence/C10-integration/06-scripts.log
+- A	orchestrator/evidence/C10-integration/07-build.log
+- A	orchestrator/evidence/C10-integration/08-diff.log
+- A	orchestrator/evidence/C10-integration/09-clean.log
+- A	orchestrator/evidence/C10-integration/10-req133-isolated.env
+- A	orchestrator/evidence/C10-integration/10-req133-isolated.log
+- A	orchestrator/evidence/C10-integration/env.txt
+- A	orchestrator/evidence/C10-integration/gate-c10-jest-attempt3.sh.txt
+- A	orchestrator/evidence/C10-integration/gate-c10.sh.txt
+- A	orchestrator/evidence/C10-integration/summary.txt
+- A	orchestrator/evidence/C10-ordering-contract.md
+- A	orchestrator/evidence/C10-provenance/00-provenance.txt
+- A	orchestrator/evidence/C10-provenance/01-criterion-suites-on-head.log
+- A	orchestrator/evidence/C10-unknown-is-not-clean.md
+- A	orchestrator/evidence/C10.json
+- A	orchestrator/evidence/D00-gate/00-sha.txt
+- A	orchestrator/evidence/D00-gate/01-install.log
+- A	orchestrator/evidence/D00-gate/02-check-react-types.log
+- A	orchestrator/evidence/D00-gate/03-lint.log
+- A	orchestrator/evidence/D00-gate/04-typecheck.log
+- A	orchestrator/evidence/D00-gate/05-jest-full.log
+- A	orchestrator/evidence/D00-gate/05b-handoff-check.log
+- A	orchestrator/evidence/D00-gate/06-scripts-test.log
+- A	orchestrator/evidence/D00-gate/07-build.log
+- A	orchestrator/evidence/D00-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D00-gate/08-git-diff-check.log
+- A	orchestrator/evidence/D00-gate/09-git-status.log
+- A	orchestrator/evidence/D00-gate/10-android-export.log
+- A	orchestrator/evidence/D00-gate/10b-localization.log
+- A	orchestrator/evidence/D00-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/D00-gate/11-criterion-suites.log
+- A	orchestrator/evidence/D00-gate/12-git-status-after.log
+- A	orchestrator/evidence/D00-gate/13-negative-controls.log
+- A	orchestrator/evidence/D00-gate/14-git-status-final.log
+- A	orchestrator/evidence/D00-gate/exits.txt
+- A	orchestrator/evidence/D00-gate/gate.sh
+- A	orchestrator/evidence/D00-gate/negative-controls.py
+- A	orchestrator/evidence/D00-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D00-gate/run1-oom/00-sha.txt
+- A	orchestrator/evidence/D00-gate/run1-oom/01-install.log
+- A	orchestrator/evidence/D00-gate/run1-oom/02-check-react-types.log
+- A	orchestrator/evidence/D00-gate/run1-oom/03-lint.log
+- A	orchestrator/evidence/D00-gate/run1-oom/04-typecheck.log
+- A	orchestrator/evidence/D00-gate/run1-oom/05-jest-full.log
+- A	orchestrator/evidence/D00-gate/run1-oom/05b-handoff-check.log
+- A	orchestrator/evidence/D00-gate/run1-oom/06-scripts-test.log
+- A	orchestrator/evidence/D00-gate/run1-oom/07-build.log
+- A	orchestrator/evidence/D00-gate/run1-oom/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D00-gate/run1-oom/08-git-diff-check.log
+- A	orchestrator/evidence/D00-gate/run1-oom/09-git-status.log
+- A	orchestrator/evidence/D00-gate/run1-oom/10-android-export.log
+- A	orchestrator/evidence/D00-gate/run1-oom/10b-localization.log
+- A	orchestrator/evidence/D00-gate/run1-oom/10c-no-schema-change.log
+- A	orchestrator/evidence/D00-gate/run1-oom/11-criterion-suites.log
+- A	orchestrator/evidence/D00-gate/run1-oom/12-git-status-after.log
+- A	orchestrator/evidence/D00-gate/run1-oom/13-negative-controls.log
+- A	orchestrator/evidence/D00-gate/run1-oom/14-git-status-final.log
+- A	orchestrator/evidence/D00-gate/run1-oom/exits.txt
+- A	orchestrator/evidence/D00.json
+- A	orchestrator/evidence/D01-gate/00-sha.txt
+- A	orchestrator/evidence/D01-gate/01-install.log
+- A	orchestrator/evidence/D01-gate/02-check-react-types.log
+- A	orchestrator/evidence/D01-gate/03-lint.log
+- A	orchestrator/evidence/D01-gate/04-typecheck.log
+- A	orchestrator/evidence/D01-gate/05-jest-full.log
+- A	orchestrator/evidence/D01-gate/05b-handoff-check.log
+- A	orchestrator/evidence/D01-gate/06-scripts-test.log
+- A	orchestrator/evidence/D01-gate/07-build.log
+- A	orchestrator/evidence/D01-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D01-gate/08-git-diff-check.log
+- A	orchestrator/evidence/D01-gate/09-git-status.log
+- A	orchestrator/evidence/D01-gate/10-android-export.log
+- A	orchestrator/evidence/D01-gate/10b-localization.log
+- A	orchestrator/evidence/D01-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/D01-gate/11-criterion-suites.log
+- A	orchestrator/evidence/D01-gate/12-git-status-after.log
+- A	orchestrator/evidence/D01-gate/13-negative-controls.log
+- A	orchestrator/evidence/D01-gate/14-git-status-final.log
+- A	orchestrator/evidence/D01-gate/exits.txt
+- A	orchestrator/evidence/D01-gate/gate.sh
+- A	orchestrator/evidence/D01-gate/inventory-added.json
+- A	orchestrator/evidence/D01-gate/negative-controls.py
+- A	orchestrator/evidence/D01-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D01.json
+- A	orchestrator/evidence/D02-gate/00-sha.txt
+- A	orchestrator/evidence/D02-gate/01-install.log
+- A	orchestrator/evidence/D02-gate/02-check-react-types.log
+- A	orchestrator/evidence/D02-gate/03-lint.log
+- A	orchestrator/evidence/D02-gate/04-typecheck.log
+- A	orchestrator/evidence/D02-gate/05-jest-full.log
+- A	orchestrator/evidence/D02-gate/05a-install-local.log
+- A	orchestrator/evidence/D02-gate/05b-handoff-check.log
+- A	orchestrator/evidence/D02-gate/05c-jest-shard-1-of-2.log
+- A	orchestrator/evidence/D02-gate/05d-jest-shard-2-of-2.log
+- A	orchestrator/evidence/D02-gate/06-scripts-test.log
+- A	orchestrator/evidence/D02-gate/07-build.log
+- A	orchestrator/evidence/D02-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D02-gate/08-git-diff-check.log
+- A	orchestrator/evidence/D02-gate/09-git-status.log
+- A	orchestrator/evidence/D02-gate/10-android-export.log
+- A	orchestrator/evidence/D02-gate/10b-localization.log
+- A	orchestrator/evidence/D02-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/D02-gate/11-criterion-suites.log
+- A	orchestrator/evidence/D02-gate/12-git-status-after.log
+- A	orchestrator/evidence/D02-gate/13-negative-controls.log
+- A	orchestrator/evidence/D02-gate/14-git-status-final.log
+- A	orchestrator/evidence/D02-gate/add-touch-floors.cjs
+- A	orchestrator/evidence/D02-gate/exits.txt
+- A	orchestrator/evidence/D02-gate/gate.sh
+- A	orchestrator/evidence/D02-gate/inventory-added.json
+- A	orchestrator/evidence/D02-gate/migrate-typography-spacing.cjs
+- A	orchestrator/evidence/D02-gate/negative-controls.py
+- A	orchestrator/evidence/D02-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D02.json
+- A	orchestrator/evidence/D03-gate/00-sha.txt
+- A	orchestrator/evidence/D03-gate/01-install.log
+- A	orchestrator/evidence/D03-gate/02-check-react-types.log
+- A	orchestrator/evidence/D03-gate/03-lint.log
+- A	orchestrator/evidence/D03-gate/04-typecheck.log
+- A	orchestrator/evidence/D03-gate/05-jest-full.log
+- A	orchestrator/evidence/D03-gate/05a-install-local.log
+- A	orchestrator/evidence/D03-gate/05b-handoff-check.log
+- A	orchestrator/evidence/D03-gate/05c-jest-shard-1-of-2.log
+- A	orchestrator/evidence/D03-gate/05d-jest-shard-2-of-2.log
+- A	orchestrator/evidence/D03-gate/06-scripts-test.log
+- A	orchestrator/evidence/D03-gate/07-build.log
+- A	orchestrator/evidence/D03-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D03-gate/08-git-diff-check.log
+- A	orchestrator/evidence/D03-gate/09-git-status.log
+- A	orchestrator/evidence/D03-gate/10-android-export.log
+- A	orchestrator/evidence/D03-gate/10b-localization.log
+- A	orchestrator/evidence/D03-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/D03-gate/11-criterion-suites.log
+- A	orchestrator/evidence/D03-gate/12-git-status-after.log
+- A	orchestrator/evidence/D03-gate/14-git-status-final.log
+- A	orchestrator/evidence/D03-gate/exits.txt
+- A	orchestrator/evidence/D03-gate/gate.sh
+- A	orchestrator/evidence/D03-gate/inventory-added.json
+- A	orchestrator/evidence/D03-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D03.json
+- A	orchestrator/evidence/D04-gate/00-sha.txt
+- A	orchestrator/evidence/D04-gate/01-install.log
+- A	orchestrator/evidence/D04-gate/02-check-react-types.log
+- A	orchestrator/evidence/D04-gate/03-lint.log
+- A	orchestrator/evidence/D04-gate/04-typecheck.log
+- A	orchestrator/evidence/D04-gate/05-jest-full.log
+- A	orchestrator/evidence/D04-gate/05a-install-local.log
+- A	orchestrator/evidence/D04-gate/05b-handoff-check.log
+- A	orchestrator/evidence/D04-gate/05c-jest-shard-1-of-2.log
+- A	orchestrator/evidence/D04-gate/05d-jest-shard-2-of-2.log
+- A	orchestrator/evidence/D04-gate/06-scripts-test.log
+- A	orchestrator/evidence/D04-gate/07-build.log
+- A	orchestrator/evidence/D04-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D04-gate/08-git-diff-check.log
+- A	orchestrator/evidence/D04-gate/09-git-status.log
+- A	orchestrator/evidence/D04-gate/10-android-export.log
+- A	orchestrator/evidence/D04-gate/10b-localization.log
+- A	orchestrator/evidence/D04-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/D04-gate/11-criterion-suites.log
+- A	orchestrator/evidence/D04-gate/11b-criterion-suites-d04.log
+- A	orchestrator/evidence/D04-gate/12-git-status-after.log
+- A	orchestrator/evidence/D04-gate/13-negative-controls.log
+- A	orchestrator/evidence/D04-gate/14-git-status-final.log
+- A	orchestrator/evidence/D04-gate/categorize-added.cjs
+- A	orchestrator/evidence/D04-gate/exits.txt
+- A	orchestrator/evidence/D04-gate/gate.sh
+- A	orchestrator/evidence/D04-gate/inventory-added.json
+- A	orchestrator/evidence/D04-gate/negative-controls.py
+- A	orchestrator/evidence/D04-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D04.json
+- A	orchestrator/evidence/D05-gate/00-sha.txt
+- A	orchestrator/evidence/D05-gate/01-install.log
+- A	orchestrator/evidence/D05-gate/02-check-react-types.log
+- A	orchestrator/evidence/D05-gate/03-lint.log
+- A	orchestrator/evidence/D05-gate/04-typecheck.log
+- A	orchestrator/evidence/D05-gate/05-jest-full.log
+- A	orchestrator/evidence/D05-gate/05a-install-local.log
+- A	orchestrator/evidence/D05-gate/05b-handoff-check.log
+- A	orchestrator/evidence/D05-gate/05c-jest-shard-1-of-2.log
+- A	orchestrator/evidence/D05-gate/05d-jest-shard-2-of-2.log
+- A	orchestrator/evidence/D05-gate/06-scripts-test.log
+- A	orchestrator/evidence/D05-gate/07-build.log
+- A	orchestrator/evidence/D05-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D05-gate/08-git-diff-check.log
+- A	orchestrator/evidence/D05-gate/09-git-status.log
+- A	orchestrator/evidence/D05-gate/10-android-export.log
+- A	orchestrator/evidence/D05-gate/10b-localization.log
+- A	orchestrator/evidence/D05-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/D05-gate/11-criterion-suites.log
+- A	orchestrator/evidence/D05-gate/11b-criterion-suites-d04.log
+- A	orchestrator/evidence/D05-gate/11c-criterion-suites-d05.log
+- A	orchestrator/evidence/D05-gate/12-git-status-after.log
+- A	orchestrator/evidence/D05-gate/14-git-status-final.log
+- A	orchestrator/evidence/D05-gate/exits.txt
+- A	orchestrator/evidence/D05-gate/gate.sh
+- A	orchestrator/evidence/D05-gate/inventory-added-review.json
+- A	orchestrator/evidence/D05-gate/inventory-added-review2.json
+- A	orchestrator/evidence/D05-gate/inventory-added.json
+- A	orchestrator/evidence/D05-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D05.json
+- A	orchestrator/evidence/D06-gate/00-sha.txt
+- A	orchestrator/evidence/D06-gate/01-install.log
+- A	orchestrator/evidence/D06-gate/02-check-react-types.log
+- A	orchestrator/evidence/D06-gate/03-lint.log
+- A	orchestrator/evidence/D06-gate/04-typecheck.log
+- A	orchestrator/evidence/D06-gate/05-jest-full.log
+- A	orchestrator/evidence/D06-gate/05a-install-local.log
+- A	orchestrator/evidence/D06-gate/05b-handoff-check.log
+- A	orchestrator/evidence/D06-gate/05c-jest-shard-1-of-2.log
+- A	orchestrator/evidence/D06-gate/05d-jest-shard-2-of-2.log
+- A	orchestrator/evidence/D06-gate/06-scripts-test.log
+- A	orchestrator/evidence/D06-gate/07-build.log
+- A	orchestrator/evidence/D06-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D06-gate/08-git-diff-check.log
+- A	orchestrator/evidence/D06-gate/09-git-status.log
+- A	orchestrator/evidence/D06-gate/10-android-export.log
+- A	orchestrator/evidence/D06-gate/10b-localization.log
+- A	orchestrator/evidence/D06-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/D06-gate/11-criterion-suites.log
+- A	orchestrator/evidence/D06-gate/11b-criterion-suites-d04.log
+- A	orchestrator/evidence/D06-gate/11c-criterion-suites-d05.log
+- A	orchestrator/evidence/D06-gate/11d-criterion-suites-d06.log
+- A	orchestrator/evidence/D06-gate/12-git-status-after.log
+- A	orchestrator/evidence/D06-gate/exits.txt
+- A	orchestrator/evidence/D06-gate/gate.sh
+- A	orchestrator/evidence/D06-gate/inventory-added-none.json
+- A	orchestrator/evidence/D06-gate/inventory-added.json
+- A	orchestrator/evidence/D06-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D06.json
+- A	orchestrator/evidence/D07-gate/00-sha.txt
+- A	orchestrator/evidence/D07-gate/01-install.log
+- A	orchestrator/evidence/D07-gate/02-check-react-types.log
+- A	orchestrator/evidence/D07-gate/03-lint.log
+- A	orchestrator/evidence/D07-gate/04-typecheck.log
+- A	orchestrator/evidence/D07-gate/05-jest-full.log
+- A	orchestrator/evidence/D07-gate/05a-install-local.log
+- A	orchestrator/evidence/D07-gate/05b-handoff-check.log
+- A	orchestrator/evidence/D07-gate/05c-jest-shard-1-of-2.log
+- A	orchestrator/evidence/D07-gate/05d-jest-shard-2-of-2.log
+- A	orchestrator/evidence/D07-gate/05e-jest-full-vps.log
+- A	orchestrator/evidence/D07-gate/05f-base-83009212-jest-full-vps.log
+- A	orchestrator/evidence/D07-gate/06-scripts-test.log
+- A	orchestrator/evidence/D07-gate/07-build.log
+- A	orchestrator/evidence/D07-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D07-gate/08-git-diff-check.log
+- A	orchestrator/evidence/D07-gate/09-git-status.log
+- A	orchestrator/evidence/D07-gate/10-android-export.log
+- A	orchestrator/evidence/D07-gate/10b-localization.log
+- A	orchestrator/evidence/D07-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/D07-gate/11-criterion-suites.log
+- A	orchestrator/evidence/D07-gate/11b-criterion-suites-d04.log
+- A	orchestrator/evidence/D07-gate/11c-criterion-suites-d05.log
+- A	orchestrator/evidence/D07-gate/11d-criterion-suites-d06.log
+- A	orchestrator/evidence/D07-gate/11e-criterion-suites-d07.log
+- A	orchestrator/evidence/D07-gate/12-git-status-after.log
+- A	orchestrator/evidence/D07-gate/controller-d65596df/android-export-d65596df51d7-1793520553879.log
+- A	orchestrator/evidence/D07-gate/controller-d65596df/core-d65596df51d7-1793520537477.log
+- A	orchestrator/evidence/D07-gate/controller-d65596df/localization-d65596df51d7-1793520590407.log
+- A	orchestrator/evidence/D07-gate/controller-d65596df/offline-d65596df51d7-1793520598606.log
+- A	orchestrator/evidence/D07-gate/exits.txt
+- A	orchestrator/evidence/D07-gate/final/00-sha.txt
+- A	orchestrator/evidence/D07-gate/final/01-install.log
+- A	orchestrator/evidence/D07-gate/final/03-lint.log
+- A	orchestrator/evidence/D07-gate/final/04-typecheck.log
+- A	orchestrator/evidence/D07-gate/final/11e-d07a1.log
+- A	orchestrator/evidence/D07-gate/final/exits.txt
+- A	orchestrator/evidence/D07-gate/gate-final.sh
+- A	orchestrator/evidence/D07-gate/gate.sh
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/00-sha.txt
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/01-install.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/02-check-react-types.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/03-lint.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/04-typecheck.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/05-jest-full.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/05a-install-local.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/05b-handoff-check.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/05c-jest-shard-1-of-2.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/05d-jest-shard-2-of-2.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/05e-jest-full-vps.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/06-scripts-test.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/07-build.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/07b-typecheck-after-build.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/08-git-diff-check.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/09-git-status.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/10-android-export.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/10b-localization.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/10c-no-schema-change.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/11-criterion-suites.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/11b-criterion-suites-d04.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/11c-criterion-suites-d05.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/11d-criterion-suites-d06.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/11e-criterion-suites-d07.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/12-git-status-after.log
+- A	orchestrator/evidence/D07-gate/gate4-d65596df/exits.txt
+- A	orchestrator/evidence/D07-gate/heap/d06-alone-before.log
+- A	orchestrator/evidence/D07-gate/heap/four-matrix-suites-after.log
+- A	orchestrator/evidence/D07-gate/heap/four-matrix-suites-before.log
+- A	orchestrator/evidence/D07-gate/heap/gate3-0cf1a8d6-05-jest-full-mac-oom.log
+- A	orchestrator/evidence/D07-gate/inventory-added-hooks.json
+- A	orchestrator/evidence/D07-gate/inventory-added-none.json
+- A	orchestrator/evidence/D07-gate/inventory-added.json
+- A	orchestrator/evidence/D07-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D07.json
+- A	orchestrator/evidence/D08-gate/gate.sh
+- A	orchestrator/evidence/D08-gate/inventory-added.json
+- A	orchestrator/evidence/D08-gate/negative-control-zero-amount.log
+- A	orchestrator/evidence/D08-gate/out/00-sha.txt
+- A	orchestrator/evidence/D08-gate/out/01-install.log
+- A	orchestrator/evidence/D08-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/D08-gate/out/03-lint.log
+- A	orchestrator/evidence/D08-gate/out/04-typecheck.log
+- A	orchestrator/evidence/D08-gate/out/05-jest-full.log
+- A	orchestrator/evidence/D08-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/D08-gate/out/05c-jest-killed-suite-runinband.log
+- A	orchestrator/evidence/D08-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/D08-gate/out/10b-localization.log
+- A	orchestrator/evidence/D08-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/D08-gate/out/11-d08a1.log
+- A	orchestrator/evidence/D08-gate/out/11b-media-offline.log
+- A	orchestrator/evidence/D08-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/D08-gate/out/exits.txt
+- A	orchestrator/evidence/D08-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D08.json
+- A	orchestrator/evidence/D09-gate/before-fix-redesign-d06-2026-11-02.log
+- A	orchestrator/evidence/D09-gate/gate.sh
+- A	orchestrator/evidence/D09-gate/inventory-added.json
+- A	orchestrator/evidence/D09-gate/out/00-sha.txt
+- A	orchestrator/evidence/D09-gate/out/01-install.log
+- A	orchestrator/evidence/D09-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/D09-gate/out/03-lint.log
+- A	orchestrator/evidence/D09-gate/out/04-typecheck.log
+- A	orchestrator/evidence/D09-gate/out/05-jest-full.log
+- A	orchestrator/evidence/D09-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/D09-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/D09-gate/out/10b-localization.log
+- A	orchestrator/evidence/D09-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/D09-gate/out/11-d09a1.log
+- A	orchestrator/evidence/D09-gate/out/11b-groups-and-accepted.log
+- A	orchestrator/evidence/D09-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/D09-gate/out/exits.txt
+- A	orchestrator/evidence/D09-gate/realign-inventory.cjs
+- A	orchestrator/evidence/D09.json
+- A	orchestrator/evidence/D09/mockup-colors.json
+- A	orchestrator/evidence/D09/mockup-colors.mjs
+- A	orchestrator/evidence/D09/web-shots/shoot.mjs
+- A	orchestrator/evidence/E01-baseline.txt
+- A	orchestrator/evidence/E01-gate/02-react-types.txt
+- A	orchestrator/evidence/E01-gate/03-lint.txt
+- A	orchestrator/evidence/E01-gate/04-typecheck.txt
+- A	orchestrator/evidence/E01-gate/05-jest.txt
+- A	orchestrator/evidence/E01-gate/06-scripts-test.txt
+- A	orchestrator/evidence/E01-gate/07-build.txt
+- A	orchestrator/evidence/E01.json
+- A	orchestrator/evidence/E02-baseline.txt
+- A	orchestrator/evidence/E02-gate/01-install.txt
+- A	orchestrator/evidence/E02-gate/02-react-types.txt
+- A	orchestrator/evidence/E02-gate/03-lint.txt
+- A	orchestrator/evidence/E02-gate/04-typecheck.txt
+- A	orchestrator/evidence/E02-gate/05-jest.txt
+- A	orchestrator/evidence/E02-gate/06-scripts-test.txt
+- A	orchestrator/evidence/E02-gate/07-build.txt
+- A	orchestrator/evidence/E02-gate/08-git.txt
+- A	orchestrator/evidence/E02.json
+- A	orchestrator/evidence/E03-baseline.txt
+- A	orchestrator/evidence/E03-gate/gate-1-6.txt
+- A	orchestrator/evidence/E03-gate/gate-1-7.txt
+- A	orchestrator/evidence/E03-gate/gate-7.txt
+- A	orchestrator/evidence/E03-gate/gate-8-9.txt
+- A	orchestrator/evidence/E03.json
+- A	orchestrator/evidence/E04-baseline.txt
+- A	orchestrator/evidence/E04-gate/README.txt
+- A	orchestrator/evidence/E04-gate/build.txt
+- A	orchestrator/evidence/E04-gate/gates-1-8.txt
+- A	orchestrator/evidence/E04-gate/jest.txt
+- A	orchestrator/evidence/E04.json
+- A	orchestrator/evidence/E05-gate/README.txt
+- A	orchestrator/evidence/E05-gate/build.txt
+- A	orchestrator/evidence/E05-gate/gates-1-8.txt
+- A	orchestrator/evidence/E05-gate/jest.txt
+- A	orchestrator/evidence/E05-gate/scripts-test.txt
+- A	orchestrator/evidence/E05.json
+- A	orchestrator/evidence/E06-baseline.txt
+- A	orchestrator/evidence/E06-gate/build.txt
+- A	orchestrator/evidence/E06-gate/git-diff-check.txt
+- A	orchestrator/evidence/E06-gate/head.txt
+- A	orchestrator/evidence/E06-gate/install.txt
+- A	orchestrator/evidence/E06-gate/jest.txt
+- A	orchestrator/evidence/E06-gate/lint.txt
+- A	orchestrator/evidence/E06-gate/react-types.txt
+- A	orchestrator/evidence/E06-gate/scripts-test.txt
+- A	orchestrator/evidence/E06-gate/typecheck.txt
+- A	orchestrator/evidence/E06.json
+- A	orchestrator/evidence/E07-baseline.txt
+- A	orchestrator/evidence/E07-gate/build.txt
+- A	orchestrator/evidence/E07-gate/git-diff-check.txt
+- A	orchestrator/evidence/E07-gate/head.txt
+- A	orchestrator/evidence/E07-gate/install.txt
+- A	orchestrator/evidence/E07-gate/jest.txt
+- A	orchestrator/evidence/E07-gate/lint.txt
+- A	orchestrator/evidence/E07-gate/react-types.txt
+- A	orchestrator/evidence/E07-gate/scripts-test.txt
+- A	orchestrator/evidence/E07-gate/typecheck.txt
+- A	orchestrator/evidence/E07.json
+- A	orchestrator/evidence/E08-baseline.txt
+- A	orchestrator/evidence/E08-gate/build.txt
+- A	orchestrator/evidence/E08-gate/git-diff-check.txt
+- A	orchestrator/evidence/E08-gate/head.txt
+- A	orchestrator/evidence/E08-gate/install.txt
+- A	orchestrator/evidence/E08-gate/jest.txt
+- A	orchestrator/evidence/E08-gate/lint.txt
+- A	orchestrator/evidence/E08-gate/react-types.txt
+- A	orchestrator/evidence/E08-gate/scripts-test.txt
+- A	orchestrator/evidence/E08-gate/typecheck.txt
+- A	orchestrator/evidence/E08.json
+- A	orchestrator/evidence/E09-baseline.txt
+- A	orchestrator/evidence/E09-gate/build.txt
+- A	orchestrator/evidence/E09-gate/git-diff-check.txt
+- A	orchestrator/evidence/E09-gate/head.txt
+- A	orchestrator/evidence/E09-gate/install.txt
+- A	orchestrator/evidence/E09-gate/jest.txt
+- A	orchestrator/evidence/E09-gate/lint.txt
+- A	orchestrator/evidence/E09-gate/react-types.txt
+- A	orchestrator/evidence/E09-gate/scripts-test.txt
+- A	orchestrator/evidence/E09-gate/typecheck.txt
+- A	orchestrator/evidence/E09.json
+- A	orchestrator/evidence/E10-baseline.txt
+- A	orchestrator/evidence/E10-gate/build.txt
+- A	orchestrator/evidence/E10-gate/git-diff-check.txt
+- A	orchestrator/evidence/E10-gate/head.txt
+- A	orchestrator/evidence/E10-gate/install.txt
+- A	orchestrator/evidence/E10-gate/jest.txt
+- A	orchestrator/evidence/E10-gate/lint.txt
+- A	orchestrator/evidence/E10-gate/react-types.txt
+- A	orchestrator/evidence/E10-gate/scripts-test.txt
+- A	orchestrator/evidence/E10-gate/typecheck.txt
+- A	orchestrator/evidence/E10.json
+- A	orchestrator/evidence/E11-baseline.txt
+- A	orchestrator/evidence/E11-gate/build.txt
+- A	orchestrator/evidence/E11-gate/git-diff-check.txt
+- A	orchestrator/evidence/E11-gate/head.txt
+- A	orchestrator/evidence/E11-gate/install.txt
+- A	orchestrator/evidence/E11-gate/jest.txt
+- A	orchestrator/evidence/E11-gate/lint.txt
+- A	orchestrator/evidence/E11-gate/react-types.txt
+- A	orchestrator/evidence/E11-gate/scripts-test.txt
+- A	orchestrator/evidence/E11-gate/typecheck.txt
+- A	orchestrator/evidence/E11.json
+- A	orchestrator/evidence/E12-baseline.txt
+- A	orchestrator/evidence/E12-gate/build.txt
+- A	orchestrator/evidence/E12-gate/git-diff-check.txt
+- A	orchestrator/evidence/E12-gate/head.txt
+- A	orchestrator/evidence/E12-gate/install.txt
+- A	orchestrator/evidence/E12-gate/jest.txt
+- A	orchestrator/evidence/E12-gate/lint.txt
+- A	orchestrator/evidence/E12-gate/react-types.txt
+- A	orchestrator/evidence/E12-gate/scripts-test.txt
+- A	orchestrator/evidence/E12-gate/typecheck.txt
+- A	orchestrator/evidence/E12-live-provider/attempt-1-payload.json
+- A	orchestrator/evidence/E12-live-provider/attempt-1-raw-response.json
+- A	orchestrator/evidence/E12-live-provider/attempt-1-server.log
+- A	orchestrator/evidence/E12-live-provider/attempt-1-summary.json
+- A	orchestrator/evidence/E12-live-provider/attempt-2-payload.json
+- A	orchestrator/evidence/E12-live-provider/attempt-2-raw-response.json
+- A	orchestrator/evidence/E12-live-provider/attempt-2-server.log
+- A	orchestrator/evidence/E12-live-provider/attempt-2-summary.json
+- A	orchestrator/evidence/E12-live-provider/run.mjs
+- A	orchestrator/evidence/E12.json
+- A	orchestrator/evidence/E13-gate/build.txt
+- A	orchestrator/evidence/E13-gate/git-diff-check.txt
+- A	orchestrator/evidence/E13-gate/head.txt
+- A	orchestrator/evidence/E13-gate/install.txt
+- A	orchestrator/evidence/E13-gate/jest.txt
+- A	orchestrator/evidence/E13-gate/lint.txt
+- A	orchestrator/evidence/E13-gate/react-types.txt
+- A	orchestrator/evidence/E13-gate/scripts-test.txt
+- A	orchestrator/evidence/E13-gate/typecheck.txt
+- A	orchestrator/evidence/E13.json
+- A	orchestrator/evidence/FX1-gate/apply-keys.py
+- A	orchestrator/evidence/FX1-gate/code-values.json
+- A	orchestrator/evidence/FX1-gate/files.txt
+- A	orchestrator/evidence/FX1-gate/gate.sh
+- A	orchestrator/evidence/FX1-gate/inventory-added.json
+- A	orchestrator/evidence/FX1-gate/keys.json
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/00-sha.txt
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/01-install.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/01b-install-local.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/02-check-react-types.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/03-lint.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/04-typecheck.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/05-criterion-suites.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/06-jest-full.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/06b-handoff-check.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/07-scripts-test.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/08-build.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/08b-typecheck-after-build.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/09-localization.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/09m-media.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/10-android-export.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/10a-fx1-keys.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/10b-r39-pin-and-scope.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/10c-no-credential-tracked.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/10d-pem-guard.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/11-git-diff-check.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/12-git-status.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/12br-install-local.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/12r-git-status.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/13-negative-controls.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/13r-negative-controls.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/14-git-status-final.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/14r-git-status-final.log
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/exits-rerun-13.txt
+- A	orchestrator/evidence/FX1-gate/logs-36b5dd01/exits.txt
+- A	orchestrator/evidence/FX1-gate/make-inventory-added.py
+- A	orchestrator/evidence/FX1-gate/negative-controls.py
+- A	orchestrator/evidence/FX1-gate/realign-inventory.cjs
+- A	orchestrator/evidence/FX1-gate/realign.sh
+- A	orchestrator/evidence/FX1.json
+- A	orchestrator/evidence/H01-gate/gate.sh
+- A	orchestrator/evidence/H01-gate/logs/00-sha.txt
+- A	orchestrator/evidence/H01-gate/logs/01-install.log
+- A	orchestrator/evidence/H01-gate/logs/02-check-react-types.log
+- A	orchestrator/evidence/H01-gate/logs/03-lint.log
+- A	orchestrator/evidence/H01-gate/logs/04-typecheck.log
+- A	orchestrator/evidence/H01-gate/logs/05-jest-full.log
+- A	orchestrator/evidence/H01-gate/logs/05b-handoff-check.log
+- A	orchestrator/evidence/H01-gate/logs/06-scripts-test.log
+- A	orchestrator/evidence/H01-gate/logs/07-build.log
+- A	orchestrator/evidence/H01-gate/logs/08-criterion-test.log
+- A	orchestrator/evidence/H01-gate/logs/08b-orchestrator-tests.log
+- A	orchestrator/evidence/H01-gate/logs/09-git-diff-check.log
+- A	orchestrator/evidence/H01-gate/logs/09b-whitespace-only.log
+- A	orchestrator/evidence/H01-gate/logs/09c-no-schema-change.log
+- A	orchestrator/evidence/H01-gate/logs/10-git-status.log
+- A	orchestrator/evidence/H01-gate/logs/10b-install-local.log
+- A	orchestrator/evidence/H01-gate/logs/11-negative-controls.log
+- A	orchestrator/evidence/H01-gate/logs/12-git-status-final.log
+- A	orchestrator/evidence/H01-gate/logs/exits.txt
+- A	orchestrator/evidence/H01-gate/logs/run1-05-jest-full-oom.log
+- A	orchestrator/evidence/H01-gate/logs/run1-exits.txt
+- A	orchestrator/evidence/H01-gate/logs/run10-exits.txt
+- A	orchestrator/evidence/H01-gate/logs/run2-exits.txt
+- A	orchestrator/evidence/H01-gate/logs/run3-exits.txt
+- A	orchestrator/evidence/H01-gate/logs/run4-exits.txt
+- A	orchestrator/evidence/H01-gate/logs/run6-exits.txt
+- A	orchestrator/evidence/H01-gate/logs/run8-exits.txt
+- A	orchestrator/evidence/H01-gate/negative-controls.py
+- A	orchestrator/evidence/H01.json
+- A	orchestrator/evidence/H02.json
+- A	orchestrator/evidence/H02/mac-v22-01-react-types.log
+- A	orchestrator/evidence/H02/mac-v22-02-lint.log
+- A	orchestrator/evidence/H02/mac-v22-03-typecheck.log
+- A	orchestrator/evidence/H02/mac-v22-04-jest.log
+- A	orchestrator/evidence/H02/mac-v22-05-scripts-test.log
+- A	orchestrator/evidence/H02/mac-v22-06-build.log
+- A	orchestrator/evidence/H02/mac-v22-07-diff-check.log
+- A	orchestrator/evidence/H02/mac-v22-req83.log
+- A	orchestrator/evidence/H02/mac-v24-01-react-types.log
+- A	orchestrator/evidence/H02/mac-v24-02-lint.log
+- A	orchestrator/evidence/H02/mac-v24-03-typecheck.log
+- A	orchestrator/evidence/H02/mac-v24-04-jest.log
+- A	orchestrator/evidence/H02/mac-v24-05-scripts-test.log
+- A	orchestrator/evidence/H02/mac-v24-06-build.log
+- A	orchestrator/evidence/H02/mac-v24-07-diff-check.log
+- A	orchestrator/evidence/H02/mac-v24-req83.log
+- A	orchestrator/evidence/H02/merge-gate-d1b3425c.log
+- A	orchestrator/evidence/H02/readline-probe.log
+- A	orchestrator/evidence/H02/readline-probe.mjs
+- A	orchestrator/evidence/H02/req83.sh
+- A	orchestrator/evidence/H02/run-all.sh
+- A	orchestrator/evidence/H02/step.sh
+- A	orchestrator/evidence/H02/steps.txt
+- A	orchestrator/evidence/H02/vps-req156-v22.23.2.log
+- A	orchestrator/evidence/H02/vps-req156-v24.20.0.log
+- A	orchestrator/evidence/H03-gate/gate.sh
+- A	orchestrator/evidence/H03-gate/logs-298634cd/00-sha.txt
+- A	orchestrator/evidence/H03-gate/logs-298634cd/01-install.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/02-check-react-types.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/03-lint.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/04-typecheck.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/05-criterion-suites.digest.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/06-jest-full.digest.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/06a-matrix-times.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/06b-handoff-check.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/07-scripts-test.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/08-build.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/08b-typecheck-after-build.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/09-test-only.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/09b-test-only-rerun.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/11-git-diff-check.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/12-git-status.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/12b-install-local.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/13-negative-controls.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/14-git-status-final.log
+- A	orchestrator/evidence/H03-gate/logs-298634cd/base-a39b751b-times.txt
+- A	orchestrator/evidence/H03-gate/logs-298634cd/exits.txt
+- A	orchestrator/evidence/H03-gate/matrix-times.py
+- A	orchestrator/evidence/H03-gate/negative-controls.py
+- A	orchestrator/evidence/H03-gate/vps-repro-531efb2f/build.tail.log
+- A	orchestrator/evidence/H03-gate/vps-repro-531efb2f/jest-w2.digest.log
+- A	orchestrator/evidence/H03-gate/vps-repro-531efb2f/root-typecheck.log
+- A	orchestrator/evidence/H03.json
+- A	orchestrator/evidence/I00-gate/00-sha.txt
+- A	orchestrator/evidence/I00-gate/01-install.log
+- A	orchestrator/evidence/I00-gate/02-check-react-types.log
+- A	orchestrator/evidence/I00-gate/03-lint.log
+- A	orchestrator/evidence/I00-gate/04-typecheck.log
+- A	orchestrator/evidence/I00-gate/05-jest-full.log
+- A	orchestrator/evidence/I00-gate/05b-handoff-check.log
+- A	orchestrator/evidence/I00-gate/06-scripts-test.log
+- A	orchestrator/evidence/I00-gate/07-build.log
+- A	orchestrator/evidence/I00-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I00-gate/08-git-diff-check.log
+- A	orchestrator/evidence/I00-gate/09-git-status.log
+- A	orchestrator/evidence/I00-gate/10-android-export.log
+- A	orchestrator/evidence/I00-gate/10b-localization.log
+- A	orchestrator/evidence/I00-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/I00-gate/11-criterion-suites.log
+- A	orchestrator/evidence/I00-gate/12-git-status-after.log
+- A	orchestrator/evidence/I00-gate/13-negative-controls.log
+- A	orchestrator/evidence/I00-gate/14-git-status-final.log
+- A	orchestrator/evidence/I00-gate/exits.txt
+- A	orchestrator/evidence/I00-gate/gate-tail.sh
+- A	orchestrator/evidence/I00-gate/gate.sh
+- A	orchestrator/evidence/I00-gate/inventory-added.json
+- A	orchestrator/evidence/I00-gate/negative-controls.py
+- A	orchestrator/evidence/I00-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I00.json
+- A	orchestrator/evidence/I01-gate/00-sha.txt
+- A	orchestrator/evidence/I01-gate/00c-req162-base-vs-head.log
+- A	orchestrator/evidence/I01-gate/00d-req106-random-storage-path.log
+- A	orchestrator/evidence/I01-gate/00e-req162-index-ratio.log
+- A	orchestrator/evidence/I01-gate/01-install.log
+- A	orchestrator/evidence/I01-gate/02-check-react-types.log
+- A	orchestrator/evidence/I01-gate/03-lint.log
+- A	orchestrator/evidence/I01-gate/04-typecheck.log
+- A	orchestrator/evidence/I01-gate/05-jest-full.log
+- A	orchestrator/evidence/I01-gate/05b-handoff-check.log
+- A	orchestrator/evidence/I01-gate/06-scripts-test.log
+- A	orchestrator/evidence/I01-gate/07-build.log
+- A	orchestrator/evidence/I01-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I01-gate/08-git-diff-check.log
+- A	orchestrator/evidence/I01-gate/09-git-status.log
+- A	orchestrator/evidence/I01-gate/10-android-export.log
+- A	orchestrator/evidence/I01-gate/10b-localization.log
+- A	orchestrator/evidence/I01-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/I01-gate/11-criterion-suites.log
+- A	orchestrator/evidence/I01-gate/12-git-status-after.log
+- A	orchestrator/evidence/I01-gate/13-negative-controls.log
+- A	orchestrator/evidence/I01-gate/14-git-status-final.log
+- A	orchestrator/evidence/I01-gate/ar-translations-added.json
+- A	orchestrator/evidence/I01-gate/exits.txt
+- A	orchestrator/evidence/I01-gate/gate.sh
+- A	orchestrator/evidence/I01-gate/inventory-added-ar.json
+- A	orchestrator/evidence/I01-gate/inventory-added.json
+- A	orchestrator/evidence/I01-gate/negative-controls.py
+- A	orchestrator/evidence/I01-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I01.json
+- A	orchestrator/evidence/I02-apk-size.json
+- A	orchestrator/evidence/I02-gate/00-sha.txt
+- A	orchestrator/evidence/I02-gate/01-install.log
+- A	orchestrator/evidence/I02-gate/02-check-react-types.log
+- A	orchestrator/evidence/I02-gate/03-lint.log
+- A	orchestrator/evidence/I02-gate/04-typecheck.log
+- A	orchestrator/evidence/I02-gate/05-jest-full.log
+- A	orchestrator/evidence/I02-gate/05b-handoff-check.log
+- A	orchestrator/evidence/I02-gate/06-scripts-test.log
+- A	orchestrator/evidence/I02-gate/07-build.log
+- A	orchestrator/evidence/I02-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I02-gate/08-git-diff-check.log
+- A	orchestrator/evidence/I02-gate/09-git-status.log
+- A	orchestrator/evidence/I02-gate/10-android-export.log
+- A	orchestrator/evidence/I02-gate/10b-localization.log
+- A	orchestrator/evidence/I02-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/I02-gate/11-criterion-suites.log
+- A	orchestrator/evidence/I02-gate/12-git-status-after.log
+- A	orchestrator/evidence/I02-gate/13-negative-controls.log
+- A	orchestrator/evidence/I02-gate/14-git-status-final.log
+- A	orchestrator/evidence/I02-gate/apk-size.py
+- A	orchestrator/evidence/I02-gate/exits.txt
+- A	orchestrator/evidence/I02-gate/gate.sh
+- A	orchestrator/evidence/I02-gate/inventory-added.json
+- A	orchestrator/evidence/I02-gate/negative-controls.py
+- A	orchestrator/evidence/I02-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I02.json
+- A	orchestrator/evidence/I10-gate/build-catalogs.mjs
+- A	orchestrator/evidence/I10-gate/categorise-added.cjs
+- A	orchestrator/evidence/I10-gate/gate.sh
+- A	orchestrator/evidence/I10-gate/i10-keys.json
+- A	orchestrator/evidence/I10-gate/inventory-added.json
+- A	orchestrator/evidence/I10-gate/negative-controls.py
+- A	orchestrator/evidence/I10-gate/out/00-sha.txt
+- A	orchestrator/evidence/I10-gate/out/01-install.log
+- A	orchestrator/evidence/I10-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I10-gate/out/03-lint.log
+- A	orchestrator/evidence/I10-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I10-gate/out/05-jest-full.log
+- A	orchestrator/evidence/I10-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I10-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I10-gate/out/07-build.log
+- A	orchestrator/evidence/I10-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I10-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I10-gate/out/09-git-status.log
+- A	orchestrator/evidence/I10-gate/out/10-android-export.log
+- A	orchestrator/evidence/I10-gate/out/10b-localization.log
+- A	orchestrator/evidence/I10-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/I10-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I10-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I10-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I10-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I10-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I10-gate/out/exits.txt
+- A	orchestrator/evidence/I10-gate/realign-dry.json
+- A	orchestrator/evidence/I10-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I10-gate/realign.sh
+- A	orchestrator/evidence/I10-gate/translations-added-de.json
+- A	orchestrator/evidence/I10-gate/translations-added-fr.json
+- A	orchestrator/evidence/I10-gate/translations-added-pl.json
+- A	orchestrator/evidence/I10-gate/translations-added.mjs
+- A	orchestrator/evidence/I10.json
+- A	orchestrator/evidence/I11-gate/build-catalogs.mjs
+- A	orchestrator/evidence/I11-gate/categorise-added.cjs
+- A	orchestrator/evidence/I11-gate/gate.sh
+- A	orchestrator/evidence/I11-gate/inventory-added.json
+- A	orchestrator/evidence/I11-gate/negative-controls.py
+- A	orchestrator/evidence/I11-gate/out/00-sha.txt
+- A	orchestrator/evidence/I11-gate/out/01-install.log
+- A	orchestrator/evidence/I11-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I11-gate/out/03-lint.log
+- A	orchestrator/evidence/I11-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I11-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/I11-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/I11-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I11-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I11-gate/out/07-build.log
+- A	orchestrator/evidence/I11-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I11-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I11-gate/out/09-git-status.log
+- A	orchestrator/evidence/I11-gate/out/10-android-export.log
+- A	orchestrator/evidence/I11-gate/out/10b-localization.log
+- A	orchestrator/evidence/I11-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/I11-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I11-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I11-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I11-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I11-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I11-gate/out/exits.txt
+- A	orchestrator/evidence/I11-gate/realign-dry.json
+- A	orchestrator/evidence/I11-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I11-gate/realign.sh
+- A	orchestrator/evidence/I11-gate/shortened.json
+- A	orchestrator/evidence/I11-gate/translations-added-es-MX.json
+- A	orchestrator/evidence/I11-gate/translations-added-es.json
+- A	orchestrator/evidence/I11-gate/translations-added-it.json
+- A	orchestrator/evidence/I11-gate/translations-added-nl.json
+- A	orchestrator/evidence/I11-gate/translations-added.mjs
+- A	orchestrator/evidence/I11.json
+- A	orchestrator/evidence/I12-gate/build-catalogs.mjs
+- A	orchestrator/evidence/I12-gate/categorise-added.cjs
+- A	orchestrator/evidence/I12-gate/gate.sh
+- A	orchestrator/evidence/I12-gate/inventory-added.json
+- A	orchestrator/evidence/I12-gate/negative-controls.py
+- A	orchestrator/evidence/I12-gate/out/00-sha.txt
+- A	orchestrator/evidence/I12-gate/out/01-install.log
+- A	orchestrator/evidence/I12-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I12-gate/out/03-lint.log
+- A	orchestrator/evidence/I12-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I12-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/I12-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/I12-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I12-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I12-gate/out/07-build.log
+- A	orchestrator/evidence/I12-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I12-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I12-gate/out/09-git-status.log
+- A	orchestrator/evidence/I12-gate/out/10-android-export.log
+- A	orchestrator/evidence/I12-gate/out/10b-localization.log
+- A	orchestrator/evidence/I12-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/I12-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I12-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I12-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I12-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I12-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I12-gate/out/exits.txt
+- A	orchestrator/evidence/I12-gate/realign-dry.json
+- A	orchestrator/evidence/I12-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I12-gate/realign.sh
+- A	orchestrator/evidence/I12-gate/shortened.json
+- A	orchestrator/evidence/I12-gate/translations-added-da.json
+- A	orchestrator/evidence/I12-gate/translations-added-nb.json
+- A	orchestrator/evidence/I12-gate/translations-added-pt-BR.json
+- A	orchestrator/evidence/I12-gate/translations-added-sv.json
+- A	orchestrator/evidence/I12-gate/translations-added.mjs
+- A	orchestrator/evidence/I12.json
+- A	orchestrator/evidence/I13-gate/build-catalogs.mjs
+- A	orchestrator/evidence/I13-gate/categorise-added.cjs
+- A	orchestrator/evidence/I13-gate/gate.sh
+- A	orchestrator/evidence/I13-gate/inventory-added.json
+- A	orchestrator/evidence/I13-gate/negative-controls.py
+- A	orchestrator/evidence/I13-gate/out/00-sha.txt
+- A	orchestrator/evidence/I13-gate/out/01-install.log
+- A	orchestrator/evidence/I13-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I13-gate/out/03-lint.log
+- A	orchestrator/evidence/I13-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I13-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/I13-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/I13-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I13-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I13-gate/out/07-build.log
+- A	orchestrator/evidence/I13-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I13-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I13-gate/out/09-git-status.log
+- A	orchestrator/evidence/I13-gate/out/10-android-export.log
+- A	orchestrator/evidence/I13-gate/out/10b-localization.log
+- A	orchestrator/evidence/I13-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/I13-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I13-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I13-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I13-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I13-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I13-gate/out/exits.txt
+- A	orchestrator/evidence/I13-gate/realign-dry.json
+- A	orchestrator/evidence/I13-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I13-gate/realign.sh
+- A	orchestrator/evidence/I13-gate/shortened.json
+- A	orchestrator/evidence/I13-gate/translations-added-cs.json
+- A	orchestrator/evidence/I13-gate/translations-added-ro.json
+- A	orchestrator/evidence/I13-gate/translations-added-sk.json
+- A	orchestrator/evidence/I13-gate/translations-added-tr.json
+- A	orchestrator/evidence/I13-gate/translations-added.mjs
+- A	orchestrator/evidence/I13.json
+- A	orchestrator/evidence/I14-gate/build-catalogs.mjs
+- A	orchestrator/evidence/I14-gate/categorise-added.cjs
+- A	orchestrator/evidence/I14-gate/gate.sh
+- A	orchestrator/evidence/I14-gate/inventory-added.json
+- A	orchestrator/evidence/I14-gate/negative-controls.py
+- A	orchestrator/evidence/I14-gate/out/00-sha.txt
+- A	orchestrator/evidence/I14-gate/out/01-install.log
+- A	orchestrator/evidence/I14-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I14-gate/out/03-lint.log
+- A	orchestrator/evidence/I14-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I14-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/I14-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/I14-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I14-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I14-gate/out/07-build.log
+- A	orchestrator/evidence/I14-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I14-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I14-gate/out/09-git-status.log
+- A	orchestrator/evidence/I14-gate/out/10-android-export.log
+- A	orchestrator/evidence/I14-gate/out/10b-localization.log
+- A	orchestrator/evidence/I14-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/I14-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I14-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I14-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I14-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I14-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I14-gate/out/exits.txt
+- A	orchestrator/evidence/I14-gate/realign-dry.json
+- A	orchestrator/evidence/I14-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I14-gate/realign.sh
+- A	orchestrator/evidence/I14-gate/shortened.json
+- A	orchestrator/evidence/I14-gate/translations-added-et.json
+- A	orchestrator/evidence/I14-gate/translations-added-hu.json
+- A	orchestrator/evidence/I14-gate/translations-added-lt.json
+- A	orchestrator/evidence/I14-gate/translations-added-lv.json
+- A	orchestrator/evidence/I14-gate/translations-added.mjs
+- A	orchestrator/evidence/I14.json
+- A	orchestrator/evidence/I15-gate/apply-ar.mjs
+- A	orchestrator/evidence/I15-gate/categorise-added.cjs
+- A	orchestrator/evidence/I15-gate/gate.sh
+- A	orchestrator/evidence/I15-gate/inventory-added.json
+- A	orchestrator/evidence/I15-gate/negative-controls.py
+- A	orchestrator/evidence/I15-gate/out/00-sha.txt
+- A	orchestrator/evidence/I15-gate/out/01-install.log
+- A	orchestrator/evidence/I15-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I15-gate/out/03-lint.log
+- A	orchestrator/evidence/I15-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I15-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/I15-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/I15-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I15-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I15-gate/out/07-build.log
+- A	orchestrator/evidence/I15-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I15-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I15-gate/out/09-git-status.log
+- A	orchestrator/evidence/I15-gate/out/10-android-export.log
+- A	orchestrator/evidence/I15-gate/out/10b-localization.log
+- A	orchestrator/evidence/I15-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/I15-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I15-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I15-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I15-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I15-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I15-gate/out/exits.txt
+- A	orchestrator/evidence/I15-gate/policy-notice.json
+- A	orchestrator/evidence/I15-gate/realign-dry.json
+- A	orchestrator/evidence/I15-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I15-gate/realign.sh
+- A	orchestrator/evidence/I15-gate/translator-changes.json
+- A	orchestrator/evidence/I15.json
+- A	orchestrator/evidence/I16-gate/build-catalogs.mjs
+- A	orchestrator/evidence/I16-gate/categorise-added.cjs
+- A	orchestrator/evidence/I16-gate/gate.sh
+- A	orchestrator/evidence/I16-gate/inventory-added.json
+- A	orchestrator/evidence/I16-gate/negative-controls.py
+- A	orchestrator/evidence/I16-gate/out/00-sha.txt
+- A	orchestrator/evidence/I16-gate/out/01-install.log
+- A	orchestrator/evidence/I16-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I16-gate/out/03-lint.log
+- A	orchestrator/evidence/I16-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I16-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/I16-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/I16-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I16-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I16-gate/out/07-build.log
+- A	orchestrator/evidence/I16-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I16-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I16-gate/out/09-git-status.log
+- A	orchestrator/evidence/I16-gate/out/10-android-export.log
+- A	orchestrator/evidence/I16-gate/out/10b-localization.log
+- A	orchestrator/evidence/I16-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/I16-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I16-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I16-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I16-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I16-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I16-gate/out/exits.txt
+- A	orchestrator/evidence/I16-gate/realign-dry.json
+- A	orchestrator/evidence/I16-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I16-gate/realign.sh
+- A	orchestrator/evidence/I16-gate/shortened.json
+- A	orchestrator/evidence/I16-gate/translations-added-ja.json
+- A	orchestrator/evidence/I16-gate/translations-added-ko.json
+- A	orchestrator/evidence/I16-gate/translations-added-zh-Hans.json
+- A	orchestrator/evidence/I16-gate/translations-added-zh-Hant.json
+- A	orchestrator/evidence/I16-gate/translations-added.mjs
+- A	orchestrator/evidence/I16.json
+- A	orchestrator/evidence/I17-gate/build-catalogs.mjs
+- A	orchestrator/evidence/I17-gate/categorise-added.cjs
+- A	orchestrator/evidence/I17-gate/gate.sh
+- A	orchestrator/evidence/I17-gate/glyphs.py
+- A	orchestrator/evidence/I17-gate/inventory-added.json
+- A	orchestrator/evidence/I17-gate/negative-controls.py
+- A	orchestrator/evidence/I17-gate/out/00-sha.txt
+- A	orchestrator/evidence/I17-gate/out/01-install.log
+- A	orchestrator/evidence/I17-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I17-gate/out/03-lint.log
+- A	orchestrator/evidence/I17-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I17-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/I17-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/I17-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I17-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I17-gate/out/07-build.log
+- A	orchestrator/evidence/I17-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I17-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I17-gate/out/09-git-status.log
+- A	orchestrator/evidence/I17-gate/out/10-android-export.log
+- A	orchestrator/evidence/I17-gate/out/10b-localization.log
+- A	orchestrator/evidence/I17-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/I17-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I17-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I17-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I17-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I17-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I17-gate/out/23-git-diff-check-main.log
+- A	orchestrator/evidence/I17-gate/out/24-git-diff-check-base.log
+- A	orchestrator/evidence/I17-gate/out/exits.txt
+- A	orchestrator/evidence/I17-gate/prune.mjs
+- A	orchestrator/evidence/I17-gate/realign-dry.json
+- A	orchestrator/evidence/I17-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I17-gate/realign.sh
+- A	orchestrator/evidence/I17-gate/translations-added-hi.json
+- A	orchestrator/evidence/I17-gate/translations-added-id.json
+- A	orchestrator/evidence/I17-gate/translations-added-th.json
+- A	orchestrator/evidence/I17-gate/translations-added-vi.json
+- A	orchestrator/evidence/I17-gate/translations-added.mjs
+- A	orchestrator/evidence/I17.json
+- A	orchestrator/evidence/I20-gate/categorise-added.cjs
+- A	orchestrator/evidence/I20-gate/gate.sh
+- A	orchestrator/evidence/I20-gate/inventory-added.json
+- A	orchestrator/evidence/I20-gate/inventory-font.cjs
+- A	orchestrator/evidence/I20-gate/inventory-i20.py
+- A	orchestrator/evidence/I20-gate/negative-controls.py
+- A	orchestrator/evidence/I20-gate/out/00-sha.txt
+- A	orchestrator/evidence/I20-gate/out/01-install.log
+- A	orchestrator/evidence/I20-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I20-gate/out/03-lint.log
+- A	orchestrator/evidence/I20-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I20-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/I20-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/I20-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I20-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I20-gate/out/07-build.log
+- A	orchestrator/evidence/I20-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I20-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I20-gate/out/09-git-status.log
+- A	orchestrator/evidence/I20-gate/out/10-android-export.log
+- A	orchestrator/evidence/I20-gate/out/10b-localization.log
+- A	orchestrator/evidence/I20-gate/out/10c-database.log
+- A	orchestrator/evidence/I20-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I20-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I20-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I20-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I20-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I20-gate/out/23-git-diff-check-main.log
+- A	orchestrator/evidence/I20-gate/out/24-git-diff-check-base.log
+- A	orchestrator/evidence/I20-gate/out/exits.txt
+- A	orchestrator/evidence/I20-gate/realign-inventory.cjs
+- A	orchestrator/evidence/I20-gate/realign.sh
+- A	orchestrator/evidence/I20-locales/build-manifest.mjs
+- A	orchestrator/evidence/I20-locales/live-snapshot.json
+- A	orchestrator/evidence/I20-locales/local-replay-reading.json
+- A	orchestrator/evidence/I20-locales/manifest.json
+- A	orchestrator/evidence/I20-locales/reading.sql
+- A	orchestrator/evidence/I20-locales/rollback.sql
+- A	orchestrator/evidence/I20-locales/tools/generate.mjs
+- A	orchestrator/evidence/I20-locales/tools/merge-translations.mjs
+- A	orchestrator/evidence/I20-locales/translations.json
+- A	orchestrator/evidence/I20.json
+- A	orchestrator/evidence/I22-gate/gate.sh
+- A	orchestrator/evidence/I22-gate/negative-controls.py
+- A	orchestrator/evidence/I22-gate/out/00-sha.txt
+- A	orchestrator/evidence/I22-gate/out/01-install.log
+- A	orchestrator/evidence/I22-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/I22-gate/out/03-lint.log
+- A	orchestrator/evidence/I22-gate/out/04-typecheck.log
+- A	orchestrator/evidence/I22-gate/out/05-jest-full.log
+- A	orchestrator/evidence/I22-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/I22-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/I22-gate/out/07-build.log
+- A	orchestrator/evidence/I22-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/I22-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/I22-gate/out/09-git-status.log
+- A	orchestrator/evidence/I22-gate/out/10-manifest-unchanged.log
+- A	orchestrator/evidence/I22-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/I22-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/I22-gate/out/12b-install-local.log
+- A	orchestrator/evidence/I22-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/I22-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/I22-gate/out/exits.txt
+- A	orchestrator/evidence/I22-production-apply/00-expected.json
+- A	orchestrator/evidence/I22-production-apply/01-precondition.json
+- A	orchestrator/evidence/I22-production-apply/02-apply.json
+- A	orchestrator/evidence/I22-production-apply/02-apply.sql
+- A	orchestrator/evidence/I22-production-apply/03-postcondition.json
+- A	orchestrator/evidence/I22-production-apply/04-independent-read.json
+- A	orchestrator/evidence/I22-production-apply/verdict.json
+- A	orchestrator/evidence/I22-tooling/apply.mjs
+- A	orchestrator/evidence/I22-tooling/independent-read.sql
+- A	orchestrator/evidence/I22.json
+- A	orchestrator/evidence/IOS0-gate/01-ios-export.log
+- A	orchestrator/evidence/IOS0-gate/02-citations.log
+- A	orchestrator/evidence/IOS0-gate/03-grep-ios1.log
+- A	orchestrator/evidence/IOS0-gate/04-product-diff.log
+- A	orchestrator/evidence/IOS0-gate/07-full-gate.log
+- A	orchestrator/evidence/IOS0-gate/check-citations.mjs
+- A	orchestrator/evidence/IOS0.json
+- A	orchestrator/evidence/R01-gate/00-sha.txt
+- A	orchestrator/evidence/R01-gate/01-install.log
+- A	orchestrator/evidence/R01-gate/02-check-react-types.log
+- A	orchestrator/evidence/R01-gate/03-lint.log
+- A	orchestrator/evidence/R01-gate/04-typecheck.log
+- A	orchestrator/evidence/R01-gate/05-jest-full.log
+- A	orchestrator/evidence/R01-gate/06-scripts-test.log
+- A	orchestrator/evidence/R01-gate/07-build.log
+- A	orchestrator/evidence/R01-gate/07a-android-export.log
+- A	orchestrator/evidence/R01-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R01-gate/09-git-status.log
+- A	orchestrator/evidence/R01-gate/10-localization.log
+- A	orchestrator/evidence/R01-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R01-gate/12-git-status-after.log
+- A	orchestrator/evidence/R01-gate/13-negative-controls.log
+- A	orchestrator/evidence/R01-gate/14-git-status-after-controls.log
+- A	orchestrator/evidence/R01-gate/15-database.log
+- A	orchestrator/evidence/R01-gate/16-git-status-final.log
+- A	orchestrator/evidence/R01-gate/exits.txt
+- A	orchestrator/evidence/R01-gate/gate.sh
+- A	orchestrator/evidence/R01-gate/negative-controls.sh
+- A	orchestrator/evidence/R01.json
+- A	orchestrator/evidence/R02-gate/00-sha.txt
+- A	orchestrator/evidence/R02-gate/01-install.log
+- A	orchestrator/evidence/R02-gate/02-check-react-types.log
+- A	orchestrator/evidence/R02-gate/03-lint.log
+- A	orchestrator/evidence/R02-gate/04-typecheck.log
+- A	orchestrator/evidence/R02-gate/05-jest-full.log
+- A	orchestrator/evidence/R02-gate/06-scripts-test.log
+- A	orchestrator/evidence/R02-gate/07-build.log
+- A	orchestrator/evidence/R02-gate/07a-android-export.log
+- A	orchestrator/evidence/R02-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R02-gate/09-git-status.log
+- A	orchestrator/evidence/R02-gate/10-media.log
+- A	orchestrator/evidence/R02-gate/11-database.log
+- A	orchestrator/evidence/R02-gate/12-criterion-suites.log
+- A	orchestrator/evidence/R02-gate/13-git-status-after.log
+- A	orchestrator/evidence/R02-gate/14-negative-controls.log
+- A	orchestrator/evidence/R02-gate/15-git-status-final.log
+- A	orchestrator/evidence/R02-gate/exits.txt
+- A	orchestrator/evidence/R02-gate/gate.sh
+- A	orchestrator/evidence/R02-gate/negative-controls.sh
+- A	orchestrator/evidence/R02-media-bucket/build-manifest.mjs
+- A	orchestrator/evidence/R02-media-bucket/live-photos-bucket.json
+- A	orchestrator/evidence/R02-media-bucket/manifest.json
+- A	orchestrator/evidence/R02.json
+- A	orchestrator/evidence/R03-gate/00-sha.txt
+- A	orchestrator/evidence/R03-gate/01-install.log
+- A	orchestrator/evidence/R03-gate/02-check-react-types.log
+- A	orchestrator/evidence/R03-gate/03-lint.log
+- A	orchestrator/evidence/R03-gate/04-typecheck.log
+- A	orchestrator/evidence/R03-gate/05-jest-full.log
+- A	orchestrator/evidence/R03-gate/06-scripts-test.log
+- A	orchestrator/evidence/R03-gate/07-build.log
+- A	orchestrator/evidence/R03-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R03-gate/09-git-status.log
+- A	orchestrator/evidence/R03-gate/10-criterion-suites.log
+- A	orchestrator/evidence/R03-gate/11-git-status-after.log
+- A	orchestrator/evidence/R03-gate/12-negative-controls.log
+- A	orchestrator/evidence/R03-gate/13-git-status-final.log
+- A	orchestrator/evidence/R03-gate/exits.txt
+- A	orchestrator/evidence/R03-gate/gate.sh
+- A	orchestrator/evidence/R03-gate/negative-controls.sh
+- A	orchestrator/evidence/R03-production-apply/01-precondition.json
+- A	orchestrator/evidence/R03-production-apply/02-apply.json
+- A	orchestrator/evidence/R03-production-apply/02-apply.sql
+- A	orchestrator/evidence/R03-production-apply/03-postcondition.json
+- A	orchestrator/evidence/R03-production-apply/04-independent-read.json
+- A	orchestrator/evidence/R03-production-apply/verdict.json
+- A	orchestrator/evidence/R03-tooling/apply.mjs
+- A	orchestrator/evidence/R03.json
+- A	orchestrator/evidence/R04-gate/00-sha.txt
+- A	orchestrator/evidence/R04-gate/01-install.log
+- A	orchestrator/evidence/R04-gate/02-check-react-types.log
+- A	orchestrator/evidence/R04-gate/03-lint.log
+- A	orchestrator/evidence/R04-gate/04-typecheck.log
+- A	orchestrator/evidence/R04-gate/05-jest-full.log
+- A	orchestrator/evidence/R04-gate/06-scripts-test.log
+- A	orchestrator/evidence/R04-gate/07-build.log
+- A	orchestrator/evidence/R04-gate/07a-android-export.log
+- A	orchestrator/evidence/R04-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R04-gate/09-git-status.log
+- A	orchestrator/evidence/R04-gate/10-media.log
+- A	orchestrator/evidence/R04-gate/11-localization.log
+- A	orchestrator/evidence/R04-gate/12-criterion-suites.log
+- A	orchestrator/evidence/R04-gate/13-git-status-after.log
+- A	orchestrator/evidence/R04-gate/14-negative-controls.log
+- A	orchestrator/evidence/R04-gate/15-git-status-final.log
+- A	orchestrator/evidence/R04-gate/exits.txt
+- A	orchestrator/evidence/R04-gate/gate.sh
+- A	orchestrator/evidence/R04-gate/negative-controls.sh
+- A	orchestrator/evidence/R04.json
+- A	orchestrator/evidence/R05-gate/00-sha.txt
+- A	orchestrator/evidence/R05-gate/01-install.log
+- A	orchestrator/evidence/R05-gate/02-check-react-types.log
+- A	orchestrator/evidence/R05-gate/03-lint.log
+- A	orchestrator/evidence/R05-gate/04-typecheck.log
+- A	orchestrator/evidence/R05-gate/05-jest-full.log
+- A	orchestrator/evidence/R05-gate/06-scripts-test.log
+- A	orchestrator/evidence/R05-gate/07-build.log
+- A	orchestrator/evidence/R05-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R05-gate/09-git-status.log
+- A	orchestrator/evidence/R05-gate/10-media.log
+- A	orchestrator/evidence/R05-gate/11-database.log
+- A	orchestrator/evidence/R05-gate/12-criterion-suites.log
+- A	orchestrator/evidence/R05-gate/13-git-status-after.log
+- A	orchestrator/evidence/R05-gate/14-negative-controls.log
+- A	orchestrator/evidence/R05-gate/15-git-status-final.log
+- A	orchestrator/evidence/R05-gate/exits.txt
+- A	orchestrator/evidence/R05-gate/gate.sh
+- A	orchestrator/evidence/R05-gate/negative-controls.sh
+- A	orchestrator/evidence/R05-thumbnail-delete-policy/build-manifest.mjs
+- A	orchestrator/evidence/R05-thumbnail-delete-policy/live-storage-object-policies.json
+- A	orchestrator/evidence/R05-thumbnail-delete-policy/local-replay-policies.json
+- A	orchestrator/evidence/R05-thumbnail-delete-policy/manifest.json
+- A	orchestrator/evidence/R05.json
+- A	orchestrator/evidence/R06-gate/00-sha.txt
+- A	orchestrator/evidence/R06-gate/01-install.log
+- A	orchestrator/evidence/R06-gate/02-check-react-types.log
+- A	orchestrator/evidence/R06-gate/03-lint.log
+- A	orchestrator/evidence/R06-gate/04-typecheck.log
+- A	orchestrator/evidence/R06-gate/05-jest-full.log
+- A	orchestrator/evidence/R06-gate/06-scripts-test.log
+- A	orchestrator/evidence/R06-gate/07-build.log
+- A	orchestrator/evidence/R06-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R06-gate/09-git-status.log
+- A	orchestrator/evidence/R06-gate/10-criterion-suites.log
+- A	orchestrator/evidence/R06-gate/11-git-status-after.log
+- A	orchestrator/evidence/R06-gate/12-negative-controls.log
+- A	orchestrator/evidence/R06-gate/13-git-status-final.log
+- A	orchestrator/evidence/R06-gate/exits.txt
+- A	orchestrator/evidence/R06-gate/gate.sh
+- A	orchestrator/evidence/R06-gate/negative-controls.sh
+- A	orchestrator/evidence/R06-production-apply/01-precondition.json
+- A	orchestrator/evidence/R06-production-apply/02-apply.json
+- A	orchestrator/evidence/R06-production-apply/02-apply.sql
+- A	orchestrator/evidence/R06-production-apply/03-postcondition.json
+- A	orchestrator/evidence/R06-production-apply/04-independent-read.json
+- A	orchestrator/evidence/R06-production-apply/verdict.json
+- A	orchestrator/evidence/R06-tooling/apply.mjs
+- A	orchestrator/evidence/R06.json
+- A	orchestrator/evidence/R07-gate/00-sha.txt
+- A	orchestrator/evidence/R07-gate/01-install.log
+- A	orchestrator/evidence/R07-gate/02-check-react-types.log
+- A	orchestrator/evidence/R07-gate/03-lint.log
+- A	orchestrator/evidence/R07-gate/04-typecheck.log
+- A	orchestrator/evidence/R07-gate/05-jest-full.log
+- A	orchestrator/evidence/R07-gate/06-scripts-test.log
+- A	orchestrator/evidence/R07-gate/07-build.log
+- A	orchestrator/evidence/R07-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R07-gate/09-git-status.log
+- A	orchestrator/evidence/R07-gate/10-android-export.log
+- A	orchestrator/evidence/R07-gate/11-offline.log
+- A	orchestrator/evidence/R07-gate/12-localization.log
+- A	orchestrator/evidence/R07-gate/13-criterion-suites.log
+- A	orchestrator/evidence/R07-gate/14-git-status-after.log
+- A	orchestrator/evidence/R07-gate/15-negative-controls.log
+- A	orchestrator/evidence/R07-gate/16-git-status-final.log
+- A	orchestrator/evidence/R07-gate/exits.txt
+- A	orchestrator/evidence/R07-gate/gate.sh
+- A	orchestrator/evidence/R07-gate/negative-controls.py
+- A	orchestrator/evidence/R07.json
+- A	orchestrator/evidence/R08-gate/00-sha.txt
+- A	orchestrator/evidence/R08-gate/01-install.log
+- A	orchestrator/evidence/R08-gate/02-check-react-types.log
+- A	orchestrator/evidence/R08-gate/03-lint.log
+- A	orchestrator/evidence/R08-gate/04-typecheck.log
+- A	orchestrator/evidence/R08-gate/05-jest-full.log
+- A	orchestrator/evidence/R08-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R08-gate/06-scripts-test.log
+- A	orchestrator/evidence/R08-gate/07-build.log
+- A	orchestrator/evidence/R08-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R08-gate/09-git-status.log
+- A	orchestrator/evidence/R08-gate/10-android-export.log
+- A	orchestrator/evidence/R08-gate/11-offline.log
+- A	orchestrator/evidence/R08-gate/12-localization.log
+- A	orchestrator/evidence/R08-gate/13-criterion-suites.log
+- A	orchestrator/evidence/R08-gate/14-git-status-after.log
+- A	orchestrator/evidence/R08-gate/15-negative-controls.log
+- A	orchestrator/evidence/R08-gate/16-git-status-final.log
+- A	orchestrator/evidence/R08-gate/exits.txt
+- A	orchestrator/evidence/R08-gate/gate.sh
+- A	orchestrator/evidence/R08-gate/negative-controls.py
+- A	orchestrator/evidence/R08.json
+- A	orchestrator/evidence/R09-gate/00-sha.txt
+- A	orchestrator/evidence/R09-gate/01-install.log
+- A	orchestrator/evidence/R09-gate/02-check-react-types.log
+- A	orchestrator/evidence/R09-gate/03-lint.log
+- A	orchestrator/evidence/R09-gate/04-typecheck.log
+- A	orchestrator/evidence/R09-gate/05-jest-full.log
+- A	orchestrator/evidence/R09-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R09-gate/06-scripts-test.log
+- A	orchestrator/evidence/R09-gate/07-build.log
+- A	orchestrator/evidence/R09-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R09-gate/09-git-status.log
+- A	orchestrator/evidence/R09-gate/10-android-export.log
+- A	orchestrator/evidence/R09-gate/11-offline.log
+- A	orchestrator/evidence/R09-gate/12-localization.log
+- A	orchestrator/evidence/R09-gate/13-criterion-suites.log
+- A	orchestrator/evidence/R09-gate/14-git-status-after.log
+- A	orchestrator/evidence/R09-gate/15-negative-controls.log
+- A	orchestrator/evidence/R09-gate/16-git-status-final.log
+- A	orchestrator/evidence/R09-gate/exits.txt
+- A	orchestrator/evidence/R09-gate/gate.sh
+- A	orchestrator/evidence/R09-gate/negative-controls.py
+- A	orchestrator/evidence/R09.json
+- A	orchestrator/evidence/R10-gate/00-sha.txt
+- A	orchestrator/evidence/R10-gate/01-install.log
+- A	orchestrator/evidence/R10-gate/02-check-react-types.log
+- A	orchestrator/evidence/R10-gate/03-lint.log
+- A	orchestrator/evidence/R10-gate/04-typecheck.log
+- A	orchestrator/evidence/R10-gate/05-jest-full.log
+- A	orchestrator/evidence/R10-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R10-gate/06-scripts-test.log
+- A	orchestrator/evidence/R10-gate/07-build.log
+- A	orchestrator/evidence/R10-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R10-gate/09-git-status.log
+- A	orchestrator/evidence/R10-gate/10-android-export.log
+- A	orchestrator/evidence/R10-gate/11-offline.log
+- A	orchestrator/evidence/R10-gate/12-localization.log
+- A	orchestrator/evidence/R10-gate/13-criterion-suites.log
+- A	orchestrator/evidence/R10-gate/14-git-status-after.log
+- A	orchestrator/evidence/R10-gate/15-negative-controls.log
+- A	orchestrator/evidence/R10-gate/16-git-status-final.log
+- A	orchestrator/evidence/R10-gate/exits.txt
+- A	orchestrator/evidence/R10-gate/gate.sh
+- A	orchestrator/evidence/R10-gate/negative-controls.py
+- A	orchestrator/evidence/R10.json
+- A	orchestrator/evidence/R11-gate/00-sha.txt
+- A	orchestrator/evidence/R11-gate/01-install.log
+- A	orchestrator/evidence/R11-gate/02-check-react-types.log
+- A	orchestrator/evidence/R11-gate/03-lint.log
+- A	orchestrator/evidence/R11-gate/04-typecheck.log
+- A	orchestrator/evidence/R11-gate/05-jest-full.log
+- A	orchestrator/evidence/R11-gate/06-scripts-test.log
+- A	orchestrator/evidence/R11-gate/07-build.log
+- A	orchestrator/evidence/R11-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R11-gate/09-git-status.log
+- A	orchestrator/evidence/R11-gate/10-criterion-suites.log
+- A	orchestrator/evidence/R11-gate/11-git-status-after.log
+- A	orchestrator/evidence/R11-gate/12-negative-controls.log
+- A	orchestrator/evidence/R11-gate/13-git-status-final.log
+- A	orchestrator/evidence/R11-gate/exits.txt
+- A	orchestrator/evidence/R11-gate/gate.sh
+- A	orchestrator/evidence/R11-gate/negative-controls.sh
+- A	orchestrator/evidence/R11-production-apply/00-expected.json
+- A	orchestrator/evidence/R11-production-apply/01-precondition.json
+- A	orchestrator/evidence/R11-production-apply/02-apply.json
+- A	orchestrator/evidence/R11-production-apply/02-apply.sql
+- A	orchestrator/evidence/R11-production-apply/03-postcondition.json
+- A	orchestrator/evidence/R11-production-apply/04-independent-read.json
+- A	orchestrator/evidence/R11-production-apply/verdict.json
+- A	orchestrator/evidence/R11-tooling/apply.mjs
+- A	orchestrator/evidence/R11.json
+- A	orchestrator/evidence/R12-gate/00-sha.txt
+- A	orchestrator/evidence/R12-gate/01-install.log
+- A	orchestrator/evidence/R12-gate/02-check-react-types.log
+- A	orchestrator/evidence/R12-gate/03-lint.log
+- A	orchestrator/evidence/R12-gate/04-typecheck.log
+- A	orchestrator/evidence/R12-gate/05-jest-full.log
+- A	orchestrator/evidence/R12-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R12-gate/06-scripts-test.log
+- A	orchestrator/evidence/R12-gate/07-build.log
+- A	orchestrator/evidence/R12-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R12-gate/09-git-status.log
+- A	orchestrator/evidence/R12-gate/10-android-export.log
+- A	orchestrator/evidence/R12-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R12-gate/12-git-status-after.log
+- A	orchestrator/evidence/R12-gate/13-negative-controls.log
+- A	orchestrator/evidence/R12-gate/14-git-status-final.log
+- A	orchestrator/evidence/R12-gate/exits.txt
+- A	orchestrator/evidence/R12-gate/gate.sh
+- A	orchestrator/evidence/R12-gate/negative-controls.py
+- A	orchestrator/evidence/R12.json
+- A	orchestrator/evidence/R13-gate/00-sha.txt
+- A	orchestrator/evidence/R13-gate/01-install.log
+- A	orchestrator/evidence/R13-gate/02-check-react-types.log
+- A	orchestrator/evidence/R13-gate/03-lint.log
+- A	orchestrator/evidence/R13-gate/04-typecheck.log
+- A	orchestrator/evidence/R13-gate/05-jest-full.log
+- A	orchestrator/evidence/R13-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R13-gate/06-scripts-test.log
+- A	orchestrator/evidence/R13-gate/07-build.log
+- A	orchestrator/evidence/R13-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R13-gate/09-git-status.log
+- A	orchestrator/evidence/R13-gate/10-android-export.log
+- A	orchestrator/evidence/R13-gate/10b-localization.log
+- A	orchestrator/evidence/R13-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R13-gate/12-git-status-after.log
+- A	orchestrator/evidence/R13-gate/13-negative-controls.log
+- A	orchestrator/evidence/R13-gate/14-git-status-final.log
+- A	orchestrator/evidence/R13-gate/exits.txt
+- A	orchestrator/evidence/R13-gate/gate.sh
+- A	orchestrator/evidence/R13-gate/negative-controls.py
+- A	orchestrator/evidence/R13.json
+- A	orchestrator/evidence/R14-gate/00-sha.txt
+- A	orchestrator/evidence/R14-gate/01-install.log
+- A	orchestrator/evidence/R14-gate/02-check-react-types.log
+- A	orchestrator/evidence/R14-gate/03-lint.log
+- A	orchestrator/evidence/R14-gate/04-typecheck.log
+- A	orchestrator/evidence/R14-gate/05-jest-full.log
+- A	orchestrator/evidence/R14-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R14-gate/06-scripts-test.log
+- A	orchestrator/evidence/R14-gate/07-build.log
+- A	orchestrator/evidence/R14-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R14-gate/09-git-status.log
+- A	orchestrator/evidence/R14-gate/10-android-export.log
+- A	orchestrator/evidence/R14-gate/10b-localization.log
+- A	orchestrator/evidence/R14-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R14-gate/12-git-status-after.log
+- A	orchestrator/evidence/R14-gate/13-negative-controls.log
+- A	orchestrator/evidence/R14-gate/14-git-status-final.log
+- A	orchestrator/evidence/R14-gate/exits.txt
+- A	orchestrator/evidence/R14-gate/gate.sh
+- A	orchestrator/evidence/R14-gate/negative-controls.py
+- A	orchestrator/evidence/R14.json
+- A	orchestrator/evidence/R15-gate/00-sha.txt
+- A	orchestrator/evidence/R15-gate/01-install.log
+- A	orchestrator/evidence/R15-gate/02-check-react-types.log
+- A	orchestrator/evidence/R15-gate/03-lint.log
+- A	orchestrator/evidence/R15-gate/04-typecheck.log
+- A	orchestrator/evidence/R15-gate/05-jest-full.log
+- A	orchestrator/evidence/R15-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R15-gate/06-scripts-test.log
+- A	orchestrator/evidence/R15-gate/07-build.log
+- A	orchestrator/evidence/R15-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R15-gate/09-git-status.log
+- A	orchestrator/evidence/R15-gate/10-android-export.log
+- A	orchestrator/evidence/R15-gate/10b-localization.log
+- A	orchestrator/evidence/R15-gate/10c-offline.log
+- A	orchestrator/evidence/R15-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R15-gate/12-git-status-after.log
+- A	orchestrator/evidence/R15-gate/13-negative-controls.log
+- A	orchestrator/evidence/R15-gate/14-git-status-final.log
+- A	orchestrator/evidence/R15-gate/exits.txt
+- A	orchestrator/evidence/R15-gate/gate.sh
+- A	orchestrator/evidence/R15-gate/negative-controls.py
+- A	orchestrator/evidence/R15.json
+- A	orchestrator/evidence/R16-gate/00-sha.txt
+- A	orchestrator/evidence/R16-gate/01-install.log
+- A	orchestrator/evidence/R16-gate/02-check-react-types.log
+- A	orchestrator/evidence/R16-gate/03-lint.log
+- A	orchestrator/evidence/R16-gate/04-typecheck.log
+- A	orchestrator/evidence/R16-gate/05-jest-full.log
+- A	orchestrator/evidence/R16-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R16-gate/06-scripts-test.log
+- A	orchestrator/evidence/R16-gate/07-build.log
+- A	orchestrator/evidence/R16-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R16-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R16-gate/09-git-status.log
+- A	orchestrator/evidence/R16-gate/10-android-export.log
+- A	orchestrator/evidence/R16-gate/10b-localization.log
+- A	orchestrator/evidence/R16-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R16-gate/12-git-status-after.log
+- A	orchestrator/evidence/R16-gate/13-negative-controls.log
+- A	orchestrator/evidence/R16-gate/14-git-status-final.log
+- A	orchestrator/evidence/R16-gate/exits.txt
+- A	orchestrator/evidence/R16-gate/gate.sh
+- A	orchestrator/evidence/R16-gate/negative-controls.py
+- A	orchestrator/evidence/R16.json
+- A	orchestrator/evidence/R17-gate/00-sha.txt
+- A	orchestrator/evidence/R17-gate/01-install.log
+- A	orchestrator/evidence/R17-gate/02-check-react-types.log
+- A	orchestrator/evidence/R17-gate/03-lint.log
+- A	orchestrator/evidence/R17-gate/04-typecheck.log
+- A	orchestrator/evidence/R17-gate/05-jest-full.log
+- A	orchestrator/evidence/R17-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R17-gate/06-scripts-test.log
+- A	orchestrator/evidence/R17-gate/07-build.log
+- A	orchestrator/evidence/R17-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R17-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R17-gate/09-git-status.log
+- A	orchestrator/evidence/R17-gate/10-android-export.log
+- A	orchestrator/evidence/R17-gate/10b-media.log
+- A	orchestrator/evidence/R17-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R17-gate/12-git-status-after.log
+- A	orchestrator/evidence/R17-gate/13-negative-controls.log
+- A	orchestrator/evidence/R17-gate/14-git-status-final.log
+- A	orchestrator/evidence/R17-gate/exits.txt
+- A	orchestrator/evidence/R17-gate/gate.sh
+- A	orchestrator/evidence/R17-gate/negative-controls.py
+- A	orchestrator/evidence/R17.json
+- A	orchestrator/evidence/R18-gate/00-sha.txt
+- A	orchestrator/evidence/R18-gate/01-install.log
+- A	orchestrator/evidence/R18-gate/02-check-react-types.log
+- A	orchestrator/evidence/R18-gate/03-lint.log
+- A	orchestrator/evidence/R18-gate/04-typecheck.log
+- A	orchestrator/evidence/R18-gate/05-jest-full.log
+- A	orchestrator/evidence/R18-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R18-gate/06-scripts-test.log
+- A	orchestrator/evidence/R18-gate/07-build.log
+- A	orchestrator/evidence/R18-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R18-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R18-gate/09-git-status.log
+- A	orchestrator/evidence/R18-gate/10-android-export.log
+- A	orchestrator/evidence/R18-gate/10b-localization.log
+- A	orchestrator/evidence/R18-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R18-gate/12-git-status-after.log
+- A	orchestrator/evidence/R18-gate/13-negative-controls.log
+- A	orchestrator/evidence/R18-gate/14-git-status-final.log
+- A	orchestrator/evidence/R18-gate/exits.txt
+- A	orchestrator/evidence/R18-gate/gate.sh
+- A	orchestrator/evidence/R18-gate/negative-controls.py
+- A	orchestrator/evidence/R18.json
+- A	orchestrator/evidence/R19-gate/00-sha.txt
+- A	orchestrator/evidence/R19-gate/01-install.log
+- A	orchestrator/evidence/R19-gate/02-check-react-types.log
+- A	orchestrator/evidence/R19-gate/03-lint.log
+- A	orchestrator/evidence/R19-gate/04-typecheck.log
+- A	orchestrator/evidence/R19-gate/05-jest-full.log
+- A	orchestrator/evidence/R19-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R19-gate/06-scripts-test.log
+- A	orchestrator/evidence/R19-gate/07-build.log
+- A	orchestrator/evidence/R19-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R19-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R19-gate/09-git-status.log
+- A	orchestrator/evidence/R19-gate/10-android-export.log
+- A	orchestrator/evidence/R19-gate/10b-localization.log
+- A	orchestrator/evidence/R19-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R19-gate/12-git-status-after.log
+- A	orchestrator/evidence/R19-gate/13-negative-controls.log
+- A	orchestrator/evidence/R19-gate/14-git-status-final.log
+- A	orchestrator/evidence/R19-gate/15-heap-profile.txt
+- A	orchestrator/evidence/R19-gate/exits.txt
+- A	orchestrator/evidence/R19-gate/gate.sh
+- A	orchestrator/evidence/R19-gate/negative-controls.py
+- A	orchestrator/evidence/R19.json
+- A	orchestrator/evidence/R20-gate/00-sha.txt
+- A	orchestrator/evidence/R20-gate/01-install.log
+- A	orchestrator/evidence/R20-gate/02-check-react-types.log
+- A	orchestrator/evidence/R20-gate/03-lint.log
+- A	orchestrator/evidence/R20-gate/04-typecheck.log
+- A	orchestrator/evidence/R20-gate/05-jest-full.log
+- A	orchestrator/evidence/R20-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R20-gate/06-scripts-test.log
+- A	orchestrator/evidence/R20-gate/07-build.log
+- A	orchestrator/evidence/R20-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R20-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R20-gate/09-git-status.log
+- A	orchestrator/evidence/R20-gate/10-android-export.log
+- A	orchestrator/evidence/R20-gate/10b-localization.log
+- A	orchestrator/evidence/R20-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R20-gate/12-git-status-after.log
+- A	orchestrator/evidence/R20-gate/13-negative-controls.log
+- A	orchestrator/evidence/R20-gate/14-git-status-final.log
+- A	orchestrator/evidence/R20-gate/exits.txt
+- A	orchestrator/evidence/R20-gate/gate.sh
+- A	orchestrator/evidence/R20-gate/negative-controls.py
+- A	orchestrator/evidence/R20-gate/probes/baseline-defect-at-1430687.txt
+- A	orchestrator/evidence/R20-gate/probes/baseline-defect.test.ts.txt
+- A	orchestrator/evidence/R20-gate/probes/csv-at-0cfe966.json
+- A	orchestrator/evidence/R20-gate/probes/csv-at-1430687.json
+- A	orchestrator/evidence/R20-gate/probes/csv-identity.template.ts.txt
+- A	orchestrator/evidence/R20-gate/probes/csv-identity.txt
+- A	orchestrator/evidence/R20.json
+- A	orchestrator/evidence/R21-gate/00-sha.txt
+- A	orchestrator/evidence/R21-gate/01-install.log
+- A	orchestrator/evidence/R21-gate/02-check-react-types.log
+- A	orchestrator/evidence/R21-gate/03-lint.log
+- A	orchestrator/evidence/R21-gate/04-typecheck.log
+- A	orchestrator/evidence/R21-gate/05-jest-full.log
+- A	orchestrator/evidence/R21-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R21-gate/06-scripts-test.log
+- A	orchestrator/evidence/R21-gate/07-build.log
+- A	orchestrator/evidence/R21-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R21-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R21-gate/09-git-status.log
+- A	orchestrator/evidence/R21-gate/10-android-export.log
+- A	orchestrator/evidence/R21-gate/10b-localization.log
+- A	orchestrator/evidence/R21-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R21-gate/12-git-status-after.log
+- A	orchestrator/evidence/R21-gate/13-negative-controls.log
+- A	orchestrator/evidence/R21-gate/14-git-status-final.log
+- A	orchestrator/evidence/R21-gate/exits.txt
+- A	orchestrator/evidence/R21-gate/gate.sh
+- A	orchestrator/evidence/R21-gate/negative-controls.py
+- A	orchestrator/evidence/R21-template-translations/live-snapshot.json
+- A	orchestrator/evidence/R21-template-translations/manifest.json
+- A	orchestrator/evidence/R21-template-translations/text-count-reconciliation.json
+- A	orchestrator/evidence/R21.json
+- A	orchestrator/evidence/R21B-gate/categorise-added.cjs
+- A	orchestrator/evidence/R21B-gate/gate.sh
+- A	orchestrator/evidence/R21B-gate/inventory-added.json
+- A	orchestrator/evidence/R21B-gate/negative-controls.py
+- A	orchestrator/evidence/R21B-gate/out/00-sha.txt
+- A	orchestrator/evidence/R21B-gate/out/01-install.log
+- A	orchestrator/evidence/R21B-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/R21B-gate/out/03-lint.log
+- A	orchestrator/evidence/R21B-gate/out/04-typecheck.log
+- A	orchestrator/evidence/R21B-gate/out/05-jest-full-shard1.log
+- A	orchestrator/evidence/R21B-gate/out/05-jest-full-shard2.log
+- A	orchestrator/evidence/R21B-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/R21B-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/R21B-gate/out/07-build.log
+- A	orchestrator/evidence/R21B-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R21B-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/R21B-gate/out/09-git-status.log
+- A	orchestrator/evidence/R21B-gate/out/10-android-export.log
+- A	orchestrator/evidence/R21B-gate/out/10b-localization.log
+- A	orchestrator/evidence/R21B-gate/out/10c-no-schema-change.log
+- A	orchestrator/evidence/R21B-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/R21B-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/R21B-gate/out/12b-install-local.log
+- A	orchestrator/evidence/R21B-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/R21B-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/R21B-gate/out/exits.txt
+- A	orchestrator/evidence/R21B-gate/realign-dry.json
+- A	orchestrator/evidence/R21B-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R21B-gate/realign.sh
+- A	orchestrator/evidence/R21B-gate/recategorise-drawn.cjs
+- A	orchestrator/evidence/R21B.json
+- A	orchestrator/evidence/R21C-gate/00-sha.txt
+- A	orchestrator/evidence/R21C-gate/01-install.log
+- A	orchestrator/evidence/R21C-gate/02-check-react-types.log
+- A	orchestrator/evidence/R21C-gate/03-lint.log
+- A	orchestrator/evidence/R21C-gate/04-typecheck.log
+- A	orchestrator/evidence/R21C-gate/05-jest-full.log
+- A	orchestrator/evidence/R21C-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R21C-gate/06-scripts-test.log
+- A	orchestrator/evidence/R21C-gate/07-build.log
+- A	orchestrator/evidence/R21C-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R21C-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R21C-gate/09-git-status.log
+- A	orchestrator/evidence/R21C-gate/10-android-export.log
+- A	orchestrator/evidence/R21C-gate/10b-localization.log
+- A	orchestrator/evidence/R21C-gate/10c-migration-unchanged.log
+- A	orchestrator/evidence/R21C-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R21C-gate/12-git-status-after.log
+- A	orchestrator/evidence/R21C-gate/13-negative-controls.log
+- A	orchestrator/evidence/R21C-gate/14-git-status-final.log
+- A	orchestrator/evidence/R21C-gate/controller-5c4ad16/core-jest-heap-oom.txt
+- A	orchestrator/evidence/R21C-gate/defect-on-base/template-translations-on-86d599d.log
+- A	orchestrator/evidence/R21C-gate/exits.txt
+- A	orchestrator/evidence/R21C-gate/gate.sh
+- A	orchestrator/evidence/R21C-gate/negative-controls.py
+- A	orchestrator/evidence/R21C-gate/rerun-336922f/00-sha.txt
+- A	orchestrator/evidence/R21C-gate/rerun-336922f/01-install.log
+- A	orchestrator/evidence/R21C-gate/rerun-336922f/05-jest-full.log
+- A	orchestrator/evidence/R21C-gate/rerun-336922f/exits.txt
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/00-sha.txt
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/01-install.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/02-check-react-types.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/03-lint.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/04-typecheck.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/05-jest-full.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/05b-handoff-check.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/06-scripts-test.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/07-build.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/08-git-diff-check.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/09-git-status.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/10-android-export.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/10b-localization.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/10c-migration-unchanged.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/11-criterion-suites.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/12-git-status-after.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/13-negative-controls.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/14-git-status-final.log
+- A	orchestrator/evidence/R21C-gate/run-5c4ad16-superseded/exits.txt
+- A	orchestrator/evidence/R21C.json
+- A	orchestrator/evidence/R22-gate/00-sha.txt
+- A	orchestrator/evidence/R22-gate/01-install.log
+- A	orchestrator/evidence/R22-gate/02-check-react-types.log
+- A	orchestrator/evidence/R22-gate/03-lint.log
+- A	orchestrator/evidence/R22-gate/04-typecheck.log
+- A	orchestrator/evidence/R22-gate/05-jest-full.log
+- A	orchestrator/evidence/R22-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R22-gate/06-scripts-test.log
+- A	orchestrator/evidence/R22-gate/07-build.log
+- A	orchestrator/evidence/R22-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R22-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R22-gate/09-git-status.log
+- A	orchestrator/evidence/R22-gate/10-migration-unchanged.log
+- A	orchestrator/evidence/R22-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R22-gate/12-git-status-after.log
+- A	orchestrator/evidence/R22-gate/13-negative-controls.log
+- A	orchestrator/evidence/R22-gate/14-git-status-final.log
+- A	orchestrator/evidence/R22-gate/exits.txt
+- A	orchestrator/evidence/R22-gate/gate.sh
+- A	orchestrator/evidence/R22-gate/negative-controls.py
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/00-sha.txt
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/01-install.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/02-check-react-types.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/03-lint.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/04-typecheck.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/05-jest-full.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/05b-handoff-check.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/06-scripts-test.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/07-build.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/08-git-diff-check.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/09-git-status.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/10-migration-unchanged.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/11-criterion-suites.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/12-git-status-after.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/13-negative-controls.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/14-git-status-final.log
+- A	orchestrator/evidence/R22-gate/run-994de65-superseded/exits.txt
+- A	orchestrator/evidence/R22-production-apply/00-expected.json
+- A	orchestrator/evidence/R22-production-apply/01-precondition.json
+- A	orchestrator/evidence/R22-production-apply/02-apply.json
+- A	orchestrator/evidence/R22-production-apply/02-apply.sql
+- A	orchestrator/evidence/R22-production-apply/03-postcondition.json
+- A	orchestrator/evidence/R22-production-apply/04-independent-read.json
+- A	orchestrator/evidence/R22-production-apply/verdict.json
+- A	orchestrator/evidence/R22-tooling/apply.mjs
+- A	orchestrator/evidence/R22.json
+- A	orchestrator/evidence/R23-gate/00-sha.txt
+- A	orchestrator/evidence/R23-gate/01-install.log
+- A	orchestrator/evidence/R23-gate/02-check-react-types.log
+- A	orchestrator/evidence/R23-gate/03-lint.log
+- A	orchestrator/evidence/R23-gate/04-typecheck.log
+- A	orchestrator/evidence/R23-gate/05-jest-full.log
+- A	orchestrator/evidence/R23-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R23-gate/06-scripts-test.log
+- A	orchestrator/evidence/R23-gate/07-build.log
+- A	orchestrator/evidence/R23-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R23-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R23-gate/09-git-status.log
+- A	orchestrator/evidence/R23-gate/10-android-export.log
+- A	orchestrator/evidence/R23-gate/10b-localization.log
+- A	orchestrator/evidence/R23-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R23-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R23-gate/12-git-status-after.log
+- A	orchestrator/evidence/R23-gate/13-negative-controls.log
+- A	orchestrator/evidence/R23-gate/14-git-status-final.log
+- A	orchestrator/evidence/R23-gate/controller-7a94fc3/core-failures.txt
+- A	orchestrator/evidence/R23-gate/controller-7a94fc3/localization-failures.txt
+- A	orchestrator/evidence/R23-gate/defect-on-base/README.txt
+- A	orchestrator/evidence/R23-gate/defect-on-base/portfolio-public-text-on-23756203.log
+- A	orchestrator/evidence/R23-gate/defect-on-base/probe-portfolio-public-text.test.ts.txt
+- A	orchestrator/evidence/R23-gate/defect-on-base/probe-v101-layout.screen.test.tsx.txt
+- A	orchestrator/evidence/R23-gate/defect-on-base/v101-layout-on-23756203.log
+- A	orchestrator/evidence/R23-gate/exits.txt
+- A	orchestrator/evidence/R23-gate/gate.sh
+- A	orchestrator/evidence/R23-gate/negative-controls.py
+- A	orchestrator/evidence/R23-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R23-gate/rerun-jest.sh
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/00-sha.txt
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/01-install.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/02-check-react-types.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/03-lint.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/04-typecheck.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/05-jest-full.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/05b-handoff-check.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/06-scripts-test.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/07-build.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/08-git-diff-check.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/09-git-status.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/10-android-export.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/10b-localization.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/10c-no-schema-change.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/11-criterion-suites.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/12-git-status-after.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/13-negative-controls.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/14-git-status-final.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/exits.txt
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520-oom/00-sha.txt
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520-oom/05-jest-full.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520-oom/exits.txt
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520/00-sha.txt
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520/05-jest-full.log
+- A	orchestrator/evidence/R23-gate/run-3f0a520-superseded/rerun-3f0a520/exits.txt
+- A	orchestrator/evidence/R23.json
+- A	orchestrator/evidence/R24-gate/00-sha.txt
+- A	orchestrator/evidence/R24-gate/01-install.log
+- A	orchestrator/evidence/R24-gate/02-check-react-types.log
+- A	orchestrator/evidence/R24-gate/03-lint.log
+- A	orchestrator/evidence/R24-gate/04-typecheck.log
+- A	orchestrator/evidence/R24-gate/05-jest-full.log
+- A	orchestrator/evidence/R24-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R24-gate/06-scripts-test.log
+- A	orchestrator/evidence/R24-gate/07-build.log
+- A	orchestrator/evidence/R24-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R24-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R24-gate/09-git-status.log
+- A	orchestrator/evidence/R24-gate/10-android-export.log
+- A	orchestrator/evidence/R24-gate/10b-localization.log
+- A	orchestrator/evidence/R24-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R24-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R24-gate/12-git-status-after.log
+- A	orchestrator/evidence/R24-gate/13-negative-controls.log
+- A	orchestrator/evidence/R24-gate/14-git-status-final.log
+- A	orchestrator/evidence/R24-gate/defect-on-base/README.txt
+- A	orchestrator/evidence/R24-gate/defect-on-base/probe-store-data-safety.test.ts.txt
+- A	orchestrator/evidence/R24-gate/defect-on-base/store-data-safety-on-8fd1336c.log
+- A	orchestrator/evidence/R24-gate/exits.txt
+- A	orchestrator/evidence/R24-gate/gate.sh
+- A	orchestrator/evidence/R24-gate/inventory-added-round2.json
+- A	orchestrator/evidence/R24-gate/inventory-added-round3.json
+- A	orchestrator/evidence/R24-gate/inventory-added.json
+- A	orchestrator/evidence/R24-gate/negative-controls.py
+- A	orchestrator/evidence/R24-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/00-sha.txt
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/01-install.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/02-check-react-types.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/03-lint.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/04-typecheck.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/05-jest-full.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/05b-handoff-check.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/06-scripts-test.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/07-build.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/08-git-diff-check.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/09-git-status.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/10-android-export.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/10b-localization.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/10c-no-schema-change.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/11-criterion-suites.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/12-git-status-after.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/13-negative-controls.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/14-git-status-final.log
+- A	orchestrator/evidence/R24-gate/run-0330d10-superseded/exits.txt
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/00-sha.txt
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/01-install.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/02-check-react-types.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/03-lint.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/04-typecheck.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/05-jest-full.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/05b-handoff-check.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/06-scripts-test.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/07-build.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/08-git-diff-check.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/09-git-status.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/10-android-export.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/10b-localization.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/10c-no-schema-change.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/11-criterion-suites.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/12-git-status-after.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/13-negative-controls.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/14-git-status-final.log
+- A	orchestrator/evidence/R24-gate/run-d74859b-superseded/exits.txt
+- A	orchestrator/evidence/R24.json
+- A	orchestrator/evidence/R25-gate/00-sha.txt
+- A	orchestrator/evidence/R25-gate/01-install.log
+- A	orchestrator/evidence/R25-gate/02-check-react-types.log
+- A	orchestrator/evidence/R25-gate/03-lint.log
+- A	orchestrator/evidence/R25-gate/04-typecheck.log
+- A	orchestrator/evidence/R25-gate/05-jest-full.log
+- A	orchestrator/evidence/R25-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R25-gate/06-scripts-test.log
+- A	orchestrator/evidence/R25-gate/07-build.log
+- A	orchestrator/evidence/R25-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R25-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R25-gate/09-git-status.log
+- A	orchestrator/evidence/R25-gate/10-android-export.log
+- A	orchestrator/evidence/R25-gate/10b-localization.log
+- A	orchestrator/evidence/R25-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R25-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R25-gate/12-git-status-after.log
+- A	orchestrator/evidence/R25-gate/13-negative-controls.log
+- A	orchestrator/evidence/R25-gate/14-git-status-final.log
+- A	orchestrator/evidence/R25-gate/exits.txt
+- A	orchestrator/evidence/R25-gate/gate.sh
+- A	orchestrator/evidence/R25-gate/inventory-added.json
+- A	orchestrator/evidence/R25-gate/negative-controls.py
+- A	orchestrator/evidence/R25-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R25.json
+- A	orchestrator/evidence/R26-gate/categorise-added.cjs
+- A	orchestrator/evidence/R26-gate/gate.sh
+- A	orchestrator/evidence/R26-gate/inventory-added.json
+- A	orchestrator/evidence/R26-gate/negative-controls.py
+- A	orchestrator/evidence/R26-gate/out/00-sha.txt
+- A	orchestrator/evidence/R26-gate/out/01-install.log
+- A	orchestrator/evidence/R26-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/R26-gate/out/03-lint.log
+- A	orchestrator/evidence/R26-gate/out/04-typecheck.log
+- A	orchestrator/evidence/R26-gate/out/05-jest-full.log
+- A	orchestrator/evidence/R26-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/R26-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/R26-gate/out/07-build.log
+- A	orchestrator/evidence/R26-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R26-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/R26-gate/out/09-git-status.log
+- A	orchestrator/evidence/R26-gate/out/10-android-export.log
+- A	orchestrator/evidence/R26-gate/out/10b-localization.log
+- A	orchestrator/evidence/R26-gate/out/10c-offline.log
+- A	orchestrator/evidence/R26-gate/out/10d-database.log
+- A	orchestrator/evidence/R26-gate/out/10e-manifest-rebuild.log
+- A	orchestrator/evidence/R26-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/R26-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/R26-gate/out/12b-install-local.log
+- A	orchestrator/evidence/R26-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/R26-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/R26-gate/out/exits.txt
+- A	orchestrator/evidence/R26-gate/realign-dry.json
+- A	orchestrator/evidence/R26-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R26-gate/realign.sh
+- A	orchestrator/evidence/R26-moderation/build-manifest.mjs
+- A	orchestrator/evidence/R26-moderation/live-snapshot.json
+- A	orchestrator/evidence/R26-moderation/local-replay-reading.json
+- A	orchestrator/evidence/R26-moderation/manifest.json
+- A	orchestrator/evidence/R26-moderation/reading.sql
+- A	orchestrator/evidence/R26-moderation/rollback.sql
+- A	orchestrator/evidence/R26.json
+- A	orchestrator/evidence/R27-gate/gate.sh
+- A	orchestrator/evidence/R27-gate/negative-controls.py
+- A	orchestrator/evidence/R27-gate/out/00-sha.txt
+- A	orchestrator/evidence/R27-gate/out/01-install.log
+- A	orchestrator/evidence/R27-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/R27-gate/out/03-lint.log
+- A	orchestrator/evidence/R27-gate/out/04-typecheck.log
+- A	orchestrator/evidence/R27-gate/out/05-jest-full.log
+- A	orchestrator/evidence/R27-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/R27-gate/out/05c-jest-shard-1of2.log
+- A	orchestrator/evidence/R27-gate/out/05d-jest-shard-2of2.log
+- A	orchestrator/evidence/R27-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/R27-gate/out/07-build.log
+- A	orchestrator/evidence/R27-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R27-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/R27-gate/out/09-git-status.log
+- A	orchestrator/evidence/R27-gate/out/10-manifest-unchanged.log
+- A	orchestrator/evidence/R27-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/R27-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/R27-gate/out/12b-install-local.log
+- A	orchestrator/evidence/R27-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/R27-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/R27-gate/out/exits.txt
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/00-sha.txt
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/01-install.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/02-check-react-types.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/03-lint.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/04-typecheck.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/05-jest-full.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/05b-handoff-check.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/06-scripts-test.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/07-build.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/08-git-diff-check.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/09-git-status.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/10-manifest-unchanged.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/11-criterion-suites.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/12-git-status-after.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/12b-install-local.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/13-negative-controls.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/14-git-status-final.log
+- A	orchestrator/evidence/R27-gate/run-7c2b64f6-superseded/exits.txt
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/00-sha.txt
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/01-install.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/02-check-react-types.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/03-lint.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/04-typecheck.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/05-jest-full.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/05b-handoff-check.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/06-scripts-test.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/07-build.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/08-git-diff-check.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/09-git-status.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/10-manifest-unchanged.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/11-criterion-suites.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/12-git-status-after.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/12b-install-local.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/13-negative-controls.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/14-git-status-final.log
+- A	orchestrator/evidence/R27-gate/run-b2752d7a-1-worker-lost/exits.txt
+- A	orchestrator/evidence/R27-gate/shards.sh
+- A	orchestrator/evidence/R27-production-apply/00-expected.json
+- A	orchestrator/evidence/R27-production-apply/01-precondition.json
+- A	orchestrator/evidence/R27-production-apply/02-apply.json
+- A	orchestrator/evidence/R27-production-apply/02-apply.sql
+- A	orchestrator/evidence/R27-production-apply/03-postcondition.json
+- A	orchestrator/evidence/R27-production-apply/04-independent-read.json
+- A	orchestrator/evidence/R27-production-apply/verdict.json
+- A	orchestrator/evidence/R27-tooling/apply.mjs
+- A	orchestrator/evidence/R27-tooling/independent-read.sql
+- A	orchestrator/evidence/R27.json
+- A	orchestrator/evidence/R28-gate/00-sha.txt
+- A	orchestrator/evidence/R28-gate/01-install.log
+- A	orchestrator/evidence/R28-gate/02-check-react-types.log
+- A	orchestrator/evidence/R28-gate/03-lint.log
+- A	orchestrator/evidence/R28-gate/04-typecheck.log
+- A	orchestrator/evidence/R28-gate/05-jest-full.log
+- A	orchestrator/evidence/R28-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R28-gate/06-scripts-test.log
+- A	orchestrator/evidence/R28-gate/07-build.log
+- A	orchestrator/evidence/R28-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R28-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R28-gate/09-git-status.log
+- A	orchestrator/evidence/R28-gate/10-android-export.log
+- A	orchestrator/evidence/R28-gate/10b-localization.log
+- A	orchestrator/evidence/R28-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R28-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R28-gate/12-git-status-after.log
+- A	orchestrator/evidence/R28-gate/13-negative-controls.log
+- A	orchestrator/evidence/R28-gate/14-git-status-final.log
+- A	orchestrator/evidence/R28-gate/exits.txt
+- A	orchestrator/evidence/R28-gate/gate.sh
+- A	orchestrator/evidence/R28-gate/negative-controls.py
+- A	orchestrator/evidence/R28-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R28.json
+- A	orchestrator/evidence/R28M-active-project-role/build-manifest.mjs
+- A	orchestrator/evidence/R28M-active-project-role/live-read.json
+- A	orchestrator/evidence/R28M-active-project-role/manifest.json
+- A	orchestrator/evidence/R28M-active-project-role/reading.sql
+- A	orchestrator/evidence/R28M-active-project-role/rollback.sql
+- A	orchestrator/evidence/R28M-gate/gate.sh
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/00-install-local.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/00-sha.txt
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/01-install.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/02-check-react-types.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/03-lint.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/04-typecheck.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/05-criterion-suites.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/06-prepare.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/06b-handoff-check.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/07-manifest-rebuilt.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/08-approval-null.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/09-git-diff-check.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/10-git-status.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/10b-install-local.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/11-negative-controls.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/12-git-status-final.log
+- A	orchestrator/evidence/R28M-gate/logs-883b2cdd/exits.txt
+- A	orchestrator/evidence/R28M-gate/logs-controller-fontscale/00-sha.txt
+- A	orchestrator/evidence/R28M-gate/logs-controller-fontscale/01-font-scale-live-change-alone.log
+- A	orchestrator/evidence/R28M-gate/logs-controller-oom/00-sha.txt
+- A	orchestrator/evidence/R28M-gate/logs-controller-oom/01-line-height-scales-alone.log
+- A	orchestrator/evidence/R28M-gate/logs-controller-timeout/00-sha.txt
+- A	orchestrator/evidence/R28M-gate/logs-controller-timeout/01-two-suites.log
+- A	orchestrator/evidence/R28M-gate/negative-controls.sh
+- A	orchestrator/evidence/R28M.json
+- A	orchestrator/evidence/R28P-active-project-role/00-plan.json
+- A	orchestrator/evidence/R28P-active-project-role/01-precondition-check-only.json
+- A	orchestrator/evidence/R28P-active-project-role/01-precondition.json
+- A	orchestrator/evidence/R28P-active-project-role/02-backup.json
+- A	orchestrator/evidence/R28P-active-project-role/03-apply.json
+- A	orchestrator/evidence/R28P-active-project-role/03-apply.sql
+- A	orchestrator/evidence/R28P-active-project-role/04-postcondition.json
+- A	orchestrator/evidence/R28P-active-project-role/applied.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt1-blocked/01-precondition.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt1-blocked/02-backup.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt1-blocked/blocked.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/01-precondition.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/02-backup.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/03-apply.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/03-apply.sql
+- A	orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/04-postcondition.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/05-rollback.json
+- A	orchestrator/evidence/R28P-active-project-role/attempt2-rolled-back/blocked.json
+- A	orchestrator/evidence/R28P-active-project-role/read-first.json
+- A	orchestrator/evidence/R28P-active-project-role/verdict.json
+- A	orchestrator/evidence/R28P-gate/gate.sh
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/00-install-local.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/00-sha.txt
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/01-install.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/02-check-react-types.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/03-lint.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/04-typecheck.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/05-criterion-suites.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/06-jest-full.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/06-prepare.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/06b-handoff-check.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/07-manifest-unchanged.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/08-approval-null.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/09-git-diff-check.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/10-git-status.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/10b-install-local.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/11-negative-controls.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/12-git-status-final.log
+- A	orchestrator/evidence/R28P-gate/logs-953631d1/exits.txt
+- A	orchestrator/evidence/R28P-gate/negative-controls.sh
+- A	orchestrator/evidence/R28P-tooling/apply.mjs
+- A	orchestrator/evidence/R28P.json
+- A	orchestrator/evidence/R29-gate/00-sha.txt
+- A	orchestrator/evidence/R29-gate/01-install.log
+- A	orchestrator/evidence/R29-gate/02-check-react-types.log
+- A	orchestrator/evidence/R29-gate/03-lint.log
+- A	orchestrator/evidence/R29-gate/04-typecheck.log
+- A	orchestrator/evidence/R29-gate/05-jest-full.log
+- A	orchestrator/evidence/R29-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R29-gate/06-scripts-test.log
+- A	orchestrator/evidence/R29-gate/07-build.log
+- A	orchestrator/evidence/R29-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R29-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R29-gate/09-git-status.log
+- A	orchestrator/evidence/R29-gate/10-android-export.log
+- A	orchestrator/evidence/R29-gate/10b-localization.log
+- A	orchestrator/evidence/R29-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R29-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R29-gate/12-git-status-after.log
+- A	orchestrator/evidence/R29-gate/13-negative-controls.log
+- A	orchestrator/evidence/R29-gate/14-git-status-final.log
+- A	orchestrator/evidence/R29-gate/exits.txt
+- A	orchestrator/evidence/R29-gate/gate.sh
+- A	orchestrator/evidence/R29-gate/negative-controls.py
+- A	orchestrator/evidence/R29.json
+- A	orchestrator/evidence/R30-gate/00-sha.txt
+- A	orchestrator/evidence/R30-gate/01-install.log
+- A	orchestrator/evidence/R30-gate/02-check-react-types.log
+- A	orchestrator/evidence/R30-gate/03-lint.log
+- A	orchestrator/evidence/R30-gate/04-typecheck.log
+- A	orchestrator/evidence/R30-gate/05-jest-full.log
+- A	orchestrator/evidence/R30-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R30-gate/06-scripts-test.log
+- A	orchestrator/evidence/R30-gate/07-build.log
+- A	orchestrator/evidence/R30-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R30-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R30-gate/09-git-status.log
+- A	orchestrator/evidence/R30-gate/10-android-export.log
+- A	orchestrator/evidence/R30-gate/10b-localization.log
+- A	orchestrator/evidence/R30-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R30-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R30-gate/12-git-status-after.log
+- A	orchestrator/evidence/R30-gate/13-negative-controls.log
+- A	orchestrator/evidence/R30-gate/14-git-status-final.log
+- A	orchestrator/evidence/R30-gate/exits.txt
+- A	orchestrator/evidence/R30-gate/gate.sh
+- A	orchestrator/evidence/R30-gate/inventory-added-review6.json
+- A	orchestrator/evidence/R30-gate/inventory-added.json
+- A	orchestrator/evidence/R30-gate/negative-controls.py
+- A	orchestrator/evidence/R30-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R30.json
+- A	orchestrator/evidence/R31-gate/00-sha.txt
+- A	orchestrator/evidence/R31-gate/00b-base-defect-repro.log
+- A	orchestrator/evidence/R31-gate/01-install.log
+- A	orchestrator/evidence/R31-gate/02-check-react-types.log
+- A	orchestrator/evidence/R31-gate/03-lint.log
+- A	orchestrator/evidence/R31-gate/04-typecheck.log
+- A	orchestrator/evidence/R31-gate/05-jest-full.log
+- A	orchestrator/evidence/R31-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R31-gate/06-scripts-test.log
+- A	orchestrator/evidence/R31-gate/07-build.log
+- A	orchestrator/evidence/R31-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R31-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R31-gate/09-git-status.log
+- A	orchestrator/evidence/R31-gate/10-android-export.log
+- A	orchestrator/evidence/R31-gate/10b-localization.log
+- A	orchestrator/evidence/R31-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R31-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R31-gate/12-git-status-after.log
+- A	orchestrator/evidence/R31-gate/13-negative-controls.log
+- A	orchestrator/evidence/R31-gate/14-git-status-final.log
+- A	orchestrator/evidence/R31-gate/exits.txt
+- A	orchestrator/evidence/R31-gate/gate.sh
+- A	orchestrator/evidence/R31-gate/inventory-added.json
+- A	orchestrator/evidence/R31-gate/negative-controls.py
+- A	orchestrator/evidence/R31-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R31.json
+- A	orchestrator/evidence/R32-active-project-role/manifest.json
+- A	orchestrator/evidence/R32-gate/00-sha.txt
+- A	orchestrator/evidence/R32-gate/00b-base-defect-repro.log
+- A	orchestrator/evidence/R32-gate/00c-req162-base-ab.log
+- A	orchestrator/evidence/R32-gate/00d-req162-ab-idle.log
+- A	orchestrator/evidence/R32-gate/01-install.log
+- A	orchestrator/evidence/R32-gate/02-check-react-types.log
+- A	orchestrator/evidence/R32-gate/03-lint.log
+- A	orchestrator/evidence/R32-gate/04-typecheck.log
+- A	orchestrator/evidence/R32-gate/05-jest-full.log
+- A	orchestrator/evidence/R32-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R32-gate/06-scripts-test.log
+- A	orchestrator/evidence/R32-gate/07-build.log
+- A	orchestrator/evidence/R32-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R32-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R32-gate/09-git-status.log
+- A	orchestrator/evidence/R32-gate/10-android-export.log
+- A	orchestrator/evidence/R32-gate/10b-localization.log
+- A	orchestrator/evidence/R32-gate/10c-schema-as-integration.log
+- A	orchestrator/evidence/R32-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R32-gate/12-git-status-after.log
+- A	orchestrator/evidence/R32-gate/12b-install-local.log
+- A	orchestrator/evidence/R32-gate/13-negative-controls.log
+- A	orchestrator/evidence/R32-gate/14-git-status-final.log
+- A	orchestrator/evidence/R32-gate/exits.txt
+- A	orchestrator/evidence/R32-gate/gate.sh
+- A	orchestrator/evidence/R32-gate/inventory-added.json
+- A	orchestrator/evidence/R32-gate/negative-controls.py
+- A	orchestrator/evidence/R32-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R32-gate/req162-probe/probe-set-clause.test.ts.txt
+- A	orchestrator/evidence/R32-gate/req162-probe/probe-wrappers.test.ts.txt
+- A	orchestrator/evidence/R32-gate/req162-probe/probe1.out.txt
+- A	orchestrator/evidence/R32-gate/req162-probe/probe2.out.txt
+- A	orchestrator/evidence/R32-gate/req162-probe/probe3.out.txt
+- A	orchestrator/evidence/R32-gate/req162-probe/probe4.out.txt
+- A	orchestrator/evidence/R32-gate/req162-probe/probe5.out.txt
+- A	orchestrator/evidence/R32-gate/run1-load-timeouts/05-jest-full.summary.log
+- A	orchestrator/evidence/R32-gate/run1-load-timeouts/11-criterion-suites.summary.log
+- A	orchestrator/evidence/R32-gate/run1-load-timeouts/11b-criterion-load-reruns.log
+- A	orchestrator/evidence/R32-gate/run1-load-timeouts/exits.txt
+- A	orchestrator/evidence/R32.json
+- A	orchestrator/evidence/R33-gate/00-sha.txt
+- A	orchestrator/evidence/R33-gate/00c-req162-ab.log
+- A	orchestrator/evidence/R33-gate/01-install.log
+- A	orchestrator/evidence/R33-gate/02-check-react-types.log
+- A	orchestrator/evidence/R33-gate/03-lint.log
+- A	orchestrator/evidence/R33-gate/04-typecheck.log
+- A	orchestrator/evidence/R33-gate/05-jest-full.log
+- A	orchestrator/evidence/R33-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R33-gate/06-scripts-test.log
+- A	orchestrator/evidence/R33-gate/07-build.log
+- A	orchestrator/evidence/R33-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R33-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R33-gate/09-git-status.log
+- A	orchestrator/evidence/R33-gate/10-android-export.log
+- A	orchestrator/evidence/R33-gate/10b-localization.log
+- A	orchestrator/evidence/R33-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R33-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R33-gate/12-git-status-after.log
+- A	orchestrator/evidence/R33-gate/13-negative-controls.log
+- A	orchestrator/evidence/R33-gate/14-git-status-final.log
+- A	orchestrator/evidence/R33-gate/exits.txt
+- A	orchestrator/evidence/R33-gate/gate.sh
+- A	orchestrator/evidence/R33-gate/inventory-added.json
+- A	orchestrator/evidence/R33-gate/negative-controls.py
+- A	orchestrator/evidence/R33-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R33.json
+- A	orchestrator/evidence/R34-gate/00-sha.txt
+- A	orchestrator/evidence/R34-gate/00c-base-product-ab.log
+- A	orchestrator/evidence/R34-gate/01-install.log
+- A	orchestrator/evidence/R34-gate/02-check-react-types.log
+- A	orchestrator/evidence/R34-gate/03-lint.log
+- A	orchestrator/evidence/R34-gate/04-typecheck.log
+- A	orchestrator/evidence/R34-gate/05-jest-full.log
+- A	orchestrator/evidence/R34-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R34-gate/06-scripts-test.log
+- A	orchestrator/evidence/R34-gate/07-build.log
+- A	orchestrator/evidence/R34-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R34-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R34-gate/09-git-status.log
+- A	orchestrator/evidence/R34-gate/10-android-export.log
+- A	orchestrator/evidence/R34-gate/10b-localization.log
+- A	orchestrator/evidence/R34-gate/10c-no-schema-change.log
+- A	orchestrator/evidence/R34-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R34-gate/12-git-status-after.log
+- A	orchestrator/evidence/R34-gate/13-negative-controls.log
+- A	orchestrator/evidence/R34-gate/14-git-status-final.log
+- A	orchestrator/evidence/R34-gate/exits.txt
+- A	orchestrator/evidence/R34-gate/gate.sh
+- A	orchestrator/evidence/R34-gate/inventory-added.json
+- A	orchestrator/evidence/R34-gate/negative-controls.py
+- A	orchestrator/evidence/R34-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R34.json
+- A	orchestrator/evidence/R35-gate/00-sha.txt
+- A	orchestrator/evidence/R35-gate/01-install.log
+- A	orchestrator/evidence/R35-gate/02-check-react-types.log
+- A	orchestrator/evidence/R35-gate/03-lint.log
+- A	orchestrator/evidence/R35-gate/04-typecheck.log
+- A	orchestrator/evidence/R35-gate/05-jest-full.log
+- A	orchestrator/evidence/R35-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R35-gate/06-scripts-test.log
+- A	orchestrator/evidence/R35-gate/07-build.log
+- A	orchestrator/evidence/R35-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R35-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R35-gate/09-git-status.log
+- A	orchestrator/evidence/R35-gate/10-android-export.log
+- A	orchestrator/evidence/R35-gate/10b-localization.log
+- A	orchestrator/evidence/R35-gate/10c-no-schema-or-dependency-change.log
+- A	orchestrator/evidence/R35-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R35-gate/12-git-status-after.log
+- A	orchestrator/evidence/R35-gate/12b-install-local.log
+- A	orchestrator/evidence/R35-gate/12c-base-product-ab.log
+- A	orchestrator/evidence/R35-gate/13-negative-controls.log
+- A	orchestrator/evidence/R35-gate/14-git-status-final.log
+- A	orchestrator/evidence/R35-gate/base-product-ab.sh
+- A	orchestrator/evidence/R35-gate/exits.txt
+- A	orchestrator/evidence/R35-gate/gate.sh
+- A	orchestrator/evidence/R35-gate/inventory-added.json
+- A	orchestrator/evidence/R35-gate/make-inventory-added.py
+- A	orchestrator/evidence/R35-gate/negative-controls.py
+- A	orchestrator/evidence/R35-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R35-gate/realign.sh
+- A	orchestrator/evidence/R35.json
+- A	orchestrator/evidence/R36-gate/00-sha.txt
+- A	orchestrator/evidence/R36-gate/01-install.log
+- A	orchestrator/evidence/R36-gate/02-check-react-types.log
+- A	orchestrator/evidence/R36-gate/03-lint.log
+- A	orchestrator/evidence/R36-gate/04-typecheck.log
+- A	orchestrator/evidence/R36-gate/05-jest-full.log
+- A	orchestrator/evidence/R36-gate/05b-handoff-check.log
+- A	orchestrator/evidence/R36-gate/05b2-base-666dc558-jest-full.log
+- A	orchestrator/evidence/R36-gate/05r-jest-full-rerun.log
+- A	orchestrator/evidence/R36-gate/05s1-jest-shard-1-of-2.log
+- A	orchestrator/evidence/R36-gate/05s2-jest-shard-2-of-2.log
+- A	orchestrator/evidence/R36-gate/06-scripts-test.log
+- A	orchestrator/evidence/R36-gate/07-build.log
+- A	orchestrator/evidence/R36-gate/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R36-gate/08-git-diff-check.log
+- A	orchestrator/evidence/R36-gate/09-git-status.log
+- A	orchestrator/evidence/R36-gate/10-android-export.log
+- A	orchestrator/evidence/R36-gate/10b-localization.log
+- A	orchestrator/evidence/R36-gate/10c-no-schema-and-one-dependency.log
+- A	orchestrator/evidence/R36-gate/11-criterion-suites.log
+- A	orchestrator/evidence/R36-gate/12-git-status-after.log
+- A	orchestrator/evidence/R36-gate/12b-install-local.log
+- A	orchestrator/evidence/R36-gate/12c-base-product-ab.log
+- A	orchestrator/evidence/R36-gate/13-negative-controls.log
+- A	orchestrator/evidence/R36-gate/14-git-status-final.log
+- A	orchestrator/evidence/R36-gate/base-product-ab.sh
+- A	orchestrator/evidence/R36-gate/exits.txt
+- A	orchestrator/evidence/R36-gate/gate.sh
+- A	orchestrator/evidence/R36-gate/negative-controls.py
+- A	orchestrator/evidence/R36.json
+- A	orchestrator/evidence/R37-gate/base-product-ab.sh
+- A	orchestrator/evidence/R37-gate/gate.sh
+- A	orchestrator/evidence/R37-gate/inventory-added.json
+- A	orchestrator/evidence/R37-gate/logs/00-sha.txt
+- A	orchestrator/evidence/R37-gate/logs/01-install.log
+- A	orchestrator/evidence/R37-gate/logs/02-check-react-types.log
+- A	orchestrator/evidence/R37-gate/logs/03-lint.log
+- A	orchestrator/evidence/R37-gate/logs/04-typecheck.log
+- A	orchestrator/evidence/R37-gate/logs/05-jest-full.log
+- A	orchestrator/evidence/R37-gate/logs/05b-handoff-check.log
+- A	orchestrator/evidence/R37-gate/logs/06-scripts-test.log
+- A	orchestrator/evidence/R37-gate/logs/07-build.log
+- A	orchestrator/evidence/R37-gate/logs/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R37-gate/logs/08-git-diff-check.log
+- A	orchestrator/evidence/R37-gate/logs/09-git-status.log
+- A	orchestrator/evidence/R37-gate/logs/10-android-export.log
+- A	orchestrator/evidence/R37-gate/logs/10b-localization.log
+- A	orchestrator/evidence/R37-gate/logs/10c-no-schema-or-dependency-change.log
+- A	orchestrator/evidence/R37-gate/logs/11-criterion-suites.log
+- A	orchestrator/evidence/R37-gate/logs/12-git-status-after.log
+- A	orchestrator/evidence/R37-gate/logs/12b-install-local.log
+- A	orchestrator/evidence/R37-gate/logs/12c-base-product-ab.log
+- A	orchestrator/evidence/R37-gate/logs/13-negative-controls.log
+- A	orchestrator/evidence/R37-gate/logs/14-git-status-final.log
+- A	orchestrator/evidence/R37-gate/logs/exits.txt
+- A	orchestrator/evidence/R37-gate/make-inventory-added.py
+- A	orchestrator/evidence/R37-gate/negative-controls.py
+- A	orchestrator/evidence/R37-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R37-gate/realign.sh
+- A	orchestrator/evidence/R37.json
+- A	orchestrator/evidence/R38-gate/base-product-ab.sh
+- A	orchestrator/evidence/R38-gate/gate.sh
+- A	orchestrator/evidence/R38-gate/inventory-added.json
+- A	orchestrator/evidence/R38-gate/logs/00-sha.txt
+- A	orchestrator/evidence/R38-gate/logs/01-install.log
+- A	orchestrator/evidence/R38-gate/logs/02-check-react-types.log
+- A	orchestrator/evidence/R38-gate/logs/03-lint.log
+- A	orchestrator/evidence/R38-gate/logs/04-typecheck.log
+- A	orchestrator/evidence/R38-gate/logs/05-jest-full.log
+- A	orchestrator/evidence/R38-gate/logs/05b-handoff-check.log
+- A	orchestrator/evidence/R38-gate/logs/05s1-jest-shard-1-of-2.log
+- A	orchestrator/evidence/R38-gate/logs/05s2-jest-shard-2-of-2.log
+- A	orchestrator/evidence/R38-gate/logs/06-scripts-test.log
+- A	orchestrator/evidence/R38-gate/logs/07-build.log
+- A	orchestrator/evidence/R38-gate/logs/07b-typecheck-after-build.log
+- A	orchestrator/evidence/R38-gate/logs/08-git-diff-check.log
+- A	orchestrator/evidence/R38-gate/logs/09-git-status.log
+- A	orchestrator/evidence/R38-gate/logs/10-android-export.log
+- A	orchestrator/evidence/R38-gate/logs/10b-localization.log
+- A	orchestrator/evidence/R38-gate/logs/10c-no-schema-or-dependency-change.log
+- A	orchestrator/evidence/R38-gate/logs/11-criterion-suites.log
+- A	orchestrator/evidence/R38-gate/logs/12-git-status-after.log
+- A	orchestrator/evidence/R38-gate/logs/12b-install-local.log
+- A	orchestrator/evidence/R38-gate/logs/12c-base-product-ab.log
+- A	orchestrator/evidence/R38-gate/logs/13-negative-controls.log
+- A	orchestrator/evidence/R38-gate/logs/14-git-status-final.log
+- A	orchestrator/evidence/R38-gate/logs/exits.txt
+- A	orchestrator/evidence/R38-gate/make-inventory-added.py
+- A	orchestrator/evidence/R38-gate/negative-controls.py
+- A	orchestrator/evidence/R38-gate/realign-inventory.cjs
+- A	orchestrator/evidence/R38-gate/realign.sh
+- A	orchestrator/evidence/R38.json
+- A	orchestrator/evidence/R39-gate/acceptance-screens.log
+- A	orchestrator/evidence/R39-gate/android-export.log
+- A	orchestrator/evidence/R39-gate/build.log
+- A	orchestrator/evidence/R39-gate/core-gates.log
+- A	orchestrator/evidence/R39-gate/full-jest.log
+- A	orchestrator/evidence/R39-gate/inventory-added.json
+- A	orchestrator/evidence/R39-gate/inventory-realign-empty.json
+- A	orchestrator/evidence/R39.json
+- A	orchestrator/evidence/R40-gate/acceptance-screens.log
+- A	orchestrator/evidence/R40-gate/android-export.log
+- A	orchestrator/evidence/R40-gate/build.log
+- A	orchestrator/evidence/R40-gate/core-gates.log
+- A	orchestrator/evidence/R40-gate/full-jest.log
+- A	orchestrator/evidence/R40-gate/inventory-added.json
+- A	orchestrator/evidence/R40-gate/localization.log
+- A	orchestrator/evidence/R40-gate/negative-controls.log
+- A	orchestrator/evidence/R40-gate/negative-controls.py
+- A	orchestrator/evidence/R40-gate/realign.sh
+- A	orchestrator/evidence/R40.json
+- A	orchestrator/evidence/R41-gate/categorise-ledgers.cjs
+- A	orchestrator/evidence/R41-gate/gate.sh
+- A	orchestrator/evidence/R41-gate/inventory-added.json
+- A	orchestrator/evidence/R41-gate/logs/controller-android-export.log
+- A	orchestrator/evidence/R41-gate/logs/controller-core.log
+- A	orchestrator/evidence/R41-gate/logs/controller-localization.log
+- A	orchestrator/evidence/R41-gate/logs/criterion-suites.log
+- A	orchestrator/evidence/R41-gate/logs/local-checks.txt
+- A	orchestrator/evidence/R41-gate/logs/negative-controls.log
+- A	orchestrator/evidence/R41-gate/logs/own-core.log
+- A	orchestrator/evidence/R41-gate/logs/own-gate-run1.txt
+- A	orchestrator/evidence/R41-gate/logs/redesign-matrix.log
+- A	orchestrator/evidence/R41-gate/negative-controls.py
+- A	orchestrator/evidence/R41-gate/realign.sh
+- A	orchestrator/evidence/R41.json
+- A	orchestrator/evidence/RC101-gate/gate.sh
+- A	orchestrator/evidence/RC101-gate/logs-515a0308/rerun-req173-line-height.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/00-sha.txt
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/01-install.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/01b-install-local.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/02-check-react-types.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/03-lint.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/04-typecheck.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/05-criterion-suites.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/06-jest-full.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/06b-handoff-check.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/07-scripts-test.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/08-build.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/08b-typecheck-after-build.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/09-localization.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/10-android-export.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/10a-version-and-scope.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/10b-no-schema-change.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/10c-candidate-on-disk.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/10d-no-credential-tracked.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/11-git-diff-check.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/12-git-status.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/13-negative-controls.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/14-git-status-final.log
+- A	orchestrator/evidence/RC101-gate/logs-e4d434d4/exits.txt
+- A	orchestrator/evidence/RC101-gate/negative-controls.sh
+- A	orchestrator/evidence/RC101.json
+- A	orchestrator/evidence/RC101/refresh-vulns.cjs
+- A	orchestrator/evidence/RC102-gate/gate.sh
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/00-sha.txt
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/01-install.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/01b-install-local.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/02-check-react-types.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/03-lint.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/04-typecheck.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/05-criterion-suites.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/06-jest-full.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/06b-handoff-check.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/07-scripts-test.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/08-build.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/08b-typecheck-after-build.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/09-localization.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/10-android-export.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/10a-version-and-scope.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/10b-no-schema-change.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/10c-candidate-on-disk.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/10d-no-credential-tracked.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/10e-pem-guard.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/11-git-diff-check.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/12-git-status.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/13-negative-controls.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/14-git-status-final.log
+- A	orchestrator/evidence/RC102-gate/logs-176b62d2/exits.txt
+- A	orchestrator/evidence/RC102-gate/negative-controls.sh
+- A	orchestrator/evidence/RC102.json
+- A	orchestrator/evidence/T00.json
+- A	orchestrator/evidence/T01-gate/accepted/01-install.log
+- A	orchestrator/evidence/T01-gate/accepted/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/accepted/03-lint.log
+- A	orchestrator/evidence/T01-gate/accepted/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/accepted/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/accepted/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/accepted/07-build.log
+- A	orchestrator/evidence/T01-gate/accepted/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/accepted/09-git-status.log
+- A	orchestrator/evidence/T01-gate/accepted/10-git-diff-check-main.log
+- A	orchestrator/evidence/T01-gate/accepted/11-git-status-short.log
+- A	orchestrator/evidence/T01-gate/accepted/env.txt
+- A	orchestrator/evidence/T01-gate/accepted/exits.txt
+- A	orchestrator/evidence/T01-gate/baseline/01-install.log
+- A	orchestrator/evidence/T01-gate/baseline/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/baseline/03-lint.log
+- A	orchestrator/evidence/T01-gate/baseline/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/baseline/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/baseline/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/baseline/07-build.log
+- A	orchestrator/evidence/T01-gate/baseline/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/baseline/09-git-status.log
+- A	orchestrator/evidence/T01-gate/baseline/env.txt
+- A	orchestrator/evidence/T01-gate/baseline/exits.txt
+- A	orchestrator/evidence/T01-gate/head-confirm/01-install.log
+- A	orchestrator/evidence/T01-gate/head-confirm/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/head-confirm/03-lint.log
+- A	orchestrator/evidence/T01-gate/head-confirm/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/head-confirm/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/head-confirm/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/head-confirm/07-build.log
+- A	orchestrator/evidence/T01-gate/head-confirm/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/head-confirm/09-git-status.log
+- A	orchestrator/evidence/T01-gate/head-confirm/10-git-diff-check-main.log
+- A	orchestrator/evidence/T01-gate/head-confirm/11-git-status-short.log
+- A	orchestrator/evidence/T01-gate/head-confirm/env.txt
+- A	orchestrator/evidence/T01-gate/head-confirm/exits.txt
+- A	orchestrator/evidence/T01-gate/head/01-install.log
+- A	orchestrator/evidence/T01-gate/head/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/head/03-lint.log
+- A	orchestrator/evidence/T01-gate/head/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/head/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/head/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/head/07-build.log
+- A	orchestrator/evidence/T01-gate/head/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/head/09-git-status.log
+- A	orchestrator/evidence/T01-gate/head/10-git-diff-check-main.log
+- A	orchestrator/evidence/T01-gate/head/11-git-status-short.log
+- A	orchestrator/evidence/T01-gate/head/env.txt
+- A	orchestrator/evidence/T01-gate/head/exits.txt
+- A	orchestrator/evidence/T01-gate/head2-confirm/01-install.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/03-lint.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/07-build.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/09-git-status.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/10-git-diff-check-main.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/11-git-status-short.log
+- A	orchestrator/evidence/T01-gate/head2-confirm/env.txt
+- A	orchestrator/evidence/T01-gate/head2-confirm/exits.txt
+- A	orchestrator/evidence/T01-gate/head2/01-install.log
+- A	orchestrator/evidence/T01-gate/head2/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/head2/03-lint.log
+- A	orchestrator/evidence/T01-gate/head2/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/head2/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/head2/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/head2/07-build.log
+- A	orchestrator/evidence/T01-gate/head2/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/head2/09-git-status.log
+- A	orchestrator/evidence/T01-gate/head2/10-git-diff-check-main.log
+- A	orchestrator/evidence/T01-gate/head2/11-git-status-short.log
+- A	orchestrator/evidence/T01-gate/head2/env.txt
+- A	orchestrator/evidence/T01-gate/head2/exits.txt
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/01-install.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/03-lint.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/07-build.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/09-git-status.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/10-git-diff-check-main.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/11-git-status-short.log
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/env.txt
+- A	orchestrator/evidence/T01-gate/merged-dirty-attempt/exits.txt
+- A	orchestrator/evidence/T01-gate/merged-first-run/01-install.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/03-lint.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/07-build.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/09-git-status.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/10-git-diff-check-main.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/11-git-status-short.log
+- A	orchestrator/evidence/T01-gate/merged-first-run/env.txt
+- A	orchestrator/evidence/T01-gate/merged-first-run/exits.txt
+- A	orchestrator/evidence/T01-gate/merged-first-run/stale-router-types.d.ts
+- A	orchestrator/evidence/T01-gate/merged/01-install.log
+- A	orchestrator/evidence/T01-gate/merged/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/merged/03-lint.log
+- A	orchestrator/evidence/T01-gate/merged/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/merged/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/merged/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/merged/07-build.log
+- A	orchestrator/evidence/T01-gate/merged/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/merged/09-git-status.log
+- A	orchestrator/evidence/T01-gate/merged/10-git-diff-check-main.log
+- A	orchestrator/evidence/T01-gate/merged/11-git-status-short.log
+- A	orchestrator/evidence/T01-gate/merged/commands.txt
+- A	orchestrator/evidence/T01-gate/merged/env.txt
+- A	orchestrator/evidence/T01-gate/merged/exits.txt
+- A	orchestrator/evidence/T01-gate/merged/probe-versions.sh
+- A	orchestrator/evidence/T01-gate/merged/versions.txt
+- A	orchestrator/evidence/T01-gate/reviewed/01-install.log
+- A	orchestrator/evidence/T01-gate/reviewed/02-check-react-types.log
+- A	orchestrator/evidence/T01-gate/reviewed/03-lint.log
+- A	orchestrator/evidence/T01-gate/reviewed/04-typecheck.log
+- A	orchestrator/evidence/T01-gate/reviewed/05-jest-milesign.log
+- A	orchestrator/evidence/T01-gate/reviewed/06-scripts-test.log
+- A	orchestrator/evidence/T01-gate/reviewed/07-build.log
+- A	orchestrator/evidence/T01-gate/reviewed/08-git-diff-check.log
+- A	orchestrator/evidence/T01-gate/reviewed/09-git-status.log
+- A	orchestrator/evidence/T01-gate/reviewed/env.txt
+- A	orchestrator/evidence/T01-gate/reviewed/exits.txt
+- A	orchestrator/evidence/T01-gate/whitespace-replay/01-adb4b35-without-gitattributes.log
+- A	orchestrator/evidence/T01-gate/whitespace-replay/02-adb4b35-with-gitattributes.log
+- A	orchestrator/evidence/T01-gate/whitespace-replay/03-fdc8613-with-gitattributes.log
+- A	orchestrator/evidence/T01-gate/whitespace-replay/commands.txt
+- A	orchestrator/evidence/T01-gate/whitespace-replay/env.txt
+- A	orchestrator/evidence/T01-gate/whitespace-replay/exits.txt
+- A	orchestrator/evidence/T01.json
+- A	orchestrator/evidence/T02-effects/01-live-migration-history.json
+- A	orchestrator/evidence/T02-effects/02-live-d1-material-delete-activity.json
+- A	orchestrator/evidence/T02-effects/03-live-d2-nine-indexes.json
+- A	orchestrator/evidence/T02-effects/04-live-d3-expenses-category.json
+- A	orchestrator/evidence/T02-effects/05-local-database-engine.txt
+- A	orchestrator/evidence/T02-effects/06-staging-target.json
+- A	orchestrator/evidence/T02-effects/README.md
+- A	orchestrator/evidence/T02-effects/env.txt
+- A	orchestrator/evidence/T02-gate/baseline/01-install.log
+- A	orchestrator/evidence/T02-gate/baseline/02-check-react-types.log
+- A	orchestrator/evidence/T02-gate/baseline/03-lint.log
+- A	orchestrator/evidence/T02-gate/baseline/04-typecheck.log
+- A	orchestrator/evidence/T02-gate/baseline/05-jest-milesign.log
+- A	orchestrator/evidence/T02-gate/baseline/06-scripts-test.log
+- A	orchestrator/evidence/T02-gate/baseline/07-build.log
+- A	orchestrator/evidence/T02-gate/baseline/08-git-diff-check.log
+- A	orchestrator/evidence/T02-gate/baseline/09-git-status.log
+- A	orchestrator/evidence/T02-gate/baseline/env.txt
+- A	orchestrator/evidence/T02-gate/baseline/exits.txt
+- A	orchestrator/evidence/T02-gate/reviewed/01-install.log
+- A	orchestrator/evidence/T02-gate/reviewed/02-check-react-types.log
+- A	orchestrator/evidence/T02-gate/reviewed/03-lint.log
+- A	orchestrator/evidence/T02-gate/reviewed/04-typecheck.log
+- A	orchestrator/evidence/T02-gate/reviewed/05-jest-milesign.log
+- A	orchestrator/evidence/T02-gate/reviewed/06-scripts-test.log
+- A	orchestrator/evidence/T02-gate/reviewed/07-build.log
+- A	orchestrator/evidence/T02-gate/reviewed/08-git-diff-check.log
+- A	orchestrator/evidence/T02-gate/reviewed/09-git-status.log
+- A	orchestrator/evidence/T02-gate/reviewed/env.txt
+- A	orchestrator/evidence/T02-gate/reviewed/exits.txt
+- A	orchestrator/evidence/T02.json
+- A	orchestrator/evidence/T03-gate/baseline/01-install.log
+- A	orchestrator/evidence/T03-gate/baseline/02-check-react-types.log
+- A	orchestrator/evidence/T03-gate/baseline/03-lint.log
+- A	orchestrator/evidence/T03-gate/baseline/04-typecheck.log
+- A	orchestrator/evidence/T03-gate/baseline/05-jest-milesign.log
+- A	orchestrator/evidence/T03-gate/baseline/06-scripts-test.log
+- A	orchestrator/evidence/T03-gate/baseline/07-build.log
+- A	orchestrator/evidence/T03-gate/baseline/08-git-diff-check.log
+- A	orchestrator/evidence/T03-gate/baseline/09-git-status.log
+- A	orchestrator/evidence/T03-gate/baseline/env.txt
+- A	orchestrator/evidence/T03-gate/baseline/exits.txt
+- A	orchestrator/evidence/T03-gate/reviewed/01-install.log
+- A	orchestrator/evidence/T03-gate/reviewed/02-check-react-types.log
+- A	orchestrator/evidence/T03-gate/reviewed/03-lint.log
+- A	orchestrator/evidence/T03-gate/reviewed/04-typecheck.log
+- A	orchestrator/evidence/T03-gate/reviewed/05-jest-milesign.log
+- A	orchestrator/evidence/T03-gate/reviewed/06-scripts-test.log
+- A	orchestrator/evidence/T03-gate/reviewed/07-build.log
+- A	orchestrator/evidence/T03-gate/reviewed/08-git-diff-check.log
+- A	orchestrator/evidence/T03-gate/reviewed/09-git-status.log
+- A	orchestrator/evidence/T03-gate/reviewed/env.txt
+- A	orchestrator/evidence/T03-gate/reviewed/exits.txt
+- A	orchestrator/evidence/T03.json
+- A	orchestrator/evidence/T04-gate/00-sha.txt
+- A	orchestrator/evidence/T04-gate/01-install.log
+- A	orchestrator/evidence/T04-gate/02-check-react-types.log
+- A	orchestrator/evidence/T04-gate/03-lint.log
+- A	orchestrator/evidence/T04-gate/04-typecheck.log
+- A	orchestrator/evidence/T04-gate/05-jest-full.log
+- A	orchestrator/evidence/T04-gate/06-scripts-test.log
+- A	orchestrator/evidence/T04-gate/07-build.log
+- A	orchestrator/evidence/T04-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T04-gate/09-git-status.log
+- A	orchestrator/evidence/T04-gate/10-criterion-suites.log
+- A	orchestrator/evidence/T04-gate/11-handoff-check.log
+- A	orchestrator/evidence/T04-gate/12-git-status-after.log
+- A	orchestrator/evidence/T04-gate/13-negative-controls.log
+- A	orchestrator/evidence/T04-gate/13-negative-controls.sh
+- A	orchestrator/evidence/T04-gate/14-secrets-scan.log
+- A	orchestrator/evidence/T04-gate/exits.txt
+- A	orchestrator/evidence/T04-production-plan/manifest.json
+- A	orchestrator/evidence/T04.json
+- A	orchestrator/evidence/T04L-gate/build.txt
+- A	orchestrator/evidence/T04L-gate/git-diff-check.txt
+- A	orchestrator/evidence/T04L-gate/head.txt
+- A	orchestrator/evidence/T04L-gate/install.txt
+- A	orchestrator/evidence/T04L-gate/jest.txt
+- A	orchestrator/evidence/T04L-gate/lint.txt
+- A	orchestrator/evidence/T04L-gate/react-types.txt
+- A	orchestrator/evidence/T04L-gate/scripts-test.txt
+- A	orchestrator/evidence/T04L-gate/typecheck.txt
+- A	orchestrator/evidence/T04L-local/01-local-migration-history.json
+- A	orchestrator/evidence/T04L-local/02-local-d1-material-delete-activity.json
+- A	orchestrator/evidence/T04L-local/03-local-d2-nine-indexes.json
+- A	orchestrator/evidence/T04L-local/04-local-d3-expenses-category.json
+- A	orchestrator/evidence/T04L-local/05-local-replay-engine.txt
+- A	orchestrator/evidence/T04L-local/README.md
+- A	orchestrator/evidence/T04L-local/env.txt
+- A	orchestrator/evidence/T04L-mutations.log
+- A	orchestrator/evidence/T04L-mutations.sh
+- A	orchestrator/evidence/T04L.json
+- A	orchestrator/evidence/T05-gate/baseline/01-install.log
+- A	orchestrator/evidence/T05-gate/baseline/02-check-react-types.log
+- A	orchestrator/evidence/T05-gate/baseline/03-lint.log
+- A	orchestrator/evidence/T05-gate/baseline/04-typecheck.log
+- A	orchestrator/evidence/T05-gate/baseline/05-jest-milesign.log
+- A	orchestrator/evidence/T05-gate/baseline/06-scripts-test.log
+- A	orchestrator/evidence/T05-gate/baseline/07-build.log
+- A	orchestrator/evidence/T05-gate/baseline/08-git-diff-check.log
+- A	orchestrator/evidence/T05-gate/baseline/09-git-status.log
+- A	orchestrator/evidence/T05-gate/baseline/env.txt
+- A	orchestrator/evidence/T05-gate/baseline/exits.txt
+- A	orchestrator/evidence/T05-gate/fix1-run1-e68f414/00-sha.txt
+- A	orchestrator/evidence/T05-gate/fix1-run1-e68f414/05-jest-full-excerpt.log
+- A	orchestrator/evidence/T05-gate/fix1-run1-e68f414/exits.txt
+- A	orchestrator/evidence/T05-gate/fix1/00-sha.txt
+- A	orchestrator/evidence/T05-gate/fix1/01-install.log
+- A	orchestrator/evidence/T05-gate/fix1/02-check-react-types.log
+- A	orchestrator/evidence/T05-gate/fix1/03-lint.log
+- A	orchestrator/evidence/T05-gate/fix1/04-typecheck.log
+- A	orchestrator/evidence/T05-gate/fix1/05-jest-full.log
+- A	orchestrator/evidence/T05-gate/fix1/06-scripts-test.log
+- A	orchestrator/evidence/T05-gate/fix1/07-build.log
+- A	orchestrator/evidence/T05-gate/fix1/08-git-diff-check.log
+- A	orchestrator/evidence/T05-gate/fix1/09-git-status.log
+- A	orchestrator/evidence/T05-gate/fix1/10-localization.log
+- A	orchestrator/evidence/T05-gate/fix1/11-android-export.log
+- A	orchestrator/evidence/T05-gate/fix1/12-criterion-suites.log
+- A	orchestrator/evidence/T05-gate/fix1/13-controller-test-commands.log
+- A	orchestrator/evidence/T05-gate/fix1/exits.txt
+- A	orchestrator/evidence/T05-gate/fix1/gate.sh.txt
+- A	orchestrator/evidence/T05-gate/reviewed/01-install.log
+- A	orchestrator/evidence/T05-gate/reviewed/02-check-react-types.log
+- A	orchestrator/evidence/T05-gate/reviewed/03-lint.log
+- A	orchestrator/evidence/T05-gate/reviewed/04-typecheck.log
+- A	orchestrator/evidence/T05-gate/reviewed/05-jest-milesign.log
+- A	orchestrator/evidence/T05-gate/reviewed/06-scripts-test.log
+- A	orchestrator/evidence/T05-gate/reviewed/07-build.log
+- A	orchestrator/evidence/T05-gate/reviewed/08-git-diff-check.log
+- A	orchestrator/evidence/T05-gate/reviewed/09-git-status.log
+- A	orchestrator/evidence/T05-gate/reviewed/10-gate-localization.log
+- A	orchestrator/evidence/T05-gate/reviewed/env.txt
+- A	orchestrator/evidence/T05-gate/reviewed/exits.txt
+- A	orchestrator/evidence/T05-mutations.log
+- A	orchestrator/evidence/T05-mutations.py
+- A	orchestrator/evidence/T05.json
+- A	orchestrator/evidence/T06-gate/baseline.txt
+- A	orchestrator/evidence/T06-gate/fix-45228a4/00-sha.txt
+- A	orchestrator/evidence/T06-gate/fix-45228a4/01-install.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/02-check-react-types.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/03-lint.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/04-typecheck.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/05-jest-full.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/05b-handoff-check.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/06-scripts-test.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/07-build.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/07b-typecheck-after-build.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/08-git-diff-check.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/09-git-status.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/10-android-export.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/10b-localization.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/10c-product-as-base.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/10d-product-scope.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/11-criterion-suites.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/12-git-status-after.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/12b-install-local.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/13-negative-controls.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/14-git-status-final.log
+- A	orchestrator/evidence/T06-gate/fix-45228a4/exits.txt
+- A	orchestrator/evidence/T06-gate/fix-6ede1d5/00-sha.txt
+- A	orchestrator/evidence/T06-gate/fix-6ede1d5/01-install.log
+- A	orchestrator/evidence/T06-gate/fix-6ede1d5/02-handoff-check.log
+- A	orchestrator/evidence/T06-gate/fix-6ede1d5/03-matrix-suites.log
+- A	orchestrator/evidence/T06-gate/fix-6ede1d5/04-git-status.log
+- A	orchestrator/evidence/T06-gate/fix-6ede1d5/exits.txt
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/00-sha.txt
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/01-install.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/02-check-react-types.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/03-lint.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/04-typecheck.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/05-jest-full.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/05b-handoff-check.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/06-scripts-test.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/07-build.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/07b-typecheck-after-build.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/08-git-diff-check.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/09-git-status.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/10-android-export.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/10b-localization.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/10c-product-as-base.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/11-criterion-suites.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/12-git-status-after.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/12b-install-local.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/13-negative-controls.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/14-git-status-final.log
+- A	orchestrator/evidence/T06-gate/fix-9cf3baf/exits.txt
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/00-sha.txt
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/01-install.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/02-check-react-types.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/03-lint.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/04-typecheck.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/05-jest-full.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/05b-handoff-check.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/06-scripts-test.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/07-build.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/07b-typecheck-after-build.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/08-git-diff-check.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/09-git-status.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/10-android-export.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/10b-localization.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/10c-product-as-base.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/11-criterion-suites.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/12-git-status-after.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/12b-install-local.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/13-negative-controls.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/14-git-status-final.log
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/exits.txt
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/gate.sh
+- A	orchestrator/evidence/T06-gate/fix-a00c9d8/negative-controls.sh
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/00-sha.txt
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/01-install.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/02-check-react-types.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/03-lint.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/04-typecheck.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/05-jest-full.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/05b-handoff-check.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/06-scripts-test.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/07-build.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/07b-typecheck-after-build.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/08-git-diff-check.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/09-git-status.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/10-android-export.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/10b-localization.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/10c-product-as-base.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/11-criterion-suites.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/12-git-status-after.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/12b-install-local.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/13-negative-controls.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/14-git-status-final.log
+- A	orchestrator/evidence/T06-gate/fix-b6c5cda/exits.txt
+- A	orchestrator/evidence/T06-gate/followup-stage-row-a11y.patch
+- A	orchestrator/evidence/T06-gate/gate-1-static.txt
+- A	orchestrator/evidence/T06-gate/gate-2-tests.txt
+- A	orchestrator/evidence/T06-gate/gate-3-build.txt
+- A	orchestrator/evidence/T06-gate/gate-4-localization.txt
+- A	orchestrator/evidence/T06-gate/gate-5-android-export.txt
+- A	orchestrator/evidence/T06-gate/gate-6-tree.txt
+- A	orchestrator/evidence/T06-gate/rerun-e3e4059/gate-1-static.txt
+- A	orchestrator/evidence/T06-gate/rerun-e3e4059/gate-2-tests.txt
+- A	orchestrator/evidence/T06-gate/rerun-e3e4059/gate-3-build.txt
+- A	orchestrator/evidence/T06-gate/rerun-e3e4059/gate-4-localization.txt
+- A	orchestrator/evidence/T06-gate/rerun-e3e4059/gate-5-android-export.txt
+- A	orchestrator/evidence/T06-gate/rerun-e3e4059/gate-6-tree.txt
+- A	orchestrator/evidence/T06.json
+- A	orchestrator/evidence/T06F-candidate-e5e2364-diagnosis.txt
+- A	orchestrator/evidence/T06F-gate/gate-0-first-run-typecheck-failure.txt
+- A	orchestrator/evidence/T06F-gate/gate-1-static.txt
+- A	orchestrator/evidence/T06F-gate/gate-2-tests.txt
+- A	orchestrator/evidence/T06F-gate/gate-3-build.txt
+- A	orchestrator/evidence/T06F-gate/gate-4-localization.txt
+- A	orchestrator/evidence/T06F-gate/gate-5-android-export.txt
+- A	orchestrator/evidence/T06F-gate/gate-6-tree.txt
+- A	orchestrator/evidence/T06F-gate/gate-7-typecheck-strict.txt
+- A	orchestrator/evidence/T06F-gate/gate-8-pristine-head.txt
+- A	orchestrator/evidence/T06F-mutations.log
+- A	orchestrator/evidence/T06F-mutations.py
+- A	orchestrator/evidence/T06F.json
+- A	orchestrator/evidence/T07-gate/00-regression-first-runs.md
+- A	orchestrator/evidence/T07-gate/00a-first-run-without-migration.log
+- A	orchestrator/evidence/T07-gate/00b-first-run-with-old-register-screen.log
+- A	orchestrator/evidence/T07-gate/00c-first-run-with-local-scope-signout.log
+- A	orchestrator/evidence/T07-gate/01-install.log
+- A	orchestrator/evidence/T07-gate/02-check-react-types.log
+- A	orchestrator/evidence/T07-gate/03-lint.log
+- A	orchestrator/evidence/T07-gate/04-typecheck.log
+- A	orchestrator/evidence/T07-gate/05-jest.log
+- A	orchestrator/evidence/T07-gate/06-scripts-test.log
+- A	orchestrator/evidence/T07-gate/07-build.log
+- A	orchestrator/evidence/T07-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T07-gate/09-android-export.log
+- A	orchestrator/evidence/T07.json
+- A	orchestrator/evidence/T08-gate/00-exit-codes.txt
+- A	orchestrator/evidence/T08-gate/00-first-runs.md
+- A	orchestrator/evidence/T08-gate/00-sha.txt
+- A	orchestrator/evidence/T08-gate/01-install.log
+- A	orchestrator/evidence/T08-gate/02-check-react-types.log
+- A	orchestrator/evidence/T08-gate/03-lint.log
+- A	orchestrator/evidence/T08-gate/04-typecheck.log
+- A	orchestrator/evidence/T08-gate/05-jest.log
+- A	orchestrator/evidence/T08-gate/06-scripts-test.log
+- A	orchestrator/evidence/T08-gate/07-build.log
+- A	orchestrator/evidence/T08-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T08-gate/09-database-gate.log
+- A	orchestrator/evidence/T08-gate/10-defects-reproduced.log
+- A	orchestrator/evidence/T08-gate/11-concurrency.log
+- A	orchestrator/evidence/T08.json
+- A	orchestrator/evidence/T09-fix1-gate/00-run-header.txt
+- A	orchestrator/evidence/T09-fix1-gate/01-install.log
+- A	orchestrator/evidence/T09-fix1-gate/02-react-types.log
+- A	orchestrator/evidence/T09-fix1-gate/03-lint.log
+- A	orchestrator/evidence/T09-fix1-gate/04-typecheck.log
+- A	orchestrator/evidence/T09-fix1-gate/05-jest-full.log
+- A	orchestrator/evidence/T09-fix1-gate/06-scripts-test.log
+- A	orchestrator/evidence/T09-fix1-gate/07-build.log
+- A	orchestrator/evidence/T09-fix1-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T09-fix1-gate/09-git-status.log
+- A	orchestrator/evidence/T09-fix1-gate/10-database-gate.log
+- A	orchestrator/evidence/T09-fix1-gate/11-criterion-suites.log
+- A	orchestrator/evidence/T09-fix1-gate/11b-criterion-counts.log
+- A	orchestrator/evidence/T09-fix1-gate/12-all-spec-suites.log
+- A	orchestrator/evidence/T09-fix1-gate/13-provenance-base.log
+- A	orchestrator/evidence/T09-fix1-gate/14-provenance-t09.log
+- A	orchestrator/evidence/T09-fix1-gate/15-extra-checks.log
+- A	orchestrator/evidence/T09-fix1-gate/16-head-jest-after-paperwork.log
+- A	orchestrator/evidence/T09-fix1-gate/exits.txt
+- A	orchestrator/evidence/T09-fix1-gate/extra-checks.sh.txt
+- A	orchestrator/evidence/T09-fix1-gate/gate.sh.txt
+- A	orchestrator/evidence/T09-fix1-gate/pre-fix-reproduction.sh.txt
+- A	orchestrator/evidence/T09-fix1-gate/pre-fix-reproduction.txt
+- A	orchestrator/evidence/T09.json
+- A	orchestrator/evidence/T10-fix1-gate/00-run-header.txt
+- A	orchestrator/evidence/T10-fix1-gate/01-install.log
+- A	orchestrator/evidence/T10-fix1-gate/02-react-types.log
+- A	orchestrator/evidence/T10-fix1-gate/03-lint.log
+- A	orchestrator/evidence/T10-fix1-gate/04-typecheck.log
+- A	orchestrator/evidence/T10-fix1-gate/05-jest-full.log
+- A	orchestrator/evidence/T10-fix1-gate/06-scripts-test.log
+- A	orchestrator/evidence/T10-fix1-gate/07-build.log
+- A	orchestrator/evidence/T10-fix1-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T10-fix1-gate/09-git-status.log
+- A	orchestrator/evidence/T10-fix1-gate/10-database-gate.log
+- A	orchestrator/evidence/T10-fix1-gate/11-criterion-suites.log
+- A	orchestrator/evidence/T10-fix1-gate/11b-criterion-counts.log
+- A	orchestrator/evidence/T10-fix1-gate/11c-render-suites.log
+- A	orchestrator/evidence/T10-fix1-gate/12-all-spec-suites.log
+- A	orchestrator/evidence/T10-fix1-gate/12b-all-screen-suites.log
+- A	orchestrator/evidence/T10-fix1-gate/13-provenance-base.log
+- A	orchestrator/evidence/T10-fix1-gate/14-provenance-t10.log
+- A	orchestrator/evidence/T10-fix1-gate/16-head-jest-after-paperwork.log
+- A	orchestrator/evidence/T10-fix1-gate/exits.txt
+- A	orchestrator/evidence/T10-fix1-gate/gate.sh.txt
+- A	orchestrator/evidence/T10-fix1-gate/pre-fix-reproduction.sh.txt
+- A	orchestrator/evidence/T10-fix1-gate/pre-fix-reproduction.txt
+- A	orchestrator/evidence/T10-fix2-gate/00-run-header.txt
+- A	orchestrator/evidence/T10-fix2-gate/01-install.log
+- A	orchestrator/evidence/T10-fix2-gate/02-react-types.log
+- A	orchestrator/evidence/T10-fix2-gate/03-lint.log
+- A	orchestrator/evidence/T10-fix2-gate/04-typecheck.log
+- A	orchestrator/evidence/T10-fix2-gate/05-jest-full.log
+- A	orchestrator/evidence/T10-fix2-gate/06-scripts-test.log
+- A	orchestrator/evidence/T10-fix2-gate/07-build.log
+- A	orchestrator/evidence/T10-fix2-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T10-fix2-gate/09-git-status.log
+- A	orchestrator/evidence/T10-fix2-gate/10-database-gate.log
+- A	orchestrator/evidence/T10-fix2-gate/11-criterion-suites.log
+- A	orchestrator/evidence/T10-fix2-gate/11b-criterion-counts.log
+- A	orchestrator/evidence/T10-fix2-gate/11c-render-suites.log
+- A	orchestrator/evidence/T10-fix2-gate/12-all-spec-suites.log
+- A	orchestrator/evidence/T10-fix2-gate/12b-all-screen-suites.log
+- A	orchestrator/evidence/T10-fix2-gate/13-provenance-base.log
+- A	orchestrator/evidence/T10-fix2-gate/14-provenance-t10.log
+- A	orchestrator/evidence/T10-fix2-gate/16-head-jest-after-paperwork.log
+- A	orchestrator/evidence/T10-fix2-gate/exits.txt
+- A	orchestrator/evidence/T10-fix2-gate/gate.sh.txt
+- A	orchestrator/evidence/T10-fix2-gate/neuter-guard.py.txt
+- A	orchestrator/evidence/T10-fix2-gate/neuter-perms.py.txt
+- A	orchestrator/evidence/T10-fix2-gate/pre-fix-reproduction.sh.txt
+- A	orchestrator/evidence/T10-fix2-gate/pre-fix-reproduction.txt
+- A	orchestrator/evidence/T10-fix3-gate/00-run-header.txt
+- A	orchestrator/evidence/T10-fix3-gate/01-install.log
+- A	orchestrator/evidence/T10-fix3-gate/02-react-types.log
+- A	orchestrator/evidence/T10-fix3-gate/03-lint.log
+- A	orchestrator/evidence/T10-fix3-gate/04-typecheck.log
+- A	orchestrator/evidence/T10-fix3-gate/05-jest-full.log
+- A	orchestrator/evidence/T10-fix3-gate/06-scripts-test.log
+- A	orchestrator/evidence/T10-fix3-gate/07-build.log
+- A	orchestrator/evidence/T10-fix3-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T10-fix3-gate/09-git-status.log
+- A	orchestrator/evidence/T10-fix3-gate/10-database-gate.log
+- A	orchestrator/evidence/T10-fix3-gate/11-criterion-suites.log
+- A	orchestrator/evidence/T10-fix3-gate/11b-criterion-counts.log
+- A	orchestrator/evidence/T10-fix3-gate/11c-render-suites.log
+- A	orchestrator/evidence/T10-fix3-gate/11d-workflow-suite.log
+- A	orchestrator/evidence/T10-fix3-gate/12-all-spec-suites.log
+- A	orchestrator/evidence/T10-fix3-gate/12b-all-screen-suites.log
+- A	orchestrator/evidence/T10-fix3-gate/13-provenance-base.log
+- A	orchestrator/evidence/T10-fix3-gate/14-provenance-t10.log
+- A	orchestrator/evidence/T10-fix3-gate/16-head-jest-after-paperwork.log
+- A	orchestrator/evidence/T10-fix3-gate/exits.txt
+- A	orchestrator/evidence/T10-fix3-gate/gate.sh.txt
+- A	orchestrator/evidence/T10-fix3-gate/pre-fix-reproduction.sh.txt
+- A	orchestrator/evidence/T10-fix3-gate/pre-fix-reproduction.txt
+- A	orchestrator/evidence/T10-gate/00-sha.txt
+- A	orchestrator/evidence/T10-gate/01-install.log
+- A	orchestrator/evidence/T10-gate/02-check-react-types.log
+- A	orchestrator/evidence/T10-gate/03-lint.log
+- A	orchestrator/evidence/T10-gate/04-typecheck.log
+- A	orchestrator/evidence/T10-gate/05-jest-full.log
+- A	orchestrator/evidence/T10-gate/06-scripts-test.log
+- A	orchestrator/evidence/T10-gate/07-build.log
+- A	orchestrator/evidence/T10-gate/08-tree.log
+- A	orchestrator/evidence/T10-gate/09-criterion-suites.log
+- A	orchestrator/evidence/T10-gate/10-provenance.log
+- A	orchestrator/evidence/T10-gate/11-database-gate.log
+- A	orchestrator/evidence/T10.json
+- A	orchestrator/evidence/T11-device/README.md
+- A	orchestrator/evidence/T11-device/android_phone_test_2026-10-18.md
+- A	orchestrator/evidence/T11-device/android_phone_test_2026-10-19.md
+- A	orchestrator/evidence/T11-device/android_phone_test_2026-10-20.md
+- A	orchestrator/evidence/T11-gate/00-sha.txt
+- A	orchestrator/evidence/T11-gate/01-install.log
+- A	orchestrator/evidence/T11-gate/02-check-react-types.log
+- A	orchestrator/evidence/T11-gate/03-lint.log
+- A	orchestrator/evidence/T11-gate/04-typecheck.log
+- A	orchestrator/evidence/T11-gate/05-jest-full.log
+- A	orchestrator/evidence/T11-gate/06-scripts-test.log
+- A	orchestrator/evidence/T11-gate/07-build.log
+- A	orchestrator/evidence/T11-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T11-gate/09-git-status.log
+- A	orchestrator/evidence/T11-gate/10-android-export.log
+- A	orchestrator/evidence/T11-gate/11-media.log
+- A	orchestrator/evidence/T11-gate/12-criterion-suites.log
+- A	orchestrator/evidence/T11-gate/13-handoff-check.log
+- A	orchestrator/evidence/T11-gate/14-git-status-after.log
+- A	orchestrator/evidence/T11-gate/15-negative-controls.log
+- A	orchestrator/evidence/T11-gate/16-git-status-final.log
+- A	orchestrator/evidence/T11-gate/exits.txt
+- A	orchestrator/evidence/T11-gate/gate.sh
+- A	orchestrator/evidence/T11-gate/negative-controls.py
+- A	orchestrator/evidence/T11-media-delete-row-first/live-snapshot.json
+- A	orchestrator/evidence/T11-media-delete-row-first/manifest.json
+- A	orchestrator/evidence/T11.json
+- A	orchestrator/evidence/T12-fix1-gate/00-context.log
+- A	orchestrator/evidence/T12-fix1-gate/01.log
+- A	orchestrator/evidence/T12-fix1-gate/02.log
+- A	orchestrator/evidence/T12-fix1-gate/03.log
+- A	orchestrator/evidence/T12-fix1-gate/04.log
+- A	orchestrator/evidence/T12-fix1-gate/05.log
+- A	orchestrator/evidence/T12-fix1-gate/06.log
+- A	orchestrator/evidence/T12-fix1-gate/07.log
+- A	orchestrator/evidence/T12-fix1-gate/08.log
+- A	orchestrator/evidence/T12-fix1-gate/09.log
+- A	orchestrator/evidence/T12-fix1-gate/criterion-suites.log
+- A	orchestrator/evidence/T12-fix1-gate/database-context.log
+- A	orchestrator/evidence/T12-fix1-gate/database.log
+- A	orchestrator/evidence/T12-fix1-gate/negative-control.log
+- A	orchestrator/evidence/T12-fix1-gate/summary.log
+- A	orchestrator/evidence/T12.json
+- A	orchestrator/evidence/T13-gate/categorise-added.cjs
+- A	orchestrator/evidence/T13-gate/gate.sh
+- A	orchestrator/evidence/T13-gate/inventory-added.json
+- A	orchestrator/evidence/T13-gate/inventory-t13.py
+- A	orchestrator/evidence/T13-gate/negative-controls.py
+- A	orchestrator/evidence/T13-gate/out/00-sha.txt
+- A	orchestrator/evidence/T13-gate/out/01-install.log
+- A	orchestrator/evidence/T13-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/T13-gate/out/03-lint.log
+- A	orchestrator/evidence/T13-gate/out/04-typecheck.log
+- A	orchestrator/evidence/T13-gate/out/05-jest-full.log
+- A	orchestrator/evidence/T13-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/T13-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/T13-gate/out/07-build.log
+- A	orchestrator/evidence/T13-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/T13-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/T13-gate/out/09-git-status.log
+- A	orchestrator/evidence/T13-gate/out/10-schema-and-deps-unchanged.log
+- A	orchestrator/evidence/T13-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/T13-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/T13-gate/out/12b-install-local.log
+- A	orchestrator/evidence/T13-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/T13-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/T13-gate/out/exits.txt
+- A	orchestrator/evidence/T13-gate/realign-inventory.cjs
+- A	orchestrator/evidence/T13-gate/realign.sh
+- A	orchestrator/evidence/T13.json
+- A	orchestrator/evidence/T13E-gate/categorise-added.cjs
+- A	orchestrator/evidence/T13E-gate/gate.sh
+- A	orchestrator/evidence/T13E-gate/inventory-added.json
+- A	orchestrator/evidence/T13E-gate/inventory-t13e.py
+- A	orchestrator/evidence/T13E-gate/negative-controls.py
+- A	orchestrator/evidence/T13E-gate/out/00-sha.txt
+- A	orchestrator/evidence/T13E-gate/out/01-install.log
+- A	orchestrator/evidence/T13E-gate/out/02-check-react-types.log
+- A	orchestrator/evidence/T13E-gate/out/03-lint.log
+- A	orchestrator/evidence/T13E-gate/out/04-typecheck.log
+- A	orchestrator/evidence/T13E-gate/out/05-jest-full.log
+- A	orchestrator/evidence/T13E-gate/out/05b-handoff-check.log
+- A	orchestrator/evidence/T13E-gate/out/06-scripts-test.log
+- A	orchestrator/evidence/T13E-gate/out/07-build.log
+- A	orchestrator/evidence/T13E-gate/out/07b-typecheck-after-build.log
+- A	orchestrator/evidence/T13E-gate/out/08-git-diff-check.log
+- A	orchestrator/evidence/T13E-gate/out/09-git-status.log
+- A	orchestrator/evidence/T13E-gate/out/10-schema-and-deps-unchanged.log
+- A	orchestrator/evidence/T13E-gate/out/11-criterion-suites.log
+- A	orchestrator/evidence/T13E-gate/out/11b-grep-provider-switch.log
+- A	orchestrator/evidence/T13E-gate/out/12-git-status-after.log
+- A	orchestrator/evidence/T13E-gate/out/12b-install-local.log
+- A	orchestrator/evidence/T13E-gate/out/13-negative-controls.log
+- A	orchestrator/evidence/T13E-gate/out/14-git-status-final.log
+- A	orchestrator/evidence/T13E-gate/out/exits.txt
+- A	orchestrator/evidence/T13E-gate/realign-inventory.cjs
+- A	orchestrator/evidence/T13E-gate/realign.sh
+- A	orchestrator/evidence/T13E-gate/shards.sh
+- A	orchestrator/evidence/T13E-gate/workers.sh
+- A	orchestrator/evidence/T13E.json
+- A	orchestrator/evidence/T13L-baseline.txt
+- A	orchestrator/evidence/T13L-gate/00-first-run-failed.log
+- A	orchestrator/evidence/T13L-gate/01-install.log
+- A	orchestrator/evidence/T13L-gate/02-check-react-types.log
+- A	orchestrator/evidence/T13L-gate/03-lint.log
+- A	orchestrator/evidence/T13L-gate/04-typecheck.log
+- A	orchestrator/evidence/T13L-gate/05-jest-milesign.log
+- A	orchestrator/evidence/T13L-gate/06-scripts-test.log
+- A	orchestrator/evidence/T13L-gate/07-build.log
+- A	orchestrator/evidence/T13L-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T13L-gate/09-git-status-clean.log
+- A	orchestrator/evidence/T13L-gate/env.txt
+- A	orchestrator/evidence/T13L-gate/exits.txt
+- A	orchestrator/evidence/T13L-gate/fix1/00-controller-run-c248850.log
+- A	orchestrator/evidence/T13L-gate/fix1/01-install.log
+- A	orchestrator/evidence/T13L-gate/fix1/02-check-react-types.log
+- A	orchestrator/evidence/T13L-gate/fix1/03-lint.log
+- A	orchestrator/evidence/T13L-gate/fix1/04-typecheck.log
+- A	orchestrator/evidence/T13L-gate/fix1/05-jest-milesign.log
+- A	orchestrator/evidence/T13L-gate/fix1/06-scripts-test.log
+- A	orchestrator/evidence/T13L-gate/fix1/07-build.log
+- A	orchestrator/evidence/T13L-gate/fix1/08-git-diff-check.log
+- A	orchestrator/evidence/T13L-gate/fix1/09-git-status-clean.log
+- A	orchestrator/evidence/T13L-gate/fix1/10-criterion-suites.log
+- A	orchestrator/evidence/T13L-gate/fix1/11-req-36-after-doc-fix.log
+- A	orchestrator/evidence/T13L-gate/fix1/env.txt
+- A	orchestrator/evidence/T13L-gate/fix1/exits.txt
+- A	orchestrator/evidence/T13L-gate/merged/01-install.log
+- A	orchestrator/evidence/T13L-gate/merged/02-check-react-types.log
+- A	orchestrator/evidence/T13L-gate/merged/03-lint.log
+- A	orchestrator/evidence/T13L-gate/merged/04-typecheck.log
+- A	orchestrator/evidence/T13L-gate/merged/05-jest-milesign.log
+- A	orchestrator/evidence/T13L-gate/merged/06-scripts-test.log
+- A	orchestrator/evidence/T13L-gate/merged/07-build.log
+- A	orchestrator/evidence/T13L-gate/merged/08-git-diff-check-at-record.log
+- A	orchestrator/evidence/T13L-gate/merged/08-git-diff-check.log
+- A	orchestrator/evidence/T13L-gate/merged/09-git-status-clean-at-record.log
+- A	orchestrator/evidence/T13L-gate/merged/09-git-status-clean.log
+- A	orchestrator/evidence/T13L-gate/merged/env.txt
+- A	orchestrator/evidence/T13L-gate/merged/exits.txt
+- A	orchestrator/evidence/T13L.json
+- A	orchestrator/evidence/T14-gate/build.txt
+- A	orchestrator/evidence/T14-gate/core.txt
+- A	orchestrator/evidence/T14-gate/diag/00-sha.txt
+- A	orchestrator/evidence/T14-gate/diag/01-install.log
+- A	orchestrator/evidence/T14-gate/diag/02-check-react-types.log
+- A	orchestrator/evidence/T14-gate/diag/03-lint.log
+- A	orchestrator/evidence/T14-gate/diag/04-typecheck.log
+- A	orchestrator/evidence/T14-gate/diag/05-jest-full.log
+- A	orchestrator/evidence/T14-gate/diag/06-scripts-test.log
+- A	orchestrator/evidence/T14-gate/diag/07-build.log
+- A	orchestrator/evidence/T14-gate/diag/08-git-diff-check.log
+- A	orchestrator/evidence/T14-gate/diag/09-git-status.log
+- A	orchestrator/evidence/T14-gate/diag/10-offline.log
+- A	orchestrator/evidence/T14-gate/diag/11-android-export.log
+- A	orchestrator/evidence/T14-gate/diag/12-controller-test-commands.log
+- A	orchestrator/evidence/T14-gate/diag/exits.txt
+- A	orchestrator/evidence/T14-gate/diag/gate.sh.txt
+- A	orchestrator/evidence/T14-gate/fix1/00-sha.txt
+- A	orchestrator/evidence/T14-gate/fix1/01-install.log
+- A	orchestrator/evidence/T14-gate/fix1/02-check-react-types.log
+- A	orchestrator/evidence/T14-gate/fix1/03-lint.log
+- A	orchestrator/evidence/T14-gate/fix1/04-typecheck.log
+- A	orchestrator/evidence/T14-gate/fix1/05-jest-full.log
+- A	orchestrator/evidence/T14-gate/fix1/06-scripts-test.log
+- A	orchestrator/evidence/T14-gate/fix1/07-build.log
+- A	orchestrator/evidence/T14-gate/fix1/08-git-diff-check.log
+- A	orchestrator/evidence/T14-gate/fix1/09-git-status.log
+- A	orchestrator/evidence/T14-gate/fix1/10-offline.log
+- A	orchestrator/evidence/T14-gate/fix1/11-android-export.log
+- A	orchestrator/evidence/T14-gate/fix1/12-controller-test-commands.log
+- A	orchestrator/evidence/T14-gate/fix1/exits.txt
+- A	orchestrator/evidence/T14-gate/fix1/gate.sh.txt
+- A	orchestrator/evidence/T14-gate/gate-android-export.txt
+- A	orchestrator/evidence/T14-gate/gate-database.txt
+- A	orchestrator/evidence/T14-gate/gate-localization.txt
+- A	orchestrator/evidence/T14-gate/gate-offline.txt
+- A	orchestrator/evidence/T14-gate/install.txt
+- A	orchestrator/evidence/T14-gate/jest.txt
+- A	orchestrator/evidence/T14-gate/lint.txt
+- A	orchestrator/evidence/T14-gate/owner/00-sha.txt
+- A	orchestrator/evidence/T14-gate/owner/01-install.log
+- A	orchestrator/evidence/T14-gate/owner/02-check-react-types.log
+- A	orchestrator/evidence/T14-gate/owner/03-lint.log
+- A	orchestrator/evidence/T14-gate/owner/04-typecheck.log
+- A	orchestrator/evidence/T14-gate/owner/05-jest-full.log
+- A	orchestrator/evidence/T14-gate/owner/06-scripts-test.log
+- A	orchestrator/evidence/T14-gate/owner/07-build.log
+- A	orchestrator/evidence/T14-gate/owner/08-git-diff-check.log
+- A	orchestrator/evidence/T14-gate/owner/09-git-status.log
+- A	orchestrator/evidence/T14-gate/owner/10-offline.log
+- A	orchestrator/evidence/T14-gate/owner/11-android-export.log
+- A	orchestrator/evidence/T14-gate/owner/12-controller-test-commands.log
+- A	orchestrator/evidence/T14-gate/owner/exits.txt
+- A	orchestrator/evidence/T14-gate/owner/gate.sh.txt
+- A	orchestrator/evidence/T14-gate/r2/00-sha.txt
+- A	orchestrator/evidence/T14-gate/r2/01-install.log
+- A	orchestrator/evidence/T14-gate/r2/02-check-react-types.log
+- A	orchestrator/evidence/T14-gate/r2/03-lint.log
+- A	orchestrator/evidence/T14-gate/r2/04-typecheck.log
+- A	orchestrator/evidence/T14-gate/r2/05-jest-full.log
+- A	orchestrator/evidence/T14-gate/r2/06-scripts-test.log
+- A	orchestrator/evidence/T14-gate/r2/07-build.log
+- A	orchestrator/evidence/T14-gate/r2/08-git-diff-check.log
+- A	orchestrator/evidence/T14-gate/r2/09-git-status.log
+- A	orchestrator/evidence/T14-gate/r2/10-offline.log
+- A	orchestrator/evidence/T14-gate/r2/11-android-export.log
+- A	orchestrator/evidence/T14-gate/r2/12-controller-test-commands.log
+- A	orchestrator/evidence/T14-gate/r2/exits.txt
+- A	orchestrator/evidence/T14-gate/r2/gate.sh.txt
+- A	orchestrator/evidence/T14-gate/react-types.txt
+- A	orchestrator/evidence/T14-gate/review/00-sha.txt
+- A	orchestrator/evidence/T14-gate/review/01-install.log
+- A	orchestrator/evidence/T14-gate/review/02-check-react-types.log
+- A	orchestrator/evidence/T14-gate/review/03-lint.log
+- A	orchestrator/evidence/T14-gate/review/04-typecheck.log
+- A	orchestrator/evidence/T14-gate/review/05-jest-full.log
+- A	orchestrator/evidence/T14-gate/review/06-scripts-test.log
+- A	orchestrator/evidence/T14-gate/review/07-build.log
+- A	orchestrator/evidence/T14-gate/review/08-git-diff-check.log
+- A	orchestrator/evidence/T14-gate/review/09-git-status.log
+- A	orchestrator/evidence/T14-gate/review/10-offline.log
+- A	orchestrator/evidence/T14-gate/review/11-android-export.log
+- A	orchestrator/evidence/T14-gate/review/12-controller-test-commands.log
+- A	orchestrator/evidence/T14-gate/review/exits.txt
+- A	orchestrator/evidence/T14-gate/review/gate.sh.txt
+- A	orchestrator/evidence/T14-gate/scripts-test.txt
+- A	orchestrator/evidence/T14-gate/typecheck.txt
+- A	orchestrator/evidence/T14.json
+- A	orchestrator/evidence/T15-gate/00-sha.txt
+- A	orchestrator/evidence/T15-gate/01-install.log
+- A	orchestrator/evidence/T15-gate/02-check-react-types.log
+- A	orchestrator/evidence/T15-gate/03-lint.log
+- A	orchestrator/evidence/T15-gate/04-typecheck.log
+- A	orchestrator/evidence/T15-gate/05-jest-full.log
+- A	orchestrator/evidence/T15-gate/06-scripts-test.log
+- A	orchestrator/evidence/T15-gate/07-build.log
+- A	orchestrator/evidence/T15-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T15-gate/09-git-status.log
+- A	orchestrator/evidence/T15-gate/10-offline.log
+- A	orchestrator/evidence/T15-gate/11-android-export.log
+- A	orchestrator/evidence/T15-gate/12-controller-test-commands.log
+- A	orchestrator/evidence/T15-gate/exits.txt
+- A	orchestrator/evidence/T15-gate/gate.sh.txt
+- A	orchestrator/evidence/T15.json
+- A	orchestrator/evidence/T16-baseline.txt
+- A	orchestrator/evidence/T16-fix1-gate/00-context.log
+- A	orchestrator/evidence/T16-fix1-gate/01.log
+- A	orchestrator/evidence/T16-fix1-gate/02.log
+- A	orchestrator/evidence/T16-fix1-gate/03.log
+- A	orchestrator/evidence/T16-fix1-gate/04.log
+- A	orchestrator/evidence/T16-fix1-gate/05.log
+- A	orchestrator/evidence/T16-fix1-gate/06.log
+- A	orchestrator/evidence/T16-fix1-gate/07.log
+- A	orchestrator/evidence/T16-fix1-gate/08.log
+- A	orchestrator/evidence/T16-fix1-gate/09.log
+- A	orchestrator/evidence/T16-fix1-gate/10.log
+- A	orchestrator/evidence/T16-fix1-gate/11.log
+- A	orchestrator/evidence/T16-fix1-gate/12.log
+- A	orchestrator/evidence/T16-fix1-gate/summary.log
+- A	orchestrator/evidence/T16-fix2-gate/00-context.log
+- A	orchestrator/evidence/T16-fix2-gate/01.log
+- A	orchestrator/evidence/T16-fix2-gate/02.log
+- A	orchestrator/evidence/T16-fix2-gate/03.log
+- A	orchestrator/evidence/T16-fix2-gate/04.log
+- A	orchestrator/evidence/T16-fix2-gate/05.log
+- A	orchestrator/evidence/T16-fix2-gate/06.log
+- A	orchestrator/evidence/T16-fix2-gate/07.log
+- A	orchestrator/evidence/T16-fix2-gate/08.log
+- A	orchestrator/evidence/T16-fix2-gate/09.log
+- A	orchestrator/evidence/T16-fix2-gate/10.log
+- A	orchestrator/evidence/T16-fix2-gate/11.log
+- A	orchestrator/evidence/T16-fix2-gate/12.log
+- A	orchestrator/evidence/T16-fix2-gate/13.log
+- A	orchestrator/evidence/T16-fix2-gate/summary.log
+- A	orchestrator/evidence/T16-fixes/01-req-97-no-lease-FAILED.log
+- A	orchestrator/evidence/T16-fixes/02-req-105-partial-queue-FAILED.log
+- A	orchestrator/evidence/T16-fixes/03-req-105-sweep-FAILED.log
+- A	orchestrator/evidence/T16-fixes/14-req-97-form-no-lease-FAILED.log
+- A	orchestrator/evidence/T16-fixes/15-req-97-media-no-lease-FAILED-on-128c493c.log
+- A	orchestrator/evidence/T16-fixes/16-req-105-partial-queue-FAILED-on-128c493c.log
+- A	orchestrator/evidence/T16-fixes/17-req-105-adoption-FAILED.log
+- A	orchestrator/evidence/T16-fixes/18-req-159-picker-screens-FAILED.log
+- A	orchestrator/evidence/T16-gate/02-check-react-types.log
+- A	orchestrator/evidence/T16-gate/03-lint.log
+- A	orchestrator/evidence/T16-gate/04-typecheck.log
+- A	orchestrator/evidence/T16-gate/05-jest-full-first-run-failed.log
+- A	orchestrator/evidence/T16-gate/05-jest-full.log
+- A	orchestrator/evidence/T16-gate/06-scripts-test.log
+- A	orchestrator/evidence/T16-gate/07-build.log
+- A	orchestrator/evidence/T16.json
+- A	orchestrator/evidence/T17-gate/00-sha.txt
+- A	orchestrator/evidence/T17-gate/01-install.log
+- A	orchestrator/evidence/T17-gate/02-check-react-types.log
+- A	orchestrator/evidence/T17-gate/03-lint.log
+- A	orchestrator/evidence/T17-gate/04-typecheck.log
+- A	orchestrator/evidence/T17-gate/05-jest-full.log
+- A	orchestrator/evidence/T17-gate/06-scripts-test.log
+- A	orchestrator/evidence/T17-gate/07-build.log
+- A	orchestrator/evidence/T17-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T17-gate/09-git-status.log
+- A	orchestrator/evidence/T17-gate/10-localization.log
+- A	orchestrator/evidence/T17-gate/11-android-export.log
+- A	orchestrator/evidence/T17-gate/12-criterion-suites.log
+- A	orchestrator/evidence/T17-gate/exits.txt
+- A	orchestrator/evidence/T17-gate/gate.sh
+- A	orchestrator/evidence/T17-mutations.log
+- A	orchestrator/evidence/T17-mutations.py
+- A	orchestrator/evidence/T17.json
+- A	orchestrator/evidence/T18-gate/00-sha.txt
+- A	orchestrator/evidence/T18-gate/01-install.log
+- A	orchestrator/evidence/T18-gate/02-check-react-types.log
+- A	orchestrator/evidence/T18-gate/03-lint.log
+- A	orchestrator/evidence/T18-gate/04-typecheck.log
+- A	orchestrator/evidence/T18-gate/05-jest-full.log
+- A	orchestrator/evidence/T18-gate/06-scripts-test.log
+- A	orchestrator/evidence/T18-gate/07-build.log
+- A	orchestrator/evidence/T18-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T18-gate/09-git-status.log
+- A	orchestrator/evidence/T18-gate/10-database.log
+- A	orchestrator/evidence/T18-gate/11-criterion-suites.log
+- A	orchestrator/evidence/T18-gate/12-git-status-after.log
+- A	orchestrator/evidence/T18-gate/13-negative-controls.log
+- A	orchestrator/evidence/T18-gate/14-git-status-final.log
+- A	orchestrator/evidence/T18-gate/exits.txt
+- A	orchestrator/evidence/T18-gate/gate.sh
+- A	orchestrator/evidence/T18-gate/negative-controls.sh
+- A	orchestrator/evidence/T18.json
+- A	orchestrator/evidence/T18L-attempt1-lint-failure.txt
+- A	orchestrator/evidence/T18L-gate/00-sha.txt
+- A	orchestrator/evidence/T18L-gate/01-install.log
+- A	orchestrator/evidence/T18L-gate/02-check-react-types.log
+- A	orchestrator/evidence/T18L-gate/03-lint.log
+- A	orchestrator/evidence/T18L-gate/04-typecheck.log
+- A	orchestrator/evidence/T18L-gate/05-jest-full.log
+- A	orchestrator/evidence/T18L-gate/06-scripts-test.log
+- A	orchestrator/evidence/T18L-gate/07-build.log
+- A	orchestrator/evidence/T18L-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T18L-gate/09-git-status.log
+- A	orchestrator/evidence/T18L-gate/10-database.log
+- A	orchestrator/evidence/T18L-gate/11-criterion-suites.log
+- A	orchestrator/evidence/T18L-gate/exits.txt
+- A	orchestrator/evidence/T18L-gate/gate.sh
+- A	orchestrator/evidence/T18L-gate/run1-d7531f2-failed/00-sha.txt
+- A	orchestrator/evidence/T18L-gate/run1-d7531f2-failed/05-jest-full-failures.log
+- A	orchestrator/evidence/T18L-gate/run1-d7531f2-failed/exits.txt
+- A	orchestrator/evidence/T18L-restore-rehearsal.json
+- A	orchestrator/evidence/T18L.json
+- A	orchestrator/evidence/T19-gate/00-sha.txt
+- A	orchestrator/evidence/T19-gate/01-install.log
+- A	orchestrator/evidence/T19-gate/02-check-react-types.log
+- A	orchestrator/evidence/T19-gate/03-lint.log
+- A	orchestrator/evidence/T19-gate/04-typecheck.log
+- A	orchestrator/evidence/T19-gate/05-jest-full.log
+- A	orchestrator/evidence/T19-gate/06-scripts-test.log
+- A	orchestrator/evidence/T19-gate/07-build.log
+- A	orchestrator/evidence/T19-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T19-gate/09-git-status.log
+- A	orchestrator/evidence/T19-gate/10-criterion-suites.log
+- A	orchestrator/evidence/T19-gate/11-git-status-after.log
+- A	orchestrator/evidence/T19-gate/exits.txt
+- A	orchestrator/evidence/T19-gate/gate.sh
+- A	orchestrator/evidence/T19-production-apply/01-pre-window.json
+- A	orchestrator/evidence/T19-production-apply/02-writes-stopped.json
+- A	orchestrator/evidence/T19-production-apply/03-backup.json
+- A	orchestrator/evidence/T19-production-apply/04-before-step-1.json
+- A	orchestrator/evidence/T19-production-apply/05-apply-log.json
+- A	orchestrator/evidence/T19-production-apply/06-after.json
+- A	orchestrator/evidence/T19-production-apply/07-writes-reopened.json
+- A	orchestrator/evidence/T19-tooling/apply.mjs
+- A	orchestrator/evidence/T19-tooling/catalog-check.mjs
+- A	orchestrator/evidence/T19-tooling/catalog-rows.sh
+- A	orchestrator/evidence/T19-tooling/env.sh
+- A	orchestrator/evidence/T19-tooling/gate.sh
+- A	orchestrator/evidence/T19-tooling/local-instance.sh
+- A	orchestrator/evidence/T19-tooling/pgdumpp
+- A	orchestrator/evidence/T19-tooling/probe.mjs
+- A	orchestrator/evidence/T19-tooling/psqll
+- A	orchestrator/evidence/T19-tooling/psqlp
+- A	orchestrator/evidence/T19-tooling/sanitize.mjs
+- A	orchestrator/evidence/T19-tooling/state.mjs
+- A	orchestrator/evidence/T19-tooling/window.sh
+- A	orchestrator/evidence/T19.json
+- A	orchestrator/evidence/T19P-gate/00-sha.txt
+- A	orchestrator/evidence/T19P-gate/01-install.log
+- A	orchestrator/evidence/T19P-gate/02-check-react-types.log
+- A	orchestrator/evidence/T19P-gate/03-lint.log
+- A	orchestrator/evidence/T19P-gate/04-typecheck.log
+- A	orchestrator/evidence/T19P-gate/05-jest-full.log
+- A	orchestrator/evidence/T19P-gate/06-scripts-test.log
+- A	orchestrator/evidence/T19P-gate/07-build.log
+- A	orchestrator/evidence/T19P-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T19P-gate/09-git-status.log
+- A	orchestrator/evidence/T19P-gate/10-criterion-suites.log
+- A	orchestrator/evidence/T19P-gate/11-git-status-after.log
+- A	orchestrator/evidence/T19P-gate/build-manifest.mjs
+- A	orchestrator/evidence/T19P-gate/exits.txt
+- A	orchestrator/evidence/T19P-gate/gate.sh
+- A	orchestrator/evidence/T19P-production-plan/01-live-catalog.json
+- A	orchestrator/evidence/T19P-production-plan/02-live-migration-history.json
+- A	orchestrator/evidence/T19P-production-plan/03-live-row-counts.json
+- A	orchestrator/evidence/T19P-production-plan/04-live-data-profile.json
+- A	orchestrator/evidence/T19P-production-plan/05-live-drift-ddl.json
+- A	orchestrator/evidence/T19P-production-plan/06-live-data-preconditions.json
+- A	orchestrator/evidence/T19P-production-plan/catalog.sql
+- A	orchestrator/evidence/T19P-production-plan/manifest.json
+- A	orchestrator/evidence/T19P.json
+- A	orchestrator/evidence/T20-candidate/candidate.json
+- A	orchestrator/evidence/T20-candidate/logs/00-build.txt
+- A	orchestrator/evidence/T20-candidate/logs/01-web-export.log
+- A	orchestrator/evidence/T20-candidate/logs/02-prebuild.log
+- A	orchestrator/evidence/T20-candidate/logs/02b-prebuild-tracked-diff.patch
+- A	orchestrator/evidence/T20-candidate/logs/03-gradle-bundle.log
+- A	orchestrator/evidence/T20-candidate/logs/04-aab-signer.txt
+- A	orchestrator/evidence/T20-candidate/logs/05-merged-AndroidManifest.xml
+- A	orchestrator/evidence/T20-candidate/logs/06-record.log
+- A	orchestrator/evidence/T20-candidate/logs/07-leak-check.txt
+- A	orchestrator/evidence/T20-candidate/verify-nginx.json
+- A	orchestrator/evidence/T20-candidate/verify-nginx.txt
+- A	orchestrator/evidence/T20-gate/controls.sh
+- A	orchestrator/evidence/T20-gate/gate.sh
+- A	orchestrator/evidence/T20-gate/recheck-b6d50096/req-170.log
+- A	orchestrator/evidence/T20-gate/recheck-b6d50096/result.txt
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/00-sha.txt
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/02-check-react-types.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/03-lint.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/04-typecheck.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/05-jest-full.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/05b-handoff-check.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/06-scripts-test.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/07-build.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/07b-typecheck-after-build.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/08-git-diff-check.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/09-git-status.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/10-android-export.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/10b-localization.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/10c-no-schema-change.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/11-criterion-suites.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/12-verify-nginx.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/12-verify-nginx/verify-nginx.json
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/12-verify-nginx/verify-nginx.txt
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/13-negative-controls.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/14-git-status-after.log
+- A	orchestrator/evidence/T20-gate/run-b1061ace670d/exits.txt
+- A	orchestrator/evidence/T20.json
+- A	orchestrator/evidence/T21-e2e/trace.json
+- A	orchestrator/evidence/T21-gate/gate.sh
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/00-sha.txt
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/01-install.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/02-check-react-types.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/03-lint.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/04-typecheck.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/05-criterion-suites.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/06-jest-full.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/06b-handoff-check.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/07-scripts-test.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/08-build.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/09-no-product-change.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/11-git-diff-check.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/12-git-status.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/12b-install-local.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/13-negative-controls.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/14-git-status-final.log
+- A	orchestrator/evidence/T21-gate/logs-3473cec5/exits.txt
+- A	orchestrator/evidence/T21-gate/negative-controls.py
+- A	orchestrator/evidence/T21-gate/superseded-c45653f3/00-sha.txt
+- A	orchestrator/evidence/T21-gate/superseded-c45653f3/13-negative-controls.summary.txt
+- A	orchestrator/evidence/T21-gate/superseded-c45653f3/exits.txt
+- A	orchestrator/evidence/T21-gate/superseded-c45653f3/jest-summary.txt
+- A	orchestrator/evidence/T21-review/build-ledger.cjs
+- A	orchestrator/evidence/T21-review/ledger.json
+- A	orchestrator/evidence/T21-sbom/build-sbom.cjs
+- A	orchestrator/evidence/T21-sbom/bundle-packages.cjs
+- A	orchestrator/evidence/T21-sbom/bundle-packages.json
+- A	orchestrator/evidence/T21-sbom/export-and-inspect.sh
+- A	orchestrator/evidence/T21-sbom/licenses.json
+- A	orchestrator/evidence/T21-sbom/native-modules.json
+- A	orchestrator/evidence/T21-sbom/sbom.cdx.json
+- A	orchestrator/evidence/T21-sbom/scan-history.sh
+- A	orchestrator/evidence/T21-sbom/secret-scan.cjs
+- A	orchestrator/evidence/T21-sbom/secret-scan.json
+- A	orchestrator/evidence/T21-sbom/vulnerabilities.json
+- A	orchestrator/evidence/T21.json
+- A	orchestrator/evidence/T21L-gate/00-sha.txt
+- A	orchestrator/evidence/T21L-gate/01-install.log
+- A	orchestrator/evidence/T21L-gate/02-check-react-types.log
+- A	orchestrator/evidence/T21L-gate/03-lint.log
+- A	orchestrator/evidence/T21L-gate/04-typecheck.log
+- A	orchestrator/evidence/T21L-gate/05-jest-full.log
+- A	orchestrator/evidence/T21L-gate/06-scripts-test.log
+- A	orchestrator/evidence/T21L-gate/07-build.log
+- A	orchestrator/evidence/T21L-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T21L-gate/09-git-status.log
+- A	orchestrator/evidence/T21L-gate/10-git-diff-check-main.log
+- A	orchestrator/evidence/T21L-gate/11-criterion-suites.log
+- A	orchestrator/evidence/T21L-gate/12-gate-vs-head.log
+- A	orchestrator/evidence/T21L-gate/exits.txt
+- A	orchestrator/evidence/T21L-gate/gate.sh.txt
+- A	orchestrator/evidence/T21L.json
+- A	orchestrator/evidence/T22L-gate/00-sha.txt
+- A	orchestrator/evidence/T22L-gate/01-install.log
+- A	orchestrator/evidence/T22L-gate/02-check-react-types.log
+- A	orchestrator/evidence/T22L-gate/03-lint.log
+- A	orchestrator/evidence/T22L-gate/04-typecheck.log
+- A	orchestrator/evidence/T22L-gate/05-jest-full.log
+- A	orchestrator/evidence/T22L-gate/06-scripts-test.log
+- A	orchestrator/evidence/T22L-gate/07-build.log
+- A	orchestrator/evidence/T22L-gate/08-git-diff-check.log
+- A	orchestrator/evidence/T22L-gate/09-git-status.log
+- A	orchestrator/evidence/T22L-gate/10-criterion-suites.log
+- A	orchestrator/evidence/T22L-gate/11-handoff-check.log
+- A	orchestrator/evidence/T22L-gate/12-handoff-resume.log
+- A	orchestrator/evidence/T22L-gate/13-matrix-require-complete.log
+- A	orchestrator/evidence/T22L-gate/14-git-status-after.log
+- A	orchestrator/evidence/T22L-gate/15-defect-base-clean-clone.log
+- A	orchestrator/evidence/T22L-gate/16-secrets-scan.log
+- A	orchestrator/evidence/T22L-gate/17-negative-control.log
+- A	orchestrator/evidence/T22L-gate/exits.txt
+- A	orchestrator/evidence/T22L.json
+- A	orchestrator/evidence/U00-gate/00-exit-codes.txt
+- A	orchestrator/evidence/U00-gate/00-sha.txt
+- A	orchestrator/evidence/U00-gate/01-install.log
+- A	orchestrator/evidence/U00-gate/02-check-react-types.log
+- A	orchestrator/evidence/U00-gate/03-lint.log
+- A	orchestrator/evidence/U00-gate/04-typecheck.log
+- A	orchestrator/evidence/U00-gate/05-jest.log
+- A	orchestrator/evidence/U00-gate/06-scripts-test.log
+- A	orchestrator/evidence/U00-gate/07-build.log
+- A	orchestrator/evidence/U00-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U00-gate/head/00-exit-codes.txt
+- A	orchestrator/evidence/U00-gate/head/00-sha.txt
+- A	orchestrator/evidence/U00-gate/head/01-install.log
+- A	orchestrator/evidence/U00-gate/head/02-check-react-types.log
+- A	orchestrator/evidence/U00-gate/head/03-lint.log
+- A	orchestrator/evidence/U00-gate/head/04-typecheck.log
+- A	orchestrator/evidence/U00-gate/head/05-jest.log
+- A	orchestrator/evidence/U00-gate/head/06-scripts-test.log
+- A	orchestrator/evidence/U00-gate/head/07-build.log
+- A	orchestrator/evidence/U00-gate/head/08-git-diff-check.log
+- A	orchestrator/evidence/U00-gate/merge/00-exit-codes.txt
+- A	orchestrator/evidence/U00-gate/merge/00-sha.txt
+- A	orchestrator/evidence/U00-gate/merge/01-install.log
+- A	orchestrator/evidence/U00-gate/merge/02-check-react-types.log
+- A	orchestrator/evidence/U00-gate/merge/03-lint.log
+- A	orchestrator/evidence/U00-gate/merge/04-typecheck.log
+- A	orchestrator/evidence/U00-gate/merge/05-jest.log
+- A	orchestrator/evidence/U00-gate/merge/06-scripts-test.log
+- A	orchestrator/evidence/U00-gate/merge/07-build.log
+- A	orchestrator/evidence/U00-gate/merge/08-git-diff-check.log
+- A	orchestrator/evidence/U00-gate/narrow/database.log
+- A	orchestrator/evidence/U00-gate/narrow/localization.log
+- A	orchestrator/evidence/U00-gate/narrow/media.log
+- A	orchestrator/evidence/U00-gate/narrow/offline.log
+- A	orchestrator/evidence/U00-mutations/1-route-removed.log
+- A	orchestrator/evidence/U00-mutations/2-copy-mutated.log
+- A	orchestrator/evidence/U00-mutations/3-partition-broken.log
+- A	orchestrator/evidence/U00-mutations/4-node-environment.log
+- A	orchestrator/evidence/U00-mutations/5-restored.log
+- A	orchestrator/evidence/U00-mutations/exits.txt
+- A	orchestrator/evidence/U00-mutations/mutations.sh
+- A	orchestrator/evidence/U00-mutations/node-env.config.js
+- A	orchestrator/evidence/U00.json
+- A	orchestrator/evidence/U01-gate/00-exit-codes.txt
+- A	orchestrator/evidence/U01-gate/00-sha.txt
+- A	orchestrator/evidence/U01-gate/01-install.log
+- A	orchestrator/evidence/U01-gate/02-check-react-types.log
+- A	orchestrator/evidence/U01-gate/03-lint.log
+- A	orchestrator/evidence/U01-gate/04-typecheck.log
+- A	orchestrator/evidence/U01-gate/05-jest.log
+- A	orchestrator/evidence/U01-gate/06-scripts-test.log
+- A	orchestrator/evidence/U01-gate/07-build.log
+- A	orchestrator/evidence/U01-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U01-gate/09-git-status.log
+- A	orchestrator/evidence/U01-gate/exits.txt
+- A	orchestrator/evidence/U01.json
+- A	orchestrator/evidence/U02-gate/00-sha.txt
+- A	orchestrator/evidence/U02-gate/01-install.log
+- A	orchestrator/evidence/U02-gate/02-check-react-types.log
+- A	orchestrator/evidence/U02-gate/03-lint.log
+- A	orchestrator/evidence/U02-gate/04-typecheck.log
+- A	orchestrator/evidence/U02-gate/05-jest-full.log
+- A	orchestrator/evidence/U02-gate/06-scripts-test.log
+- A	orchestrator/evidence/U02-gate/07-build.log
+- A	orchestrator/evidence/U02-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U02-gate/09-git-status.log
+- A	orchestrator/evidence/U02-gate/10-localization.log
+- A	orchestrator/evidence/U02-gate/11-criterion-suites.log
+- A	orchestrator/evidence/U02-gate/exits.txt
+- A	orchestrator/evidence/U02-gate/gate.sh
+- A	orchestrator/evidence/U02-gate/req-91-repro.txt
+- A	orchestrator/evidence/U02.json
+- A	orchestrator/evidence/U03-gate/00-sha.txt
+- A	orchestrator/evidence/U03-gate/01-install.log
+- A	orchestrator/evidence/U03-gate/02-check-react-types.log
+- A	orchestrator/evidence/U03-gate/03-lint.log
+- A	orchestrator/evidence/U03-gate/04-typecheck.log
+- A	orchestrator/evidence/U03-gate/05-jest-full.log
+- A	orchestrator/evidence/U03-gate/06-scripts-test.log
+- A	orchestrator/evidence/U03-gate/07-build.log
+- A	orchestrator/evidence/U03-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U03-gate/09-git-status.log
+- A	orchestrator/evidence/U03-gate/10-localization.log
+- A	orchestrator/evidence/U03-gate/11-criterion-suites.log
+- A	orchestrator/evidence/U03-gate/exits.txt
+- A	orchestrator/evidence/U03-gate/gate.sh
+- A	orchestrator/evidence/U03-mutations.log
+- A	orchestrator/evidence/U03-mutations.py
+- A	orchestrator/evidence/U03.json
+- A	orchestrator/evidence/U04-gate/00-sha.txt
+- A	orchestrator/evidence/U04-gate/01-install.log
+- A	orchestrator/evidence/U04-gate/02-check-react-types.log
+- A	orchestrator/evidence/U04-gate/03-lint.log
+- A	orchestrator/evidence/U04-gate/04-typecheck.log
+- A	orchestrator/evidence/U04-gate/05-jest-full.log
+- A	orchestrator/evidence/U04-gate/06-scripts-test.log
+- A	orchestrator/evidence/U04-gate/07-build.log
+- A	orchestrator/evidence/U04-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U04-gate/09-git-status.log
+- A	orchestrator/evidence/U04-gate/10-localization.log
+- A	orchestrator/evidence/U04-gate/11-criterion-suites.log
+- A	orchestrator/evidence/U04-gate/exits.txt
+- A	orchestrator/evidence/U04-gate/gate.sh
+- A	orchestrator/evidence/U04-gate/regression/req-120-screen-reverted-to-3e27021.log
+- A	orchestrator/evidence/U04-gate/regression/req-120-team-screen-reverted-to-1a87e26.log
+- A	orchestrator/evidence/U04.json
+- A	orchestrator/evidence/U05-gate/00-exit-codes.txt
+- A	orchestrator/evidence/U05-gate/00-sha.txt
+- A	orchestrator/evidence/U05-gate/01-install.log
+- A	orchestrator/evidence/U05-gate/02-check-react-types.log
+- A	orchestrator/evidence/U05-gate/03-lint.log
+- A	orchestrator/evidence/U05-gate/04-typecheck.log
+- A	orchestrator/evidence/U05-gate/05-jest-full.log
+- A	orchestrator/evidence/U05-gate/06-scripts-test.log
+- A	orchestrator/evidence/U05-gate/07-build.log
+- A	orchestrator/evidence/U05-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U05-gate/09-git-status.log
+- A	orchestrator/evidence/U05-gate/exits.txt
+- A	orchestrator/evidence/U05.json
+- A	orchestrator/evidence/U06-gate/00-sha.txt
+- A	orchestrator/evidence/U06-gate/01-install.log
+- A	orchestrator/evidence/U06-gate/02-check-react-types.log
+- A	orchestrator/evidence/U06-gate/03-lint.log
+- A	orchestrator/evidence/U06-gate/04-typecheck.log
+- A	orchestrator/evidence/U06-gate/05-jest-full.log
+- A	orchestrator/evidence/U06-gate/06-scripts-test.log
+- A	orchestrator/evidence/U06-gate/07-build.log
+- A	orchestrator/evidence/U06-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U06-gate/09-git-status.log
+- A	orchestrator/evidence/U06-gate/10-localization.log
+- A	orchestrator/evidence/U06-gate/11-typecheck-after-build.log
+- A	orchestrator/evidence/U06-gate/12-criterion-suites.log
+- A	orchestrator/evidence/U06-gate/exits.txt
+- A	orchestrator/evidence/U06-gate/gate.sh
+- A	orchestrator/evidence/U06-gate/steal-time-sample.txt
+- A	orchestrator/evidence/U06.json
+- A	orchestrator/evidence/U07-gate/00-sha.txt
+- A	orchestrator/evidence/U07-gate/01-install.log
+- A	orchestrator/evidence/U07-gate/02-check-react-types.log
+- A	orchestrator/evidence/U07-gate/03-lint.log
+- A	orchestrator/evidence/U07-gate/04-typecheck.log
+- A	orchestrator/evidence/U07-gate/05-jest-full.log
+- A	orchestrator/evidence/U07-gate/06-scripts-test.log
+- A	orchestrator/evidence/U07-gate/07-build.log
+- A	orchestrator/evidence/U07-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U07-gate/09-git-status.log
+- A	orchestrator/evidence/U07-gate/10-localization.log
+- A	orchestrator/evidence/U07-gate/11-criterion-suites.log
+- A	orchestrator/evidence/U07-gate/12-git-status-after.log
+- A	orchestrator/evidence/U07-gate/exits.txt
+- A	orchestrator/evidence/U07-gate/gate.sh.txt
+- A	orchestrator/evidence/U07-gate/run-0147f5e-1-flake/00-sha.txt
+- A	orchestrator/evidence/U07-gate/run-0147f5e-1-flake/05-jest-full.summary.txt
+- A	orchestrator/evidence/U07-gate/run-0147f5e-1-flake/exits.txt
+- A	orchestrator/evidence/U07-gate/when-quiet.sh.txt
+- A	orchestrator/evidence/U07-provenance/round-2.txt
+- A	orchestrator/evidence/U07.json
+- A	orchestrator/evidence/U08-gate/00-exit-codes.txt
+- A	orchestrator/evidence/U08-gate/00-identifiers.md
+- A	orchestrator/evidence/U08-gate/00-sha.txt
+- A	orchestrator/evidence/U08-gate/00-versions.txt
+- A	orchestrator/evidence/U08-gate/01-install.log
+- A	orchestrator/evidence/U08-gate/02-check-react-types.log
+- A	orchestrator/evidence/U08-gate/03-lint.log
+- A	orchestrator/evidence/U08-gate/04-typecheck.log
+- A	orchestrator/evidence/U08-gate/05-jest-full.log
+- A	orchestrator/evidence/U08-gate/06-scripts-test.log
+- A	orchestrator/evidence/U08-gate/07-build.log
+- A	orchestrator/evidence/U08-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U08-gate/09-git-status.log
+- A	orchestrator/evidence/U08-gate/10-localization.log
+- A	orchestrator/evidence/U08-gate/exits.txt
+- A	orchestrator/evidence/U08-gate/probe-versions.sh.txt
+- A	orchestrator/evidence/U08-gate/versions.txt
+- A	orchestrator/evidence/U08.json
+- A	orchestrator/evidence/U09-gate/00-sha.txt
+- A	orchestrator/evidence/U09-gate/01-install.log
+- A	orchestrator/evidence/U09-gate/02-check-react-types.log
+- A	orchestrator/evidence/U09-gate/03-lint.log
+- A	orchestrator/evidence/U09-gate/04-typecheck.log
+- A	orchestrator/evidence/U09-gate/05-jest-full.log
+- A	orchestrator/evidence/U09-gate/06-scripts-test.log
+- A	orchestrator/evidence/U09-gate/07-build.log
+- A	orchestrator/evidence/U09-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U09-gate/09-git-status.log
+- A	orchestrator/evidence/U09-gate/10-localization.log
+- A	orchestrator/evidence/U09-gate/11-criterion-suites.log
+- A	orchestrator/evidence/U09-gate/exits.txt
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/00-sha.txt
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/01-install.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/02-check-react-types.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/03-lint.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/04-typecheck.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/05-jest-full.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/06-scripts-test.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/07-build.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/08-git-diff-check.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/09-git-status.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/10-localization.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/11-criterion-suites.log
+- A	orchestrator/evidence/U09-gate/first-run-8753f2c/exits.txt
+- A	orchestrator/evidence/U09-gate/gate.sh.txt
+- A	orchestrator/evidence/U09-gate/second-run-0660304/00-sha.txt
+- A	orchestrator/evidence/U09-gate/second-run-0660304/01-install.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/02-check-react-types.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/03-lint.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/04-typecheck.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/05-jest-full.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/06-scripts-test.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/07-build.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/08-git-diff-check.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/09-git-status.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/10-localization.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/11-criterion-suites.log
+- A	orchestrator/evidence/U09-gate/second-run-0660304/exits.txt
+- A	orchestrator/evidence/U09.json
+- A	orchestrator/evidence/U10-gate/00-exit-codes.txt
+- A	orchestrator/evidence/U10-gate/00-sha.txt
+- A	orchestrator/evidence/U10-gate/01-install.log
+- A	orchestrator/evidence/U10-gate/02-check-react-types.log
+- A	orchestrator/evidence/U10-gate/03-lint.log
+- A	orchestrator/evidence/U10-gate/04-typecheck.log
+- A	orchestrator/evidence/U10-gate/05-jest-full.log
+- A	orchestrator/evidence/U10-gate/06-scripts-test.log
+- A	orchestrator/evidence/U10-gate/07-build.log
+- A	orchestrator/evidence/U10-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U10-gate/09-git-status.log
+- A	orchestrator/evidence/U10-gate/exits.txt
+- A	orchestrator/evidence/U10.json
+- A	orchestrator/evidence/U11-gate/00-identifiers.md
+- A	orchestrator/evidence/U11-gate/00-sha.txt
+- A	orchestrator/evidence/U11-gate/01-install.log
+- A	orchestrator/evidence/U11-gate/02-check-react-types.log
+- A	orchestrator/evidence/U11-gate/03-lint.log
+- A	orchestrator/evidence/U11-gate/04-typecheck.log
+- A	orchestrator/evidence/U11-gate/05-jest-full.log
+- A	orchestrator/evidence/U11-gate/06-scripts-test.log
+- A	orchestrator/evidence/U11-gate/07-build.log
+- A	orchestrator/evidence/U11-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U11-gate/09-git-status.log
+- A	orchestrator/evidence/U11-gate/10-localization.log
+- A	orchestrator/evidence/U11-gate/11-criterion-suites.log
+- A	orchestrator/evidence/U11-gate/exits.txt
+- A	orchestrator/evidence/U11-gate/gate.sh.txt
+- A	orchestrator/evidence/U11.json
+- A	orchestrator/evidence/U12-gate/00-sha.txt
+- A	orchestrator/evidence/U12-gate/01-install.log
+- A	orchestrator/evidence/U12-gate/02-check-react-types.log
+- A	orchestrator/evidence/U12-gate/03-lint.log
+- A	orchestrator/evidence/U12-gate/04-typecheck.log
+- A	orchestrator/evidence/U12-gate/05-jest-full.log
+- A	orchestrator/evidence/U12-gate/06-scripts-test.log
+- A	orchestrator/evidence/U12-gate/07-build.log
+- A	orchestrator/evidence/U12-gate/08-git-diff-check.log
+- A	orchestrator/evidence/U12-gate/09-git-status.log
+- A	orchestrator/evidence/U12-gate/10-localization.log
+- A	orchestrator/evidence/U12-gate/11-criterion-suites.log
+- A	orchestrator/evidence/U12-gate/baseline-09e6a91-jest-full.log
+- A	orchestrator/evidence/U12-gate/baseline-09e6a91-sha.txt
+- A	orchestrator/evidence/U12-gate/exits.txt
+- A	orchestrator/evidence/U12.json
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/00-sha.txt
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/01-install.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/02-check-react-types.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/03-lint.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/04-typecheck-milesign.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/05-typecheck.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/06-jest-full.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/07-scripts-test.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/08-build.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/09-git-diff-check.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/10-git-diff-check-main.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/11-git-status.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/12-localization.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/13-criterion-suite.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/14-mutation-repro.log
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/exits.txt
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/gate-when-quiet.sh.txt
+- A	orchestrator/evidence/U13-gate-superseded-77c8998/gate.sh.txt
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/00-sha.txt
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/01-install.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/02-check-react-types.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/03-lint.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/04-typecheck-milesign.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/05-typecheck.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/06-jest-full.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/07-scripts-test.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/08-build.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/09-git-diff-check.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/10-git-diff-check-main.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/11-git-status.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/12-localization.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/13-criterion-suite.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/14-mutation-repro.log
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/exits.txt
+- A	orchestrator/evidence/U13-gate-superseded-dede5ab/gate.sh.txt
+- A	orchestrator/evidence/U13-gate/00-sha.txt
+- A	orchestrator/evidence/U13-gate/01-install.log
+- A	orchestrator/evidence/U13-gate/02-check-react-types.log
+- A	orchestrator/evidence/U13-gate/03-lint.log
+- A	orchestrator/evidence/U13-gate/04-typecheck-milesign.log
+- A	orchestrator/evidence/U13-gate/05-typecheck.log
+- A	orchestrator/evidence/U13-gate/06-jest-full.log
+- A	orchestrator/evidence/U13-gate/07-scripts-test.log
+- A	orchestrator/evidence/U13-gate/08-build.log
+- A	orchestrator/evidence/U13-gate/09-git-diff-check.log
+- A	orchestrator/evidence/U13-gate/10-git-diff-check-main.log
+- A	orchestrator/evidence/U13-gate/11-git-status.log
+- A	orchestrator/evidence/U13-gate/12-localization.log
+- A	orchestrator/evidence/U13-gate/13-criterion-suite.log
+- A	orchestrator/evidence/U13-gate/14-mutation-repro.log
+- A	orchestrator/evidence/U13-gate/exits.txt
+- A	orchestrator/evidence/U13-gate/gate-when-quiet.sh.txt
+- A	orchestrator/evidence/U13-gate/gate.sh.txt
+- A	orchestrator/evidence/U13.json
+- A	orchestrator/evidence/UC1-gate/00-sha.txt
+- A	orchestrator/evidence/UC1-gate/01-install.log
+- A	orchestrator/evidence/UC1-gate/02-check-react-types.log
+- A	orchestrator/evidence/UC1-gate/03-lint.log
+- A	orchestrator/evidence/UC1-gate/04-typecheck.log
+- A	orchestrator/evidence/UC1-gate/05-jest-full.log
+- A	orchestrator/evidence/UC1-gate/06-scripts-test.log
+- A	orchestrator/evidence/UC1-gate/07-build.log
+- A	orchestrator/evidence/UC1-gate/08-git-diff-check.log
+- A	orchestrator/evidence/UC1-gate/09-git-status.log
+- A	orchestrator/evidence/UC1-gate/10-localization.log
+- A	orchestrator/evidence/UC1-gate/11-criterion-suites.log
+- A	orchestrator/evidence/UC1-gate/12-git-status-after.log
+- A	orchestrator/evidence/UC1-gate/exits.txt
+- A	orchestrator/evidence/UC1-gate/gate.sh.txt
+- A	orchestrator/evidence/UC1-gate/when-quiet.sh.txt
+- A	orchestrator/evidence/UC1-mutations/m1-no-door.log
+- A	orchestrator/evidence/UC1-mutations/m2-mark-read-local-only.log
+- A	orchestrator/evidence/UC1-mutations/m3-open-ignores-route.log
+- A	orchestrator/evidence/UC1-mutations/m4-toggle-not-saved.log
+- A	orchestrator/evidence/UC1.json
+- A	orchestrator/evidence/UC2-gate-run1-7a5d89b/00-sha.txt
+- A	orchestrator/evidence/UC2-gate-run1-7a5d89b/05-jest-full-excerpt.log
+- A	orchestrator/evidence/UC2-gate-run1-7a5d89b/exits.txt
+- A	orchestrator/evidence/UC2-gate/00-sha.txt
+- A	orchestrator/evidence/UC2-gate/01-install.log
+- A	orchestrator/evidence/UC2-gate/02-check-react-types.log
+- A	orchestrator/evidence/UC2-gate/03-lint.log
+- A	orchestrator/evidence/UC2-gate/04-typecheck.log
+- A	orchestrator/evidence/UC2-gate/05-jest-full.log
+- A	orchestrator/evidence/UC2-gate/06-scripts-test.log
+- A	orchestrator/evidence/UC2-gate/07-build.log
+- A	orchestrator/evidence/UC2-gate/08-git-diff-check.log
+- A	orchestrator/evidence/UC2-gate/09-git-status.log
+- A	orchestrator/evidence/UC2-gate/10-localization.log
+- A	orchestrator/evidence/UC2-gate/11-criterion-suites.log
+- A	orchestrator/evidence/UC2-gate/exits.txt
+- A	orchestrator/evidence/UC2-gate/gate.sh.txt
+- A	orchestrator/evidence/UC2-mutations/00-sha.txt
+- A	orchestrator/evidence/UC2-mutations/99-status-after.txt
+- A	orchestrator/evidence/UC2-mutations/m1-content-search-unscoped.log
+- A	orchestrator/evidence/UC2-mutations/m1a-applied.txt
+- A	orchestrator/evidence/UC2-mutations/m1a-rls-only-bypassed.log
+- A	orchestrator/evidence/UC2-mutations/m2-records-not-drawn.log
+- A	orchestrator/evidence/UC2-mutations/m3-admission-ignored.log
+- A	orchestrator/evidence/UC2-mutations/m4-any-own-address.log
+- A	orchestrator/evidence/UC2-mutations/m5-screen-ignores-admission.log
+- A	orchestrator/evidence/UC2-mutations/mutations.sh.txt
+- A	orchestrator/evidence/UC2.json
+- A	orchestrator/evidence/UC3-gate/00-sha.txt
+- A	orchestrator/evidence/UC3-gate/01-install.log
+- A	orchestrator/evidence/UC3-gate/02-check-react-types.log
+- A	orchestrator/evidence/UC3-gate/03-lint.log
+- A	orchestrator/evidence/UC3-gate/04-typecheck.log
+- A	orchestrator/evidence/UC3-gate/05-jest-full.log
+- A	orchestrator/evidence/UC3-gate/06-scripts-test.log
+- A	orchestrator/evidence/UC3-gate/07-build.log
+- A	orchestrator/evidence/UC3-gate/08-git-diff-check.log
+- A	orchestrator/evidence/UC3-gate/09-git-status.log
+- A	orchestrator/evidence/UC3-gate/10-localization.log
+- A	orchestrator/evidence/UC3-gate/11-criterion-suites.log
+- A	orchestrator/evidence/UC3-gate/12-git-status-after.log
+- A	orchestrator/evidence/UC3-gate/exits.txt
+- A	orchestrator/evidence/UC3-gate/gate.sh.txt
+- A	orchestrator/evidence/UC3-gate/when-quiet.sh.txt
+- A	orchestrator/evidence/UC3.json
+- A	orchestrator/evidence/UC4-gate/00-sha.txt
+- A	orchestrator/evidence/UC4-gate/01-install.log
+- A	orchestrator/evidence/UC4-gate/02-check-react-types.log
+- A	orchestrator/evidence/UC4-gate/03-lint.log
+- A	orchestrator/evidence/UC4-gate/04-typecheck.log
+- A	orchestrator/evidence/UC4-gate/05-jest-full.log
+- A	orchestrator/evidence/UC4-gate/06-scripts-test.log
+- A	orchestrator/evidence/UC4-gate/07-build.log
+- A	orchestrator/evidence/UC4-gate/08-git-diff-check.log
+- A	orchestrator/evidence/UC4-gate/09-git-status.log
+- A	orchestrator/evidence/UC4-gate/10-localization.log
+- A	orchestrator/evidence/UC4-gate/11-criterion-suites.log
+- A	orchestrator/evidence/UC4-gate/12-git-status-after.log
+- A	orchestrator/evidence/UC4-gate/13-negative-controls.log
+- A	orchestrator/evidence/UC4-gate/14-git-status-after-controls.log
+- A	orchestrator/evidence/UC4-gate/15-database.log
+- A	orchestrator/evidence/UC4-gate/16-git-status-final.log
+- A	orchestrator/evidence/UC4-gate/exits.txt
+- A	orchestrator/evidence/UC4-gate/gate.sh.txt
+- A	orchestrator/evidence/UC4-gate/negative-controls.sh
+- A	orchestrator/evidence/UC4-gate/r3-gate.sh.txt
+- A	orchestrator/evidence/UC4-gate/r4-gate.sh.txt
+- A	orchestrator/evidence/UC4-gate/run-r3a-de893ea-failed/00-sha.txt
+- A	orchestrator/evidence/UC4-gate/run-r3a-de893ea-failed/05-jest-full.summary.txt
+- A	orchestrator/evidence/UC4-gate/run-r3a-de893ea-failed/exits.txt
+- A	orchestrator/evidence/UC4-gate/run-r3b-d2d076f-superseded/00-sha.txt
+- A	orchestrator/evidence/UC4-gate/run-r3b-d2d076f-superseded/exits.txt
+- A	orchestrator/evidence/UC4-gate/run-r3c-c965fc4-superseded/00-sha.txt
+- A	orchestrator/evidence/UC4-gate/run-r3c-c965fc4-superseded/exits.txt
+- A	orchestrator/evidence/UC4-gate/run-r4a-e6fa5fe-superseded/00-sha.txt
+- A	orchestrator/evidence/UC4-gate/run-r4a-e6fa5fe-superseded/11-criterion-suites.log
+- A	orchestrator/evidence/UC4-gate/run-r4a-e6fa5fe-superseded/13-negative-controls.log
+- A	orchestrator/evidence/UC4-gate/run-r4a-e6fa5fe-superseded/exits.txt
+- A	orchestrator/evidence/UC4-gate/uc3-followup/with-fix.log
+- A	orchestrator/evidence/UC4-gate/uc3-followup/without-fix.log
+- A	orchestrator/evidence/UC4-gate/uc4-fix1/with-fix.log
+- A	orchestrator/evidence/UC4-gate/uc4-fix1/without-fix.log
+- A	orchestrator/evidence/UC4-gate/uc4-fix2/pending-counts-as-ready.log
+- A	orchestrator/evidence/UC4-gate/uc4-fix2/reviewed-screen-0f1f1b4.log
+- A	orchestrator/evidence/UC4-gate/uc4-fix2/with-fix.log
+- A	orchestrator/evidence/UC4-gate/when-quiet.sh.txt
+- A	orchestrator/evidence/UC4.json
+- A	orchestrator/lib/acceptance-matrix.mjs
+- A	orchestrator/lib/cezar-driver.mjs
+- A	orchestrator/lib/controller-snapshot.mjs
+- A	orchestrator/lib/controller.mjs
+- A	orchestrator/lib/gate.mjs
+- A	orchestrator/lib/git.mjs
+- A	orchestrator/lib/handoff.mjs
+- A	orchestrator/lib/methods.mjs
+- A	orchestrator/lib/registry.mjs
+- A	orchestrator/lib/state.mjs
+- A	orchestrator/lib/verify.mjs
+- A	orchestrator/registry.json
+- A	orchestrator/reports/.gitkeep
+- A	orchestrator/reports/A01.md
+- A	orchestrator/reports/AB1.md
+- A	orchestrator/reports/AB2.md
+- A	orchestrator/reports/AB2b.md
+- A	orchestrator/reports/AB3a.md
+- A	orchestrator/reports/AB3b.md
+- A	orchestrator/reports/AB3c.md
+- A	orchestrator/reports/AB4.md
+- A	orchestrator/reports/AB4M.md
+- A	orchestrator/reports/AB4P.md
+- A	orchestrator/reports/AB5.md
+- A	orchestrator/reports/AB5P.md
+- A	orchestrator/reports/AB6.md
+- A	orchestrator/reports/AB6M.md
+- A	orchestrator/reports/AB6P.md
+- A	orchestrator/reports/C01.md
+- A	orchestrator/reports/C02.md
+- A	orchestrator/reports/C03.md
+- A	orchestrator/reports/C04.md
+- A	orchestrator/reports/C05.md
+- A	orchestrator/reports/C06.md
+- A	orchestrator/reports/C07.md
+- A	orchestrator/reports/C08.md
+- A	orchestrator/reports/C09.md
+- A	orchestrator/reports/C10.md
+- A	orchestrator/reports/D00.md
+- A	orchestrator/reports/D01.md
+- A	orchestrator/reports/D02.md
+- A	orchestrator/reports/D03.md
+- A	orchestrator/reports/D04.md
+- A	orchestrator/reports/D05.md
+- A	orchestrator/reports/D06.md
+- A	orchestrator/reports/D07.md
+- A	orchestrator/reports/D08.md
+- A	orchestrator/reports/D09.md
+- A	orchestrator/reports/E01.md
+- A	orchestrator/reports/E02.md
+- A	orchestrator/reports/E03.md
+- A	orchestrator/reports/E04.md
+- A	orchestrator/reports/E05.md
+- A	orchestrator/reports/E06.md
+- A	orchestrator/reports/E07.md
+- A	orchestrator/reports/E08.md
+- A	orchestrator/reports/E09.md
+- A	orchestrator/reports/E10.md
+- A	orchestrator/reports/E11.md
+- A	orchestrator/reports/E12.md
+- A	orchestrator/reports/E13.md
+- A	orchestrator/reports/FX1.md
+- A	orchestrator/reports/H01.md
+- A	orchestrator/reports/H02.md
+- A	orchestrator/reports/H03.md
+- A	orchestrator/reports/I00.md
+- A	orchestrator/reports/I01.md
+- A	orchestrator/reports/I02.md
+- A	orchestrator/reports/I10.md
+- A	orchestrator/reports/I11.md
+- A	orchestrator/reports/I12.md
+- A	orchestrator/reports/I13.md
+- A	orchestrator/reports/I14.md
+- A	orchestrator/reports/I15.md
+- A	orchestrator/reports/I16.md
+- A	orchestrator/reports/I17.md
+- A	orchestrator/reports/I20.md
+- A	orchestrator/reports/I22.md
+- A	orchestrator/reports/IOS0.md
+- A	orchestrator/reports/R01.md
+- A	orchestrator/reports/R02.md
+- A	orchestrator/reports/R03.md
+- A	orchestrator/reports/R04.md
+- A	orchestrator/reports/R05.md
+- A	orchestrator/reports/R06.md
+- A	orchestrator/reports/R07.md
+- A	orchestrator/reports/R08.md
+- A	orchestrator/reports/R09.md
+- A	orchestrator/reports/R10.md
+- A	orchestrator/reports/R11.md
+- A	orchestrator/reports/R12.md
+- A	orchestrator/reports/R13.md
+- A	orchestrator/reports/R14.md
+- A	orchestrator/reports/R15.md
+- A	orchestrator/reports/R16.md
+- A	orchestrator/reports/R17.md
+- A	orchestrator/reports/R18.md
+- A	orchestrator/reports/R19.md
+- A	orchestrator/reports/R20.md
+- A	orchestrator/reports/R21.md
+- A	orchestrator/reports/R21B.md
+- A	orchestrator/reports/R21C.md
+- A	orchestrator/reports/R22.md
+- A	orchestrator/reports/R23.md
+- A	orchestrator/reports/R24.md
+- A	orchestrator/reports/R25.md
+- A	orchestrator/reports/R26.md
+- A	orchestrator/reports/R27.md
+- A	orchestrator/reports/R28.md
+- A	orchestrator/reports/R28M.md
+- A	orchestrator/reports/R28P.md
+- A	orchestrator/reports/R29.md
+- A	orchestrator/reports/R30.md
+- A	orchestrator/reports/R31.md
+- A	orchestrator/reports/R32.md
+- A	orchestrator/reports/R33.md
+- A	orchestrator/reports/R34.md
+- A	orchestrator/reports/R35.md
+- A	orchestrator/reports/R36.md
+- A	orchestrator/reports/R37.md
+- A	orchestrator/reports/R38.md
+- A	orchestrator/reports/R39.md
+- A	orchestrator/reports/R40.md
+- A	orchestrator/reports/R41.md
+- A	orchestrator/reports/RC101.md
+- A	orchestrator/reports/RC102.md
+- A	orchestrator/reports/SETUP.md
+- A	orchestrator/reports/T00.md
+- A	orchestrator/reports/T01.md
+- A	orchestrator/reports/T02.md
+- A	orchestrator/reports/T03.md
+- A	orchestrator/reports/T04.md
+- A	orchestrator/reports/T04L.md
+- A	orchestrator/reports/T05.md
+- A	orchestrator/reports/T06.md
+- A	orchestrator/reports/T06F.md
+- A	orchestrator/reports/T07.md
+- A	orchestrator/reports/T08.md
+- A	orchestrator/reports/T09.md
+- A	orchestrator/reports/T10.md
+- A	orchestrator/reports/T11.md
+- A	orchestrator/reports/T12.md
+- A	orchestrator/reports/T13.md
+- A	orchestrator/reports/T13E.md
+- A	orchestrator/reports/T13L.md
+- A	orchestrator/reports/T14.md
+- A	orchestrator/reports/T15.md
+- A	orchestrator/reports/T16.md
+- A	orchestrator/reports/T17.md
+- A	orchestrator/reports/T18.md
+- A	orchestrator/reports/T18L.md
+- A	orchestrator/reports/T19.md
+- A	orchestrator/reports/T19P.md
+- A	orchestrator/reports/T20.md
+- A	orchestrator/reports/T21.md
+- A	orchestrator/reports/T21L.md
+- A	orchestrator/reports/T22L.md
+- A	orchestrator/reports/U00.md
+- A	orchestrator/reports/U01.md
+- A	orchestrator/reports/U02.md
+- A	orchestrator/reports/U03.md
+- A	orchestrator/reports/U04.md
+- A	orchestrator/reports/U05.md
+- A	orchestrator/reports/U06.md
+- A	orchestrator/reports/U07.md
+- A	orchestrator/reports/U08.md
+- A	orchestrator/reports/U09.md
+- A	orchestrator/reports/U10.md
+- A	orchestrator/reports/U11.md
+- A	orchestrator/reports/U12.md
+- A	orchestrator/reports/U13.md
+- A	orchestrator/reports/UC1.md
+- A	orchestrator/reports/UC2.md
+- A	orchestrator/reports/UC3.md
+- A	orchestrator/reports/UC4.md
+- A	orchestrator/reviews/.gitkeep
+- A	orchestrator/systemd/milesign-orchestrator.service
+- A	orchestrator/test/h01-whitespace-debt.test.mjs
+- A	orchestrator/test/harness.mjs
+- A	orchestrator/test/real-e2e.mjs
+- A	orchestrator/test/scenarios.test.mjs
+- M	package.json
+- M	pnpm-lock.yaml
+- M	pnpm-workspace.yaml
+- M	scripts/package.json
+- A	scripts/src/retention-purge-workflow.test.ts
 
-## Verified gates
+## Verified gate evidence
 
-| Gate | Status | Exit result | Verified result |
-|---|---|---:|---|
-| Dependency install (offloaded) | pass | 0 | completed |
-| Dependency install (local control) | pass | 0 | completed |
-| React type check | pass | 0 | completed |
-| Lint | pass | 0 | completed |
-| Typecheck | pass | 0 | completed |
-| Acceptance suites | pass | 0 | 12/12 suites; 280/280 tests |
-| Full Jest | pass | 0 | 374/374 suites; 11,677/11,677 tests |
-| Handoff consistency | pass | 0 | completed |
-| Script tests | pass | 0 | completed |
-| Web build | pass | 0 | completed |
-| Post-build typecheck | pass | 0 | completed |
-| Localization suites | pass | 0 | 20/20 suites; 1,712/1,712 tests |
-| Android export | pass | 0 | completed |
-| Version and product scope | pass | 0 | version 1.0.2; versionCode 7; one product file changed |
-| Server/schema scope | pass | 0 | no task change |
-| Candidate integrity and signing | pass | 0 | recorded hash, byte size, package/version, and upload signer matched |
-| Tracked credential guard | pass | 0 | no prohibited credential artifact tracked |
-| PEM guard | pass | 0 | no prohibited marker found |
-| Diff whitespace check | pass | 0 | clean |
-| Initial clean-tree check | pass | 0 | clean |
-| Negative controls | pass | 0 | 9/9 |
-| Final clean-tree check | pass | 0 | clean |
+The completed gate measured product commit 36b5dd01fdd26e9065f6c299e06ff3dfbcb48a58; the product-freshness comparison from that commit to the inspected head was empty. Initial gate results:
 
-The committed final gate measured source commit `176b62d204e1cb8ed49587cd84a35cc7cdc6e8f6`. The product-surface freshness comparison from that commit to the head was empty. An independent review reran the four core acceptance suites: 4/4 suites and 112/112 tests passed.
+- 01-install: exit 0
+- 01b-install-local: exit 0
+- 02-check-react-types: exit 0
+- 03-lint: exit 0
+- 04-typecheck: exit 0
+- 05-criterion-suites: exit 0
+- 06-jest-full: exit 0
+- 06b-handoff-check: exit 0
+- 07-scripts-test: exit 0
+- 08-build: exit 0
+- 08b-typecheck-after-build: exit 0
+- 09-localization: exit 0
+- 09m-media: exit 0
+- 10-android-export: exit 0
+- 10a-fx1-keys: exit 0
+- 10b-r39-pin-and-scope: exit 0
+- 10c-no-credential-tracked: exit 0
+- 10d-pem-guard: exit 0
+- 11-git-diff-check: exit 0
+- 12-git-status: exit 0
+- 13-negative-controls: exit 1
+- 14-git-status-final: exit 0
+
+Negative-control rerun results after the control-only correction:
+
+- 12r-git-status (rerun): exit 0
+- 12br-install-local (rerun): exit 0
+- 13r-negative-controls (rerun): exit 0
+- 14r-git-status-final (rerun): exit 0
+
+Test counts recorded by the completed gate:
+
+- Criterion suites: 13/13 suites, 294/294 tests passed.
+- Full Jest: 377/377 suites, 11714/11714 tests passed.
+- Localization suites: 20/20 suites, 1712/1712 tests passed.
+- Media suites: 11/11 suites, 148/148 tests passed.
+- Negative controls: initial 10/12; corrected rerun 12/12.
 
 ## Review verdict
 
-Ready for human review. The task acceptance evidence is internally consistent, the source worktree is clean, and no review defect was found.
+CHANGES — not ready for human approval. The tests pass for their measured assertions, but signed Storage URLs still reach copyable browser resources through web image and iframe sources, and the external-open API still accepts an arbitrary string rather than a local-only handoff type.
 
 ## Remaining risks
 
-- Real-device installation and device checks have not run.
-- Internal testing upload and installation remain owner actions; no upload or public release occurred.
-- Push delivery also depends on the separately deployed sender.
-- Production status is based on committed records rather than a fresh live read.
+- A signed Storage URL remains visible to browser tooling and copy actions while used as a web image or iframe source.
+- The static scan inventories explicit outbound APIs but does not treat media source properties as user-reachable browser exits.
+- The external-open boundary can still be called with a remote URL; runtime downloading limits the present handoff path, but the requested type-level invariant is absent.
+- Device behavior remains unverified until the RC103 owner phone test.
 
 ## Proposed next technical task
 
-**Run Android Internal testing device validation for RC 1.0.2 (versionCode 7).**
+**FX1 correction: close browser media sinks and enforce a local-only external-open boundary.** Purpose: make O7 true on web and make remote handoff unrepresentable at the external-open API.
 
-Purpose: validate the signed candidate in the actual Play Internal testing install/upgrade path and close the device-only evidence gaps.
-
-Exact scope: upload only the recorded RC 1.0.2 / versionCode 7 AAB to the existing Internal testing track, install or upgrade from the tester link on one supported Android device, run T21D, AB4D, and AB6D, and record results without changing product code, production data, or public-release state.
+Exact scope: the web preview/download helper, MediaPreviewModal, openExternally, the minimum owner-approved R39 caller change if required, FX1 static and screen tests, storage URL exposure documentation, FX1 evidence, and the FX1 report. Do not change production services, dependencies, migrations, or unrelated UI.
 
 Acceptance criteria:
 
-- Play accepts versionCode 7 and the installed app reports version 1.0.2.
-- Install or upgrade occurs from the Internal testing link.
-- T21D passes for launch, authentication, offline/online recovery, camera/media, and account deletion checks in its defined matrix.
-- AB4D passes for voice-note capture, upload, playback, and failure recovery.
-- AB6D passes for notification permission, receipt, tap routing, background/closed behavior, and moderation/digest scenarios available in the environment.
-- Evidence records device/OS, tester-track release, observed results, and any blocked server-dependent scenario; no public rollout occurs.
+- Every web image, PDF, video, and voice preview fed by Storage first materializes a blob URL and revokes it according to cache policy; no Supabase URL is assigned to a browser-rendered source.
+- The static scan treats image/video/audio/iframe source properties and downloadable anchors as exits and fails on a planted signed-URL source.
+- The external-open API accepts only a branded local handoff object or local URI, with no public overload accepting an arbitrary string.
+- R39-pinned files remain unchanged unless the owner explicitly authorizes the exact minimal caller edit.
+- Existing FX1 criterion suites, R39 guard, lint, typecheck, full Jest, build, and Android export pass on the final product commit.
 
-Verification commands:
-
-- Repository evidence validator for T21D.
-- Repository evidence validator for AB4D.
-- Repository evidence validator for AB6D.
-- Acceptance-suite runner covering the candidate-record and device-evidence specifications.
+Verification commands (names only, sanitized): FX1 storage-exit suite; FX1 local-open suite; FX1 in-app screen suite; R39 first-look guard; Milesign lint; workspace typecheck; full Jest; production build; Android export; product-freshness diff.
